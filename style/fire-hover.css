@@ -1,0 +1,383 @@
+.websiteBody{
+  margin: 0;
+}.Page{
+  display:block;
+  margin:auto;
+  width:100%;
+  height:auto;
+  pointer-events:auto;
+}
+.Page-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:1;
+}
+.Frame{
+  position:relative;
+  z-index:2;
+  pointer-events:none;
+  width:100%;
+  margin-left:0;
+  min-width:200px;
+  max-width:252px;
+  margin:auto;
+  background-color:#ffffff;
+}
+.Frame-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:2;
+}
+.card-fire-hover{
+  position:relative;
+  z-index:3;
+  pointer-events:none;
+  margin-left:0px;
+  width:252px;
+  min-width:252px;
+  height:290px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:290px;
+}
+.card-fire-hover-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:3;
+}
+.card-parent{
+  position:relative;
+  z-index:4;
+  pointer-events:none;
+  margin-left:0px;
+  width:252px;
+  min-width:252px;
+  height:290px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:290px;
+  background:linear-gradient(151.98deg, rgba(250, 250, 250, 1) 41.051563958595864%, rgba(226, 226, 226, 1) 85.82368021521708%);
+  filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius:4px;
+}
+.card-parent-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:4;
+}
+.frame-card-outline{
+  position:relative;
+  z-index:5;
+  pointer-events:none;
+  margin-left:0px;
+  width:252px;
+  min-width:252px;
+  height:285px;
+  margin-top:0px;
+  margin-bottom:5px;
+  min-height:285px;
+}
+.frame-card-outline-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:5;
+}
+.Frame-card-elements{
+  position:relative;
+  z-index:7;
+  pointer-events:none;
+  margin-left:0.3968253968253968%;
+  width:99.2063492063492%;
+  height:100%;
+  margin-top:1.1904761904761905%;
+}
+.Frame-card-elements-outer{
+  position:absolute;
+  display:flex;
+  pointer-events:none;
+  z-index:7;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+.frame-card-bg-white{
+  position:relative;
+  z-index:8;
+  pointer-events:none;
+  margin-left:0px;
+  width:250px;
+  min-width:250px;
+  height:285px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:285px;
+  background:linear-gradient(180deg, rgba(255, 255, 255, 1) -3.0616171314629196e-15%, rgba(255, 242, 222, 1) 99.99999999999997%);
+}
+.frame-card-bg-white-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:8;
+}
+.frame-card-img{
+  position:relative;
+  z-index:15;
+  pointer-events:none;
+  margin-left:28px;
+  width:197px;
+  min-width:197px;
+  height:195px;
+  margin-top:-256px;
+  margin-bottom:61px;
+  min-height:195px;
+}
+.frame-card-img-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:15;
+}
+.card-img{
+  position:relative;
+  z-index:16;
+  pointer-events:none;
+  margin-left:0px;
+  width:197px;
+  height:195px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:195px;
+  background-image:url(assets/images/card_img.png?tid=1628838759912);
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.card-img-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:16;
+  justify-content:center;
+}
+.frame-pokemon-name{
+  position:relative;
+  z-index:17;
+  pointer-events:none;
+  margin-left:-2px;
+  width:250px;
+  height:45px;
+  margin-top:224px;
+}
+.frame-pokemon-name-outer{
+  position:absolute;
+  display:flex;
+  pointer-events:none;
+  z-index:17;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  align-items:center;
+}
+.card-frame-name{
+  position:relative;
+  z-index:18;
+  pointer-events:none;
+  margin-left:24px;
+  width:203px;
+  min-width:203px;
+  height:30px;
+  margin-top:8px;
+  margin-bottom:7px;
+  min-height:30px;
+  filter:drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+  border-radius:4px;
+}
+.card-frame-name-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:18;
+}
+.Charizard{
+  position:relative;
+  z-index:19;
+  pointer-events:none;
+  margin-left:0px;
+  width:203px;
+  min-width:203px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:30px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Rubik;
+  font-weight:700;
+  font-size:30px;
+  line-height:125%;
+  background:linear-gradient(180deg, rgba(235, 100, 3, 1) -3.0616171314629196e-15%, rgba(0, 47, 61, 1) 60.416668653488145%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.Charizard-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:19;
+}
+.frame-type-logo-name{
+  position:relative;
+  z-index:9;
+  pointer-events:none;
+  margin-left:0.4%;
+  width:99.6%;
+  height:15.985964912280702%;
+  margin-top:0%;
+}
+.frame-type-logo-name-outer{
+  position:absolute;
+  display:flex;
+  pointer-events:none;
+  z-index:9;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+.frame-type-name{
+  position:relative;
+  z-index:13;
+  pointer-events:none;
+  margin-left:35px;
+  width:40px;
+  min-width:40px;
+  height:45.56px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:45.56px;
+}
+.frame-type-name-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:13;
+}
+.FIRE{
+  position:relative;
+  z-index:14;
+  pointer-events:none;
+  margin-left:4px;
+  width:33px;
+  min-width:33px;
+  margin-top:15px;
+  margin-bottom:15.560000000000002px;
+  min-height:15px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:rgba(160, 97, 22, 1);
+  font-style:normal;
+  font-family:Rubik;
+  font-weight:500;
+  font-size:15px;
+  line-height:125%;
+}
+.FIRE-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:14;
+}
+.fire-logo{
+  position:relative;
+  z-index:10;
+  pointer-events:none;
+  margin-left:10px;
+  width:25px;
+  min-width:25px;
+  height:43px;
+  margin-top:-45.56px;
+  margin-bottom:2.5600000000000023px;
+  min-height:43px;
+  overflow:hidden;
+}
+.fire-logo-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:10;
+}
+.Frame-4{
+  position:relative;
+  z-index:11;
+  pointer-events:none;
+  margin-left:0px;
+  width:25px;
+  min-width:25px;
+  height:28px;
+  margin-top:8px;
+  margin-bottom:7px;
+  min-height:28px;
+}
+.Frame-4-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:11;
+}
+.type-logo-fire{
+  position:relative;
+  z-index:12;
+  pointer-events:none;
+  margin-left:-4%;
+  width:132%;
+  height:128.57142857142858%;
+  margin-top:-12%;
+  max-width:28px;
+  content:url(assets/images/type_logo_fire.png?tid=1628838759912);
+}
+.type-logo-fire-outer{
+  position:absolute;
+  display:flex;
+  pointer-events:none;
+  z-index:12;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+.card-bg-gradient{
+  position:relative;
+  z-index:6;
+  pointer-events:none;
+  margin-left:0%;
+  width:100%;
+  height:101.75438596491227%;
+  margin-top:0%;
+  background:linear-gradient(138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgba(245, 157, 25, 1) 16.49605437168893%, rgba(245, 157, 25, 1) 22.071563002043444%, rgba(206, 74, 0, 1) 41.83927225478994%);
+  border-radius:1px 1px 4px 4px;
+}
+.card-bg-gradient-outer{
+  position:absolute;
+  display:flex;
+  pointer-events:none;
+  z-index:6;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}

@@ -1,0 +1,12 @@
+.buttonnext {
+    border-width: 2px;
+    border-color: linear-gradient(red 50%, blue 40%);
+    border-radius: 4px 4px; a
+    background-color: linear-gradient(red 50%, blue 40%); 
+    align-self: center;
+}
+
+.buttonprev {
+    border-width: 1px;
+    border-color: red;   
+}

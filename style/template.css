@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&display=swap');
+
+.temp-container {
+    display: flex;
+}
+
+
+.title {
+    font-size: 4em;
+    font-family: 'Rubik', 'open sans', 'PT Sans Narrow';
+    text-transform: uppercase;
+} 

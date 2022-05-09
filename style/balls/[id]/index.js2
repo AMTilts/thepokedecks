@@ -1,0 +1,104 @@
+import Head from 'next/head'
+import Link from 'next/link'
+import { getAllPokeData, getPokeData } from '../../../services/pokemon';
+
+// function Pokeinfo({ data }) {
+//     return (
+//         <div>
+//             {data.map(data => {
+//                 <h1 key={data._id}>{ data.name }</h1>
+//             })}
+            
+//             <p>Pokemon Info/Type</p>
+//             <ul>
+//                 <li>Type</li>
+//             </ul>
+//         </div>
+//     )
+// }
+
+const defaultEndpoint = 'https://pokeapi.co/api/v2/pokemon'
+const sprites = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
+
+
+export const getStaticProps = async () => {
+    
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+    const data = await res.json();
+
+    return {
+        props: { pokes: data }
+    }
+
+
+}
+
+
+const PokeTemp = ({ pokes }) => {
+    return (
+        <div>
+            {pokes.map(poke => (
+                <div key={poke.id}>
+                    <a>
+                        <h1>{ poke.name }</h1>
+                    </a>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default PokeTemp;
+
+// export async function getServerSideProps() {
+//     const res = await fetch(defaultEndpoint)
+//     const data = await res.json()
+//     const spriteURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon' + `${id}` + '.png'
+//         //Pass datat to the page via props
+
+//     return {
+//         props: {
+//             data
+//         }
+//     }
+// }
+
+// export default function Pokemoninfo({ data, spriteURL }) {
+//     const { results = [] } = data;
+//     console.log(data);
+//     return (
+//         <div className="container2">
+//             <Head>
+//                 <title>Pokedexicles</title>
+//                 <Link ref="icon" href="/favicon.ico" />
+//             </Head>
+
+//             <main>
+//                 <h1 className="title2">
+//                     Pokedexicle Info
+//                 </h1>
+
+//                 <p className="description2">
+//                     Fire Type
+//                 </p>
+
+//                 <ul className="grid2">
+//                     {results && results.map(result => {
+//                         const { id, name, spriteURL} = result;
+
+//                         return (
+//                             <>
+//                                 <li key={id}  className="card2">
+//                                     <img src={ spriteURL }/> </img>
+//                                     <h3>{name}</h3>
+//                                     <Link href="#">Nada</Link> 
+//                                 </li>
+//                             </>
+//                         )
+//                     }
+//                 )}
+//                 </ul>
+//             </main>
+//         </div>
+//     )
+// }

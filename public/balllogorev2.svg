@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="75.48 662.183 1395.477 1215.749" width="1346.717px" height="1173.269px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="789.044" y1="704.663" x2="789.044" y2="1848.568" id="gradient-0" gradientTransform="matrix(0.965974, 0.258641, -0.17484, 0.524519, 361.008388, 326.311117)">
+      <stop offset="0" style="stop-color: rgb(210, 210, 210); stop-opacity: 0.17;"/>
+      <stop offset="1" style="stop-color: rgb(37, 35, 35); stop-opacity: 0.27;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient1356-0" gradientUnits="userSpaceOnUse" x1="789.044" y1="704.663" x2="789.044" y2="1848.568" spreadMethod="pad" gradientTransform="matrix(-0.945316, -0.326157, 0.170729, -0.437098, 1457.00448, 1865.359343)" xlink:href="#linearGradient1356"/>
+    <linearGradient id="linearGradient1356">
+      <stop style="stop-opacity: 1; stop-color: rgb(63, 63, 63);" offset="0" id="stop1352"/>
+      <stop style="stop-opacity: 0.27; stop-color: rgb(18, 15, 15);" offset="1" id="stop1354"/>
+    </linearGradient>
+    <linearGradient id="linearGradient59990" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient22043">
+      <stop style="stop-color:#060000;stop-opacity:1;" offset="0" id="stop22041"/>
+    </linearGradient>
+    <linearGradient id="linearGradient59992" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient59994" gradientUnits="userSpaceOnUse" x1="21.983" y1="140.9915" x2="490.017" y2="140.9915" xlink:href="#linearGradient1356"/>
+    <linearGradient id="linearGradient59996" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient59998" gradientUnits="userSpaceOnUse" x1="238.4026" y1="53.517151" x2="233.01434" y2="200.79503" xlink:href="#linearGradient2566"/>
+    <linearGradient id="linearGradient2566">
+      <stop style="stop-color:#d40000;stop-opacity:1" offset="0" id="stop2562"/>
+      <stop style="stop-color:#800000;stop-opacity:1" offset="1" id="stop2564"/>
+    </linearGradient>
+    <linearGradient id="linearGradient60000" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60004" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60006" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60008" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60010" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60012" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60020" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60034" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60036" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60038" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60040" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60042" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60048" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60050" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient3766" gradientUnits="userSpaceOnUse" x1="21.983" y1="140.9915" x2="490.017" y2="140.9915" xlink:href="#linearGradient1356"/>
+    <linearGradient id="linearGradient60052" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient3768" gradientUnits="userSpaceOnUse" x1="238.4026" y1="53.517151" x2="233.01434" y2="200.79503" xlink:href="#linearGradient2566"/>
+    <linearGradient id="linearGradient60054" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60058" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60060" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60062" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60064" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+    <linearGradient id="linearGradient60066" gradientUnits="userSpaceOnUse" x1="198.3471" y1="568.13227" x2="698.87912" y2="568.13227" xlink:href="#linearGradient22043"/>
+  </defs>
+  <g>
+    <g id="g55151" style="display:inline">
+      <g>
+        <path id="path55147" style="display: inline; fill-opacity: 1; stroke-opacity: 1; stroke-miterlimit: 3; stroke-dashoffset: 50px; paint-order: stroke; stroke-width: 15px; stroke: url(#linearGradient1356-0); stroke-linejoin: bevel; fill: url(#gradient-0);" d="M 1037.323 754.913 C 1100.841 772.623 1213.303 801.694 1213.303 801.694 C 1017.59 1004.65 1037.108 1165.297 1237.576 1306.666 C 1263.182 1324.724 1284.616 1340.707 1300.372 1357.524 C 1319.916 1378.385 1334.848 1402.289 1344.845 1419.477 C 1363.855 1452.16 1369.55 1471.96 1376.483 1503.531 C 1383.609 1535.988 1384.135 1585.118 1378.58 1616.866 C 1370.687 1661.982 1347.338 1734.424 1269.278 1794.64 C 1250.024 1809.492 1214.802 1827.223 1178.973 1837.517 C 1142.573 1847.976 1099.802 1848.977 1085.86 1848.461 C 1067.95 1847.797 1048.47 1844.699 1030.593 1840.295 C 1019.686 1837.608 1007.61 1833.141 994.588 1828.3 C 979.391 1822.651 950.655 1808.881 921.222 1788.366 C 895.624 1770.524 869.466 1743.027 849.846 1713.419 C 828.579 1684.625 810.312 1635.519 805.9 1613.776 C 796.192 1565.934 742.941 1560.734 714.699 1586.029 C 695.604 1603.13 686.179 1615.076 638.779 1643.556 C 638.779 1643.556 616.44 1655.587 605.795 1659.748 C 589.849 1665.982 573.102 1671.038 573.102 1671.038 C 564.663 1673.829 560.761 1675.112 555.643 1676.154 C 546.118 1678.092 538.293 1678.938 528.49 1680.354 C 505.779 1683.634 482.512 1683.101 465.929 1682.038 C 451.331 1681.102 427.983 1679.54 395.233 1668.961 C 381.01 1664.366 363.936 1657.995 339.87 1646.581 C 301.531 1626.954 275.966 1597.537 253.516 1570.189 C 227.269 1538.214 208.309 1487.432 205.307 1474.285 C 203.963 1468.4 198.021 1441.785 197.195 1433.131 C 196.237 1423.089 195.115 1403.631 196.188 1384.52 C 196.963 1370.72 199.033 1357.647 201.253 1347.042 C 203.926 1334.27 207.981 1313.937 216.941 1291.171 C 225.601 1269.169 227.271 1270.436 233.705 1258.144 C 246.338 1236.844 283.961 1183.392 325.788 1155.831 C 378.256 1121.259 424.814 1111.804 478.417 1106.768 C 502.752 1104.482 556.034 1108.93 596.506 1121.941 C 834.619 1198.487 866.38 776.681 855.508 704.663 C 902.731 718.566 941.124 728.061 1037.323 754.913 Z"/>
+      </g>
+    </g>
+    <g id="g3480" style="display:inline">
+      <g id="g3432" style="display:none"/>
+      <g id="g3624" transform="matrix(-0.85392427,-0.59380474,-0.64065432,0.77335023,1257.0837,1218.5284)" style="display:inline;stroke:url(#linearGradient60018);stroke-opacity:1">
+        <g id="g3622" style="display:inline;stroke:url(#linearGradient60016);stroke-opacity:1">
+          <g id="g3620" transform="translate(192.61311,312.13126)" style="display:inline;stroke:url(#linearGradient60014);stroke-opacity:1">
+            <circle cx="256" cy="256.00101" r="249.76601" id="circle3600" style="stroke: url(#linearGradient59990); stroke-opacity: 1; paint-order: stroke;" fill="#040403"/>
+            <g id="g3608" style="stroke:url(#linearGradient60002);stroke-opacity:1">
+              <path d="M 490.017,254 C 490.017,383.243 385.245,488.017 256,488.017 126.755,488.017 21.983,383.243 21.983,254" id="path3602" style="stroke: url(#linearGradient59992); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+              <path d="M 21.983,258 C 21.983,128.756 126.756,23.983 256,23.983 385.244,23.983 490.017,128.756 490.017,258" id="path3604" style="fill: url(#linearGradient59994); fill-opacity: 1; stroke: url(#linearGradient59996); stroke-opacity: 1; paint-order: stroke;" fill="#e64c3c"/>
+              <path d="M 21.983,258 C 21.983,128.756 126.756,23.983 256,23.983 385.244,23.983 490.017,128.756 490.017,258" id="path3606" style="fill: url(#linearGradient59998); fill-opacity: 1; stroke: url(#linearGradient60000); stroke-opacity: 1; paint-order: stroke;" fill="#e64c3c"/>
+            </g>
+            <rect height="107" width="484" x="14" y="203" id="rect3610" style="stroke: url(#linearGradient60004); stroke-opacity: 1; paint-order: stroke;" fill="#040404"/>
+            <circle cx="256" cy="256" r="123.772" id="circle3612" style="stroke: url(#linearGradient60006); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="75.024002" id="circle3614" style="stroke: url(#linearGradient60008); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+            <circle cx="256" cy="256" r="51.025002" id="circle3616" style="stroke: url(#linearGradient60010); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="36.026001" id="circle3618" style="stroke: url(#linearGradient60012); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+          </g>
+        </g>
+      </g>
+      <g id="g3764" transform="matrix(1.0364225,-0.08728786,0.1681478,0.9900681,521.53495,1021.4387)" style="display:inline;stroke:url(#linearGradient22055);stroke-opacity:1">
+        <g id="g3762" style="display:inline;stroke:url(#linearGradient60046);stroke-opacity:1">
+          <g id="g3760" transform="translate(192.61311,312.13126)" style="display:inline;stroke:url(#linearGradient60044);stroke-opacity:1">
+            <circle cx="256" cy="256.00101" r="249.76601" id="circle3740" style="stroke: url(#linearGradient60020); stroke-opacity: 1; paint-order: stroke;" fill="#040403"/>
+            <rect height="107" width="484" x="14" y="203" id="rect3750" style="stroke: url(#linearGradient60034); stroke-opacity: 1; paint-order: stroke;" fill="#040404"/>
+            <circle cx="256" cy="256" r="123.772" id="circle3752" style="stroke: url(#linearGradient60036); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="75.024002" id="circle3754" style="stroke: url(#linearGradient60038); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+            <circle cx="256" cy="256" r="51.025002" id="circle3756" style="stroke: url(#linearGradient60040); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="36.026001" id="circle3758" style="stroke: url(#linearGradient60042); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+          </g>
+        </g>
+        <g id="g5299" style="display:inline;stroke:url(#linearGradient60070);stroke-opacity:1">
+          <g id="g5297" transform="translate(192.61311,312.13126)" style="display:inline;stroke:url(#linearGradient60068);stroke-opacity:1">
+            <circle cx="256" cy="256.00101" r="249.76601" id="circle5277" style="stroke: url(#linearGradient60048); stroke-opacity: 1; paint-order: stroke;" fill="#040403"/>
+            <g id="g5285" style="stroke:url(#linearGradient60056);stroke-opacity:1">
+              <path d="M 490.017,254 C 490.017,383.243 385.245,488.017 256,488.017 126.755,488.017 21.983,383.243 21.983,254" id="path5279" style="stroke: url(#linearGradient60050); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+              <path d="M 21.983,258 C 21.983,128.756 126.756,23.983 256,23.983 385.244,23.983 490.017,128.756 490.017,258" id="path5281" style="fill: url(#linearGradient3766); fill-opacity: 1; stroke: url(#linearGradient60052); stroke-opacity: 1; paint-order: stroke;" fill="#e64c3c"/>
+              <path d="M 21.983,258 C 21.983,128.756 126.756,23.983 256,23.983 385.244,23.983 490.017,128.756 490.017,258" id="path5283" style="fill: url(#linearGradient3768); fill-opacity: 1; stroke: url(#linearGradient60054); stroke-opacity: 1; paint-order: stroke;" fill="#e64c3c"/>
+            </g>
+            <rect height="107" width="484" x="14" y="203" id="rect5287" style="stroke: url(#linearGradient60058); stroke-opacity: 1; paint-order: stroke;" fill="#040404"/>
+            <circle cx="256" cy="256" r="123.772" id="circle5289" style="stroke: url(#linearGradient60060); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="75.024002" id="circle5291" style="stroke: url(#linearGradient60062); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+            <circle cx="256" cy="256" r="51.025002" id="circle5293" style="stroke: url(#linearGradient60064); stroke-opacity: 1; paint-order: stroke;"/>
+            <circle cx="256" cy="256" r="36.026001" id="circle5295" style="stroke: url(#linearGradient60066); stroke-opacity: 1; paint-order: stroke;" fill="#e0e4e8"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

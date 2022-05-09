@@ -1,0 +1,2027 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
+
+:root {
+    --types: --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+    // SASS Variables - Poketype color palette //
+    --bug-color: #A8B820;
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+    // $fire-color: #F08030;
+    // $fire-light: #F5AC78;
+    // $fire-dark: #9C531F;
+    --fire-color: orange;
+    --fire-light: #F5AC78;
+    --fire-dark: #9C531F;
+    --flying-color: #A890F0;
+    --flying-light: #C6B7F5;
+    --flying-dark: #6D5E9C;
+    --ghost-color: #705898;
+    --ghost-light: #A292BC;
+    --ghost-dark: #493963;
+    --grass-color: #78C850;
+    --grass-light: #A7DB8D;
+    --grass-dark: #4E8234;
+    --ground-color: #E0C068;
+    --ground-light: #EBD69D;
+    --ground-dark: #927D44;
+    --ice-color: #98D8D8;
+    --ice-light: #BCE6E6;
+    --ice-dark: #638D8D;
+    --normal-color: #A8A878;
+    --normal-light: #C6C6A7;
+    --normal-dark: #6D6D4E;
+    --poison-color: #A040A0;
+    --poison-light: #C183C1;
+    --poison-dark: #682A68;
+    --psychic-color: #F85888;
+    --psychic-light: #FA92B2;
+    --psychic-dark: #F85888;
+    --rock-color: #B8A038;
+    --rock-light: #D1C17D;
+    --rock-dark: #786824;
+    --steel-color: #B8B8D0;
+    --steel-light: #D1D1E0;
+    --steel-dark: #787887;
+    --water-color: #6890F0;
+    --water-dark: #445E9C;
+    --water-light: #9DB7F5;
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+}
+
+$pokecolors: ("bug-color": #A8B820,
+"bug-light": #C6D16E,
+"bug-dark": #6D7815,
+"dark-color": #705848,
+"dark-light": #A29288,
+"dark-dark": #49392F,
+"dragon-color": #7038F8,
+"dragon-light": #A27DFA,
+"dragon-dark": #4924A1,
+"electric-color": #F8D030,
+"electric-light": #FAE078,
+"electric-dark": #A1871F,
+"fairy-color": #EE99AC,
+"fairy-light": #F4BDC9,
+"fairy-dark": #9B6470,
+"fighting-color": #C03028,
+"fighting-light": #D67873,
+"fighting-dark": #7D1F1A,
+"fighting-hover": #D67873,
+"fire-color": #F08030,
+"fire-light": #F5AC78,
+"fire-dark": #9C531F,
+"flying-color": #A890F0,
+"flying-light": #C6B7F5,
+"flying-dark": #6D5E9C,
+"ghost-color": #705898,
+"ghost-light": #A292BC,
+"ghost-dark": #493963,
+"grass-color": #78C850,
+"grass-light": #A7DB8D,
+"grass-dark": #4E8234,
+"ground-color": #E0C068,
+"ground-light": #EBD69D,
+"ground-dark": #927D44,
+"ice-color": #98D8D8,
+"ice-light": #BCE6E6,
+"ice-dark": #638D8D,
+"normal-color": #A8A878,
+"normal-light": #C6C6A7,
+"normal-dark": #6D6D4E,
+"poison-color": #A040A0,
+"poison-light": #C183C1,
+"poison-dark": #682A68,
+"psychic-color": #F85888,
+"psychic-light": #FA92B2,
+"psychic-dark": #F85888,
+"rock-color": #B8A038,
+"rock-light": #D1C17D,
+"rock-dark": #786824,
+"steel-color": #B8B8D0,
+"steel-light": #D1D1E0,
+"steel-dark": #787887,
+"water-color": #6890F0,
+"water-dark": #445E9C,
+"water-light": #9DB7F5);
+// $bug: (
+//   light: #C6D16E,
+//   dark: #6D7815,
+//   color: #A8B820
+// );
+// $dark: (
+//   color: #705848,
+//   light: #A29288,
+//   dark: #49392F
+// );
+// $dragon: (
+//   color: #7038F8,
+//   light: #A27DFA,
+//   dark: #4924A1
+// );
+// $electric: (
+//   color: #F8D030,
+//   light: #FAE078,
+//   dark: #A1871F
+// );
+// $fairy: (
+//   color: #EE99AC,
+//   light: #F4BDC9,
+//   dark: #9B6470
+// );
+// $fighting: (
+//   color: #C030,
+//   light: #D678,
+//   dark: #7D1F1A  
+// );
+// $fire: (
+//   color: orange,
+//   light: #F5AC78,
+//   dark: #9C531F
+// );
+// $flying: (
+//   color: #A890F0,
+//   light: #C6B7F5,
+//   dark: #6D5E9C
+// );
+// $ghost: (
+//   color: #705898,
+//   light: #A292BC,
+//   dark: #493963
+// );
+// $ice: (
+//   color: #98D8D8,
+//   light: #BCE6E6,
+//   dark: #638D8D
+// );
+// $ground: (
+//   color: #E0C068,
+//   light: #EBD69D,
+//   dark: #927D44
+// );
+// $normal: (
+//   color: #A8A878,
+//   light: #C6C6A7,
+//   dark: #6D6D4E
+// );
+// $poison: (
+//   color: #A040A0,
+//   light: #C183C1,
+//   dark: #682A68
+// );
+// $ice: (
+//   color: #F85888,
+//   light: #FA92B2,
+//   dark: #F85888
+// );
+// $rock: (
+//   color: #B8A038,
+//   light: #D1C17D,
+//   dark: #786824
+// );
+// $steel: (
+//   color: #B8B8D0,
+//   light: #D1D1E0,
+//   dark: #787887
+// );
+// $water: (
+//   color: #6890F0,
+//   dark: #445E9C,
+//   light: #9DB7F5
+// );
+$types: ("grass",
+"fire",
+"fairy",
+"water",
+"rock",
+"dark",
+"ghost",
+"ice",
+"dragon",
+"flying",
+"steel",
+"electric",
+"poison",
+"fighting",
+"psychic",
+"ground",
+"bug",
+"normal",
+"grass");
+// @each $type in $types {
+//   .type-gradient-#{$type}-bottom {
+//     width: 100%;
+//     z-index: 10;
+//     background: linear-gradient(121.52deg, var(--(#{$type}-color)) 9.79%, var(--(#{$type}-light)) 24.44%, var(--(#{$type}-dark)) 65.12%);
+//   }
+// };
+// @each $type in $types {
+//   .type1logo {
+//     content: url(images/type_c21_#{$type}.svg)
+//   }
+// }
+@each $type in $types {
+    .type-c-#{$type} {
+        content: url(images/type_c21_#{$type}.svg)
+    }
+}
+
+@mixin typegradient {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 100%;
+    height: 1em;
+    position: relative;
+    z-index: 50;
+}
+
+@mixin typegradient-bottom {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 100%;
+    height: 1em;
+    position: relative;
+    z-index: 50;
+}
+// @function #{$type}($key) {
+//   @return map-get(#{$type}, $key);
+// }
+// @each $type, $bug, $dark, $dragon, $electric, $fairy, $fighting, $fire, $ghost, $grass, $ground, $ice, $poison, $psychic, $rock, $steel, $water, $normal in $types, $bugs, $darks, $dragons, $electrics, $fairies, $fightings, $fires, $ghosts, $grasses, $grounds, $ices, $poisons, $psychics, $rocks, $steels, $waters, $normals {
+//   .type-gradient-#{$type}-#{$bug}, .type-gradient-#{$type}-#{$dark}, .type-gradient-#{$type}-#{$dragon}, .type-gradient-#{$type}-#{$electric}, .type-gradient-#{$type}-#{$fairy}, .type-gradient-#{$type}-#{$fighting}, .type-gradient-#{$type}-#{$fire}, .type-gradient-#{$type}-#{$flying}, .type-gradient-#{$type}-#{$ghost}, .type-gradient-#{$type}-#{$grass},.type-gradient-#{$type}-#{$ground}, .type-gradient-#{$type}-#{$ice},.type-gradient-#{$type}-#{$normal},.type-gradient-#{$type}-#{$poison}, .type-gradient-#{$type}-#{$psychic}, .type-gradient-#{$type}-#{$rock}, .type-gradient-#{$type}-#{$water} {
+//     @include typegradient;
+//     background: linear-gradient(121.52deg, #{$type}-) 9.79%, bug(dark) 24.44%, bug(light) 65.12%)
+//   }
+// }
+//colors
+$dark-color: #705848;
+$dark-maincolor: #705848;
+$dark-light: #A29288;
+$dark-dark: #49392F;
+$dragon-color: #7038F8;
+$dragon-light: #A27DFA;
+$dragon-maincolor: #7038F8;
+$dragon-dark: #4924A1;
+$electric-color: #F8D030;
+$electric-light: #FAE078;
+$electric-maincolor: #F8D030;
+$electric-dark: #A1871F;
+$fairy-color: #EE99AC;
+$fairy-light: #F4BDC9;
+$fairy-maincolor: #EE99AC;
+$fairy-dark: #9B6470;
+$fighting-color: #C03028;
+$fighting-light: #D67873;
+$fighting-maincolor: #C03028;
+$fighting-dark: #7D1F1A;
+$fighting-hover: #D67873;
+// SASS Variables - Poketype color palette //
+$bug-color: #A8B820;
+$bug-light: #C6D16E;
+$bug-color: #A8B820;
+$bug-dark: #6D7815;
+// $fire-color: #F08030;
+// $fire-light: #F5AC78;
+// $fire-dark: #9C531F;
+$fire-color: #eb9800f8;
+$fire-light: #F5AC78;
+$fire-maincolor: #eb9800f8;
+$fire-dark: #9C531F;
+$flying-color: #A890F0;
+$flying-light: #C6B7F5;
+$flying-maincolor: #A890F0;
+$flying-dark: #6D5E9C;
+$ghost-color: #705898;
+$ghost-light: #A292BC;
+$ghost-maincolor: #705898;
+$ghost-dark: #493963;
+$grass-color: #78C850;
+$grass-light: #A7DB8D;
+$grass-maincolor: #78C850;
+$grass-dark: #4E8234;
+$ground-color: #E0C068;
+$ground-light: #EBD69D;
+$ground-maincolor: #E0C068;
+$ground-dark: #927D44;
+$ice-color: #98D8D8;
+$ice-light: #BCE6E6;
+$ice-maincolor: #98D8D8;
+$ice-dark: #638D8D;
+$normal-color: #A8A878;
+$normal-light: #C6C6A7;
+$normal-maincolor: #A8A878;
+$normal-dark: #6D6D4E;
+$poison-color: #A040A0;
+$poison-light: #C183C1;
+$poison-maincolor: #A040A0;
+$poison-dark: #682A68;
+$psychic-color: #F85888;
+$psychic-light: #FA92B2;
+$psychic-maincolor: #F85888;
+$psychic-dark: #F85888;
+$rock-color: #B8A038;
+$rock-light: #D1C17D;
+$rock-maincolor: #B8A038;
+$rock-dark: #786824;
+$steel-color: #B8B8D0;
+$steel-light: #D1D1E0;
+$steel-maincolor: #B8B8D0;
+$steel-dark: #787887;
+$water-color: #6890F0;
+$water-dark: #445E9C;
+$water-maincolor: #6890F0;
+$water-light: #9DB7F5;
+$bug-light: #C6D16E;
+$bug-dark: #6D7815;
+$dark-color: #705848;
+$dark-light: #A29288;
+$dark-dark: #49392F;
+$dragon-color: #7038F8;
+$dragon-light: #A27DFA;
+$dragon-dark: #4924A1;
+$electric-color: #F8D030;
+$electric-light: #FAE078;
+$electric-dark: #A1871F;
+$fairy-color: #EE99AC;
+$fairy-light: #F4BDC9;
+$fairy-dark: #9B6470;
+$fighting-color: #C03028;
+$fighting-light: #D67873;
+$fighting-dark: #7D1F1A;
+$fighting-hover: #D67873;
+// $color-map: ( //create an array to support the colors
+//   maincolor: $color-maincolor,
+//   light: $color-light,
+//   dark: $color-dark
+// );
+// @each $color-key, $color-var in $color-map {
+//   .type-gradient-#{$color-key}-bottom {
+//     background: linear-gradient(121.52deg, $maincolor 9.79%, $light 24.44%, $dark 65.12%);
+//   }
+// }
+@mixin infobg {
+    margin-top: 20px;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+}
+
+.infocontainergrass {
+    @include infobg;
+    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+}
+
+//top gradient bar
+.type-gradient-bug {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-dark 24.44%, $bug-light 65.12%);
+}
+
+.type-gradient-dark {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-dark 24.44%, $dark-light 65.12%);
+}
+
+.type-gradient-dragon {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-dark 24.44%, $dragon-light 65.12%);
+}
+
+.type-gradient-electric {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-dark 24.44%, $electric-light 65.12%);
+}
+
+.type-gradient-fairy {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-dark 24.44%, $fairy-light 65.12%);
+}
+
+.type-gradient-fighting {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
+}
+
+.type-gradient-fire {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $fire-color 9.79%, $fire-dark 24.44%, $fire-light 65.12%);
+}
+
+.type-gradient-flying {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-dark 24.44%, $flying-light 65.12%);
+}
+
+.type-gradient-ghost {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-dark 24.44%, $ghost-light 65.12%);
+}
+
+.type-gradient-grass {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $grass-color 9.79%, $grass-dark 24.44%, $grass-light 65.12%);
+}
+
+.type-gradient-ground {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-dark 24.44%, $ground-light 65.12%);
+}
+
+.type-gradient-ice {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-dark 24.44%, $ice-light 65.12%);
+}
+
+.type-gradient-normal {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-dark 24.44%, $normal-light 65.12%);
+}
+
+.type-gradient-poison {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-dark 24.44%, $poison-light 65.12%);
+}
+
+.type-gradient-psychic {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-dark 24.44%, $psychic-light 65.12%);
+}
+
+.type-gradient-rock {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-dark 24.44%, $rock-light 65.12%);
+}
+
+.type-gradient-steel {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $steel-color 9.79%, $steel-dark 24.44%, $steel-light 65.12%);
+}
+
+.type-gradient-water {
+    @include typegradient;
+    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 24.44%, $water-light 65.12%);
+}
+
+//bottom gradient bar //
+.type-gradient-bug-bottom {
+    @include typegradient-bottom;
+    height: 1em;
+    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-dark 24.44%, $bug-light 65.12%);
+}
+
+.type-gradient-dark-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-dark 24.44%, $dark-light 65.12%);
+}
+
+.type-gradient-dragon-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-dark 24.44%, $dragon-light 65.12%);
+}
+
+.type-gradient-electric-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-dark 24.44%, $electric-light 65.12%);
+}
+
+.type-gradient-fairy-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-dark 24.44%, $fairy-light 65.12%);
+}
+
+.type-gradient-fighting-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
+}
+
+.type-gradient-fire-bottom {
+    @include typegradient-bottom;
+    z-index: 1000;
+    background: linear-gradient(121.52deg, $fire-color 9.79%, $fire-dark 24.44%, $fire-light 65.12%);
+}
+
+.type-gradient-flying-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-dark 24.44%, $flying-light 65.12%);
+}
+
+.type-gradient-ghost-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-dark 24.44%, $ghost-light 65.12%);
+}
+
+.type-gradient-grass-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $grass-color 9.79%, $grass-dark 24.44%, $grass-light 65.12%);
+}
+
+.type-gradient-ground-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-dark 24.44%, $ground-light 65.12%);
+}
+
+.type-gradient-ice-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-dark 24.44%, $ice-light 65.12%);
+}
+
+.type-gradient-normal-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-dark 24.44%, $normal-light 65.12%);
+}
+
+.type-gradient-poison-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-dark 24.44%, $poison-light 65.12%);
+}
+
+.type-gradient-psychic-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-dark 24.44%, $psychic-light 65.12%);
+}
+
+.type-gradient-rock-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-dark 24.44%, $rock-light 65.12%);
+}
+
+.type-gradient-steel-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $steel-color 9.79%, $steel-dark 24.44%, $steel-light 65.12%);
+}
+
+.type-gradient-water-bottom {
+    @include typegradient-bottom;
+    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 24.44%, $water-light 65.12%);
+}
+
+// @each $type in $types {
+//   .flipfront-#{$type} {
+//   }
+// }
+// $g:( bug:(from: $bug-color, to: $bug-dark),
+// dark:(from: $dark-color, to: $dark-dark),
+// night:(from: $fire-color, to:$fire-dark));
+// @function gradient($gradient,$key) {
+//     @return map-get(map-get($g, $gradient),$key);
+// }
+// @each $type in $types {
+//   div.card-bg-gradient-#{$type} {
+//     background-image:linear-gradient(105deg,gradient(#{$type}-color,from),gradient(#{$type}-dark,to));
+//     border-radius: .3rem;
+//     margin-left: 10px;
+//     display:table;
+//     background-size:200% 200%!important;
+//     color:#fff;
+//     text-transform:uppercase;
+//     text-decoration:none;
+//     letter-spacing:1px;
+//     padding:1.3em 1.5em;
+//     margin:1.5em auto;
+//     border-radius:0.3em;
+//     -webkit-transition:all 200ms linear;
+//       &.inverse {
+//         -webkit-background-clip:text;
+//         -webkit-text-fill-color:transparent;
+//         border-image-source:linear-gradient(100deg,gradient(#{$type}-color,from),gradient(#{$type}-dark,to));
+//         font-weight:bold;
+//         padding:1.15em 1.5em;
+//         -webkit-background-clip:text;
+//         -webkit-text-fill-color:transparent;
+//         border-width:0.25em;
+//         border-style:solid;
+//         border-image-source:linear-gradient(45deg,#fff,#fff);
+//         border-image-slice:30%;
+//         border-image-width:1;
+//         border-image-repeat:stretch;
+//       }
+//       &:hover {
+//         background-size:110% 110%!important;
+//         padding:1.3em 2.1em;
+//         -webkit-transition:all 200ms linear;
+//       }
+//   }
+// }
+@each $type,
+$gradient in $types {
+    .frontswitch-#{$type} {
+        background-image:linear-gradient(105deg,
+        gradient(var(#{$type}-color), from),
+        gradient(var(#{$type}-dark), to));
+        border-radius: .3rem;
+        margin-left: 10px;
+        &.inverse {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-image-source:linear-gradient(100deg,
+            gradient(var(#{$type}-color), from),
+            gradient(var(#{$type}-dark), to));
+        }
+    }
+}
+
+// @each $type in $types {
+//   .#{$type}-color {
+//     color: #{$type}-color;
+//   }
+// }
+// @each $type in $types {S
+//   .#{$type}-dark {
+//     color: #{$type}-dark;
+//   }
+// }
+// @each $type in $types {
+//   .#{$type}-light {
+//     color: #{$type}-light;
+//   }
+// }
+// @each $type in $types {
+//   .type-gradient-#{$type} {
+//     display: -webkit-inline-box;
+//     display: -ms-inline-flexbox;
+//     display: inline-flex;
+//     width: 100%;
+//     height: 2em;
+//     background: linear-gradient(121.52deg, #{$type}-color 9.79%, #{$type}-light 24.44%, #{$type}-dark 65.12%);
+//   }
+// }
+// @each $typeshade, $colornum in $colors {
+//   @each $type in $types {
+//       .type-gradient-#{$type} {
+//       display: -webkit-inline-box;
+//       display: -ms-inline-flexbox;
+//       display: inline-flex;
+//       width: 100%;
+//       height: 2em;
+//       background: linear-gradient(121.52deg, #{$colornum} 9.79%, #{$colornum} 24.44%, #{$colornum} 65.12%);
+//     } 
+//   }
+// }
+// $logo_fire: (
+//     content: url(images/type_#{$type}.svg)
+// );
+.Navbar_navbartitle {
+    font-size: 60px;
+    text-decoration: bold;
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+}
+
+// .tempnav {
+//   display: inline-flex;
+//   width: 100%;
+//   height: 1em;
+//   background: l
+//   linear-gradient(121.52deg, #7af519 9.79%, #39ef1b 21.97%, #319800 41.76%);
+// }
+.tempcontainersprites {
+    display: grid;
+    grid-gap: 10px;
+    width: 100%;
+    grid-row: auto;
+    grid-template-areas: 'default info' 'default info' 'back back' 'pic3 pic4 pic5'
+}
+
+// .picdefault {
+//   grid-area: default;
+//   background-color: yellow;
+//   width: 400px;
+//   height: 400px;
+// }
+.shinyfront {
+    display: inline-block;
+    width: 200px;
+}
+
+.picdefault {
+    display: inline-flex;
+    align-items: flex-start;
+    grid-area: default;
+    position: relative;
+    // z-index: 10;
+    /* background-color: yellow; */
+    min-width: 350px;
+    width: 40%;
+    animation-name: frontback;
+    animation-duration: 2s;
+}
+
+.spriteback {
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.tempinfo {
+    grid-area: info;
+    width: 300px;
+    height: 400px;
+    background-color: sienna;
+}
+
+@mixin type-logo {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+    margin-left: 9px;
+    // width: 100%;
+    // max-width: 25px;
+    //height: 128.57142857142858%;
+    height: 25px;
+    width: 25px;
+    max-height: 25px;
+    margin-top: -5px;
+    padding-right: 12px;
+}
+
+@mixin type-name {
+    position: relative;
+    z-index: 12;
+    pointer-events: none;
+    margin-left: 18px;
+    padding-left: 15px;
+    width: 31px;
+    min-width: 33px;
+    margin-top: 30%;
+    margin-bottom: 15.560000000000002px;
+    min-height: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-style: normal;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+}
+
+@mixin pokename {
+    position: relative;
+    z-index: 17;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 203px;
+    min-width: 203px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* color: rgba(0, 0, 0, 1); */
+    font-style: normal;
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
+    background-clip: text;
+    text-decoration: shadow whitesmoke;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.websiteBody {
+    margin: 0;
+}
+
+.Page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem 1rem 1rem 1rem;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+}
+
+.Page-outer {
+    position: relative;
+    display: flex;
+    pointer-events: auto;
+    z-index: 1;
+    margin: 0;
+    padding: 10px 10px;
+}
+
+#Page:hover #card-img {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 205px;
+    height: 203px;
+    margin-top: 0px;
+    margin-bottom: -8px;
+    min-height: 203px;
+    /* content:url(images/card_img.png); */
+    transform: scale(1);
+    /* [2] Transition property for smooth transformation of images */
+    transition: transform 0.5s ease;
+    opacity: 1;
+}
+
+#Page:hover #card-img2 {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 205px;
+    height: 203px;
+    margin-top: 0px;
+    margin-bottom: -8px;
+    min-height: 203px;
+    /* content:url(images/card_img.png); */
+    transform: scale(1);
+    /* [2] Transition property for smooth transformation of images */
+    transition: transform 0.5s ease;
+}
+
+#Page:hover #poke-name-fire {
+    background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
+    text-decoration: drop-shadow(3px whitesmoke);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-fairy {
+    background: linear-gradient(180deg, $fairy-color 0%, #ba62a1 18.75%, #002f3d 71.87%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-dark {
+    background: linear-gradient(180deg, $dark-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-dragon {
+    background: linear-gradient(180deg, $dragon-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-electric {
+    background: linear-gradient(180deg, $electric-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-fairy {
+    background: linear-gradient(180deg, $fairy-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-flying {
+    background: linear-gradient(180deg, $flying-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-fighting {
+    background: linear-gradient(180deg, $fighting-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-ghost {
+    background: linear-gradient(180deg, $ghost-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-ground {
+    background: linear-gradient(180deg, $ground-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-ice {
+    background: linear-gradient(180deg, $ice-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-normal {
+    background: linear-gradient(180deg, $normal-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-poison {
+    background: linear-gradient(180deg, $poison-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-psychic {
+    background: linear-gradient(180deg, $psychic-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-rock {
+    background: linear-gradient(180deg, $rock-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #poke-name-water {
+    background: linear-gradient(180deg, $water-color 0%, #082b1e 59.9%);
+    background-clip: text;
+}
+
+#Page:hover #frame-card-bg-white-fire {
+    background: linear-gradient(180deg, #ffffff 40%, $fire-light 80%);
+}
+
+// .gradient-border {
+//   --borderWidth: 1px 1px 4px 4px;
+//   background: #1D1F20;
+//   position: relative;
+//   border-radius: var(--borderWidth);
+// }
+// .gradient-border:after {
+//   content: '';
+//   position: absolute;
+//   top: calc(-1 * var(--borderWidth));
+//   left: calc(-1 * var(--borderWidth));
+//   height: calc(100% + var(--borderWidth) * 2);
+//   width: calc(100% + var(--borderWidth) * 2);
+//   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+//   border-radius: calc(2 * var(--borderWidth));
+//   z-index: -1;
+//   animation: animatedgradient 3s ease alternate infinite;
+//   background-size: 300% 300%;
+// }
+@mixin card-gradient {
+    --borderWidth: 1px 1px 4px 4px;
+    position: relative;
+    width: 100%;
+    height: 102%;
+    z-index: 5;
+    pointer-events: none;
+    margin-left: 0%;
+    margin-top: 0%;
+    border: 1px;
+    border-color: lime;
+    border-radius: var(--borderWidth);
+}
+
+@mixin cardspin {
+    @include card-gradient;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    border-radius: calc(2 * var(--borderWidth));
+    animation-name: animatedgradient;
+    animation: 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+// background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);
+#card-bg-gradient-fairy {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-light 24.44%, $fairy-dark 65.12%);
+}
+
+#card-bg-gradient-fighting {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+}
+
+#card-bg-gradient-bug {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
+}
+
+#card-bg-gradient-water {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
+}
+
+#card-bg-gradient-water::after {
+    position: absolute;
+    z-index: -1;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    border-radius: calc(2 * var(--borderWidth));
+    animation-name: animatedgradient;
+    animation: 3s ease alternate infinite;
+    background-size: 300% 300%;
+    background: linear-gradient(60deg, $water-color, $water-dark, $water-light);
+}
+
+#card-bg-gradient-rock {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
+}
+
+#card-bg-gradient-normal {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
+}
+
+#card-bg-gradient-electric {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+}
+
+#card-bg-gradient-ice {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
+}
+
+#card-bg-gradient-psychic {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
+}
+
+#card-bg-gradient-dark {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
+}
+
+#card-bg-gradient-dragon {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
+}
+
+#card-bg-gradient-electric {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+}
+
+#card-bg-gradient-poison {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
+}
+
+#card-bg-gradient-flying {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-light 21.97%, $flying-dark 41.76%);
+}
+
+#card-bg-gradient-ghost {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
+}
+
+#card-bg-gradient-ground {
+    @include card-gradient;
+    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-light 21.97%, $steel-dark 41.76%);
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card-bg-gradient-outer {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#Page:hover #card-bg-gradient-outer::after {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: -1;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+}
+
+.card-bg-gradient {
+    @include card-gradient;
+    background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+:root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+    --rotate: 75deg;
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+    // SASS Variables - Poketype color palette //
+    --bug-color: #A8B820;
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+    // $fire-color: #F08030;
+    // $fire-light: #F5AC78;
+    // $fire-dark: #9C531F;
+    --fire-color: orange;
+    --fire-light: #F5AC78;
+    --fire-dark: #9C531F;
+    --flying-color: #A890F0;
+    --flying-light: #C6B7F5;
+    --flying-dark: #6D5E9C;
+    --ghost-color: #705898;
+    --ghost-light: #A292BC;
+    --ghost-dark: #493963;
+    --grass-color: #78C850;
+    --grass-light: #A7DB8D;
+    --grass-dark: #4E8234;
+    --ground-color: #E0C068;
+    --ground-light: #EBD69D;
+    --ground-dark: #927D44;
+    --ice-color: #98D8D8;
+    --ice-light: #BCE6E6;
+    --ice-dark: #638D8D;
+    --normal-color: #A8A878;
+    --normal-light: #C6C6A7;
+    --normal-dark: #6D6D4E;
+    --poison-color: #A040A0;
+    --poison-light: #C183C1;
+    --poison-dark: #682A68;
+    --psychic-color: #F85888;
+    --psychic-light: #FA92B2;
+    --psychic-dark: #F85888;
+    --rock-color: #B8A038;
+    --rock-light: #D1C17D;
+    --rock-dark: #786824;
+    --steel-color: #B8B8D0;
+    --steel-light: #D1D1E0;
+    --steel-dark: #787887;
+    --water-color: #6890F0;
+    --water-dark: #445E9C;
+    --water-light: #9DB7F5;
+    --bug-light: #C6D16E;
+    --bug-dark: #6D7815;
+    --dark-color: #705848;
+    --dark-light: #A29288;
+    --dark-dark: #49392F;
+    --dragon-color: #7038F8;
+    --dragon-light: #A27DFA;
+    --dragon-dark: #4924A1;
+    --electric-color: #F8D030;
+    --electric-light: #FAE078;
+    --electric-dark: #A1871F;
+    --fairy-color: #EE99AC;
+    --fairy-light: #F4BDC9;
+    --fairy-dark: #9B6470;
+    --fighting-color: #C03028;
+    --fighting-light: #D67873;
+    --fighting-dark: #7D1F1A;
+    --fighting-hover: #D67873;
+}
+
+// #card-bg-gradient-grass {
+//   @include card-gradient;
+//   animation: spingrass 2.5s linear infinite;
+//   background: linear-gradient(121.52deg, #7af519 9.79%, #39ef1b 21.97%, #319800 41.76%);
+// }
+// @keyframes spingrass {
+//   0% {
+//     --rotate: 0deg;
+//   }
+//   100% {
+//     --rotate: 360deg;
+//   }
+// }
+// @each $type in $types {
+//     #card-bg-gradient-#{$type} {
+//       @include card-gradient;
+//       background: linear-gradient(121.52deg, --fire-light 9.79%, --fire-color 21.97%, --fire-dark 41.76%);
+//       animation: spin 2.5s linear infinite;
+// }
+// .card-bg-gradient-#{$type} {
+//   @include card-gradient;
+//   background: linear-gradient(121.52deg, type(light) 9.79%, type(color) 21.97%, type(dark) 41.76%);
+//   animation: spin 2.5s linear infinite;
+// }
+// #card-bg-gradient-water {
+//   @include card-gradient;
+//   background: linear-gradient(121.52deg, $water-light 9.79%, $water-color 21.97%, $water-dark 41.76%);
+// }
+// @each $type in $types {
+//   #Page:hover #card-bg-gradient-#{$type}  {
+//     @include cardspin;  
+//     top: calc(var(--card-height) / 6);
+//     z-index: 5;
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     margin: 0 auto;
+//     transform: scale(0.8);
+//     // filter: blur(calc(var(--card-height) / 6));
+//     // background-image: linear-gradient(
+//     //   var(--rotate)
+//     //   , $fire-light,  rgb(240, 156, 0) 43%, rgb(151, 98, 0));
+//     background-image: linear-gradient(
+//       var(--rotate)
+//       121.52deg, var(--type(light)) 9.79%, var(--type(color)) 21.97%, var(--type(dark)) 41.76%);
+//       opacity: 1;
+//     filter: drop-shadow(3px 3px 6px 6px var(--type(color));
+//     transition: opacity .5s;
+//   } 
+// }
+// #Page:hover #card-bg-gradient-$type  {
+//   @include cardspin;  
+//   top: calc(var(--card-height) / 6);
+//   z-index: 5;
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+//   margin: 0 auto;
+//   transform: scale(0.8);
+//   // filter: blur(calc(var(--card-height) / 6));
+//   // background-image: linear-gradient(
+//   //   var(--rotate)
+//   //   , $fire-light,  rgb(240, 156, 0) 43%, rgb(151, 98, 0));
+//   background-image: linear-gradient(
+//     var(--rotate)
+//     121.52deg, var(--type(light)) 9.79%, var(--type(color)) 21.97%, var(--type(dark)) 41.76%);
+//     opacity: 1;
+//   filter: drop-shadow(3px 3px 6px 6px var(--type(color));
+//   transition: opacity .5s;
+// }
+// }
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+#Page:hover #frame-card-bg-white-grass {
+    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-fairy {
+    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-fighting {
+    background: linear-gradient(180deg, #ffffff 0%, $fighting-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-fairy {
+    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-bug {
+    background: linear-gradient(180deg, #ffffff 0%, $bug-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-dark {
+    background: linear-gradient(180deg, #ffffff 0%, $dark-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-dragon {
+    background: linear-gradient(180deg, #ffffff 0%, $dragon-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-electric {
+    background: linear-gradient(180deg, #ffffff 0%, $electric-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-flying {
+    background: linear-gradient(180deg, #ffffff 0%, $flying-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-ghost {
+    background: linear-gradient(180deg, #ffffff 0%, $ghost-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-grass {
+    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-ground {
+    background: linear-gradient(180deg, #ffffff 0%, $ground-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-ice {
+    background: linear-gradient(180deg, #ffffff 0%, $ice-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-normal {
+    background: linear-gradient(180deg, #ffffff 0%, $normal-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-poison {
+    background: linear-gradient(180deg, #ffffff 0%, $poison-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-psychic {
+    background: linear-gradient(180deg, #ffffff 0%, $psychic-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-rock {
+    background: linear-gradient(180deg, #ffffff 0%, $rock-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-steel {
+    background: linear-gradient(180deg, #ffffff 0%, $steel-color 100%);
+    filter: brightness(150%);
+}
+
+#Page:hover #frame-card-bg-white-water {
+    background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
+    filter: brightness(150%);
+}
+
+.Frame {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    width: 100%;
+    margin-left: 0;
+    max-width: 252px;
+    margin: inherit;
+    padding: 0;
+    background: linear-gradient( 151.98deg, rgba(250, 250, 250, 1) 41.051563958595864%, rgba(226, 226, 226, 1) 85.82368021521708%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+}
+
+#Frame:hover {
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+.Frame-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.frame-card-outline {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 252px;
+    min-width: 252px;
+    height: 285px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    min-height: 285px;
+}
+
+.frame-card-outline-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.Frame-card-elements {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+    margin-left: 0.3968253968253968%;
+    width: 99.2063492063492%;
+    height: 100%;
+    margin-top: 1.1904761904761905%;
+}
+
+.Frame-card-elements-outer {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+
+/* .frame-white-bg-card, .frame-white-bg-card-fire , .frame-white-bg-card-grass, .frame-white-bg-card-fairy, .frame-white-bg-card-fighting, .frame-white-bg-card-flying, .frame-white-bg-card-dragon, .frame-white-bg-card-ghost, .frame-white-bg-card-rock, .frame-white-bg-card-normal, .frame-white-bg-card-water, .frame-white-bg-card-dragon, .frame-white-bg-card-psychic, .frame-white-bg-card-bug, .frame-white-bg-card-ground{
+  position: relative;
+  z-index: 6;
+  pointer-events: none;
+  margin-left: 0px;
+  width: 252px;
+  min-width: 250px;
+  height: 285px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 285px;
+  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+} */
+
+.frame-card-bg-white {
+    position: relative;
+    z-index: 6;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 252px;
+    min-width: 250px;
+    height: 285px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 285px;
+    background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+    border-radius: 1px 1px 4px 4px;
+}
+
+
+/* .frame-card-bg-white:hover {
+  position: relative;
+  z-index: 6;
+  pointer-events: none;
+  margin-left: 0px;
+  width: 252px;
+  min-width: 250px;
+  height: 285px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 285px;
+  background: linear-gradient(180deg, #ffffff 0%, #fff2de 100%);
+} */
+
+.frame-card-bg-white-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.frame-card-img {
+    position: relative;
+    z-index: 13;
+    pointer-events: none;
+    margin-left: 28px;
+    width: 197px;
+    min-width: 197px;
+    height: 195px;
+    margin-top: -256px;
+    margin-bottom: 61px;
+    min-height: 195px;
+}
+
+.frame-card-img-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 13;
+}
+
+.card-img {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 205px;
+    height: 203px;
+    margin-top: 0px;
+    margin-bottom: -8px;
+    min-height: 203px;
+    /* content:url(images/card_img.png); */
+    transform: scale(0.9);
+    /* [2] Transition property for smooth transformation of images */
+    transition: transform 0.5s ease;
+    opacity: .9;
+}
+
+.card-img2 {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 205px;
+    height: 203px;
+    margin-top: 0px;
+    margin-bottom: -8px;
+    /* min-height:203px;
+    content:url(images/card_img.png); */
+    transform: scale(0.9);
+    /* [2] Transition property for smooth transformation of images */
+    transition: transform 0.5s ease;
+    opacity: 1;
+}
+
+.card-img-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 14;
+    justify-content: center;
+}
+
+.frame-pokemon-name {
+    position: relative;
+    z-index: 15;
+    pointer-events: none;
+    margin-left: -2px;
+    width: 250px;
+    height: 45px;
+    margin-top: 224px;
+}
+
+.frame-pokemon-name-outer {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: 15;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    align-items: center;
+}
+
+.card-frame-name {
+    position: relative;
+    z-index: 16;
+    pointer-events: none;
+    margin-left: 24px;
+    width: 203px;
+    min-width: 203px;
+    height: 30px;
+    margin-top: 8px;
+    margin-bottom: 7px;
+    min-height: 30px;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+}
+
+.card-frame-name-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 16;
+}
+
+.poke-name,
+.poke-name-grass,
+.poke-name-fire,
+.poke-name-fairy {
+    @include pokename;
+}
+
+.poke-name-fire {
+    @include pokename;
+}
+
+.poke-name-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 17;
+}
+
+.frame-type-logo-name {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    margin-left: 0.4%;
+    width: 100%;
+    height: 15.985964912280702%;
+    margin-top: 0px;
+    margin-right: 5px;
+}
+
+.frame-type-logo-name-outer {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-right: 50px;
+    margin-right: 4px;
+}
+
+.frame-type-name {
+    position: relative;
+    z-index: 11;
+    pointer-events: none;
+    margin-left: 35px;
+    width: 45px;
+    min-width: 40px;
+    height: 45.56px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 45.56px;
+}
+
+.frame-type-name-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    align-items: center;
+    align-content: center;
+    z-index: 11;
+}
+
+#TYPENAME-fire {
+    @include type-name;
+    font-size: 18px;
+    // margin-top: 10px;
+    // margin-left: 12px;
+    color: $fire-color;
+    align-self: center;
+    align-items: center;
+}
+
+.TYPENAME {
+    @include type-name;
+    color: #09bac7;
+}
+
+#TYPENAME-grass {
+    @include type-name;
+    font-size: 18px;
+    color: $grass-color;
+}
+
+#TYPENAME-fairy {
+    @include type-name;
+    color: $fairy-color;
+}
+
+#TYPENAME-water {
+    @include type-name;
+    color: $water-color;
+    filter: brightness(50%);
+}
+
+#TYPENAME-bug {
+    @include type-name;
+    color: $bug-dark;
+}
+
+#TYPENAME-dark {
+    @include type-name;
+    color: $dark-color;
+}
+
+#TYPENAME-dragon {
+    @include type-name;
+    color: $dragon-color;
+}
+
+#TYPENAME-electric {
+    @include type-name;
+    color: $electric-color;
+    filter: brightness(75%);
+    font-style: shadow;
+}
+
+#TYPENAME-fighting {
+    @include type-name;
+    color: $fighting-color;
+}
+
+#TYPENAME-flying {
+    @include type-name;
+    color: $flying-color;
+}
+
+#TYPENAME-ghost {
+    @include type-name;
+    color: $ghost-color;
+}
+
+#TYPENAME-ground {
+    @include type-name;
+    color: $ground-color;
+}
+
+#TYPENAME-ice {
+    @include type-name;
+    color: $ice-color;
+}
+
+#TYPENAME-normal {
+    @include type-name;
+    color: $normal-color;
+}
+
+#TYPENAME-poison {
+    @include type-name;
+    margin-top: 30%;;
+    color: $poison-color;
+}
+
+#TYPENAME-psychic {
+    @include type-name;
+    color: $psychic-color;
+}
+
+#TYPENAME-rock {
+    @include type-name;
+    color: $rock-color;
+}
+
+#TYPENAME-steel {
+    @include type-name;
+    color: $steel-color;
+}
+
+.TYPENAME-logo {
+    position: relative;
+    z-index: 8;
+    pointer-events: none;
+    // margin-left: 8px;
+    // width: 28px;
+    // min-width: 25px;
+    // height: 43px;
+    padding: 0px 2px 0px 0px;
+    overflow: visible;
+}
+
+.TYPENAME-logo-outer {
+    position: relative;
+    display: flex;
+    pointer-events: auto;
+    z-index: 8;
+    width: 100%;
+    // padding-right: 5px;
+    // margin-right: 5px;
+}
+
+.Frame-4 {
+    position: relative;
+    z-index: 9;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 100%;
+    min-width: 25px;
+    height: 28px;
+    margin-top: 8px;
+    margin-bottom: 7px;
+    min-height: 28px;
+}
+
+.Frame-4-outer {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    z-index: 9;
+    margin-right: 0px;
+    padding-right: 0px;
+    margin-top: -40px;
+    margin-left: 5px;
+    width: 100%;
+}
+
+.type-logo-TYPENAME {
+    @include type-logo;
+    align-self: center;
+    content: url(images/type_c21_fire.svg);
+}
+
+#type-logo-TYPENAME-fire {
+    @include type-logo;
+    height: 25px;
+    // max-width: 25px;
+    content: url(images/type_c21_fire.svg);
+}
+
+.TYPENAME-logo-fire {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_fire.svg);
+}
+
+#type-logo-TYPENAME-fairy {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_fairy.svg);
+}
+
+#type-logo-TYPENAME-grass {
+    @include type-logo;
+    // max-width: 25px;
+    // margin-top: 125%;
+    height: 25px;
+    content: url(images/type_c21_grass.svg);
+}
+
+#type-logo-TYPENAME-dark {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_dark.svg);
+}
+
+#type-logo-TYPENAME-bug {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_bug.svg);
+}
+
+#type-logo-TYPENAME-dragon {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_dragon.svg);
+}
+
+#type-logo-TYPENAME-electric {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_electric.svg);
+}
+
+#type-logo-TYPENAME-fighting {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_fighting.svg);
+}
+
+#type-logo-TYPENAME-flying {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_flying.svg);
+}
+
+#type-logo-TYPENAME-ghost {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_ghost.svg);
+}
+
+#type-logo-TYPENAME-ground {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_ground.svg);
+}
+
+#type-logo-TYPENAME-ice {
+    height: 25px;
+    @include type-logo;
+    content: url(images/type_c21_ice.svg);
+}
+
+#type-logo-TYPENAME-normal {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_normal.svg);
+}
+
+#type-logo-TYPENAME-poison {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_poison.svg);
+}
+
+#type-logo-TYPENAME-psychic {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_psychic.svg);
+}
+
+#type-logo-TYPENAME-rock {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_rock.svg);
+}
+
+#type-logo-TYPENAME-steel {
+    @include type-logo;
+    height: 25px;
+    content: url(images/type_c21_steel.svg);
+}
+
+#type-logo-TYPENAME-water {
+    @include type-logo;
+    // max-width: 18px;
+    height: 25px;
+    content: url(images/type_c21_water.svg);
+}
+
+.type-logo-TYPENAME-outer {
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
