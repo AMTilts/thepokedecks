@@ -56,7 +56,6 @@ const defaultEndpoint = 'https://pokeapi.co/api/v2/pokemon';
 export async function getStaticPaths() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1130')
     const characters = await res.json()
-    console.log(characters);
     const paths = characters.results.map((character) => ({
         params: { characterName: character.name },
     }))
@@ -92,7 +91,7 @@ function useFetchData() {
 }
 
 export default function Character({ character, characterName, resJson}) {
-    console.log({character});
+    
     const { name, base_experience, types, sprites, abilities } = character;
     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
     const [spriteShiny, setSpriteShiny] = useState(`${sprites.front_shiny}`);
@@ -112,9 +111,17 @@ export default function Character({ character, characterName, resJson}) {
     const [frontBackText, setFrontBackText]  = useState('Flip to Back');
     const [isShiny, setIsShiny] = useState('')
     const [isTypeTwo, setIsTypeTwo] = useState(false)
+    const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
     const [slotNumber, setSlotNumber] = useState([]);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState([]);
+
+
+        
+    console.log(`This character has ${types.length} types!`);
+    console.log(numberTypes);
+
+    console.log({character})
 
     async function fetchType(character, characterName) {
         const res = await fetch(`${defaultEndpoint}/${characterName}`)
@@ -125,7 +132,7 @@ export default function Character({ character, characterName, resJson}) {
                     types
                 },
         setSlotNumber(types) {
-            console.log(types);
+            console.log(slotNumber());
         }
         };
     }
@@ -138,6 +145,8 @@ export default function Character({ character, characterName, resJson}) {
                 .then((resJson) => {
                     console.log(`${resJson.types.toString}`)
                     setData(resJson.results)
+                    if (results.types === 2) isTwoTypes(true);
+                    setSlotNumber(results.types)
                     setLoading(false)
                 })
                 .catch((error) => {
@@ -380,7 +389,7 @@ export default function Character({ character, characterName, resJson}) {
             return (
                 <div className="temp-container-title">
                     <h1 className="title">
-                        {name} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
+                        {name} <img src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.t4444444444444444444433reqwr[1].type.name}.svg`} className="titletypelogo" />
                 </h1>
             </div>  
             )   
@@ -389,7 +398,7 @@ export default function Character({ character, characterName, resJson}) {
     function log() {
         console.log(`${character.character.types}.toString`)
         if (`${character.character.types}` === 1) console.log('type: 1')
-        else if (`${character.character.types}` === 2) console.log('type: 2')
+        else if (`${character.character.types}` === 22) console.log('type: 22')
         else console.log(`${character.charactaer.types}`)
     }
 
@@ -405,8 +414,7 @@ export default function Character({ character, characterName, resJson}) {
     // if (`${types[1].type.name}` != undefined)
     //     imageURL = typeLogoImgTwo;
     // else
-    //     imageURL = null;
-
+    //
     // function tigoBitties() {
     //     if (`${types}` > 0) 
     //         console.log('Yes, BOII')
@@ -449,12 +457,11 @@ export default function Character({ character, characterName, resJson}) {
                 <div>
                     <div className="temp-container">
                         <div className="container-back">
-                            <>
-                            {resJson && resJson.map((t) => {
-                                {`${t.results.types[0].type}` && `${t.types[1].type}` ? type1 : type2 }
-                            })}
-                                { `${character.types}` === 0 ? oneType : log}
-                            </>        {/* <>
+                            <div className="temp-container-title">
+                                <h1 className="title">
+                                    {name} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" /> { numberTypes == 2 ? <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" /> : null }
+                                </h1>
+                            </div>    {/* <>
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }
                                     </> */}
                             <div className="topcontainer">
@@ -527,9 +534,8 @@ export default function Character({ character, characterName, resJson}) {
                         </div>
                     </div>
                 </div>
-                <div className={`second-line-top-${types[0].type.name}`} style={{width: '20px'}}></div>
-                <div className={`type-gradient-${types[0].type.name}`}></div>
-            );
+                <div className={`second-line-bottom-${types[0].type.name}`} style={{height: '1px'}}></div>
+                <div className={`type-gradient-${types[0].type.name}`} style={{height: '3px', marginBottom: '0px'}}></div>
         </div>
     );
 }
