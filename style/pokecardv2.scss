@@ -767,7 +767,7 @@ $gradient in $types {
     width: 300px;
     height: 400px;
     background-color: sienna;
-}
+}dx
 
 @mixin type-logo {
     position: relative;
@@ -778,32 +778,34 @@ $gradient in $types {
     // max-width: 25px;
     //height: 128.57142857142858%;
     height: 25px;
-    width: 25px;
     max-height: 25px;
     margin-top: -5px;
-    padding-right: 12px;
+    padding-right: 0px;
+    align-self: center;
+    align-items: center;
 }
 
 @mixin type-name {
     position: relative;
     z-index: 12;
     pointer-events: none;
-    margin-left: 18px;
-    padding-left: 15px;
-    width: 31px;
-    min-width: 33px;
-    margin-top: 30%;
-    margin-bottom: 15.560000000000002px;
-    min-height: 15px;
+    // margin-left: 18px;
+    padding-left: 8px;
+    margin-top: 5px;
+    align-items: center;
+    // min-width: 33px;
+    // margin-bottom: 15.560000000000002px;
+    // min-height: 15px;
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    align-self: center;
     font-style: normal;
     font-family: Rubik;
     font-weight: 500;
     font-size: 18px;
-    line-height: 125%;
+    line-height: 100%;
     text-transform: uppercase;
 }
 
@@ -820,7 +822,7 @@ $gradient in $types {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     /* color: rgba(0, 0, 0, 1); */
     font-style: normal;
     font-family: Rubik;
@@ -1718,6 +1720,8 @@ $gradient in $types {
 }
 
 .frame-type-name {
+    display: inline-flex;
+    flex-direction: row;
     position: relative;
     z-index: 11;
     pointer-events: none;
@@ -1728,25 +1732,22 @@ $gradient in $types {
     margin-top: 0px;
     margin-bottom: 0px;
     min-height: 45.56px;
+    align-content: center;
+    align-items: center;
 }
 
 .frame-type-name-outer {
     position: relative;
     display: flex;
     pointer-events: none;
-    align-items: center;
-    align-content: center;
     z-index: 11;
 }
 
 #TYPENAME-fire {
     @include type-name;
-    font-size: 18px;
     // margin-top: 10px;
     // margin-left: 12px;
     color: $fire-color;
-    align-self: center;
-    align-items: center;
 }
 
 .TYPENAME {
@@ -1756,7 +1757,6 @@ $gradient in $types {
 
 #TYPENAME-grass {
     @include type-name;
-    font-size: 18px;
     color: $grass-color;
 }
 
@@ -1825,7 +1825,6 @@ $gradient in $types {
 
 #TYPENAME-poison {
     @include type-name;
-    margin-top: 30%;;
     color: $poison-color;
 }
 
@@ -1893,125 +1892,102 @@ $gradient in $types {
 
 .type-logo-TYPENAME {
     @include type-logo;
-    align-self: center;
     content: url(images/type_c21_fire.svg);
 }
 
 #type-logo-TYPENAME-fire {
     @include type-logo;
-    height: 25px;
-    // max-width: 25px;
     content: url(images/type_c21_fire.svg);
 }
 
 .TYPENAME-logo-fire {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_fire.svg);
 }
 
 #type-logo-TYPENAME-fairy {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_fairy.svg);
 }
 
 #type-logo-TYPENAME-grass {
     @include type-logo;
-    // max-width: 25px;
-    // margin-top: 125%;
-    height: 25px;
     content: url(images/type_c21_grass.svg);
 }
 
 #type-logo-TYPENAME-dark {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_dark.svg);
 }
 
 #type-logo-TYPENAME-bug {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_bug.svg);
 }
 
 #type-logo-TYPENAME-dragon {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_dragon.svg);
 }
 
 #type-logo-TYPENAME-electric {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_electric.svg);
 }
 
 #type-logo-TYPENAME-fighting {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_fighting.svg);
 }
 
 #type-logo-TYPENAME-flying {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_flying.svg);
 }
 
 #type-logo-TYPENAME-ghost {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_ghost.svg);
 }
 
 #type-logo-TYPENAME-ground {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_ground.svg);
 }
 
 #type-logo-TYPENAME-ice {
-    height: 25px;
     @include type-logo;
     content: url(images/type_c21_ice.svg);
 }
 
 #type-logo-TYPENAME-normal {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_normal.svg);
 }
 
 #type-logo-TYPENAME-poison {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_poison.svg);
 }
 
 #type-logo-TYPENAME-psychic {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_psychic.svg);
 }
 
 #type-logo-TYPENAME-rock {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_rock.svg);
 }
 
 #type-logo-TYPENAME-steel {
     @include type-logo;
-    height: 25px;
     content: url(images/type_c21_steel.svg);
 }
 
 #type-logo-TYPENAME-water {
     @include type-logo;
     // max-width: 18px;
-    height: 25px;
     content: url(images/type_c21_water.svg);
 }
 
