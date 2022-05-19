@@ -9,24 +9,13 @@ import styles from './shinybutton.module.css'
 //     return { props: { character } }
 // }
 
-async function getServerSideProps({ query }) {
-    const { name } = query;
-    const res = await fetch(`${baseUrl}/${name}`);
-    const data = await res.json();
-    console.log(res.json);
-    return {
-        props: {
-            data
-        }
-    }
-};
 
-export default function ShinyButton(p, btnShiny) {
+export default function ShinyButton(shiny, character, sprites, switchShiny, data) {
         return (
-            <div className={styles.shinylogo}>
-                <button className={styles.shinybutton} onClick={() => btnShiny}> <img src="/images/shiny-reg21.svg" className={styles.shinysvg} />
-                    <p className={styles.caption-`${p.type}`}>SHINY</p>
-                </button>
+            <div className={styles.shinylogo}> 
+                    <button className={styles.shinybutton}> <img src="/images/shiny-reg21.svg" className={styles.shinysvg} />
+                        <p className={styles.caption}>SHINY</p>
+                    </button>
             </div>
         )
     }   
