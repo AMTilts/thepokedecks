@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import NavbarTemplate from '../../components/NavbarTemplate';
 import ShinyButton from '../../components/ShinyButton'
+import Alert from '../../components/Alert';
 import Image from 'next/image';
 import reactDom from 'react-dom';
 import { NavItem } from 'react-bootstrap';
+import FlipButton from '../../components/FlipButton'
 
 
 
@@ -65,14 +67,30 @@ export async function getStaticPaths() {
 
 
 
+const pogoAPI = 'https://pogoapi.net';
+const candyToEvolveAPI = '/api/v1/pokemon_candy_to_evolve.json';
+const maxCPAPI = '/api/v1/pokemon_max_cp.json';
+const fastMovesAPI = '/api/v1/fast_moves.json';
+const chargedMovesAPI = '/api/v1/charged_moves.json';
+const pokeStatsAPI = '/api/v1/pokemon_stats.json';
+const shinyPokeAPI = 'api/v1/shiny_pokemon.json';
+const typesAPI = '/api/v1/pokemon_types.json';
+
 export async function getStaticProps( { params }) {
     const res = await fetch(`${defaultEndpoint}/${params.characterName}`)
     const character = await res.json()
+    const shiny = (`${character.sprites.front_shiny}`)
+    const shinyArray = ([`${character.sprites[1]}`])
+    const pogoShinyData = await fetch(`${pogoAPI}/${shinyPokeAPI}`)
+    const pogoStatsData = await fetch(`${pogoAPI}/${pokeStatsAPI}`)
+    const typesData = await fetch(`${pogoAPI}${typesAPI}`)
 
-    return { props: { character} 
+    const shinyRes = await pogoShinyData.json()
+    const statsRes = await pogoStatsData.json()
+
+    return { props: { character, shiny, shinyArray, shinyRes, statsRes } 
     }
 }
-
 
 
 // const options = {
@@ -90,7 +108,7 @@ function useFetchData() {
     const [data, setData] = React.useState([]);
 }
 
-export default function Character({ character, characterName, resJson}) {
+export default function Character({ character, shinyArray, resJson, isShiny, shiny, shinyRes, statsRes}) {
     
     const { name, base_experience, types, sprites, abilities } = character;
     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
@@ -109,17 +127,31 @@ export default function Character({ character, characterName, resJson}) {
     const [abilityTwo, setAbilityTwo] = useState('');
     const [isTwoAbilities, setIsTwoAbilities] = useState(false);
     const [frontBackText, setFrontBackText]  = useState('Flip to Back');
-    const [isShiny, setIsShiny] = useState('')
+    // const [isShiny, setIsShiny] = useState(false)
     const [isTypeTwo, setIsTypeTwo] = useState(false)
     const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
     const [slotNumber, setSlotNumber] = useState([]);
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [isPokeShiny, setIsPokeShiny] = useState(false);
+    const [array, setArray] = useState({shinyArray});
+    const [frontBackDefault, setFrontBackDefault] = useState('Flip to Back');
 
+    console.log(shinyRes);
+    console.log(statsRes);
 
         
     console.log(`This character has ${types.length} types!`);
-    console.log(numberTypes);
+
+    function spriteBalls(sprites) {
+        console.log(character.sprites.front_shiny.valueOf)
+        return (`${character.sprites.front_shiny.valueOf}` == null ? 'This Poke has a SHINY Yeeeeet' : 'Dang son, UR GAY');
+    }
+
+    console.log(spriteBalls());
+
+
+            console.log(numberTypes);
 
     console.log({character})
 
@@ -127,34 +159,41 @@ export default function Character({ character, characterName, resJson}) {
         const res = await fetch(`${defaultEndpoint}/${characterName}`)
         const cdata = res.json()
         const types = cdata.types
+        const sprites = cdata.sprites
         return { props: {
                     cdata,
-                    types
+                    types,
+                    sprites
                 },
         setSlotNumber(types) {
             console.log(slotNumber());
+            console.log(sprites);
         }
         };
     }
 
-    useEffect(() => {
-        async function fetchInfo() {
-            setLoading(true);
-            await fetch(`${defaultEndpoint}/${character.name}`)
-                .then((res) => res.json)
-                .then((resJson) => {
-                    console.log(`${resJson.types.toString}`)
-                    setData(resJson.results)
-                    if (results.types === 2) isTwoTypes(true);
-                    setSlotNumber(results.types)
-                    setLoading(false)
-                })
-                .catch((error) => {
-                    console.error(error);
-                    setLoading(false);
-                })
-            }
-        }, []) 
+    // useEffect(() => {
+    //     async function fetchInfo() {
+    //         setLoading(true);
+    //         await fetch(`${defaultEndpoint}/${character.name}`)
+    //             .then((res) => res.json)
+    //             .then((resJson) => {
+    //                 setData(resJson.results)
+    //                 if (results.types.length == 2) isTwoTypes(true);
+    //                 if (results.sprites.front_shiny != null) setIsShiny(true)
+    //                 console.log(isShiny)
+    //                 setSlotNumber(results.types)
+    //                 setIsDefault(true)
+    //                 setLoading(false)
+                    
+    //             })
+    //             .catch((error) => {
+    //                 console.error(error);
+    //                 setLoading(false);
+    //             })
+    //         }
+    //         fetchInfo();
+        // } , [currentPosition, ShinyButton]); 
 
     // useEffect(() => {
     //     async function fetchData() {
@@ -177,6 +216,7 @@ export default function Character({ character, characterName, resJson}) {
     //         return <p>Loading...</p>   
 
     //     }
+
 
 
 
@@ -320,13 +360,13 @@ export default function Character({ character, characterName, resJson}) {
 
     }
 
-    function backDefault() {
-        if (isDefault === false) switchShiny;
-        if (currentPosition === `${sprites.back_default}`) frontDefault;
-        setCurrentPosition(`${sprites.back_default}`);
-        setFrontBackText('Flip to Front');
-        setIsDefault(false);
-        }
+    // function backDefault() {
+    //     if (isDefault === false) switchShiny;
+    //     if (currentPosition === `${sprites.back_default}`) frontDefault;
+    //     setCurrentPosition(`${character.sprites.back_default}`);
+    //     setFrontBackText('Flip to Front');
+    //     setIsDefault(false);
+    //     }
     function frontDefault() {
         if (isDefault === false) switchShiny;
         if (currentPosition === `${sprites.front_default}`) backDefault;
@@ -335,31 +375,69 @@ export default function Character({ character, characterName, resJson}) {
         }  
 
     function switchShiny() {
-        if (isDefault === true) backDefault;
-        if (currentPosition.value === `${sprites.front_shiny}`) backShiny;
-        setCurrentPosition(`${sprites.back_shiny}`);
-        setFrontBackDefault('Flip to Front');
-        setIsDefault(true);
-    }
+        if (isDefault !== false) backDefault;
+        if (currentPosition == `${sprites.front_shiny}`) {
+            setCurrentPosition(`${sprites.back_shiny}`)
+            setFrontBackText('Flip to Front')
+        }
+        setCurrentPosition(`${sprites.front_shiny}`)
+        setFrontBackText('Flip to Back')
+    };
 
-    // function typeTwo {
+    // function typeTwo {   
     //     if ( `${types[1].type.name}` = 'undefined') return;
     //     setTypeTwo
     // }
+    function balls() {
+        function clickBalls(e) {
+            e.preventDefault();
+            console.log('GIMME DEM GLIZZIES');
+        }
+        return (
+            <a href="#" onClick={clickBalls}>
+                Click ME
+            </a>
+        );
+    }
 
-    function btnShiny() {
-        if (isDefault === false) switchShiny;
+    function isPokesShiny(currentPosition, setCurrentPosition) {
+        if (isShiny != true) return
+        if (currentPosition === `${sprites.front_default}`) setCurrentPosition(`${sprites.front_shiny}`);
+        if (currentPosition === `${sprites.back_default}`) setCurrentPosition(`${sprites.back_shiny}`);
         if (currentPosition === `${sprites.back_default}`) frontDefault;
-        setCurrentPosition(`${sprites.back_default}`);
-        setFrontBackText('Flip to Front');
         setIsDefault(false);
         }
 
+    // useEffect(() => {
+    //     function isPokesShiny() {
+    //         if (isShiny != true) return
+    //         if (currentPosition === `${sprites.front_default}`) setCurrentPosition(`${sprites.front_shiny}`)
+    //         if (currentPosition === `${sprites.back_default}`) setCurrentPosition(`${sprites.back_shiny}`)
+    //         if (currentPosition === `${sprites.back_default}`) frontDefault;
+    //         setIsDefault(false);
+    //         }
+    //     isPokesShiny()
+    // }, [{currentPosition}, {setCurrentPosition}]);
 
-    function frontBackDefault() {
-        if (isDefault === false) switchShiny;
-        if (currentPosition === `${sprites.front_default}`) backDefault;
-        frontDefault;
+
+        function isPokesShivny() {
+            if (isShiny === true) {
+                console.log('Hold onto your dicks!')
+                setIsPokeShiny(true)
+                setCurrentPosition(`${character.sprites.front_shiny}`)
+            } console.log('Whoah, no shiny dicks today')
+        };
+
+
+    function backDefault() {
+        if (isDefault !== true) switchShiny;
+        if (currentPosition == `${sprites.back_default}`) flipFront;
+        if (currentPosition == `${sprites.front_default}`) {
+            setCurrentPosition(`${sprites.back_default}`)
+            setFrontBackText('Flip to Front');
+        }
+        setCurrentPosition(`${sprites.front_default}`)
+        setFrontBackText('Flip to Back');
     }
 
     function spriteBack() {
@@ -389,9 +467,9 @@ export default function Character({ character, characterName, resJson}) {
             return (
                 <div className="temp-container-title">
                     <h1 className="title">
-                        {name} <img src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.t4444444444444444444433reqwr[1].type.name}.svg`} className="titletypelogo" />
-                </h1>
-            </div>  
+                        {name} <img src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
+                    </h1>
+                </div>  
             )   
         }
 
@@ -426,7 +504,7 @@ export default function Character({ character, characterName, resJson}) {
     //     return (
     //         <div className="temp-container-title">
     //             <h1 className="title">
-    //                 {name} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" />                         
+    //                 {name} <img src={`/images/type_c21_  aracter.types[0].type.name}.svg`} className="titletypelogo" />                         
     //             </h1>
     //         </div>
     //     )
@@ -443,8 +521,16 @@ export default function Character({ character, characterName, resJson}) {
     //     )
     // }
 
+    function showConsoleLog() {
+        if (currentPosition != `${sprites.front_default}`) {
+            console.log('It wont work BRO');
+        }
+        console.log('I was right');
+    }
+    showConsoleLog();
 
     return (
+        <>
         <div className="poke-temp-container">
             <Head>
                 <div className="titletext">
@@ -472,34 +558,35 @@ export default function Character({ character, characterName, resJson}) {
                                             {/* <div className="leftcontainer"></div>    */}
                                                 <img src={currentPosition} className="picdefault"  />
                                             {/* <img src={currentPosition3} className="backdefault" />   */}
-                                                <div className="frontbackbuttons">
-                                                    <button className="fbbutton" onClick={backDefault}>                                                                                                    
-
-                                                        <img id="flip" src="/images/fliparrows.svg" />
-                                                        <h2 className="fliptext">{frontBackText}</h2>
-                                                        {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-                                                        {/* <button className={`frontswitch-${types[0].type.name}`} onClick={frontBackFront}>{frontBackText}}</button> */}
-                                                    </button>
-                                                </div>
+                                                <FlipButton
+                                                    backDefault={backDefault}
+                                                    frontBackText={frontBackText}
+                                                    currentPosition={currentPosition}
+                                                    isDefault={isDefault}
+                                                 />
                                             </div>
                                         </div>
                                         
-                                        { (`${sprites.front_shiny}` == 'null' ?
-                                                <div className="middlediv">
-                                                </div>
-                                            :
+                                        { (`${sprites.front_shiny}` !==  null ?
                                                 <div className="middlediv">
                                                     
-                                                    <ShinyButton 
-                                                        btnShiny={btnShiny}
+                                                    <ShinyButton
                                                         shiny={sprites.front_shiny} 
                                                         type={types[0].type.name}
                                                         typeText={currentCaption}
-                                                        backDefault={backDefault} />
+                                                        backDefault={backDefault}
+                                                        isPokeShiny={isPokeShiny}
+                                                        isPokesShiny={isPokesShiny}
+                                                        character={character}
+                                                        switchShiny={switchShiny}
+                                                        onClick={() => {
+                                                                        }
+                                                                    }
+                                                     />
                                                 </div>
-                                        ) }
-                                   
-                                    
+                                            :   <div className="middlediv">
+                                                </div>)
+                                        }
                                         <div className={`templateinfodiv-${types[0].type.name}`}>
                                             <ul>
                                                 <li className="typeli"><b>Type(s):</b> {types[0].type.name} 
@@ -537,5 +624,6 @@ export default function Character({ character, characterName, resJson}) {
                 <div className={`second-line-bottom-${types[0].type.name}`} style={{height: '1px'}}></div>
                 <div className={`type-gradient-${types[0].type.name}`} style={{height: '3px', marginBottom: '0px'}}></div>
         </div>
+    </>
     );
 }

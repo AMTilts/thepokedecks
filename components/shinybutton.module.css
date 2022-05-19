@@ -19,15 +19,20 @@
     align-items: center;
     justify-items: center;
     align-content: center;
-    height: 20px;
-    width: 40px;
+    height: 100%;
+    width: auto;
+
     justify-content: center;
     border: 1px;
+    border-radius: 10px;
     border-color: lightgrey;
+    cursor: pointer;
 }
 
-.shinybutton:hover, .shinysvg:hover {
-    color: blue;
+#shinybutton:hover {
+    border-color: lightblue;
+    color: pink;
+    transform-style: drop-shadow;
 }
 
 .shinysvg {
