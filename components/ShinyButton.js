@@ -1,5 +1,5 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import styles from './shinybutton.module.css'
 
 // export async function getStaticProps( { params }) {
@@ -10,13 +10,13 @@ import styles from './shinybutton.module.css'
 // }
 
 
-export default function ShinyButton(shiny, character, sprites, switchShiny, data) {
+class ClickButton extends Component {
+
+    render() {
         return (
-            <div className={styles.shinylogo}> 
-                    <button className={styles.shinybutton}> <img src="/images/shiny-reg21.svg" className={styles.shinysvg} />
-                        <p className={styles.caption}>SHINY</p>
-                    </button>
-            </div>
+            <div className={styles.shinylogo} onClick={this.props.changeShinySprite}>{this.props.children}</div>
         )
     }   
+}
 
+export default ClickButton;

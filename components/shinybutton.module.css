@@ -21,7 +21,6 @@
     align-content: center;
     height: 100%;
     width: auto;
-
     justify-content: center;
     border: 1px;
     border-radius: 10px;
@@ -29,10 +28,12 @@
     cursor: pointer;
 }
 
-#shinybutton:hover {
+#shinybutton::after {
     border-color: lightblue;
     color: pink;
     transform-style: drop-shadow;
+    border: 3px;
+    border-radius: 4px;
 }
 
 .shinysvg {
@@ -50,5 +51,9 @@
     max-height: 20px;
     height: 18px;
     filter: invert(100%) sepia(0%) saturate(1486%) hue-rotate(47deg) brightness(79%) contrast(87%);
+    transition: color 1s;
     }                                                                         
 
+.shinysvg:hover {
+    color: blueviolet;
+}

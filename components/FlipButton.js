@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { frontBackText, backDefault }	from '../pages/pokemon/[characterName]'
 
-export default function FlipButton( {frontBackText, backDefault} ) {
-  return (
-    <div className="frontbackbuttons">
-        <button className="fbbutton" onClick={() => backDefault}>                                                                                                    
+class FrontBackButton extends Component {
 
-            <img id="flip" src="/images/fliparrows.svg" />
-            <h2 className="fliptext">{frontBackText}</h2>
-            {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-            {/* <button className={`frontswitch-${types[0].type.name}`} onClick={frontBackFront}>{frontBackText}}</button> */}
-        </button>
-    </div>
-  )
+  render() {
+  	return (
+    	<div className="frontbackbuttons" onClick={this.props.ballDefault}>{this.props.children}</div>
+ 		)
+	}
 }
+
+export default FrontBackButton;

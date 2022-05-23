@@ -108,7 +108,7 @@ function useFetchData() {
     const [data, setData] = React.useState([]);
 }
 
-export default function Character({ character, shinyArray, resJson, isShiny, shiny, shinyRes, statsRes}) {
+export default function Character({ character, shinyArray, resJson,shiny, shinyRes, statsRes}) {
     
     const { name, base_experience, types, sprites, abilities } = character;
     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
@@ -127,7 +127,6 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
     const [abilityTwo, setAbilityTwo] = useState('');
     const [isTwoAbilities, setIsTwoAbilities] = useState(false);
     const [frontBackText, setFrontBackText]  = useState('Flip to Back');
-    // const [isShiny, setIsShiny] = useState(false)
     const [isTypeTwo, setIsTypeTwo] = useState(false)
     const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
     const [slotNumber, setSlotNumber] = useState([]);
@@ -136,9 +135,9 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
     const [isPokeShiny, setIsPokeShiny] = useState(false);
     const [array, setArray] = useState({shinyArray});
     const [frontBackDefault, setFrontBackDefault] = useState('Flip to Back');
-
-    console.log(shinyRes);
-    console.log(statsRes);
+    const [isShiny, setIsShiny] = useState(false);
+    const [isFront, setIsFront] = useState(true);
+    const [pokeName, setPokeName] = useState(`${character.species.name}`)
 
         
     console.log(`This character has ${types.length} types!`);
@@ -172,53 +171,6 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
         };
     }
 
-    // useEffect(() => {
-    //     async function fetchInfo() {
-    //         setLoading(true);
-    //         await fetch(`${defaultEndpoint}/${character.name}`)
-    //             .then((res) => res.json)
-    //             .then((resJson) => {
-    //                 setData(resJson.results)
-    //                 if (results.types.length == 2) isTwoTypes(true);
-    //                 if (results.sprites.front_shiny != null) setIsShiny(true)
-    //                 console.log(isShiny)
-    //                 setSlotNumber(results.types)
-    //                 setIsDefault(true)
-    //                 setLoading(false)
-                    
-    //             })
-    //             .catch((error) => {
-    //                 console.error(error);
-    //                 setLoading(false);
-    //             })
-    //         }
-    //         fetchInfo();
-        // } , [currentPosition, ShinyButton]); 
-
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         let response = await getAllPokeData(currentUrl);
-    //         setLoading(false);
-    //         console.log(response);
-    //         setNextUrl(response.next);
-    //         setPrevUrl(response.previous);
-    //         await loadingPokemon(response.results);
-           
-    //         setLoading(false);
-    //     }    
-    //     fetchData();
-    // }, [])
-
-    // return { loading, data };
-
-    // function loadIng() {
-    //     if(loading) {
-    //         return <p>Loading...</p>   
-
-    //     }
-
-
-
 
     const typeLogo = ({ src, width }) => {
         return `../../style/images/type_logo_${src}?w=${width}`
@@ -235,207 +187,107 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
         )
     };
 
-    // const typeLogo2 = ({ src, width }) => {
-    //     return `../../style/images/type_logo_${4rops) => {s
-    //     return (
-    //         <Image
-    //             loader={typeLogo2}
-    //             src={`../../style/public/images/type_c21_${character.types[1].type.name}.png`}
-    //             width={20}
-    //             height={20}
-    //         />
-    //     )
-    // };
+
+    useEffect(() => {
+        function changeShiny() {
+            console.log(isShiny)
+            console.log(isFront)
+            if (isShiny != true && isFront != true && currentPosition.toString() === `${sprites.back_default}`) {
+                defaultBack
+                setIsShiny(true)
+                setIsFront(false)
+            };
+            if (isShiny != false && isFront !=true && currentPosition.toString() === `${sprites.back_shiny}`) {
+                shinyBack
+                setIsShiny(false)
+                setIsFront(false)
+            };
+            if (isShiny != false && isFront !=false && currentPosition.toString() === `${sprites.front_shiny}`) {
+                shinyFront
+                setIsShiny(false)
+                setIsFront(true)
+            }
+            // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
+            // if (currentPosition.toString() === `${sprites.front_default}`) {
+            else {
+                    defaultFront
+                    setIsShiny(true)
+                    setIsFront(true)
+                };
+        };
+    }, []);
 
 
 
-
-    // const typeLogo2 = (character) => {
-    //     return (
-    //         <Image
-    //             loader={type2}
-    //             src={`/imges/types-${character.types[1].type.name}.svg`}
-    //          />
-    //     )
-    // }
-            
-    // const typeLogo1 = (character) => {
-    //     return {
-    //         <Image
-    //             loader={type1}
-    //             src={`/imges/types-${character.types[0].type.name}.svg`}
-    //          />
+    // function balls() {
+    //     function clickBalls(e) {
+    //         e.preventDefault();
+    //         console.log('GIMME DEM GLIZZIES');
     //     }
-    // };
-  
-
-    // const spriteSwitch = setSpriteCurrent() => {
     //     return (
-    //         <div className="mySlides">
-    //             <div className="numbertext"><img src={spriteCurrent} className="spriteCurr /></div>
-    //                 <img src={sprites.front_shiny} className="picdefault" />
-    //         </div>
-    //     )
-    // }
-    // }
-    // const imgUrls = {
-    //     default: `${sprites.front_default}`,
-    //     shiny: `${sprites.front_shiny}`
-    //         }
-    
-
-    // function SpriteSwitch() {
-    //     const [slides] = useState([
-    //         {
-    //             image: `${sprites.front_default}`,
-    //             title:Wssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-    //         {
-    //             image: `${sprites.front_shiny}`,
-    //             title: "front_shiny"
-    //         }
-    //     ])
-
-
-    //     if ( {currentSlide} = `${sprites.front_default}` ); then ( {currentSlide2} = `${sprites.front_shiny}` ) 
-    //     }
-
-    // };
-
-    // function swapSprites() {
-    //     if ( {currentSlide} = `${sprites.front_default}` ); then ( {currentSlide2} = `${sprites.front_shiny}` ) 
+    //         <a href="#" onClick={clickBalls}>
+    //             Click ME
+    //         </a>
+    //     );
     // }
 
-    // useEffect(() => {
-    //     function handleStatusChange(status) {
-    //         setIsDefault(status.IsDefault);
-        
-        
-    // if ( {isDefault} = true) {
-    //     setCurrentSlide1(`${sprites.front_shiny}`);
-    //     setCurrentSlide2(`${sprites.front_default}`);
-    // }};
 
-    // useEffect(() => {
-    //     spriteToggle();
-    // });
-    // useEffect(() => {
-    //     setSpriteToggle(false);
-    //     setCurrentPosition(`${sprites.front_shiny}`);
-    //     setCurrentPosition2(`${sprites.front_default}`)
-    //     // sprite
-    // Toggle = () => {
-    //     //     ({currentPosition} = `${sprites.front_default}`) ?
-    //     //         ( setCurrentPosition(`${sprites.front_shiny}`),
-    //     //             setCurrentPosition2(`${sprites.front_default}`) ) : null;
-    //     //         }ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-    // });
-
-    function gotoDefault() {
-        if (isDefault == false) {
-            setCurrentPosition(`${sprites.front_default}`);
-            setCurrentPosition2(`${sprites.front_shiny}`);
-            setCurrentPosition3(`${sprites.back_default}`);
-            setCurrentPosition4(`${sprites.back_shiny}`);
-            setCurrentCaption('Default Variant');
-            setIsDefault(true);
-        }
-
-        if (isDefault == true) {
-            setCurrentPosition(`${sprites.front_shiny}`);
-            setCurrentPosition2(`${sprites.front_default}`);
-            setCurrentPosition3(`${sprites.back_shiny}`);
-            setCurrentPosition4(`${sprites.back_default}`);
-            setCurrentCaption('Shiny')
-            setIsDefault(false);
-        }
-    }
-
-    function gotoShiny(gotoDefault) {
-        if (isShiny === true) gotoDefault;
-        setCurrentPosition(`${sprites.front_shiny}`);
-        setCurrentPosition2(`${sprites.front_default}`);
-        setCurrentPosition3(`${sprites.back_shiny}`);
-        setCurrentPosition4(`${sprites.back_default}`);
-        setCurrentCaption('Shiny');
-
-    }
-
-    // function backDefault() {
-    //     if (isDefault === false) switchShiny;
-    //     if (currentPosition === `${sprites.back_default}`) frontDefault;
-    //     setCurrentPosition(`${character.sprites.back_default}`);
-    //     setFrontBackText('Flip to Front');
-    //     setIsDefault(false);
-    //     }
-    function frontDefault() {
-        if (isDefault === false) switchShiny;
-        if (currentPosition === `${sprites.front_default}`) backDefault;
-            setCurrentPosition(`${sprites.front_default}`);
-            setFrontBackDefault('Flip to Back');
-        }  
-
-    function switchShiny() {
-        if (isDefault !== false) backDefault;
-        if (currentPosition == `${sprites.front_shiny}`) {
+    const ballDefault = event => {
+        if (currentPosition == `${sprites.front_default}` && isFront === true) {
+            setIsFront(false)
+            setCurrentPosition(`${sprites.back_default}`)
+            setFrontBackText('Flip to Front')
+        } else if (currentPosition == `${sprites.front_shiny}` && isFront === true) {
+            setIsFront(false)
             setCurrentPosition(`${sprites.back_shiny}`)
             setFrontBackText('Flip to Front')
+        } else if (currentPosition == `${sprites.back_shiny}` && isFront === false) {
+            setIsFront(true)
+            setCurrentPosition(`${sprites.front_shiny}`)
+            setFrontBackText('Flip to Back')
+            setPokeName('BIG BLACK BALLS')
+            setIsFront(true)
+        } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
+            setIsFront(true)
+            setCurrentPosition(`${sprites.front_default}`)
+            setFrontBackText('Flip to Front')
+            setIsFront(true)
+            setPokeName('Me gusta las')
+        } else {
+            console.log('BIG BALLS IN MY FACE BROOOOO')
+            setPokeName('Eat Big Balls')
         }
-        setCurrentPosition(`${sprites.front_shiny}`)
-        setFrontBackText('Flip to Back')
     };
 
-    // function typeTwo {   
-    //     if ( `${types[1].type.name}` = 'undefined') return;
-    //     setTypeTwo
-    // }
-    function balls() {
-        function clickBalls(e) {
-            e.preventDefault();
-            console.log('GIMME DEM GLIZZIES');
+    const changeShinySprite = event => {
+        if (isFront === true && isShiny === false) {
+            setCurrentPosition(`${sprites.front_shiny}`)
+            setIsShiny(true)
+            
         }
-        return (
-            <a href="#" onClick={clickBalls}>
-                Click ME
-            </a>
-        );
-    }
-
-    function isPokesShiny(currentPosition, setCurrentPosition) {
-        if (isShiny != true) return
-        if (currentPosition === `${sprites.front_default}`) setCurrentPosition(`${sprites.front_shiny}`);
-        if (currentPosition === `${sprites.back_default}`) setCurrentPosition(`${sprites.back_shiny}`);
-        if (currentPosition === `${sprites.back_default}`) frontDefault;
-        setIsDefault(false);
+        else if (isFront === true && isShiny === true) {
+            setCurrentPosition(`${sprites.front_default}`)
+            setIsShiny(false)
         }
-
-    // useEffect(() => {
-    //     function isPokesShiny() {
-    //         if (isShiny != true) return
-    //         if (currentPosition === `${sprites.front_default}`) setCurrentPosition(`${sprites.front_shiny}`)
-    //         if (currentPosition === `${sprites.back_default}`) setCurrentPosition(`${sprites.back_shiny}`)
-    //         if (currentPosition === `${sprites.back_default}`) frontDefault;
-    //         setIsDefault(false);
-    //         }
-    //     isPokesShiny()
-    // }, [{currentPosition}, {setCurrentPosition}]);
-
-
-        function isPokesShivny() {
-            if (isShiny === true) {
-                console.log('Hold onto your dicks!')
-                setIsPokeShiny(true)
-                setCurrentPosition(`${character.sprites.front_shiny}`)
-            } console.log('Whoah, no shiny dicks today')
-        };
-
+        else if (isFront === false && isShiny === false) {
+            setCurrentPosition(`${sprites.back_shiny}`)
+            setIsShiny(true)
+        }
+        // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${sprites.front_default}`) {
+        else {
+            setCurrentPosition(`${sprites.back_default}`)
+            setIsShiny(false)
+            };
+    };
 
     function backDefault() {
         if (isDefault !== true) switchShiny;
-        if (currentPosition == `${sprites.back_default}`) flipFront;
-        if (currentPosition == `${sprites.front_default}`) {
+        else if (currentPosition == `${sprites.back_default}`) flipFront;
+        else if (currentPosition == `${sprites.front_default}`) {
             setCurrentPosition(`${sprites.back_default}`)
             setFrontBackText('Flip to Front');
-        }
+        };
         setCurrentPosition(`${sprites.front_default}`)
         setFrontBackText('Flip to Back');
     }
@@ -467,7 +319,7 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
             return (
                 <div className="temp-container-title">
                     <h1 className="title">
-                        {name} <img src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
+                        {pokeName} <img src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
                     </h1>
                 </div>  
             )   
@@ -477,9 +329,12 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
         console.log(`${character.character.types}.toString`)
         if (`${character.character.types}` === 1) console.log('type: 1')
         else if (`${character.character.types}` === 22) console.log('type: 22')
-        else console.log(`${character.charactaer.types}`)
+        else console.log(`${character.character.types}`)
     }
 
+    function testShiny() {
+        console.log('Shiny')
+    }
     // function typeTwo() {
     //     if (`${types[1].type.name}` === null) setTypeTwo('');
     //     setTypeTwo(`${types[1]}.type.name`);
@@ -521,20 +376,14 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
     //     )
     // }
 
-    function showConsoleLog() {
-        if (currentPosition != `${sprites.front_default}`) {
-            console.log('It wont work BRO');
-        }
-        console.log('I was right');
-    }
-    showConsoleLog();
+
 
     return (
         <>
         <div className="poke-temp-container">
             <Head>
                 <div className="titletext">
-                <title>{character.name}</title>
+                <title>{pokeName}</title>
                 </div>
             </Head>
 
@@ -545,7 +394,7 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
                         <div className="container-back">
                             <div className="temp-container-title">
                                 <h1 className="title">
-                                    {name} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" /> { numberTypes == 2 ? <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" /> : null }
+                                    {pokeName} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" /> { numberTypes == 2 ? <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" /> : null }
                                 </h1>
                             </div>    {/* <>
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }
@@ -559,11 +408,16 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
                                                 <img src={currentPosition} className="picdefault"  />
                                             {/* <img src={currentPosition3} className="backdefault" />   */}
                                                 <FlipButton
-                                                    backDefault={backDefault}
-                                                    frontBackText={frontBackText}
-                                                    currentPosition={currentPosition}
-                                                    isDefault={isDefault}
-                                                 />
+                                                    ballDefault={ballDefault}
+                                                    // flipFrontBackButton={flipFrontBackButton}
+                                                >
+                                                    <button className="fbbutton">                                                                                                    
+                                                        <img id="flip" src="/images/fliparrows.svg" />
+                                                            <h2 className="fliptext">{frontBackText}</h2>
+                                                            {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
+                                                            {/* <button className={`frontswitch-${types[0].type.name}`} onClick={frontBackFront}>{frontBackText}}</button> */}
+                                                    </button>
+                                                </FlipButton>
                                             </div>
                                         </div>
                                         
@@ -571,18 +425,13 @@ export default function Character({ character, shinyArray, resJson, isShiny, shi
                                                 <div className="middlediv">
                                                     
                                                     <ShinyButton
-                                                        shiny={sprites.front_shiny} 
-                                                        type={types[0].type.name}
-                                                        typeText={currentCaption}
-                                                        backDefault={backDefault}
-                                                        isPokeShiny={isPokeShiny}
-                                                        isPokesShiny={isPokesShiny}
-                                                        character={character}
-                                                        switchShiny={switchShiny}
-                                                        onClick={() => {
-                                                                        }
-                                                                    }
-                                                     />
+                                                        className="shinybutton"
+                                                        changeShinySprite={changeShinySprite}
+                                                    >
+                                                        <button className="shinybutton"><img src="/images/shiny-reg21.svg" className="shinysvg" />
+                                                            <p className="caption">SHINY</p>
+                                                        </button>
+                                                    </ShinyButton>
                                                 </div>
                                             :   <div className="middlediv">
                                                 </div>)
