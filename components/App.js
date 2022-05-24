@@ -283,7 +283,7 @@ function App() {
                             </div>
                             <div className="div-container">
                                 {pokeData && pokeData.map((p, i) => {
-                                    return <Link key={i} href={`/pokemon/${p.name}`}><a><PokeCard key={i} p={p} /></a></Link>
+                                    return <Link key={i} href={`/pokemon/${p.name}`}><a><PokeCard key={i} p={p} className="totalcard" /></a></Link>
                                 })}
                             </div>
                             <div className="btn-div-border">
