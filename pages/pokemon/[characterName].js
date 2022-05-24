@@ -138,6 +138,8 @@ export default function Character({ character, shinyArray, resJson,shiny, shinyR
     const [isShiny, setIsShiny] = useState(false);
     const [isFront, setIsFront] = useState(true);
     const [pokeName, setPokeName] = useState(`${character.species.name}`)
+    const [containerBack, setContainerBack] = useState('container-back');
+    const [pageContainer, setPageContainer] = useState('pagecontainer')
 
         
     console.log(`This character has ${types.length} types!`);
@@ -236,46 +238,56 @@ export default function Character({ character, shinyArray, resJson,shiny, shinyR
         if (currentPosition == `${sprites.front_default}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_default}`)
+            // setPokeName('Rippin Fat Farts.Balls')
             setFrontBackText('Flip to Front')
         } else if (currentPosition == `${sprites.front_shiny}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_shiny}`)
+            // setPokeName('So many balls, so little time')
             setFrontBackText('Flip to Front')
         } else if (currentPosition == `${sprites.back_shiny}` && isFront === false) {
             setIsFront(true)
             setCurrentPosition(`${sprites.front_shiny}`)
             setFrontBackText('Flip to Back')
-            setPokeName('BIG BLACK BALLS')
+            // setPokeName('BIG BLACK BALLS')
             setIsFront(true)
         } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
             setIsFront(true)
             setCurrentPosition(`${sprites.front_default}`)
             setFrontBackText('Flip to Front')
             setIsFront(true)
-            setPokeName('Me gusta las')
+            // setPokeName('Why are you so gay?')
         } else {
             console.log('BIG BALLS IN MY FACE BROOOOO')
-            setPokeName('Eat Big Balls')
+            // setPokeName('Eating Glizzies and Chewing Bubble GUm')
         }
     };
 
     const changeShinySprite = event => {
         if (isFront === true && isShiny === false) {
+            setPageContainer('pagecontainer-shiny')
+            setContainerBack('container-back-shiny')
             setCurrentPosition(`${sprites.front_shiny}`)
             setIsShiny(true)
             
         }
         else if (isFront === true && isShiny === true) {
+            setContainerBack('container-back')
+            setPageContainer('pagecontainer')
             setCurrentPosition(`${sprites.front_default}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
+            setContainerBack('container-back-shiny')
+            setPageContainer('pagecontainer-shiny')
             setCurrentPosition(`${sprites.back_shiny}`)
             setIsShiny(true)
         }
         // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
         // if (currentPosition.toString() === `${sprites.front_default}`) {
         else {
+            setContainerBack('container-back')
+            setPageContainer('pagecontainer')
             setCurrentPosition(`${sprites.back_default}`)
             setIsShiny(false)
             };
@@ -391,7 +403,7 @@ export default function Character({ character, shinyArray, resJson,shiny, shinyR
                 <div className={`type-gradient-${types[0].type.name}`}></div>
                 <div>
                     <div className="temp-container">
-                        <div className="container-back">
+                        <div className={containerBack}>
                             <div className="temp-container-title">
                                 <h1 className="title">
                                     {pokeName} <img src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" /> { numberTypes == 2 ? <img src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" /> : null }
@@ -400,7 +412,7 @@ export default function Character({ character, shinyArray, resJson,shiny, shinyR
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }
                                     </> */}
                             <div className="topcontainer">
-                                <div className="pagecontainer">
+                                <div className={pageContainer}>
                                     <div className="slidecontainer">
                                         <div className="spritecontainer">
                                             <div className="spritebuttoncontainer">
@@ -428,8 +440,8 @@ export default function Character({ character, shinyArray, resJson,shiny, shinyR
                                                         className="shinybutton"
                                                         changeShinySprite={changeShinySprite}
                                                     >
-                                                        <button className="shinybutton"><img src="/images/shiny-reg21.svg" className="shinysvg" />
-                                                            <p className="caption">SHINY</p>
+                                                        <button className="shinybutton"><img src="/images/shiny-reg21.svg" id="shinysvg" />
+                                                            {/* <p className="caption">SHINY</p> */}
                                                         </button>
                                                     </ShinyButton>
                                                 </div>
