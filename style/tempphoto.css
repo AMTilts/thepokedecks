@@ -14,9 +14,9 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  width: 100%;
   height: auto;
   top: 20px;
+  width: 100vw;
 }
 
 .temp-container {
@@ -28,6 +28,15 @@ body {
   flex-direction: column;
   position: relative;
   background-color: #d6d6d6;
+  width: auto;
+  margin: 0, 0;
+  padding: 0, 0;
+}
+
+html {
+  width: 100vw;
+  margin: 0, 0;
+  padding: 0, 0;
 }
 
 .second-line-top-dark {
@@ -37,7 +46,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #705848;
@@ -50,7 +58,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #7038F8;
@@ -63,7 +70,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #F8D030;
@@ -76,7 +82,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #EE99AC;
@@ -89,7 +94,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #C03028;
@@ -102,7 +106,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #A8B820;
@@ -115,7 +118,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #F08030;
@@ -128,7 +130,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #A890F0;
@@ -141,7 +142,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #705898;
@@ -154,7 +154,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #78C850;
@@ -167,7 +166,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #E0C068;
@@ -180,7 +178,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #98D8D8;
@@ -193,7 +190,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #A8A878;
@@ -206,7 +202,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #A040A0;
@@ -219,7 +214,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #F85888;
@@ -232,7 +226,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #B8A038;
@@ -245,7 +238,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #B8B8D0;
@@ -258,7 +250,6 @@ body {
   align-items: center;
   height: 0.1em;
   position: relative;
-  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #6890F0;
@@ -272,7 +263,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #705848;
@@ -286,7 +276,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #7038F8;
@@ -300,7 +289,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #F8D030;
@@ -314,7 +302,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #EE99AC;
@@ -328,7 +315,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #C03028;
@@ -342,7 +328,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #A8B820;
@@ -356,7 +341,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #F08030;
@@ -370,7 +354,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #A890F0;
@@ -384,7 +367,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #705898;
@@ -398,7 +380,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #78C850;
@@ -412,7 +393,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #E0C068;
@@ -426,7 +406,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #98D8D8;
@@ -440,7 +419,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #A8A878;
@@ -454,7 +432,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #A040A0;
@@ -468,7 +445,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #F85888;
@@ -482,7 +458,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #B8A038;
@@ -496,7 +471,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #B8B8D0;
@@ -510,7 +484,6 @@ body {
   padding: 0;
   height: 5px;
   position: relative;
-  width: 100%;
   margin-top: 5px;
   margin-bottom: 0px;
   background-color: #6890F0;
@@ -529,6 +502,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #6D7815;
 }
 
@@ -545,6 +519,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #49392F;
 }
 
@@ -561,6 +536,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #4924A1;
 }
 
@@ -577,6 +553,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #A1871F;
 }
 
@@ -593,6 +570,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #9B6470;
 }
 
@@ -609,6 +587,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #7D1F1A;
 }
 
@@ -625,6 +604,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #9C531F;
 }
 
@@ -641,6 +621,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #6D5E9C;
 }
 
@@ -657,6 +638,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #493963;
 }
 
@@ -673,6 +655,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #4E8234;
 }
 
@@ -689,6 +672,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #927D44;
 }
 
@@ -705,6 +689,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #638D8D;
 }
 
@@ -721,6 +706,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #6D6D4E;
 }
 
@@ -737,6 +723,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #682A68;
 }
 
@@ -753,6 +740,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #F85888;
 }
 
@@ -769,6 +757,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #786824;
 }
 
@@ -785,6 +774,7 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #787887;
 }
 
@@ -801,7 +791,296 @@ body {
   border-style: solid;
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: whitesmoke;
   border-color: #445E9C;
+}
+
+.container-back {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  background: linear-gradient(147.16deg, #FFFFFF 9.64%, #FFFFFF 9.65%, #F0F0F0 84.25%);
+  background-size: cover;
+  padding-right: 500px;
+}
+
+.container-back-shiny {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: rgb(19, 0, 38);
+  background: radial-gradient(ellipse at 35% 55%, rgb(19, 0, 38) 0%, rgb(98, 80, 181) 15%, rgb(172, 159, 233) 25%, rgb(213, 213, 218) 35%, rgb(255, 255, 255) 50%);
+}
+
+.backcontainer-shiny-grass {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.backcontainer-shiny-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+
+.backcontainer-shiny-fire {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+}
+.backcontainer-shiny-fire.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+}
+
+.backcontainer-shiny-fairy {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+}
+.backcontainer-shiny-fairy.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+}
+
+.backcontainer-shiny-water {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+}
+.backcontainer-shiny-water.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+}
+
+.backcontainer-shiny-rock {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+}
+.backcontainer-shiny-rock.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+}
+
+.backcontainer-shiny-dark {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+}
+.backcontainer-shiny-dark.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+}
+
+.backcontainer-shiny-ghost {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+}
+.backcontainer-shiny-ghost.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+}
+
+.backcontainer-shiny-ice {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+}
+.backcontainer-shiny-ice.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+}
+
+.backcontainer-shiny-dragon {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+}
+.backcontainer-shiny-dragon.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+}
+
+.backcontainer-shiny-flying {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+}
+.backcontainer-shiny-flying.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+}
+
+.backcontainer-shiny-steel {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+}
+.backcontainer-shiny-steel.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+}
+
+.backcontainer-shiny-electric {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+}
+.backcontainer-shiny-electric.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+}
+
+.backcontainer-shiny-poison {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+}
+.backcontainer-shiny-poison.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+}
+
+.backcontainer-shiny-fighting {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+}
+.backcontainer-shiny-fighting.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+}
+
+.backcontainer-shiny-psychic {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+}
+.backcontainer-shiny-psychic.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+}
+
+.backcontainer-shiny-ground {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+}
+.backcontainer-shiny-ground.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+}
+
+.backcontainer-shiny-bug {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+}
+.backcontainer-shiny-bug.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+}
+
+.backcontainer-shiny-normal {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+}
+.backcontainer-shiny-normal.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+}
+
+.backcontainer-shiny-grass {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.backcontainer-shiny-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
 }
 
 .info-text {
@@ -1283,13 +1562,30 @@ body {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-style: bold;
+  padding-left: 3px;
+}
+
+#sparkleImg::before {
+  position: absolute;
+  opacity: 0;
+}
+
+#sparkleImg::after {
+  opacity: 0.6;
+}
+
+.sparkling-style-none {
+  opacity: 0;
+}
+
+.sparkling-style-flash {
+  opacity: 0.4;
 }
 
 /* Position the image container (needed to position the left and right arrows) */
 .topcontainer {
   display: flex;
   position: relative;
-  width: 100%;
   height: auto;
   flex-direction: column;
   justify-content: center;
@@ -1307,7 +1603,6 @@ body {
   position: relative;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
   height: auto;
   justify-content: center;
   /* background: linear-gradient(180deg, #ffffff 0%, #78C850 100%); */
@@ -1322,18 +1617,8 @@ body {
   width: 100%;
   height: auto;
   justify-content: center;
-  background: rgb(19, 0, 38);
-  background-size: cover;
-  background-position: 30, 0;
-  background: radial-gradient(circle at 30% 50%, rgb(19, 0, 38) 17%, rgb(98, 80, 181) 31%, rgb(172, 159, 233) 37%, rgb(213, 213, 218) 53%, rgb(255, 255, 255) 67%);
 }
 
-@media (max-width: 963px) {
-  .pagecontainer-shiny {
-    background-position: 30, 0;
-    background: radial-gradient(circle at 44% 40%, rgb(19, 0, 38) 17%, rgb(98, 80, 181) 31%, rgb(172, 159, 233) 37%, rgb(213, 213, 218) 43%, rgb(255, 255, 255) 50%);
-  }
-}
 .frontbackbuttons {
   display: inline-flex;
   justify-content: space-evenly;
@@ -1354,6 +1639,7 @@ body {
   left: 0;
   position: relative;
   justify-content: center;
+  justify-items: center;
   width: auto;
   height: 30px;
   flex-wrap: no-wrap;
@@ -1364,12 +1650,12 @@ body {
 
 .backdefault {
   height: 100%;
-  width: 100%;
   display: inline-flex;
   grid-area: default;
   /* background-color: yellow; */
   width: 300px;
   opacity: 0.8;
+  z-index: 10;
 }
 
 #next:hover #picdefault {
@@ -1377,14 +1663,13 @@ body {
 }
 
 .slidecontainer {
-  width: 600px;
   position: relative;
 }
 
 .slidecontainer {
   display: flex;
   flex-wrap: wrap;
-  width: 80vw;
+  width: 100vw;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -1393,26 +1678,7 @@ body {
   position: relative;
   margin-top: 20px;
   border-width: 1px;
-  border-radius: 1px 1px 4px 4px;
-  border-color: lightgrey;
   margin-bottom: 10px;
-}
-
-.slide-container-shiny {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background: radial-gradient(ellipse 50%, 90%, rgb(19, 0, 36) 65%, rgb(255, 0, 212) 86%, rgb(85, 255, 0) 100%);
-  background-size: cover;
-  opacity: 0.9;
 }
 
 .spritecontainer {
@@ -1457,12 +1723,12 @@ body {
   align-items: center;
   align-content: center;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 50px;
   min-width: 15px;
   position: relative;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   top: 0;
   margin-right: 50px;
   padding-right: 75px;
@@ -1515,10 +1781,6 @@ body {
   position: relative;
 }
 
-.next:hover > #slidecontainer {
-  background: linear-gradient(180deg, #ffffff 0%, #A7DB8D 100%);
-}
-
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -1534,7 +1796,7 @@ body {
   cursor: pointer;
   position: relative;
   top: 25%;
-  width: auto;
+  width: 100vw;
   padding: 10px;
   margin-top: 100px;
   margin-left: 200spx;
@@ -1548,13 +1810,6 @@ body {
 }
 
 /* Position the "next button" to the right */
-.next {
-  right: 300;
-  border-radius: 3px 0 0 3px;
-  border-color: linear-gradient(121.52deg, #A8B820 9.79%, #6D7815 24.44%, #C6D16E 65.12%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(light-green), to(green));
-}
-
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
@@ -1566,22 +1821,9 @@ body {
   top: 5px;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 100vw;
   height: 2em;
   margin-bottom: 35px;
-}
-
-.container-back {
-  display: flex;
-  align-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  box-sizing: content-box;
-  background: linear-gradient(147.16deg, #FFFFFF 9.64%, #FFFFFF 9.65%, #F0F0F0 84.25%);
-  background-size: cover;
 }
 
 .title {
@@ -1656,7 +1898,7 @@ body {
 .shinylogo {
   display: inline-flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   margin-left: 5px;
   margin-right: 18px;
@@ -1668,7 +1910,7 @@ body {
 .shinybutton {
   display: inline-flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-items: center;
   align-content: center;
@@ -1680,6 +1922,10 @@ body {
   border-color: black;
   cursor: pointer;
   background-color: #FFFFFF;
+}
+
+.shinybutton-2 {
+  display: none;
 }
 
 #shinybutton::after {
@@ -1696,7 +1942,7 @@ body {
   align-content: center;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   font-family: "Heebo", sans-serif;
   align-self: center;
   font-size: 15px;
@@ -1707,6 +1953,7 @@ body {
   height: 18px;
   filter: invert(100%) sepia(0%) saturate(1486%) hue-rotate(47deg) brightness(79%) contrast(87%);
   transition: color 0.5s;
+  z-index: 60;
 }
 
 #middlediv:hover #shinysvg {
@@ -1716,7 +1963,63 @@ body {
 
 #shinysvg:hover {
   filter: none;
-  filter: brightness(90);
+  color: rgb(255, 0, 255);
 }
 
-/*# sourceMappingURL=tempphoto.css.map *//*# sourceMappingURL=tempphoto.css.map */
+/*# sourceMappingURL=tempphoto.css.map */
+.shinyAnim {
+  position: relative;
+  top: 10;
+  left: 20;
+  width: 100px;
+  height: 30px;
+  border-width: 2px;
+  border-radius: 8px;
+  border-color: pink;
+}
+
+#shiny, #sparkle {
+  display: flex;
+}
+
+#sparkleImg-before {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+#sparkleImg-after {
+  display: flex;
+}
+
+#sparkles {
+  position: absolute;
+  width: 606px;
+  height: 506px;
+  top: 0px;
+  left: calc(30% - 128px);
+  pointer-events: none;
+}
+
+#shinyAnim {
+  position: relative;
+  top: 10;
+  left: 20;
+  width: 100px;
+  height: 30px;
+  border-width: 2px;
+  border-radius: 8px;
+  border-color: pink;
+}
+
+#canvasId {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#pogoImg {
+  position: relative;
+  z-index: 2;
+}/*# sourceMappingURL=tempphoto.css.map */

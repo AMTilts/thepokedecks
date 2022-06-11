@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -196,12 +197,14 @@ function PokeCard({ p }) {
                         className="frame-card-img"
                       >
                         <div className="card-img-outer">
-                          <img
+                          <Image
                             id="card-img"
                             src={p.sprites.front_default}
                             data-name="card-img"
-                            alt="card-img"
+                            alt="Pokemon Image"
                             className="card-img"
+                            width="205px"
+                            height="203px"
                           />
                         </div>
                       </div>
@@ -268,6 +271,8 @@ function PokeCard({ p }) {
                                     data-name="type-logo-TYPENAME"
                                     alt="Pokemon Type"
                                     className="type-logo-TYPENAME"
+                                    height={25}
+                                    width={25}
                                   />
                                 </div>
                               </div>

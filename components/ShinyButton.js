@@ -14,7 +14,7 @@ class ClickButton extends Component {
 
     render() {
         return (
-            <div className="shinylogo" onClick={this.props.changeShinySprite}>{this.props.children}</div>
+            <div className="shinylogo" id="shinylogoimage" onClick={this.props.changeShinySprite}>{this.props.children}</div>
         )
     }   
 }

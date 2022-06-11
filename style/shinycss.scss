@@ -1,0 +1,9 @@
+.shinycs::before {
+    display: none;
+} var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
+var y = 128 + p.radius * Math.sin(p.angle * Math.PI / 180);
+var scaled = Math.max(32 * p.scale, 0);
+
+.canvas-back-before {
+    background-color: none;
+}
