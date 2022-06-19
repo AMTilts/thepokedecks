@@ -1832,15 +1832,14 @@ html {
   padding-top: 0px;
   position: relative;
   margin-right: 5px;
-  display: inline-flex;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
 
 .titletypelogo {
-  padding-left: 10px;
-  padding-right: 5px;
+  padding-left: 20px;
+  padding-right: 15px;
   height: 40px;
   align-self: center;
 }
@@ -1979,13 +1978,11 @@ html {
 }
 
 #shiny, #sparkle {
-  display: flex;
+  display: none;
 }
 
 #sparkleImg-before {
-  display: block;
-  width: 40px;
-  height: 40px;
+  display: none;
 }
 
 #sparkleImg-after {
@@ -2022,4 +2019,13 @@ html {
 #pogoImg {
   position: relative;
   z-index: 2;
+}
+
+#canvasStyle {
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 48px;
+  left: calc(50% - 128px);
+  pointer-events: none;
 }/*# sourceMappingURL=tempphoto.css.map */

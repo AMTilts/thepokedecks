@@ -756,7 +756,7 @@ $d: a;
     padding-top: 0px;
     position: relative;
     margin-right: 5px;
-    display: inline-flex;
+    // display: inline-flex;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -767,8 +767,8 @@ $d: a;
 .titletypelogo {
     // padding-top: 15px;
     // position: absolute;
-    padding-left: 10px;
-    padding-right: 5px;
+    padding-left: 20px;
+    padding-right: 15px;
     height: 40px;
     // top: 50px;
     // left: 300px;
@@ -951,12 +951,12 @@ $d: a;
     border-color: pink;
   }
 
-  #shiny, #sparkle { display: flex; }
+  #shiny, #sparkle { display: none; }
 
   #sparkleImg-before {
-      display: block;
-      width: 40px;
-      height: 40px;
+      display: none;
+    //   width: 40px;
+    //   height: 40px;
   }
 
   #sparkleImg-after {
@@ -998,4 +998,13 @@ $d: a;
 
   #particles {
       
+  }
+
+  #canvasStyle {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    top: 48px;
+    left:calc(50% - 128px);
+    pointer-events: none;   
   }

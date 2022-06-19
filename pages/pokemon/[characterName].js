@@ -16,6 +16,7 @@ import Canvas from '../../components/Canvas'
 import SparkeImg from '../../components/SparkleImg'
 // import Shine from '../../components/Shine';
 import imageSpark from '/images/sparkle.png'
+import Canimation from '../../components/Canimation';
 
 
 
@@ -115,7 +116,7 @@ function useFetchData() {
     const [data, setData] = React.useState([]);
 }
 
-export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image}) {
+export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, renderFrame }) {
     
     const { name, base_experience, types, sprites, abilities } = character;
     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
@@ -150,14 +151,12 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [shinyAnimation, setShinyAnimation] = useState('shiny-animation')
     const [sparkleImg, setSparkleImg] = useState('sparkleImg')
     const [shinePrecursor, setShinePrecursor] = useState(false);
-    var particles = useRef([]);
     const [sparkling, setSparkling] = useState(false);
     const sparkles = useRef(null);
     const [flash, setFlash] = useState('flash') ;// Meant to replace flash.style.transition and flash.style.opacity
     const [shinyAnim, setShinyAnim] = useState('shiny'); //Meant to replace shiny.style.display methods being passed 
     const [sparkleImgCSS, setSparkleImgCSS] = useState('sparkleImg-before')
-    var drawer;
-
+    const [canvasVisible, setCanvasVisible] = useState(true);
     console.log(`This character has ${types.length} types!`);
 
 
@@ -338,9 +337,6 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
 
    
    
-    function addSparkles(){
-        for (var i = 0; i < 8; i++) particles.push({ "scale": 1, "radius": 60, "angle": 45 * i });
-    }
 
     function reveal({sparkle}){
         setSparkling(true);
@@ -359,18 +355,18 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     //     //Draw Balls
     // }
   
-  function startDraw(ctx) {
-      for (p of particles){
-      var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
-      var y = 128 + p.radius * Math.sin(p.angle * Math.PI / 180);
-      var scaled = Math.max(32 * p.scale, 0);
-      ctx.current.drawImage(sparkle.current, x - scaled / 2, y - scaled / 2, scaled, scaled);
-      if (p.scale > 0.6) p.scale -= 0.2;
-      else p.scale -= 0.05;S
-      p.angle -= 5;
-      p.radius += 5;
-    }
-}
+//   function startDraw(ctx) {
+//       for (p of particles){
+//       var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
+//       var y = 128 + p.radius * Math.sin(p.angle * Math.PI / 180);
+//       var scaled = Math.max(32 * p.scale, 0);
+//       ctx.current.drawImage(sparkle.current, x - scaled / 2, y - scaled / 2, scaled, scaled);
+//       if (p.scale > 0.6) p.scale -= 0.2;
+//       else p.scale -= 0.05;S
+//       p.angle -= 5;
+//       p.radius += 5;
+//     }
+// }
     
 
 
@@ -413,9 +409,12 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setPageContainer('pagecontainer-shiny')
             setContainerBack('container-back-shiny')
             setShinePrecursor(true)
-            startDrawing()
             setCurrentPosition(`${sprites.front_shiny}`)
             setIsShiny(true)
+            return (
+            <Canvas />
+            )
+            
             
         }
         else if (isFront === true && isShiny === true) {
@@ -428,9 +427,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setContainerBack('container-back-shiny')
             setPageContainer('pagecontainer-shiny')
             setShinePrecursor(true)
-            startDrawing()
             setCurrentPosition(`${sprites.back_shiny}`)
             setIsShiny(true)
+            return (
+                <Canvas />
+                )
         }
         // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
         // if (currentPosition.toString() === `${sprites.front_default}`) {
@@ -503,20 +504,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         console.log('Shiny')
     }
 
-    const startDrawing = () => {
-        startDraw();
-        setSparkleImgCSS('sparkleImg-after')
-        setInterval(startDraw, 50);
-        
-    }
-  
-    function stopDrawing(){
-        clearInterval();
-        particles.current([]);
-        setSparkling(false);
-        setSparkleImgCSS('sparkleImg-before')
-    }
-    
+
 
     // const sparkle = useRef(null);
     // const sparkles = useRef(null);
@@ -704,8 +692,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                     ref={canvasRef.current}
                                                  /> */}
                                             {/* <div className="leftcontainer"></div>    */}
-                                                <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} />    
-                                               {/* <Image src={currentPosition3} className="backdefault" />   */}
+                                                {canvasVisible && <Canvas id="canvasStyle" />}
+                                                <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
                                                 <FlipButton
                                                     ballDefault={ballDefault}
                                                     // flipFrontBackButton={flipFrontBackButton}
@@ -748,7 +736,10 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                 style={{ position: 'absolute', 'z-index': 5 }}
                                             /> */}
                                         </div>
-                                        <Canvas
+                                        <button onClick={() => setCanvasVisible(!canvasVisible)}>
+                                            TICKLE Canvas
+                                        </button>
+                                        {/* <Canvas
                                             id="canvasId"
                                             className="canvasBG"
                                             height={600}
@@ -758,8 +749,10 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             sheight={30}
                                             swidth={30}
                                             image={image}
-                                            style={{ position: 'absolute', 'z-index': -10 }}
-                                        >
+                                            shineOn={shineOn}
+                                            // style={{ position: 'absolute', 'z-index': -10 }}
+                                        > */}
+                                        
                                         {/* <SparkleImg
                                             id={sparkleImgCSS}
                                             src={image}
@@ -773,7 +766,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                 id={sparkleImgCSS}
                                             /> */}
 
-                                        </Canvas>
+                                        {/* </Canvas> */}
                                         {/* <Image
                                             src={sparkleImage}
                                             width={30}
@@ -781,7 +774,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             id={sparkleImgCSS}
                                             style={{ position: 'absolute', 'z-index': 5 }}
                                          /> */}
-                                        // <img src="/images/sparkle.png"  width={35} height={35} />
+                                        <img src="/images/sparkle.png" id="sparkleImg-before"  width={35} height={35} />
                                         <div className={`templateinfodiv-${types[0].type.name}`}>
                                             <ul>
                                                 <li className="typeli"><b>Type(s):</b> {types[0].type.name} 

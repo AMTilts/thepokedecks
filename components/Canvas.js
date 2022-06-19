@@ -7,10 +7,11 @@ import CanvasDraw from 'react-canvas-draw'
 import SparkleImg from './SparkleImg';
 import dynamic from 'next/dynamic';
 import Gsap from 'gsap'
+import ShinyRenderer from './ShinyRenderer';
 
 
 
-const Canvas = ({startDraw, height, width, imageS, sheight, swidth, scaled, image, sparkleImg}) => {
+const Canvas = ({height, width, imageS, changeShinySprite, sheight, swidth, scaled, image, sparkleImg}) => {
     
 
     // const sparkle = useRef(null);
@@ -31,66 +32,119 @@ const Canvas = ({startDraw, height, width, imageS, sheight, swidth, scaled, imag
     const imageRef = useRef(null)
     const [imageState, setImageState] = useState(null)
     const [imager, setImager] = useState(null)
-    var particles = [];
+    const { particles, setParticles } = useState([]);
+    var drawer;
+  const particlesRef = useRef({"scale": 0, "radius": 0, "angle": 0});
+    const newImage = useRef(null);
+    const canvasRef = useRef(null);
 
     // const [sparkleImg, setSparkleImg] = useState({image})      
       
-      
-      function URLImage(props) {
-        const [imageS, setImageS] = useState(null);
-      }
+    const requestIdRef = useRef(null);      
+      // function URLImage(props) {
+      //   const [imageS, setImageS] = useState(null);
+      // }
   
       // function noRef(ref) => {
       //   if (!ref) return
       //   canvas.current =  refgxct,lAd
       // }
-      
 
-      useEffect(() => {
-        canvas = canvas.current;
-        const newImage = new Image();
-        newImage.src = '/images/sparkle.png'
-        newImage.onload = setImager(newImage);
+      function addSparkles() {
+        for (var i = 0; i < 8; i++) {
+          particles = particlesRef.current;
+          particles.concat({"scale": 1, "radius": 60, "angle": 45 * i});
+      }
+    }
 
-        if (newImage && canvas) {
-          const ctx = canvas.current.getContext('2d')
-          ctx.clearRect(0, 0, 256, 256);
-          for (p of particles){
+      const drawSparkles = () => {
+        const particles = particlesRef.current;
+        for (let p of particles){
           var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
           var y = 128 + p.radius * Math.sin(p.angle * Math.PI / 180);
           var scaled = Math.max(32 * p.scale, 0);
-          ctx.drawImage(sparkle, x - scaled / 2, y - scaled / 2, scaled, scaled);
-          if (p.scale > 0.6) p.scale -= 0.2;
-          else p.scale -= 0.05;
-          p.angle -= 5;
-          p.radius += 5;
           }
-        }});
-          
+      }
+
+      const stopDrawing = () => {
+        clearInterval(drawer);
+        setParticles([]);
+      }
+      
+       useEffect(() => {
+        
+
+        }, []);
+
+      const renderFrame = () => {
+        newImage.onload()
+        if (particles == null){
+          for (var i = 0; i < 5; i++) {
+            setTimeout(addSparkles, i * 100);
+            }
+          };
+      };
+
+      const tick = () => {
+        // if (!canvasRef.current) {
+        // console.log('CanvasRef Not loaded')
+        // return;
+        // };  
+       
+        renderFrame();
+        setSparkleImgCSS('sparkleImg-after')
+        newImage.onload();
+        ShinyRenderer.call(ctx, x, y, radius, scale, imager, particlesRef.current)
+        setInterval(drawSparkles, 50)
+        setTimeout(stopDrawing, 1000);
+        requestIdRef.current = requestAnimationFrame(tick);
+      
+      };
+
+      useEffect(() => {
+        if(!canvasRef.current) return;
+        canvas = canvasRef.current;
+        const ctx = canvasRef.current.getContext('2d')
+        var newImage = new Image();
+        newImage.src = '/images/sparkle.png';
+        newImage.onload = () => {
+          ctx.drawImage(newImage.current, 0, 0, 35, 35);
+        }
+        console.log(newImage.current)
+        requestIdRef.current = requestAnimationFrame(tick);
+        return () => {
+          cancelAnimationFrame(requestIdRef.current);
+          clearInterval()
+        };
+}, [newImage, canvas]);
+
+
 
 // function startDraw(ctx, context, scaled, sparkleImage, shinyces) {
 //       for (p of particles){
 //       var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
 //       var y = 128 + p.radius * Math.sin(p.angle * Math.PI / 180);
-//       var scaled = Math.max(32 * p.scale, 0);
-//       sparkleImage.onLoad;
-//       if (p.scale > 0.6) p.scale -= 0.2;
-//       else p.scale -= 0.05;
-//       p.angle -= 5;
-//       p.radius += 5;
-//     }
-//   };
+//         for (var i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
+  //         drawer = setInterval(drawSparkles, 50);
+  //         setTimeout(stopDrawing, 1000);
+  //             }
+  //     };
 
-  function shineOn(ctx, context, startDraw) {
-      if (!particles.length){
-          console.log('Shiny Animation is working')
-          for (var i = 0; i < 5; i++) {
-          startDrawing
-          setTimeout(addSparkles, i * 100);
-          setTimeout(stopDrawing, 1000);
-              }
-          };
-  }
+
+
+
+
+
+
+
+  // function stopDrawing(){
+  //   clearInterval();
+  //   particles.current([]);
+  //   setSparkling(false);
+  //   setSparkleImgCSS('sparkleImg-before')
+  // }
+
+
 
       // useEffect(() => {
       //   const context = canvas.current.getContext('2d');
@@ -167,16 +221,15 @@ const Canvas = ({startDraw, height, width, imageS, sheight, swidth, scaled, imag
     
     
     return (
-        <>
             <canvas 
-                ref={canvas.current}
-                style={{opacity: 0}} 
+                ref={canvasRef.current}
                 height={500} 
                 width={500}
-                image={"image"}
-                startDraw={startDraw}
+                imager={imager}
+
+
             />    
-            {/* <stage width="{window.innerWidth}" height="{window.innerHeight}">
+            /* <stage width="{window.innerWidth}" height="{window.innerHeight}">
                 <layer>
                     <imageS 
                         imageS={imageS}
@@ -187,15 +240,17 @@ const Canvas = ({startDraw, height, width, imageS, sheight, swidth, scaled, imag
                         // loadImage={loadImage()}
                     >
                     </imageS>
-                </layer>
-            </stage> */}
-         </>
+                </laye
+            </stage> */
     );
 
     Canvas.propTypes = {
-        startDraw: PropTypes.func.isRequired,
+        drawSparkles: PropTypes.func.isRequired,
+        addSparkles: PropTypes.func.isRequired,
+        tick: PropTypes.func.isRequired,
         height: PropTypes.number.isRequired,
         width: PropTypes.number.isRequired,
     }
-}
+  };
 export default Canvas;
+
