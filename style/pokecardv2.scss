@@ -662,7 +662,7 @@ $gradient in $types {
         gradient(var(#{$type}-color), from),
         gradient(var(#{$type}-dark), to));
         border-radius: .3rem;
-        margin-left: 10px;
+        margin-left: 3px;
         &.inverse {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -729,7 +729,7 @@ $gradient in $types {
 // }
 .tempcontainersprites {
     display: grid;
-    grid-gap: 10px;
+    grid-gap:3px;
     width: 100%;
     grid-row: auto;
     grid-template-areas: 'default info' 'default info' 'back back' 'pic3 pic4 pic5'
@@ -765,8 +765,8 @@ $gradient in $types {
 
 .tempinfo {
     grid-area: info;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     background-color: sienna;
 }
 
@@ -846,9 +846,9 @@ $gradient in $types {
 .Page {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 1rem 1rem 1rem 1rem;
+    margin: .5;
     width: 100%;
     height: auto;
     pointer-events: auto;
@@ -860,7 +860,7 @@ $gradient in $types {
     pointer-events: auto;
     z-index: 1;
     margin: 0;
-    padding: 10px 10px;
+    padding: 3px 3px;
 }
 
 #Page:hover #card-img {
@@ -1497,12 +1497,12 @@ $gradient in $types {
     z-index: 3;
     pointer-events: none;
     margin-left: 0px;
-    width: 252px;
-    min-width: 252px;
-    height: 285px;
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
     margin-top: 0px;
     margin-bottom: 5px;
-    min-height: 285px;
+    min-height: 10px;
 }
 
 .frame-card-outline-outer {
@@ -1553,12 +1553,12 @@ $gradient in $types {
     z-index: 6;
     pointer-events: none;
     margin-left: 0px;
-    width: 252px;
-    min-width: 250px;
-    height: 285px;
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
     margin-top: 0px;
     margin-bottom: 0px;
-    min-height: 285px;
+    min-height: 200px;
     background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
     border-radius: 1px 1px 4px 4px;
 }
@@ -1652,7 +1652,7 @@ $gradient in $types {
     z-index: 15;
     pointer-events: none;
     margin-left: -2px;
-    width: 250px;
+    width: 200px;
     height: 45px;
     margin-top: 224px;
 }
@@ -1675,8 +1675,8 @@ $gradient in $types {
     z-index: 16;
     pointer-events: none;
     margin-left: 24px;
-    width: 203px;
-    min-width: 203px;
+    width: 200px;
+    min-width: 200px;
     height: 30px;
     margin-top: 8px;
     margin-bottom: 7px;

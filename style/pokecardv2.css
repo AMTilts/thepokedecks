@@ -509,7 +509,7 @@
 .frontswitch-grass {
   background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-grass.inverse {
   -webkit-background-clip: text;
@@ -520,7 +520,7 @@
 .frontswitch-fire {
   background-image: linear-gradient(105deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-fire.inverse {
   -webkit-background-clip: text;
@@ -531,7 +531,7 @@
 .frontswitch-fairy {
   background-image: linear-gradient(105deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-fairy.inverse {
   -webkit-background-clip: text;
@@ -542,7 +542,7 @@
 .frontswitch-water {
   background-image: linear-gradient(105deg, gradient(var(water-color), from), gradient(var(water-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-water.inverse {
   -webkit-background-clip: text;
@@ -553,7 +553,7 @@
 .frontswitch-rock {
   background-image: linear-gradient(105deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-rock.inverse {
   -webkit-background-clip: text;
@@ -564,7 +564,7 @@
 .frontswitch-dark {
   background-image: linear-gradient(105deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-dark.inverse {
   -webkit-background-clip: text;
@@ -575,7 +575,7 @@
 .frontswitch-ghost {
   background-image: linear-gradient(105deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-ghost.inverse {
   -webkit-background-clip: text;
@@ -586,7 +586,7 @@
 .frontswitch-ice {
   background-image: linear-gradient(105deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-ice.inverse {
   -webkit-background-clip: text;
@@ -597,7 +597,7 @@
 .frontswitch-dragon {
   background-image: linear-gradient(105deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-dragon.inverse {
   -webkit-background-clip: text;
@@ -608,7 +608,7 @@
 .frontswitch-flying {
   background-image: linear-gradient(105deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-flying.inverse {
   -webkit-background-clip: text;
@@ -619,7 +619,7 @@
 .frontswitch-steel {
   background-image: linear-gradient(105deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-steel.inverse {
   -webkit-background-clip: text;
@@ -630,7 +630,7 @@
 .frontswitch-electric {
   background-image: linear-gradient(105deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-electric.inverse {
   -webkit-background-clip: text;
@@ -641,7 +641,7 @@
 .frontswitch-poison {
   background-image: linear-gradient(105deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-poison.inverse {
   -webkit-background-clip: text;
@@ -652,7 +652,7 @@
 .frontswitch-fighting {
   background-image: linear-gradient(105deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-fighting.inverse {
   -webkit-background-clip: text;
@@ -663,7 +663,7 @@
 .frontswitch-psychic {
   background-image: linear-gradient(105deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-psychic.inverse {
   -webkit-background-clip: text;
@@ -674,7 +674,7 @@
 .frontswitch-ground {
   background-image: linear-gradient(105deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-ground.inverse {
   -webkit-background-clip: text;
@@ -685,7 +685,7 @@
 .frontswitch-bug {
   background-image: linear-gradient(105deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-bug.inverse {
   -webkit-background-clip: text;
@@ -696,7 +696,7 @@
 .frontswitch-normal {
   background-image: linear-gradient(105deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-normal.inverse {
   -webkit-background-clip: text;
@@ -707,7 +707,7 @@
 .frontswitch-grass {
   background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
   border-radius: 0.3rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .frontswitch-grass.inverse {
   -webkit-background-clip: text;
@@ -725,7 +725,7 @@
 
 .tempcontainersprites {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 3px;
   width: 100%;
   grid-row: auto;
   grid-template-areas: "default info" "default info" "back back" "pic3 pic4 pic5";
@@ -744,10 +744,8 @@
   /* background-color: yellow; */
   min-width: 350px;
   width: 40%;
-  -webkit-animation-name: frontback;
-          animation-name: frontback;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-name: frontback;
+  animation-duration: 2s;
 }
 
 .spriteback {
@@ -756,8 +754,8 @@
 
 .tempinfo {
   grid-area: info;
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   background-color: sienna;
 }
 
@@ -768,9 +766,9 @@
 .Page {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 0.5;
   width: 100%;
   height: auto;
   pointer-events: auto;
@@ -782,7 +780,7 @@
   pointer-events: auto;
   z-index: 1;
   margin: 0;
-  padding: 10px 10px;
+  padding: 3px 3px;
 }
 
 #Page:hover #card-img {
@@ -997,10 +995,8 @@
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
   border-radius: calc(2 * var(--borderWidth));
-  -webkit-animation-name: animatedgradient;
-          animation-name: animatedgradient;
-  -webkit-animation: 3s ease alternate infinite;
-          animation: 3s ease alternate infinite;
+  animation-name: animatedgradient;
+  animation: 3s ease alternate infinite;
   background-size: 300% 300%;
   background: linear-gradient(60deg, #6890F0, #445E9C, #9DB7F5);
 }
@@ -1185,18 +1181,6 @@
   background: linear-gradient(121.52deg, #E0C068 9.79%, #EBD69D 21.97%, #787887 41.76%);
 }
 
-@-webkit-keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -1353,15 +1337,6 @@
   --fighting-hover: #D67873;
 }
 
-@-webkit-keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}
-
 @keyframes spin {
   0% {
     --rotate: 0deg;
@@ -1500,12 +1475,12 @@
   z-index: 3;
   pointer-events: none;
   margin-left: 0px;
-  width: 252px;
-  min-width: 252px;
-  height: 285px;
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
   margin-top: 0px;
   margin-bottom: 5px;
-  min-height: 285px;
+  min-height: 10px;
 }
 
 .frame-card-outline-outer {
@@ -1554,12 +1529,12 @@
   z-index: 6;
   pointer-events: none;
   margin-left: 0px;
-  width: 252px;
-  min-width: 250px;
-  height: 285px;
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
   margin-top: 0px;
   margin-bottom: 0px;
-  min-height: 285px;
+  min-height: 200px;
   background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
   border-radius: 1px 1px 4px 4px;
 }
@@ -1651,7 +1626,7 @@
   z-index: 15;
   pointer-events: none;
   margin-left: -2px;
-  width: 250px;
+  width: 200px;
   height: 45px;
   margin-top: 224px;
 }
@@ -1674,8 +1649,8 @@
   z-index: 16;
   pointer-events: none;
   margin-left: 24px;
-  width: 203px;
-  min-width: 203px;
+  width: 200px;
+  min-width: 200px;
   height: 30px;
   margin-top: 8px;
   margin-bottom: 7px;

@@ -16,7 +16,7 @@
 
 .card2 {
     height: 300px;
-    width: 250px;
+    width: 200px;
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -25,7 +25,7 @@
 
 .grid2 {
     height: 100iv;
-    width: 250px;
+    width: 200px;
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;

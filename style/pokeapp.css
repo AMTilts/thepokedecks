@@ -68,7 +68,7 @@ html, body {
 
     .card-container {
         display: inline-flex;
-        margin: 10px 5px 10px 5px;
+        margin: 3px 3px 3px 3px;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
