@@ -1,80 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
 .btn-div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 40%;
-    height: 40px;
-    justify-content: center;
-    /* background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%); */
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    align-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  justify-items: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 500px;
+  height: 40px;
+  /* background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%); */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-div2 {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: space-around;
+  width: 100%;
+  gap: 2px;
 }
 
 .btn-div-border {
-    height: 20px;
-    margin-bottom: 10px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.gradient-box {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: #000000;
+  background-clip: padding-box;
+  border: solid 2px transparent;
 }
 
 .btn-next {
-    display: inline-block;
-     border-width: 3px;
-    border-color: #8b0303;
-    width: 125px;
-    height: 30px;
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);    text-align: center; */
-    background: #8b0303;
-    padding: 5px 5px;
-    color: rgb(240,240,240);
-    /* background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255,255,255,0.001);
-    transition: 256ms all; */
-    position: relative;
-    cursor: pointer;
-    /* padding: 5px 18px; */
-    font-family: 'Rubik', sans-serif;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    /* transition: 256ms all; */
-    border-radius: 8px;
-    
+  display: inline-block;
+  border-width: 1px;
+  width: auto;
+  height: auto;
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);    text-align: center; */
+  background-color: white;
+  padding: 0.5px 1px;
+  color: #8b0303;
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.001);
+  transition: 256ms all; */
+  position: relative;
+  cursor: pointer;
+  /* padding: 5px 18px; */
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  /* transition: 256ms all; */
+  border-radius: 2px;
+  border-style: solid;
 }
 
 .btn-prev {
-    display: inline-block;
-     border-width: 3px;
-    border-color: #8b0303;
-    width: 125px;
-    height: 30px;
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);    text-align: center; */
-    background: #8b0303;
-    padding: 5px 5px;
-    /* color: rgb(240,240,240);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255,255,255,0.001); */
-    /* transition: 256ms all; */
-    position: relative;
-    cursor: pointer;
-    /* padding: 5px 18px; */
-    font-family: 'Rubik', sans-serif;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    /* transition: 256ms all; */
-    border-radius: 8px;
-    
+  display: inline-block;
+  border-width: 1px;
+  width: auto;
+  height: auto;
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);    text-align: center; */
+  background-color: white;
+  padding: 0.5px 1px;
+  color: #8b0303;
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.001);
+  transition: 256ms all; */
+  position: relative;
+  cursor: pointer;
+  /* padding: 5px 18px; */
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  /* transition: 256ms all; */
+  border-radius: 2px;
+  border-style: solid;
+}
+
+.btn-next-wrap {
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgb(24, 12, 12);
+}
+
+.btn-prev-wrap {
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgb(24, 12, 12);
 }
 
 .btn:hover {
-    background-color: #06be00;
-    color: #fff;
+  background-color: #06be00;
+  color: #fff;
 }
 
 /* .btn:before {
@@ -87,7 +126,7 @@
     right: 0px;
     z-index: -1;
   }
-  
+
   .btn:after {
     content: '';
     position: absolute;
@@ -98,4 +137,4 @@
     background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
     transition: 256ms all;
     z-index: -1;
-  } */
+  } *//*# sourceMappingURL=btns.css.map */

@@ -10,13 +10,11 @@ import styles from './shinybutton.module.css'
 // }
 
 
-class ClickButton extends Component {
+export default function ShinyButton({changeShinySprite}) {
 
-    render() {
         return (
-            <div className="shinylogo" id="shinylogoimage" onClick={this.props.changeShinySprite}>{this.props.children}</div>
+            <div className="shinylogo" id="shinylogoimage">
+                <button id="shinyButton" onClick={changeShinySprite}>Shiny</button>
+            </div>
         )
-    }   
-}
-
-export default ClickButton;
+    };

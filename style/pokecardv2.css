@@ -744,10 +744,8 @@
   /* background-color: yellow; */
   min-width: 350px;
   width: 40%;
-  -webkit-animation-name: frontback;
-          animation-name: frontback;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-name: frontback;
+  animation-duration: 2s;
 }
 
 .spriteback {
@@ -997,10 +995,8 @@
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
   border-radius: calc(2 * var(--borderWidth));
-  -webkit-animation-name: animatedgradient;
-          animation-name: animatedgradient;
-  -webkit-animation: 3s ease alternate infinite;
-          animation: 3s ease alternate infinite;
+  animation-name: animatedgradient;
+  animation: 3s ease alternate infinite;
   background-size: 300% 300%;
   background: linear-gradient(60deg, #6890F0, #445E9C, #9DB7F5);
 }
@@ -1185,18 +1181,6 @@
   background: linear-gradient(121.52deg, #E0C068 9.79%, #EBD69D 21.97%, #787887 41.76%);
 }
 
-@-webkit-keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -1351,15 +1335,6 @@
   --fighting-light: #D67873;
   --fighting-dark: #7D1F1A;
   --fighting-hover: #D67873;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
 }
 
 @keyframes spin {

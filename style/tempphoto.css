@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #d6d6d6;
+  background-color: gray;
   width: auto;
   margin: 0, 0;
   padding: 0, 0;
@@ -795,6 +795,13 @@ html {
   border-color: #445E9C;
 }
 
+#shinyDiv {
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  z-index: 100;
+}
+
 .container-back {
   display: flex;
   align-content: flex-start;
@@ -805,6 +812,28 @@ html {
   background: linear-gradient(147.16deg, #FFFFFF 9.64%, #FFFFFF 9.65%, #F0F0F0 84.25%);
   background-size: cover;
   padding-right: 500px;
+}
+
+#imageSpark, #imageSparkCanvas {
+  display: none;
+}
+
+#imageSparkCanvas {
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 48px;
+  left: calc(50% - 128px);
+  pointer-events: none;
+}
+
+#sparkleCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 48px;
+  left: 150px;
+  pointer-events: none;
 }
 
 .container-back-shiny {
@@ -829,6 +858,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-fire {
@@ -843,6 +873,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-fairy {
@@ -857,6 +888,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-water {
@@ -871,6 +903,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-rock {
@@ -885,6 +918,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-dark {
@@ -899,6 +933,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-ghost {
@@ -913,6 +948,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-ice {
@@ -927,6 +963,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-dragon {
@@ -941,6 +978,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-flying {
@@ -955,6 +993,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-steel {
@@ -969,6 +1008,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-electric {
@@ -983,6 +1023,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-poison {
@@ -997,6 +1038,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-fighting {
@@ -1011,6 +1053,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-psychic {
@@ -1025,6 +1068,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-ground {
@@ -1039,6 +1083,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-bug {
@@ -1053,6 +1098,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-normal {
@@ -1067,6 +1113,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+  background-clip: text;
 }
 
 .backcontainer-shiny-grass {
@@ -1081,6 +1128,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
 }
 
 .info-text {
@@ -1704,6 +1752,7 @@ html {
 .shinybutton {
   border-color: purple;
   border-width: 2px;
+  z-index: 50;
 }
 
 .frontbackbuttons {
@@ -1804,7 +1853,6 @@ html {
   font-size: 14px;
   border-radius: 2px 2px 2px 2px;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -1902,8 +1950,9 @@ html {
   margin-left: 5px;
   margin-right: 18px;
   padding-right: 5px;
-  height: 20px;
-  width: 20px;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
 }
 
 .shinybutton {
@@ -1913,14 +1962,15 @@ html {
   align-items: center;
   justify-items: center;
   align-content: center;
-  height: 100%;
-  width: auto;
+  height: 20px;
+  width: 30px;
   justify-content: center;
   border: 1px;
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: black;
   cursor: pointer;
-  background-color: #FFFFFF;
+  background-color: transparent;
+  z-index: 50;
 }
 
 .shinybutton-2 {
@@ -1965,7 +2015,7 @@ html {
   color: rgb(255, 0, 255);
 }
 
-/*# sourceMappingURL=tempphoto.css.map */
+
 .shinyAnim {
   position: relative;
   top: 10;
