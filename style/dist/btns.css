@@ -100,7 +100,7 @@
   border-radius: 3px;
   border-style: solid;
   border-width: 0.5px;
-  border-color: rgb(24, 12, 12);
+  border-color: #180c0c;
 }
 
 .btn-prev-wrap {
@@ -110,11 +110,14 @@
   border-radius: 3px;
   border-style: solid;
   border-width: 0.5px;
-  border-color: rgb(24, 12, 12);
+  border-color: #180c0c;
 }
 
 .btn-next:hover {
   color: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
 
@@ -144,4 +147,4 @@
     background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
     transition: 256ms all;
     z-index: -1;
-  } *//*# sourceMappingURL=btns.css.map */
+  } */

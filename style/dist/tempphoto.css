@@ -842,8 +842,8 @@ html {
   align-items: center;
   flex-direction: column;
   position: relative;
-  background: rgb(19, 0, 38);
-  background: radial-gradient(ellipse at 35% 55%, rgb(19, 0, 38) 0%, rgb(98, 80, 181) 15%, rgb(172, 159, 233) 25%, rgb(213, 213, 218) 35%, rgb(255, 255, 255) 50%);
+  background: #130026;
+  background: radial-gradient(ellipse at 35% 55%, #130026 0%, #6250b5 15%, #ac9fe9 25%, #d5d5da 35%, white 50%);
 }
 
 .backcontainer-shiny-grass {
@@ -1647,6 +1647,7 @@ html {
 
 .pagecontainer {
   display: flex;
+  -ms-flex-line-pack: center;
   align-content: center;
   position: relative;
   flex-direction: row;
@@ -1658,6 +1659,7 @@ html {
 
 .pagecontainer-shiny {
   display: flex;
+  -ms-flex-line-pack: center;
   align-content: center;
   position: relative;
   flex-direction: row;
@@ -1693,7 +1695,7 @@ html {
   flex-wrap: no-wrap;
   border-width: 0.5px 0.5px 0.5px 0.5px;
   border-radius: 5px;
-  border-color: rgb(54, 51, 51);
+  border-color: #363333;
 }
 
 .backdefault {
@@ -1707,6 +1709,7 @@ html {
 }
 
 #next:hover #picdefault {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#A7DB8D));
   background: linear-gradient(180deg, #ffffff 0%, #A7DB8D 100%);
 }
 
@@ -1853,6 +1856,7 @@ html {
   font-size: 14px;
   border-radius: 2px 2px 2px 2px;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -1927,6 +1931,7 @@ html {
 }
 
 .sprite_back:hover {
+  -webkit-filter: drop-shadow(1px 1px 1px gray);
   filter: drop-shadow(1px 1px 1px gray);
 }
 
@@ -2011,16 +2016,16 @@ html {
 }
 
 #middlediv:hover #shinysvg {
-  color: rgb(255, 0, 255);
+  color: fuchsia;
   filter: none;
 }
 
 #shinysvg:hover {
   filter: none;
-  color: rgb(255, 0, 255);
+  color: fuchsia;
 }
 
-
+/*# sourceMappingURL=tempphoto.css.map */
 .shinyAnim {
   position: relative;
   top: 10;
@@ -2083,4 +2088,4 @@ html {
   top: 48px;
   left: calc(50% - 128px);
   pointer-events: none;
-}/*# sourceMappingURL=tempphoto.css.map */
+}

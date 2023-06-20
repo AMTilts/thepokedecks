@@ -87,8 +87,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [frontBackText, setFrontBackText]  = useState('Flip to Back');
     const [isTypeTwo, setIsTypeTwo] = useState(false)
     const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
-    const [slotNumber, setSlotNumber] = useState([]);
-    const [data, setData] = useState([]);
+    const [slotNumber, setSlotNumber] = useState([]);    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [isPokeShiny, setIsPokeShiny] = useState(false);
     const [array, setArray] = useState({shinyArray});
@@ -99,7 +98,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [containerBack, setContainerBack] = useState('container-back');
     const [pageContainer, setPageContainer] = useState('pagecontainer');
     const [shinyAnimation, setShinyAnimation] = useState('shiny-animation')
-    const [sparkleImg, setSparkleImg] = useState('sparkleImg')
+    // const [sparkleImg, setSparkleImg] = useState('sparkleImg')
     const [shinePrecursor, setShinePrecursor] = useState(false);
     const [sparkling, setSparkling] = useState(false);
     const sparkles = useRef('sparkle-Img-before');
@@ -182,7 +181,42 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     //     {shine}
     // }
 
-    const changeShinySprite = ( event, handleShineButtonClick ) => {
+    const changeShinySprite = () => {
+        if (isFront === true && isShiny === false) {
+            console.log(isFront);
+            setPageContainer('pagecontainer-shiny')
+            setContainerBack('container-back-shiny')
+            setShinePrecursor(true)
+            console.log({shine});
+            setCurrentPosition(`${sprites.front_shiny}`)
+            setIsShiny(true)       
+            
+        }
+        else if (isFront === true && isShiny === true) {
+            setContainerBack('container-back')
+            setPageContainer('pagecontainer')
+            setCurrentPosition(`${sprites.front_default}`)
+            setIsShiny(false)
+        }
+        else if (isFront === false && isShiny === false) {
+            setContainerBack('container-back-shiny')
+            setPageContainer('pagecontainer-shiny')
+            setShinePrecursor(true)
+            setCurrentPosition(`${sprites.back_shiny}`)
+            setIsShiny(true)
+        }
+        // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${sprites.front_default}`) {
+        else {
+            setContainerBack('container-back')
+            setPageContainer('pagecontainer')
+            setCurrentPosition(`${sprites.back_default}`)
+            setIsShiny(false)
+            };
+    };
+
+
+    const changeshinysprite2 = ( event, handleshinebuttonclick ) => {
         if (isFront === true && isShiny === false) {
             console.log(isFront);
             setPageContainer('pagecontainer-shiny')
@@ -191,7 +225,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             console.log({shine});
             setCurrentPosition(`${sprites.front_shiny}`)
             setIsShiny(true)
-            {handleShineButtonClick};          
+            {handleshineButtonclick};          
             
         }
         else if (isFront === true && isShiny === true) {
@@ -258,6 +292,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         setCurrentCaption(`${types[0].type.name}`)
     }
 
+    // function addSparkles() {
+    //     for (let i = 0; i < 8; i++) {
+    //       particles.current.push({ scale: 1, radius: 60, angle: 45 * i });
+    //       setParticlesState((prevState) => [...prevState, { scale: 1, radius: 60, angle: 45 * i }]);
+    //     }
+    //   }
+    
+
     function shine() {
         if (!particles.current.length) {
           for (let i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
@@ -268,6 +310,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
           console.log('not processed');
         }
       };
+
+    const clickShiny = (changeShinySprite, shine) => {
+        {changeShinySprite}
+    }
+
 
 
     function oneType() {
@@ -294,10 +341,26 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         console.log('Shiny')
     }
 
-    function clickShinyButton(shine) {
-        shine;
+    async function clickShinyButton(addSparkles, drawerRef, ctx) {
+        console.log('shine processed1');
+        if (!particles.current.length) {
+            for (let i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
+            const drawerRef = setInterval(() => drawSparkles(canvasRef.current.getContext('2d')), 50);
+            setTimeout(() => stopDrawing(drawerRef), 1000);
+            console.log('shine processed');
+          } else {
+            console.log('not processed');
+          }
     }
 
+    const childButton = (shine) => {
+        console.log('passed prop')
+        {shine}
+    }
+
+    const isShinyData = () => {
+        isShiny;
+    }
 
 
     // const drawSparkles = (context) => {
@@ -346,7 +409,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }
                                     </> */}
                             <div id="shinyDiv">
-                                <Sparkles {...props} handleShinyButtonClick={clickShinyButton} />
+                                <Sparkles {...props} isShinyData={data} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
                             </div>
                             <div className="topcontainer">
                                 <div className={pageContainer}>
@@ -362,13 +425,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                     // flipFrontBackButton={flipFrontBackButton}
                                                 >
                                                     <button className="fbbutton">                                                                                                    
-                                                        <Image id="flip" src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
+                                                        <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
                                                             <h2 className="fliptext">{frontBackText}</h2>
                                                             {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
                                                             {/* <button className={`frontswitch-${types[0].type.name}`} onClick={frontBackFront}>{frontBackText}}</button> */}
                                                     </button>
                                                 </FlipButton>
-                                                <ShinyButton changeShinySprite={clickShinyButton} handleShinyButtonClick={clickShinyButton} />
+                                                {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
+                                                <button id="fuButton" onClick={shine}>Shinee</button>
                                             </div>
                                         </div>
                                         {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
