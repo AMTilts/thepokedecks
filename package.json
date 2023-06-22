@@ -33,7 +33,8 @@
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "react-fontawesome": "^1.7.1",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "tailwindcss": "^3.3.2"
   },
   "browser": {
     "fs": false,

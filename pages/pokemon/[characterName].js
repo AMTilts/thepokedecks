@@ -84,7 +84,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [isTwoTypes,setIsTwoTypes] = useState(false);
     const [abilityTwo, setAbilityTwo] = useState('');
     const [isTwoAbilities, setIsTwoAbilities] = useState(false);
-    const [frontBackText, setFrontBackText]  = useState('Flip to Back');
+    const [frontBackText, setFrontBackText]  = useState('Flip');
     const [isTypeTwo, setIsTypeTwo] = useState(false)
     const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
     const [slotNumber, setSlotNumber] = useState([]);    const [data, setData] = useState([]);
@@ -153,22 +153,22 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setIsFront(false)
             setCurrentPosition(`${sprites.back_default}`)
             // setPokeName('Rippin Fat Farts.Balls')
-            setFrontBackText('Flip to Front')
+            setFrontBackText('Front')
         } else if (currentPosition == `${sprites.front_shiny}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_shiny}`)
             // setPokeName('So many balls, so little time')
-            setFrontBackText('Flip to Front')
+            setFrontBackText('Front')
         } else if (currentPosition == `${sprites.back_shiny}` && isFront === false) {
             setIsFront(true)
             setCurrentPosition(`${sprites.front_shiny}`)
-            setFrontBackText('Flip to Back')
+            setFrontBackText('Back')
             // setPokeName('BIG BLACK BALLS')
             setIsFront(true)
         } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
             setIsFront(true)
             setCurrentPosition(`${sprites.front_default}`)
-            setFrontBackText('Flip to Front')
+            setFrontBackText('Back')
             setIsFront(true)
             // setPokeName('Why are you so gay?')
         } else {
@@ -265,10 +265,10 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (currentPosition == `${sprites.back_default}`) flipFront;
         else if (currentPosition == `${sprites.front_default}`) {
             setCurrentPosition(`${sprites.back_default}`)
-            setFrontBackText('Flip to Front');
+            setFrontBackText('Front');
         };
         setCurrentPosition(`${sprites.front_default}`)
-        setFrontBackText('Flip to Back');
+        setFrontBackText('Back');
     }
 
     function spriteBack() {
@@ -400,6 +400,9 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <div className={`type--${types[0].type.name}`}></div>
                     <div>
                     <div className="temp-container">
+                        <div id="shinyDiv">
+                            <Sparkles {...props} isShinyData={data} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                        </div>
                         <div className={containerBack}>
                             <div className="temp-container-title">
                                 <h1 className="title">
@@ -408,9 +411,6 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                             </div>    {/* <>
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }
                                     </> */}
-                            <div id="shinyDiv">
-                                <Sparkles {...props} isShinyData={data} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
-                            </div>
                             <div className="topcontainer">
                                 <div className={pageContainer}>
 
@@ -432,7 +432,6 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                     </button>
                                                 </FlipButton>
                                                 {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
-                                                <button id="fuButton" onClick={shine}>Shinee</button>
                                             </div>
                                         </div>
                                         {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
