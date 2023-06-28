@@ -66,7 +66,7 @@ function useFetchData() {
     const [data, setData] = React.useState([]);
 }
 
-export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, sparkleRef, renderFrame, ...props}) {
+export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, sparkleRef, shinyBlackRef, renderFrame, ...props}) {
     
     const { name, base_experience, types, sprites, abilities } = character;
     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
@@ -198,7 +198,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setCurrentPosition(`${sprites.front_default}`)
             setIsShiny(false)
         }
-        else if (isFront === false && isShiny === false) {
+        else if (isFront === false && isShiny != true) {
             setContainerBack('container-back-shiny')
             setPageContainer('pagecontainer-shiny')
             setShinePrecursor(true)
@@ -400,9 +400,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <div className={`type--${types[0].type.name}`}></div>
                     <div>
                     <div className="temp-container">
-                        <div id="shinyDiv">
-                            <Sparkles {...props} isShinyData={data} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
-                        </div>
+                        
                         <div className={containerBack}>
                             <div className="temp-container-title">
                                 <h1 className="title">
@@ -419,6 +417,9 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                     <div className="slidecontainer">
                                         <div className="spritecontainer">
                                             <div className="spritebuttoncontainer">
+                                                <div id="shinyDiv">
+                                                    <Sparkles {...props} isShinyData={data} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                                                </div>
                                                 <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
                                                 <FlipButton
                                                     ballDefault={ballDefault}

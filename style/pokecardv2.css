@@ -339,7 +339,6 @@
   height: 1em;
   position: relative;
   z-index: 50;
-  background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 24.44%, #9DB7F5 65.12%);
 }
 
 .type-gradient-bug-bottom {
@@ -763,7 +762,7 @@
   margin: 0;
 }
 
-.Page {
+#Page .Page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -772,6 +771,8 @@
   width: 100%;
   height: auto;
   pointer-events: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
 }
 
 .Page-outer {
@@ -781,6 +782,7 @@
   z-index: 1;
   margin: 0;
   padding: 10px 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 #Page:hover #card-img {
@@ -798,6 +800,8 @@
   /* [2] Transition property for smooth transformation of images */
   transition: transform 0.5s ease;
   opacity: 1;
+  box-shadow: 1px 8px 20px grey;
+  -webkit-transition: box-shadow 0.6s ease-in;
 }
 
 #Page:hover #card-img2 {
@@ -813,7 +817,7 @@
   /* content:url(images/card_img.png); */
   transform: scale(1);
   /* [2] Transition property for smooth transformation of images */
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease-in;
 }
 
 #totalcard {
@@ -822,7 +826,7 @@
 
 #totalcard:hover, #Page:hover #frame {
   transform: scale(1);
-  transition: transfrom 0.5s ease;
+  transition: transfrom 0.6 ease-in;
 }
 
 #Page:hover #poke-name-fire {
@@ -988,6 +992,7 @@
 }
 
 #card-bg-gradient-water::after {
+  content: "";
   position: absolute;
   z-index: -1;
   top: calc(-1 * var(--borderWidth));
@@ -1345,11 +1350,6 @@
     --rotate: 360deg;
   }
 }
-#Page:hover #frame-card-bg-white-grass {
-  background: linear-gradient(180deg, #ffffff 0%, #78C850 100%);
-  filter: brightness(150%);
-}
-
 #Page:hover #frame-card-bg-white-fairy {
   background: linear-gradient(180deg, #ffffff 0%, #EE99AC 100%);
   filter: brightness(150%);
@@ -1450,12 +1450,14 @@
   margin: inherit;
   padding: 0;
   background: linear-gradient(151.98deg, rgb(250, 250, 250) 41.0515639586%, rgb(236, 235, 235) 85.8236802152%);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 4px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: box-shadow 0.2s;
 }
 
 #Page:hover #frame {
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.8));
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: box-shadow 0.5s;
 }
 
 #totalcard:hover {
@@ -2516,4 +2518,23 @@
   height: 100%;
   left: 0;
   top: 0;
+}
+
+#Page::afte r #frame {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 295px;
+  opacity: 0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease-in-out;
+}
+
+#Page:hover::after #frame {
+  z-index: 20;
+  content: "";
+  opacity: 1;
 }/*# sourceMappingURL=pokecardv2.css.map */

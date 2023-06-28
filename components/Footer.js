@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Navbar, Nav, FormControl, Button, Form } from 'react-bootstrap'
 import styles from './Navbar.module.css'
 
+
+
 function Footer() {
     return (
         <>
@@ -16,11 +18,7 @@ function Footer() {
               className={styles.d-inline-block align-middle"
               alt="Pokeballs Logo"
             /> */}
-            <Navbar.Brand href="#home" className={styles.navbartitle}>POKEDEX-ICLES</Navbar.Brand>
             // <Navbar className={styles.navlinks}>
-            //   <Nav.Link className="navlink" href="#home">HOME</Nav.Link>
-            //   <Nav.Link classname="navlink" href="#features">POKEDEX</Nav.Link>
-            //   <Nav.Link className="navlink" href="#pricing">TYPES</Nav.Link>
             // </Navbar>
             // {/* <Form inline className={styles.justify-content-end">
             //   <FormControl type="text" placeholder="Search" className={styles.mr-sm-2" />

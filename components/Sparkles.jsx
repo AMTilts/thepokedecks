@@ -1,13 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 // import ShinyButton from './ShinyButton';
+import { ReactSVG } from 'react-svg';
+import Image from 'next/image';
+import ShinyB from "../images/shinyblack.png";
+import ShinyBlack from "./ShinyButton";
+import CanvasDraw from 'react-canvas-draw';
+import shinyBlack from '../images/shinyblack.svg';
+import ShinyButton from './ShinyButton';
 
-const Sparkles = ({ isShinyData, changeShinySprite, ...props}) => {
+
+const Sparkles = ({ isShinyData, changeShinySprite, handleClick, ...props}) => {
   const canvasRef = useRef(null);
   const particles = useRef([]);
   const sparkleRef = useRef(null);
   const [particlesState, setParticlesState] = useState([]);
   const {drawTime, fps = 30, establishContext, esablishedCanvasWidth, width='100%', ...rest} = props
   const shineFunctionRef = useRef();
+  const shinyBlackRef = useRef(null);
 
 
   const drawSparkles = (ctx, changeShinySprite) => {
@@ -41,6 +50,8 @@ const Sparkles = ({ isShinyData, changeShinySprite, ...props}) => {
     let frameCount = 0;
     let AnimationFrameId, fpsInterval, now, then, elapsed;
 
+
+  
     const render = () => {
       now = Date.now();
       elapsed = now - then;
@@ -81,7 +92,7 @@ const Sparkles = ({ isShinyData, changeShinySprite, ...props}) => {
   const handleShineButtonClick = ({ isShiny }) => {
     if ({isShiny} != true) console.log('not shiny'); {
        changeShinySprite();
-       shine();
+       setTimeout(shine(), 1000);
   }
 };
 
@@ -96,9 +107,8 @@ const Sparkles = ({ isShinyData, changeShinySprite, ...props}) => {
       ></canvas>
       {/* <ShinyButton className="shinybutton" style={{ borderWidth: 2, borderRadius: 3, textTransform: 'bold' }} sparkleRef={sparkleRef} handleShineButtonClick={handleShineButtonClick} /> */}
       <img ref={sparkleRef} alt="sparkle" src="/sparkle.png" style={{ display: 'none' }} />
-      <button id="shinyButton" onClick={handleShineButtonClick}>
-        ShinyMan
-      </button>
+        <ShinyButton handleShinyButtonClick={handleClick} />
+      <button id="shinybutton" onClick={handleShineButtonClick}></button>
     </div>
   );
 };

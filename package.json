@@ -24,17 +24,18 @@
     "react-canvas-draw": "^1.2.1",
     "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
+    "react-svg": "^16.1.17",
     "sass": "^1.51.0",
     "sass-convert": "^0.5.2",
     "use-image": "^1.0.12",
-    "webpack": "^5.86.0"
+    "webpack": "^5.88.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "react-fontawesome": "^1.7.1",
-    "sass": "^1.51.0",
-    "tailwindcss": "^3.3.2"
+    "sass": "^1.51.0"
   },
   "browser": {
     "fs": false,
