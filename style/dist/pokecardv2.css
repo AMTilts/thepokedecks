@@ -843,7 +843,7 @@
   height: auto;
   pointer-events: auto;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
 .Page-outer {
@@ -853,7 +853,7 @@
   z-index: 1;
   margin: 0;
   padding: 10px 10px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
 #Page:hover #card-img {
@@ -897,7 +897,7 @@
 
 #totalcard:hover, #Page:hover #frame {
   transform: scale(1);
-  transition: transfrom 0.6 ease-in;
+  transition: transfrom 0.6s ease-in;
 }
 
 #Page:hover #poke-name-fire {
@@ -1042,6 +1042,7 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
+  animation: spin 2.5s linear infinite;
   background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 21.97%, #9DB7F5 41.76%);
 }
 
@@ -1492,6 +1493,8 @@
 #Page:hover #frame-card-bg-white-water {
   background: linear-gradient(180deg, #ffffff 0%, #6890F0 100%);
   filter: brightness(150%);
+  animation-name: spin;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 .Frame {
@@ -1506,7 +1509,6 @@
   background: linear-gradient(151.98deg, #fafafa 41.0515639586%, #ecebeb 85.8236802152%);
   border-radius: 4px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: box-shadow 0.2s;
 }
 
 #Page:hover #frame {
@@ -2572,21 +2574,19 @@
   top: 0;
 }
 
-#Page::afte r #frame {
+#Page:hover::after #Frame {
   content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 295px;
-  opacity: 0;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+#Page:hover #Frame {
+  transform: translateY(-15px);
+  transform: translateX(-5px);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+  transition: transform 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
 
-#Page:hover::after #frame {
-  z-index: 20;
-  content: "";
-  opacity: 1;
+#Page {
+  transition: transform(500ms);
 }

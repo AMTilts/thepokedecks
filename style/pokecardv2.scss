@@ -853,7 +853,7 @@ $gradient in $types {
     height: auto;
     pointer-events: auto;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in;
     
 }
 
@@ -867,7 +867,7 @@ $gradient in $types {
     z-index: 1;
     margin: 0;
     padding: 10px 10px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in;
 }
 
 #Page:hover #card-img {
@@ -912,7 +912,7 @@ $gradient in $types {
 
 #totalcard:hover, #Page:hover #frame{
     transform: scale(1);
-    transition: transfrom .6 ease-in;
+    transition: transfrom .6s ease-in;
 }
 
 #Page:hover #poke-name-fire {
@@ -1066,6 +1066,7 @@ $gradient in $types {
 
 #card-bg-gradient-water {
     @include card-gradient;
+    animation: spin 2.5s linear infinite;
     background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
 }
 
@@ -1471,6 +1472,8 @@ $gradient in $types {
 #Page:hover #frame-card-bg-white-water {
     background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
     filter: brightness(150%);
+    animation-name: spin;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 .Frame {
@@ -1486,7 +1489,6 @@ $gradient in $types {
     // filter:  
     border-radius: 4px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
-    -webkit-transition:  box-shadow .2s;
 }
 
 #Page:hover #frame  {
@@ -2032,19 +2034,19 @@ $gradient in $types {
     top: 0;
 }
 
-#Page::afte r #frame {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 295px;
-    opacity: 0;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-    transition: opacity 0.5s ease-in-out;
+// #Page::after .Page::after {
+//     content: '';
+//     position: absolute;
+//     z-index: -1;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 300px;
+//     opacity: 0;
+//     box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+//     transition: opacity 0.5s ease-in-out;
 
-}
+// }
 
 // #Page:hover {
 //     z-index: 20;
@@ -2052,8 +2054,45 @@ $gradient in $types {
 //     transform: scale(1.25, 1.25);
 // }
 
-#Page:hover::after  #frame {
-    z-index: 20;
+// #Page:hover::after .Page:hover::after {
+//     z-index: 20;
+//     content: '';
+//     opacity: 1;
+// }
+
+
+#Page:hover::after #Frame {
     content: '';
     opacity: 1;
 }
+
+#Page:hover #Frame {
+    // content: '';
+    // position: absolute;
+    // z-index: -1;
+    // width: 100%;
+    // height: 100%;
+    // opacity: 0;
+    transform: translateY(-15px);
+    transform: translateX(-5px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+    transition: transform 0.5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+
+}
+
+#Page {
+    // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    transition: transform(500ms);
+}
+// #Page:hover #Frame {
+//     content: '';
+//     position: absolute;
+//     z-index: -1;
+//     width: 100%;
+//     height: 100%;
+//     opacity: 0;
+//     box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+//     transition: opacity 0.5s ease-in-out;
+
+// }

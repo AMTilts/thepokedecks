@@ -13,6 +13,7 @@
   align-items: center;
   align-content: center;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .btn-div2 {
@@ -22,6 +23,7 @@
   justify-items: space-around;
   width: 100%;
   gap: 2px;
+  margin-bottom: 20px;
 }
 
 .btn-div-border {
