@@ -842,8 +842,12 @@
   width: 100%;
   height: auto;
   pointer-events: auto;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  transition: all 0.5s ease-in;
+  transition: transform 0.3s ease;
+}
+
+#Page {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .Page-outer {
@@ -857,6 +861,7 @@
 }
 
 #Page:hover #card-img {
+  --angle: 40;
   position: relative;
   z-index: 14;
   pointer-events: none;
@@ -888,7 +893,7 @@
   /* content:url(images/card_img.png); */
   transform: scale(1);
   /* [2] Transition property for smooth transformation of images */
-  transition: transform 0.6s ease-in;
+  transition: transform 0.5s ease-in;
 }
 
 #totalcard {
@@ -1511,16 +1516,6 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-#Page:hover #frame {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  -webkit-transition: box-shadow 0.5s;
-}
-
-#totalcard:hover {
-  top: 2px;
-  left: -2px;
-}
-
 .Frame-outer {
   position: relative;
   display: flex;
@@ -1783,6 +1778,10 @@
   text-decoration: shadow whitesmoke;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#Page:hover .poke-name {
+  transform: translateY(-5px) translateX(-5px);
 }
 
 .poke-name-outer {
@@ -2242,6 +2241,10 @@
   color: #B8B8D0;
 }
 
+#Page:hover .TYPENAME {
+  transform: translateY(-5px) translateX(-5px);
+}
+
 .TYPENAME-logo {
   position: relative;
   z-index: 8;
@@ -2580,13 +2583,65 @@
 }
 
 #Page:hover #Frame {
-  transform: translateY(-15px);
-  transform: translateX(-5px);
+  transform: translateY(-5px) translateX(-5px);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
-  transition: transform 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-#Page {
-  transition: transform(500ms);
+#Page:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+  transition: transform 0.3s ease-in-out;
 }
+
+#Page:hover .Page {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#Frame {
+  width: 100%;
+  transition: transform 0.5s ease;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.169);
+}
+
+#Frame {
+  box-shadow: none;
+}
+
+/* Division */
+#__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(2) a:nth-child(1) div:nth-child(1) #Page div:nth-child(1) #Frame > div:nth-child(1) {
+  box-shadow: 0px 0px 3px 0px #0000ee !important;
+}
+
+/* Page */
+#Page {
+  box-shadow: none;
+}
+
+/* Frame (hover) */
+#Frame:hover {
+  max-width: 100%;
+}
+
+/* Body */
+body {
+  left: 1px;
+}
+
+/* Image (hover) */
+#Page:hover img {
+  transform: scale(1.1) rotateY(-2deg) translatex(2px) translatey(-3px);
+  perspective: 399px;
+}
+
+/* Span Tag (hover) */
+div > span:hover {
+  transform: scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
+  perspective: 584px;
+}
+
+/* Span Tag (hover) */
+#Page span span:hover {
+  transform: scale(0.52);
+}
+
+/* Division (hover) */
