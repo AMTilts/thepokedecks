@@ -66,6 +66,7 @@ export default function Character ({ data, character }) {
             <Image
                 loader={typeLogo}
                 src={`../../style/images/${types[0].type.name}.png`}
+                alt="Pokemon Type Logo"
                 width={20}
                 height={20}
             />

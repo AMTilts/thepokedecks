@@ -786,6 +786,10 @@ $gradient in $types {
     align-items: center;
 }
 
+#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
+    transform: translateY(-2px) translateX(-7px);
+}
+
 @mixin type-name {
     position: relative;
     z-index: 12;
@@ -848,7 +852,7 @@ $gradient in $types {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 1rem 1rem 1rem 1rem;
+    // margin: 1rem 1rem 1rem 1rem;
     width: 100%;
     height: auto;
     pointer-events: auto;
@@ -866,7 +870,7 @@ $gradient in $types {
     // width: 100%;
     // height: auto;
     // pointer-events: auto;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+    // box-shadow: 0 5px 5px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
     
 }
@@ -900,7 +904,7 @@ $gradient in $types {
     /* [2] Transition property for smooth transformation of images */
     transition: transform 0.5s ease;
     opacity: 1;
-    box-shadow: 1px 8px 20px grey;
+    // box-shadow: 1px 8px 20px grey;
     -webkit-transition:  box-shadow .6s ease-in;
    
 }
@@ -932,7 +936,7 @@ $gradient in $types {
 
 #Page:hover #poke-name-fire {
     background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
-    text-decoration: drop-shadow(3px whitesmoke);
+    // text-decoration: drop-shadow(3px whitesmoke);
     background-clip: text;
 }
 
@@ -1048,16 +1052,42 @@ $gradient in $types {
     border-radius: var(--borderWidth);
 }
 
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+        opacity: 0;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+        transition: opacity(1);
+        transform: rotateX('50deg');
+        transform: rotateY(60deg);
+        background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+    }
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
 @mixin cardspin {
-    @include card-gradient;
+    --borderWidth: 1px 1px 4px 4px;
     content: '';
     position: absolute;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    border-radius: calc(2 * var(--borderWidth));
+    z-index: 5;
+    top: calc(-1 * --borderWidth);
+    left: 150px;
+    height: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+    width: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+    border-radius: calc(2 * (border-width(1px 1px 4px 4px)));
     animation-name: animatedgradient;
     animation: 3s ease alternate infinite;
     background-size: 300% 300%;
@@ -1069,10 +1099,10 @@ $gradient in $types {
     background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-light 24.44%, $fairy-dark 65.12%);
 }
 
-#card-bg-gradient-fighting {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
-}
+// #card-bg-gradient-fighting {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+// }
 
 #card-bg-gradient-bug {
     @include card-gradient;
@@ -1084,6 +1114,11 @@ $gradient in $types {
     animation: spin 2.5s linear infinite;
     background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
 }
+
+
+
+
+
 
 #card-bg-gradient-water::after {
     content: '';
@@ -1160,17 +1195,17 @@ $gradient in $types {
     background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-light 21.97%, $steel-dark 41.76%);
 }
 
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+// @keyframes animatedgradient {
+//     0% {
+//         background-position: 0% 50%;
+//     }
+//     50% {
+//         background-position: 100% 50%;
+//     }
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
 
 .card-bg-gradient-outer {
     position: absolute;
@@ -2095,23 +2130,25 @@ $gradient in $types {
     // content: '';
     // position: absolute;
     // z-index: -1;
-    // width: 100%;
-    // height: 100%;
+    width: 100%;
+    height: 100%;
     // opacity: 0;
     transform: translateY(-5px) translateX(-5px);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease-in-out, opacity .3s ease-in-out;
+    color: rgba(0, 0, 0, 0.25);
 
 }
 
 #Page:hover {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+    // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+    // color: rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease-in-out;
 }
 
-#Page:hover .Page {
-    transition: opacity .3s ease-in-out;
-}
+// #Page:hover .Page {
+//     transition: opacity .3s ease-in-out;
+// }
 
 
 
@@ -2119,7 +2156,15 @@ $gradient in $types {
     // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
     width: 100%;
     transition: transform .5s ease;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.169);
+    // background-color: rgba(0, 0, 0, 0.54);
+    // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.Page {
+    width: 100%;
+    height: 100%;
+    // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
 }
 // #Page:hover #Frame {
 //     content: '';
@@ -2144,13 +2189,14 @@ $gradient in $types {
    
    /* Page */
    #Page{
-    box-shadow:none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
    }
    
    /* Frame (hover) */
-   #Frame:hover{
-    max-width:100%;
-   }
+//    #Frame:hover{
+//     max-width:100%;
+//    }
    
    /* Body */
    body{
@@ -2175,3 +2221,55 @@ $gradient in $types {
    }
    
    /* Division (hover) */
+
+   #card-bg-gradient-fighting {
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--fighting-light),
+        var(--fighting-color)
+    );
+    border: var(--borderWidth) solid var(--fighting-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-fighting{
+    animation: rotateGradient 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+}
+
+@keyframes rotateGradient {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+    }
+
+    25% {
+        --rotate: 30deg;
+        background: linear-gradient(121.52deg, $fighting-color 30.79%, $fighting-light 51.97%, $fighting-dark 91.76%);
+    }
+
+    50% {
+        --rotate: 90deg;
+        background-postion: 100% 50%;
+        background: linear-gradient(121.52deg, $fighting-light 9.79%, $fighting-dark 21.97%, $fighting-color 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+    }
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+

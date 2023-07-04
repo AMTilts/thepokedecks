@@ -6,7 +6,6 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
   const sparkleRef = useRef(null);
   const [particlesState, setParticlesState] = useState([]);
   const [frameCount, setFrameCount] = useState(0);
-  const [trackShiny, setTrackShiny] = useState(false);
 
   const drawSparkles = (ctx) => {
     const canvas = canvasRef.current;
@@ -30,8 +29,8 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
   function shine() {
     if (!particles.current.length) {
       for (let i = 0; i < 8; i++) setTimeout(addSparkles, i * 200);
-      const drawerRef = setInterval(() => drawSparkles(canvasRef.current.getContext('2d')), 1500); // Adjust this interval duration
-      setTimeout(() => stopDrawing(drawerRef), 5000);
+      const drawerRef = setInterval(() => drawSparkles(canvasRef.current.getContext('2d')), 1500);
+      setTimeout(() => stopDrawing(drawerRef), 3000);
       console.log('shine processed');
     } else {
       console.log('not processed');
@@ -44,8 +43,8 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
 
     const render = () => {
       requestAnimationFrame(render);
-      drawSparkles(ctx);
-    };
+          drawSparkles(ctx);
+      };
 
     const startRendering = () => {
       render();
@@ -60,7 +59,7 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
 
   const addSparkles = () => {
     for (let i = 0; i < 8; i++) {
-      particles.current.push({ scale: 2, radius: 60, angle: 45 * i });
+      particles.current.push({ scale: 1, radius: 60, angle: 45 * i });
       setParticlesState((prevState) => [...prevState, { scale: 1, radius: 60, angle: 45 * i }]);
     }
   };
@@ -72,14 +71,12 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
   }
 
   const handleShineButtonClick = () => {
-    if (trackShiny === true) {
+    if (!isShinyData) {
       console.log('not shiny');
-      setTrackShiny(false)
-    } else if (trackShiny === false) {
+    } else {
       changeShinySprite();
       setTimeout(shine(), 25000);
-      setTrackShiny(true)
-    } console.log('err err what dat who dere?')
+    }
   };
 
   return (
@@ -90,8 +87,8 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
         width={500}
         height={500}
       ></canvas>
-        <img ref={sparkleRef} alt="sparkle" src="/sparkle.png" width={40} height={40} style={{ display: 'none' }} />
-      <button id="shinyButtonCanvas" onClick={handleShineButtonClick}>Shiny</button>
+      <img ref={sparkleRef} alt="sparkle" src="/sparkle.png" style={{ display: 'none' }} />
+      <button id="shinybutton" onClick={handleShineButtonClick}>Shine Button</button>
     </div>
   );
 };

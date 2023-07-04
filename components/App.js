@@ -8,7 +8,8 @@ import PokeCard from './PokeCard';
 import '../services/pokemon'
 import loading from '../loading/loading.gif'
 import Navbar from './Navbar'
-import Link from 'next/link';
+import Link from 'next/link'
+import Image from 'next/image'
 // import styles from "./Button.module.css";
 
 // import '../style/pokecard.css'
@@ -32,9 +33,9 @@ function App() {
     const [ pokeAbility, setPokeAbility ] = useState(0);
     const [ pokeLink, setPokeLink] = useState('');
     const [ pokeId, getPokeId] = useState('');
-
+    
     async function getServerSideProps({ query }) {
-        const { id } = query;
+        const { id } = {query};
         const res = await fetch(`${baseUrl}/${id}`);
         const data = await res.json();
         console.log(res.json);
@@ -45,102 +46,6 @@ function App() {
         }
     };
     
-
-/*  useEffect(async () => {
-        // setLoading(true)
-        const res = await axios.get(baseUrl + currentUrl, {
-                // cancelToken: new axios.CancelToken(c => cancel = c),
-            }).then( res => {
-                setPrevUrl(res.data.prev);
-                setNextUrl(res.data.next);
-                // setLoading(false),
-                return axios.all(res.map(p => p.url));
-            }).then(res => {
-                setPokemonssssss(res.map(sp => sp.data));
-                console.log(sp.data);
-                return axios.all(res.map(sp => axios.get(sp.data.results[0])));
-            }).then(res => {
-                setNames(res.map(n => n.data.index.names));
-                paddedIndex = {index + 1};
-                setSprites(res.map(s => s.data.sprites.front_default));
-                return axios.all(res.map(s => {
-                })
-            )
-            })
-    }, [currentUrl]); */
-/* 
-    async function getPokeData() {
-        setLoading(true)
-        let cancel
-        await axios.get(currentUrl, {
-            cancelToken: new axios.CancelToken(c => cancel = c)})
-            .then(res => {
-            setLoading(false);
-            setPrevUrl(res.data.prev);
-            setNextUrl(res.data.next);
-            await loadingPokemon(response.results);
-            setLoading(false);
-/*             setPokemons(res.data.results.map((p, index) => {
-                const trueIndex = (index + 1)
-                const image = baseUrl + `${trueIndex}`;
-                
-
-                const imageCall = () => {
-                        axios.get((baseUrl + `${trueIndex}`)
-                            .then(res => {
-                                setImageUrl(res.data.sprites.front_default)
-                                
-                                }
-                        ))
-                    }
-                (imageCall);
-                return {
-                    ...p,
-                    trueIndex,
-                    imageCall
-                }
-            })) */
-            // setPokeState(imageCall);
-            // })
-/*         s
-        else return () => cancel();
-    }  */
-
-
-            // setPokemons(res.data.results.map((result, index) => {
-            //     const trueIndex = (index + 1)
-            //     const image = baseUrl + `${trueIndex}.png`;
-            //     return {
-            //         ...result,
-            //         image,
-            //         trueIndex
-            //     };   
-            //     }))
-            
-
-/*     async function getPokeSprites(pokemons) {
-        let cancel
-        await axios.get(currentUrl + `${trueIndex}`, {
-            cancelToken: new axios.CancelToken(c => cancel = c)})
-            .then(res => {
-                setImageUrl(res.data.sprites.front_default)
-                pokeImage = currentUrl + `${trueIndex}.png`;
-
-                return {
-                    pokeImage
-                }
-            })
-        }
-         */
- 
-/*     useEffect(() => {
-        try {
-            getPokeData();
-        }catch(error) {
-            console.log(error, error.message);
-        }
-        getPokeData();
-    }, [currentUrl]); */
 
     useEffect(() => {
         async function fetchData() {
@@ -189,51 +94,7 @@ function App() {
 
     
 
-    // let dataToRender;
-    // if (pokeData) {
-    //     dataToRender = pokeData.map(pokemon, i => {
-    //         return <PokeCard key={i} pokemon={pokemon} />;
-//     });  
-    // }
-
-
-
     
-
-
-
-
-
-                        /* setPokemonsssssss(res.data.results.map((result, index, url) => {
-                        const paddedIndex = (index + 1);
-                        return {
-                            ...result,
-                            index, ...url
-                        };
-                    })) */
-                    // setImage(res.data.results.url);
-                
- /*            () => {
-                    // cancel(), 
-                axios
-                    .get('https://pokeapi.co/api/v2/pokemon/50')
-                    .then((res => {
-                        setImageUrl(res.data.sprites.front_default)
-                        setImageUrls(res.data.map(( sprites, url) => {
-                            const frontImage = (url)
-                            return {
-                                ...sprites,
-                                url
-                            }
-                        }))
-                    }
-                ))
-                
-            } */
-            
-   
-
-        // if(loading) return 'BRB, Taking a BIG, FAT DUMP....'
 
         function gotoPrevPage() {
             setCurrentUrl(prevUrl)
@@ -244,36 +105,10 @@ function App() {
         };
 
 
-        // function pokeDataProps( {pokemons, pokeState} ) {
-        //     return (
-        //         <div className="div-container">
-        //              {/* <PokemonData pokemons={pokemons ? pokemons : console.log('tissue issue')} /> */}
-        //             <ul>
-        //                 {pokemons && pokemons.map((p, index) => {
-        //                     <li key={indx.index}>
-        //                         <h3>{p.name}</h3>
-        //                         <a href={baseUrl + '/pokemon?id=' + (`${index.index} + 1`)}>
-        //                         <img src={pokeState} alt={p.name} />
-        //                         <button className="button-map">More Info</button>
-        //                         </a>
-        //                     </li>
-        //                   })}
-        //             </ul>
-        //         </div>
-        //     )
-        // }
-
-        
-
-
-        // console.log(imageUrl);
-
-        // console.log(pokemons);
-
         return (
             <>
                 <div>
-                    {loading ? <img src={loading} /> : (
+                    {loading ? <Image width="200px" height="209px" alt="loading" src="/loading/loading.gif" /> : (
                         <>
                             <div className="btn-div-border">
                                 <Pagination 

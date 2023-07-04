@@ -758,6 +758,10 @@
   background-color: sienna;
 }
 
+#Page:hover div[class^=type-logo-TYPENAME-], div[className="type-logo-TYPENAME-*"] {
+  transform: translateY(-2px) translateX(-7px);
+}
+
 .websiteBody {
   margin: 0;
 }
@@ -767,7 +771,6 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 1rem 1rem 1rem 1rem;
   width: 100%;
   height: auto;
   pointer-events: auto;
@@ -775,7 +778,6 @@
 }
 
 #Page {
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -805,7 +807,6 @@
   /* [2] Transition property for smooth transformation of images */
   transition: transform 0.5s ease;
   opacity: 1;
-  box-shadow: 1px 8px 20px grey;
   -webkit-transition: box-shadow 0.6s ease-in;
 }
 
@@ -836,8 +837,6 @@
 
 #Page:hover #poke-name-fire {
   background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
-  -webkit-text-decoration: drop-shadow(3px whitesmoke);
-          text-decoration: drop-shadow(3px whitesmoke);
   -webkit-background-clip: text;
           background-clip: text;
 }
@@ -936,6 +935,30 @@
   background: linear-gradient(180deg, #ffffff 40%, #F5AC78 80%);
 }
 
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    transition: opacity(1);
+    transform: rotateX("50deg");
+    transform: rotateY(60deg);
+    background: linear-gradient(121.52deg, #6890F0 9.79%, #9DB7F5 21.97%, #445E9C 41.76%);
+  }
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
 #card-bg-gradient-fairy {
   --borderWidth: 1px 1px 4px 4px;
   position: relative;
@@ -949,21 +972,6 @@
   border-color: lime;
   border-radius: var(--borderWidth);
   background: linear-gradient(121.52deg, #EE99AC 9.79%, #F4BDC9 24.44%, #9B6470 65.12%);
-}
-
-#card-bg-gradient-fighting {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
 }
 
 #card-bg-gradient-bug {
@@ -1192,17 +1200,6 @@
   background: linear-gradient(121.52deg, #E0C068 9.79%, #EBD69D 21.97%, #787887 41.76%);
 }
 
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .card-bg-gradient-outer {
   position: absolute;
   display: flex;
@@ -2531,24 +2528,26 @@
 }
 
 #Page:hover #Frame {
+  width: 100%;
+  height: 100%;
   transform: translateY(-5px) translateX(-5px);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 #Page:hover {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
   transition: transform 0.3s ease-in-out;
-}
-
-#Page:hover .Page {
-  transition: opacity 0.3s ease-in-out;
 }
 
 #Frame {
   width: 100%;
   transition: transform 0.5s ease;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.169);
+}
+
+.Page {
+  width: 100%;
+  height: 100%;
 }
 
 #Frame {
@@ -2562,14 +2561,10 @@
 
 /* Page */
 #Page {
-  box-shadow: none;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Frame (hover) */
-#Frame:hover {
-  max-width: 100%;
-}
-
 /* Body */
 body {
   left: 1px;
@@ -2592,4 +2587,47 @@ div > span:hover {
   transform: scale(0.52);
 }
 
-/* Division (hover) *//*# sourceMappingURL=pokecardv2.css.map */
+/* Division (hover) */
+#card-bg-gradient-fighting {
+  background-size: 600% 600%;
+  --borderWidth: 1px;
+  background-image: linear-gradient(to bottom, var(--fighting-light), var(--fighting-color));
+  border: var(--borderWidth) solid var(--fighting-dark);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
+}
+
+#Page:hover #card-bg-gradient-fighting {
+  animation: rotateGradient 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+}
+
+@keyframes rotateGradient {
+  0% {
+    --rotate: 0deg;
+    background-position: 0% 50%;
+    background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
+  }
+  25% {
+    --rotate: 30deg;
+    background: linear-gradient(121.52deg, #C03028 30.79%, #D67873 51.97%, #7D1F1A 91.76%);
+  }
+  50% {
+    --rotate: 90deg;
+    background-postion: 100% 50%;
+    background: linear-gradient(121.52deg, #D67873 9.79%, #7D1F1A 21.97%, #C03028 41.76%);
+  }
+  100% {
+    --rotate: 360deg;
+    background-position: 0% 50%;
+    background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
+  }
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}/*# sourceMappingURL=pokecardv2.css.map */
