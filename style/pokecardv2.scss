@@ -1096,7 +1096,7 @@ $gradient in $types {
 // background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);
 #card-bg-gradient-fairy {
     @include card-gradient;
-    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-light 24.44%, $fairy-dark 65.12%);
+    background: radial-gradient(121.52deg, $fairy-color 9.79%, $fairy-light 24.44%, $fairy-dark 65.12%);
 }
 
 // #card-bg-gradient-fighting {

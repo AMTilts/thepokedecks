@@ -31,23 +31,6 @@
 }
 
 /* Shiny button */
-#shinyButton {
-  transform: translatex(640px) translatey(-358px);
-  position: relative;
-  top: 400px;
-  background-color: transparent;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  min-height: 20px;
-  height: 30px;
-  font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  z-index: 10;
-}
-
 #shinyDiv {
   display: flex;
   position: absolute;
@@ -1041,9 +1024,6 @@ html {
   width: 100%;
   position: relative;
   font-size: 1em;
-}
-
-.p caption-bug {
   position: relative;
   font-size: 18px;
   position: relative;
@@ -1053,461 +1033,185 @@ html {
   font-weight: bold;
   padding-left: 5px;
   margin-left: 5px;
+}
+
+.p caption-bug {
+  display: inline-flex;
   color: #6D7815;
 }
 
 .p caption-dark {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #49392F;
 }
 
 .p caption-dragon {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #4924A1;
 }
 
 .p caption-electric {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #A1871F;
 }
 
 .p caption-fairy {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #9B6470;
 }
 
 .p caption-fighting {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #7D1F1A;
 }
 
 .p caption-fire {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #9C531F;
 }
 
 .p caption-flying {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #6D5E9C;
 }
 
 .p caption-ghost {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #493963;
 }
 
 .p caption-grass {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #4E8234;
 }
 
 .p caption-ground {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #927D44;
 }
 
 .p caption-ice {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #638D8D;
 }
 
 .p caption-normal {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #6D6D4E;
 }
 
 .p caption-poison {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #682A68;
 }
 
 .p caption-psychic {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #F85888;
 }
 
 .p caption-rock {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #786824;
 }
 
 .p caption-steel {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #787887;
 }
 
 .p caption-water {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   color: #445E9C;
 }
 
 .p caption-bug:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-dark:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-dragon:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-electric:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-fairy:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-fighting:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-fire:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-flying:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-ghost:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-grass:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-ground:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-ice:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-normal:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-poison:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-psychic:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-rock:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-steel:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
 .p caption-water:hover {
-  position: relative;
-  font-size: 18px;
-  position: relative;
-  align-items: baseline;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 5px;
+  display: inline-flex;
   font-size: 100px;
 }
 
@@ -1882,7 +1586,7 @@ html {
   height: 20px;
   width: 30px;
   justify-content: center;
-  border: 1px;
+  border: 3px;
   border-radius: 5px;
   border-color: black;
   cursor: pointer;
@@ -2071,11 +1775,15 @@ html {
 }
 
 /* Shiny button */
-#shinyButton {
+#shinybutton {
   transform: translatex(0px) translatey(0px) !important;
   right: auto !important;
-  left: 375px;
-  top: 125px !important;
+  left: 400px;
+  top: 250px !important;
+  border-width: 2px;
+  border-color: black;
+  background-color: transparent;
+  border-radius: 4px;
 }
 
 /* Templateinfodiv water */
@@ -2134,4 +1842,76 @@ html {
 /* Frontbackbuttons */
 .spritecontainer .frontbackbuttons {
   z-index: 50;
+}
+
+#shinyButtonCanvas .shinyButtonCanvas {
+  display: flex;
+  border-width: 1px;
+  border-color: --grass-dark;
+  border-radius: 4px;
+  background-color: transparent;
+  width: 200px;
+  height: auto;
+  top: 250px;
+  left: 250px;
+}
+
+/* Image */
+#__next .poke-temp-container div .temp-container .container-back .topcontainer .pagecontainer .slidecontainer .spritecontainer .spritebuttoncontainer > span span img {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+/* Pogoimg */
+#pogoimg {
+  width: 350px !important;
+}
+
+/* Image */
+.spritebuttoncontainer span span img {
+  overflow: visible;
+  min-width: 14%;
+}
+
+/* Fbbutton */
+.spritebuttoncontainer .frontbackbuttons .fbbutton {
+  display: flex;
+  width: 60px;
+  height: 20px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Shiny button canvas */
+#shinyButtonCanvas {
+  border-width: 1px;
+  border-color: #bebe02;
+  border-style: solid;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-radius: 10px;
+  position: absolute;
+  top: 129px;
+  left: 300px;
+  background-color: rgba(22, 160, 133, 0.81);
+  transform: translatex(6px) translatey(-6px);
+  background-image: linear-gradient(to right, #cac531 0%, #f3f9a7 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: normal;
+  background-position-x: 24%;
+  background-position-y: 32%;
+  color: transparent;
+  background-clip: text;
+  background-repeat: repeat;
+  backdrop-filter: hue-rotate(51deg) saturate(1.95);
+  cursor: pointer;
+  z-index: 562;
+}
+
+/* Shiny canvascss */
+#shinyCanvasCSS {
+  transform: translatex(0px) translatey(0px);
 }

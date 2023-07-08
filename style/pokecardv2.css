@@ -971,7 +971,7 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #EE99AC 9.79%, #F4BDC9 24.44%, #9B6470 65.12%);
+  background: radial-gradient(121.52deg, #EE99AC 9.79%, #F4BDC9 24.44%, #9B6470 65.12%);
 }
 
 #card-bg-gradient-bug {

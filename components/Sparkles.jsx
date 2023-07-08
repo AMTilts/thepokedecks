@@ -1,21 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image'
 
-const Sparkles = ({ isShinyData, changeShinySprite }) => {
+
+const Sparkles = ({isShiny, isFront, changeShinySpriteTT, changeShinySpriteFF, changeShinySpriteFT, changeShinySpriteTF}) => {
   const canvasRef = useRef(null);
   const particles = useRef([]);
   const sparkleRef = useRef(null);
   const [particlesState, setParticlesState] = useState([]);
   const [frameCount, setFrameCount] = useState(0);
   const [trackShiny, setTrackShiny] = useState(false);
+  const shinyBlackRef = useRef(null);
+
+  // const drawSparkles = (ctx) => {
+  //   const canvas = canvasRef.current;
+  //   if (!canvas) return; {
+  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  //   for (let p of particles.current) {
+  //     const centerX = canvas.width / 2;
+  //     const centerY = canvas.height / 2;
+  //     const radiusMultiplier = 2;
+
+  //     const x = centerX + p.radius * radiusMultiplier * Math.cos((p.angle * Math.PI) / 180);
+  //     const y = centerY + p.radius * radiusMultiplier * Math.sin((p.angle * Math.PI) / 180);
+  //     const scaled = Math.max(32 * p.scale, 0);
+  //     ctx.drawImage(sparkleRef.current, x - scaled / 2, y - scaled / 2, scaled, scaled);
+  //     if (p.scale > 0.6) p.scale -= 0.2;
+  //     else p.scale -= 0.05;
+  //     p.angle -= 5;
+  //     p.radius += 5;
+  //   }
+  //   }
+  // };
 
   const drawSparkles = (ctx) => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+  
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
     for (let p of particles.current) {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       const radiusMultiplier = 2;
-
+  
       const x = centerX + p.radius * radiusMultiplier * Math.cos((p.angle * Math.PI) / 180);
       const y = centerY + p.radius * radiusMultiplier * Math.sin((p.angle * Math.PI) / 180);
       const scaled = Math.max(32 * p.scale, 0);
@@ -70,19 +97,49 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
     particles.current = [];
     setParticlesState([]);
   }
+// 
+//   const handleShineButtonClick = (props) => {
+//     if (props.isShinyData === true && isFrontData == true) {
+//       setTrackShiny(false)
+//       changeShinySpriteTF();
+//     } else if (props.isShinyData === true && props.isFrontData == false) {
+//       setTrackShiny(false);
+//       changeShinySpriteTF();
+//       setTimeout(shine(), 2000);
+//     } else if (props.isShinyData === false && props.isFrontData == true) {
+//       setTrackShiny(true);
+//       changeShinySpriteFT();
+//       setTimeout(shine(), 2000)
+//     } else if (props.isShinyData === false && props.isFrontData == false) {
+//       setTrackShiny(true);
+//       changeShinySpriteFF();
+//       setTimeout(shine(), 2000)
+//   }
+// }
 
-  const handleShineButtonClick = () => {
-    if (trackShiny === true) {
-      console.log('not shiny');
-      setTrackShiny(false)
-    } else if (trackShiny === false) {
-      changeShinySprite();
-      setTimeout(shine(), 25000);
-      setTrackShiny(true)
-    } console.log('err err what dat who dere?')
-  };
+const handleShineButtonClick = () => {
+  console.log(isShiny, isFront)
+  if (isShiny === true && isFront == true) {
+    setTrackShiny(false)
+    changeShinySpriteTT();
+  } else if (isShiny === true && isFront == false) {
+    setTrackShiny(false);
+    changeShinySpriteTF();
+    // setTimeout(shine, 1000);
+  } else if (isShiny === false && isFront == true) {
+    setTrackShiny(true);
+    changeShinySpriteFT();
+    setTimeout(shine, 1000)
+  } else if (isShiny === false && isFront == false) {
+    setTrackShiny(true);
+    changeShinySpriteFF();
+    setTimeout(shine, 1000)
+}
+}
+
 
   return (
+    <>
     <div>
       <canvas
         id="shinyCanvasCSS"
@@ -90,9 +147,12 @@ const Sparkles = ({ isShinyData, changeShinySprite }) => {
         width={500}
         height={500}
       ></canvas>
-        <img ref={sparkleRef} alt="sparkle" src="/sparkle.png" width={40} height={40} style={{ display: 'none' }} />
-      <button id="shinyButtonCanvas" onClick={handleShineButtonClick}>Shiny</button>
     </div>
+    <div style={{display: 'relative', top: 150, left: 350}}>
+      <img ref={sparkleRef} alt="sparkle" src="/sparkle.png" width={40} height={40} style={{ display: 'none' }} />
+      <button id="shinyButtonCanvas" onClick={handleShineButtonClick}><Image ref={shinyBlackRef} alt="shinyBlack" src="/images/shinyblack.svg" width={20} height={20} style={{top: 200, left: 250}} /></button>
+    </div>
+    </>
   );
 };
 

@@ -308,6 +308,10 @@ $gradient in $types {
     margin-left: 5px;
 }
 
+@mixin caption {
+    display: inline-flex;
+}
+
 @each $type,
 $color in $darkcolors {
     .p caption-#{$type} {
@@ -1242,3 +1246,65 @@ $d: a;
     top: 250px;
     left: 250px;
    }
+
+   /* Image */
+#__next .poke-temp-container div .temp-container .container-back .topcontainer .pagecontainer .slidecontainer .spritecontainer .spritebuttoncontainer > span span img{
+    width:300px !important;
+    height:300px !important;
+   }
+   
+   /* Pogoimg */
+   #pogoimg{
+    width:350px !important;
+   }
+   
+   /* Image */
+   .spritebuttoncontainer span span img{
+    overflow:visible;
+    min-width:14%;
+   }
+   
+   /* Fbbutton */
+   .spritebuttoncontainer .frontbackbuttons .fbbutton{
+    display: flex;
+    width: 60px;
+    height: 20px;
+    flex:0 0 auto;
+    align-items:center;
+    justify-content: space-between;
+   }
+   
+   /* Shiny button canvas */
+   #shinyButtonCanvas{
+    border-width:1px;
+    border-color:#bebe02;
+    border-style:solid;
+    border-bottom-style:solid;
+    border-bottom-width:2px;
+    border-right-width:2px;
+    border-radius: 10px;
+    position:absolute;
+    top:129px;
+    left:300px;
+    background-color:rgba(22,160,133,0.81);
+    transform:translatex(6px) translatey(-6px);
+    background-image:linear-gradient(to right, #cac531 0%, #f3f9a7 100%);
+    background-size:cover;
+    background-attachment:fixed;
+    background-blend-mode:normal;
+    background-position-x:24%;
+    background-position-y:32%;
+    color:transparent;
+    background-clip:text;
+    background-repeat:repeat;
+    backdrop-filter: hue-rotate(51deg) saturate(1.95);
+    cursor:pointer;
+    z-index:562;
+   }
+   
+   /* Shiny canvascss */
+   #shinyCanvasCSS{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   
