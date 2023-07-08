@@ -180,329 +180,26 @@
   background: linear-gradient(180deg, #ffffff 0%, #78C850 100%);
 }
 
-.type-gradient-bug {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A8B820 9.79%, #6D7815 24.44%, #C6D16E 65.12%);
-}
-
-.type-gradient-dark {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #705848 9.79%, #49392F 24.44%, #A29288 65.12%);
-}
-
-.type-gradient-dragon {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #7038F8 9.79%, #4924A1 24.44%, #A27DFA 65.12%);
-}
-
-.type-gradient-electric {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #F8D030 9.79%, #A1871F 24.44%, #FAE078 65.12%);
-}
-
-.type-gradient-fairy {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #EE99AC 9.79%, #9B6470 24.44%, #F4BDC9 65.12%);
-}
-
 .type-gradient-fighting {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
   position: relative;
   z-index: 50;
   background: linear-gradient(121.52deg, #C03028 9.79%, #7D1F1A 24.44%, #D67873 65.12%);
-}
-
-.type-gradient-fire {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, rgba(235, 152, 0, 0.9725490196) 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
-}
-
-.type-gradient-flying {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A890F0 9.79%, #6D5E9C 24.44%, #C6B7F5 65.12%);
-}
-
-.type-gradient-ghost {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #705898 9.79%, #493963 24.44%, #A292BC 65.12%);
-}
-
-.type-gradient-grass {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #78C850 9.79%, #4E8234 24.44%, #A7DB8D 65.12%);
-}
-
-.type-gradient-ground {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #E0C068 9.79%, #927D44 24.44%, #EBD69D 65.12%);
-}
-
-.type-gradient-ice {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #98D8D8 9.79%, #638D8D 24.44%, #BCE6E6 65.12%);
-}
-
-.type-gradient-normal {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A8A878 9.79%, #6D6D4E 24.44%, #C6C6A7 65.12%);
-}
-
-.type-gradient-poison {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A040A0 9.79%, #682A68 24.44%, #C183C1 65.12%);
-}
-
-.type-gradient-psychic {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #F85888 9.79%, #F85888 24.44%, #FA92B2 65.12%);
-}
-
-.type-gradient-rock {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #B8A038 9.79%, #786824 24.44%, #D1C17D 65.12%);
-}
-
-.type-gradient-steel {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #B8B8D0 9.79%, #787887 24.44%, #D1D1E0 65.12%);
-}
-
-.type-gradient-water {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-}
-
-.type-gradient-bug-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  height: 1em;
-  background: linear-gradient(121.52deg, #A8B820 9.79%, #6D7815 24.44%, #C6D16E 65.12%);
-}
-
-.type-gradient-dark-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #705848 9.79%, #49392F 24.44%, #A29288 65.12%);
-}
-
-.type-gradient-dragon-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #7038F8 9.79%, #4924A1 24.44%, #A27DFA 65.12%);
-}
-
-.type-gradient-electric-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #F8D030 9.79%, #A1871F 24.44%, #FAE078 65.12%);
-}
-
-.type-gradient-fairy-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #EE99AC 9.79%, #9B6470 24.44%, #F4BDC9 65.12%);
 }
 
 .type-gradient-fighting-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
   position: relative;
   z-index: 50;
   background: linear-gradient(121.52deg, #C03028 9.79%, #7D1F1A 24.44%, #D67873 65.12%);
-}
-
-.type-gradient-fire-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  z-index: 1000;
-  background: linear-gradient(121.52deg, rgba(235, 152, 0, 0.9725490196) 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
-}
-
-.type-gradient-flying-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A890F0 9.79%, #6D5E9C 24.44%, #C6B7F5 65.12%);
-}
-
-.type-gradient-ghost-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #705898 9.79%, #493963 24.44%, #A292BC 65.12%);
-}
-
-.type-gradient-grass-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #78C850 9.79%, #4E8234 24.44%, #A7DB8D 65.12%);
-}
-
-.type-gradient-ground-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #E0C068 9.79%, #927D44 24.44%, #EBD69D 65.12%);
-}
-
-.type-gradient-ice-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #98D8D8 9.79%, #638D8D 24.44%, #BCE6E6 65.12%);
-}
-
-.type-gradient-normal-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A8A878 9.79%, #6D6D4E 24.44%, #C6C6A7 65.12%);
-}
-
-.type-gradient-poison-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #A040A0 9.79%, #682A68 24.44%, #C183C1 65.12%);
-}
-
-.type-gradient-psychic-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #F85888 9.79%, #F85888 24.44%, #FA92B2 65.12%);
-}
-
-.type-gradient-rock-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #B8A038 9.79%, #786824 24.44%, #D1C17D 65.12%);
-}
-
-.type-gradient-steel-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #B8B8D0 9.79%, #787887 24.44%, #D1D1E0 65.12%);
-}
-
-.type-gradient-water-bottom {
-  display: inline-flex;
-  width: 100vw;
-  height: 1em;
-  position: relative;
-  z-index: 50;
-  background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 24.44%, #9DB7F5 65.12%);
 }
 
 .frontswitch-grass {
@@ -716,8 +413,7 @@
 
 .Navbar_navbartitle {
   font-size: 60px;
-  -webkit-text-decoration: bold;
-          text-decoration: bold;
+  text-decoration: bold;
   font-family: "Oxygen", sans-serif;
   color: white;
 }
@@ -835,104 +531,9 @@
   transition: transfrom 0.6s ease-in;
 }
 
-#Page:hover #poke-name-fire {
-  background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-fairy {
-  background: linear-gradient(180deg, #EE99AC 0%, #ba62a1 18.75%, #002f3d 71.87%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-dark {
-  background: linear-gradient(180deg, #705848 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-dragon {
-  background: linear-gradient(180deg, #7038F8 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-electric {
-  background: linear-gradient(180deg, #F8D030 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-fairy {
-  background: linear-gradient(180deg, #EE99AC 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-flying {
-  background: linear-gradient(180deg, #A890F0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
 #Page:hover #poke-name-fighting {
   background: linear-gradient(180deg, #C03028 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-ghost {
-  background: linear-gradient(180deg, #705898 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-ground {
-  background: linear-gradient(180deg, #E0C068 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-ice {
-  background: linear-gradient(180deg, #98D8D8 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-normal {
-  background: linear-gradient(180deg, #A8A878 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-poison {
-  background: linear-gradient(180deg, #A040A0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-psychic {
-  background: linear-gradient(180deg, #F85888 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-rock {
-  background: linear-gradient(180deg, #B8A038 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #poke-name-water {
-  background: linear-gradient(180deg, #6890F0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-#Page:hover #frame-card-bg-white-fire {
-  background: linear-gradient(180deg, #ffffff 40%, #F5AC78 80%);
+  background-clip: text;
 }
 
 @keyframes animatedgradient {
@@ -959,7 +560,7 @@
     --rotate: 360deg;
   }
 }
-#card-bg-gradient-fairy {
+#card-bg-gradient-fighting {
   --borderWidth: 1px 1px 4px 4px;
   position: relative;
   width: 100%;
@@ -971,233 +572,7 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
-  background: radial-gradient(121.52deg, #EE99AC 9.79%, #F4BDC9 24.44%, #9B6470 65.12%);
-}
-
-#card-bg-gradient-bug {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #A8B820 9.79%, #C6D16E 21.97%, #6D7815 41.76%);
-}
-
-#card-bg-gradient-water {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  animation: spin 2.5s linear infinite;
-  background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 21.97%, #9DB7F5 41.76%);
-}
-
-#card-bg-gradient-water::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  border-radius: calc(2 * var(--borderWidth));
-  animation-name: animatedgradient;
-  animation: 3s ease alternate infinite;
-  background-size: 300% 300%;
-  background: linear-gradient(60deg, #6890F0, #445E9C, #9DB7F5);
-}
-
-#card-bg-gradient-rock {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #B8A038 9.79%, #D1C17D 21.97%, #786824 41.76%);
-}
-
-#card-bg-gradient-normal {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #A8A878 9.79%, #C6C6A7 21.97%, #6D6D4E 41.76%);
-}
-
-#card-bg-gradient-electric {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #F8D030 9.79%, #FAE078 21.97%, #A1871F 41.76%);
-}
-
-#card-bg-gradient-ice {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #98D8D8 9.79%, #BCE6E6 21.97%, #638D8D 41.76%);
-}
-
-#card-bg-gradient-psychic {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #F85888 9.79%, #FA92B2 21.97%, #F85888 41.76%);
-}
-
-#card-bg-gradient-dark {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #705848 9.79%, #A29288 21.97%, #49392F 41.76%);
-}
-
-#card-bg-gradient-dragon {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #7038F8 9.79%, #A27DFA 21.97%, #4924A1 41.76%);
-}
-
-#card-bg-gradient-electric {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #F8D030 9.79%, #FAE078 21.97%, #A1871F 41.76%);
-}
-
-#card-bg-gradient-poison {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #A040A0 9.79%, #C183C1 21.97%, #682A68 41.76%);
-}
-
-#card-bg-gradient-flying {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #A890F0 9.79%, #C6B7F5 21.97%, #6D5E9C 41.76%);
-}
-
-#card-bg-gradient-ghost {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #705898 9.79%, #A292BC 21.97%, #493963 41.76%);
-}
-
-#card-bg-gradient-ground {
-  --borderWidth: 1px 1px 4px 4px;
-  position: relative;
-  width: 100%;
-  height: 102%;
-  z-index: 5;
-  pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
-  border: 1px;
-  border-color: lime;
-  border-radius: var(--borderWidth);
-  background: linear-gradient(121.52deg, #E0C068 9.79%, #EBD69D 21.97%, #787887 41.76%);
+  background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
 }
 
 .card-bg-gradient-outer {
@@ -1234,7 +609,7 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
-  background: linear-gradient(138.83deg, rgb(245, 197, 25) 9.906817229%, rgb(0, 139, 23) 16.4960543717%, rgb(245, 25, 234) 22.071563002%, rgb(0, 124, 206) 41.8392722548%);
+  background: linear-gradient(138.83deg, #f5c519 9.906817229%, #008b17 16.4960543717%, #f519ea 22.071563002%, #007cce 41.8392722548%);
 }
 
 @keyframes animatedgradient {
@@ -1252,93 +627,10 @@
   --card-height: 65vh;
   --card-width: calc(var(--card-height) / 1.5);
   --rotate: 75deg;
-  --bug-light: #C6D16E;
-  --bug-dark: #6D7815;
-  --dark-color: #705848;
-  --dark-light: #A29288;
-  --dark-dark: #49392F;
-  --dragon-color: #7038F8;
-  --dragon-light: #A27DFA;
-  --dragon-dark: #4924A1;
-  --electric-color: #F8D030;
-  --electric-light: #FAE078;
-  --electric-dark: #A1871F;
-  --fairy-color: #EE99AC;
-  --fairy-light: #F4BDC9;
-  --fairy-dark: #9B6470;
   --fighting-color: #C03028;
   --fighting-light: #D67873;
   --fighting-dark: #7D1F1A;
   --fighting-hover: #D67873;
-  --bug-color: #A8B820;
-  --bug-light: #C6D16E;
-  --bug-dark: #6D7815;
-  --dark-color: #705848;
-  --dark-light: #A29288;
-  --dark-dark: #49392F;
-  --dragon-color: #7038F8;
-  --dragon-light: #A27DFA;
-  --dragon-dark: #4924A1;
-  --electric-color: #F8D030;
-  --electric-light: #FAE078;
-  --electric-dark: #A1871F;
-  --fairy-color: #EE99AC;
-  --fairy-light: #F4BDC9;
-  --fairy-dark: #9B6470;
-  --fighting-color: #C03028;
-  --fighting-light: #D67873;
-  --fighting-dark: #7D1F1A;
-  --fighting-hover: #D67873;
-  --fire-color: orange;
-  --fire-light: #F5AC78;
-  --fire-dark: #9C531F;
-  --flying-color: #A890F0;
-  --flying-light: #C6B7F5;
-  --flying-dark: #6D5E9C;
-  --ghost-color: #705898;
-  --ghost-light: #A292BC;
-  --ghost-dark: #493963;
-  --grass-color: #78C850;
-  --grass-light: #A7DB8D;
-  --grass-dark: #4E8234;
-  --ground-color: #E0C068;
-  --ground-light: #EBD69D;
-  --ground-dark: #927D44;
-  --ice-color: #98D8D8;
-  --ice-light: #BCE6E6;
-  --ice-dark: #638D8D;
-  --normal-color: #A8A878;
-  --normal-light: #C6C6A7;
-  --normal-dark: #6D6D4E;
-  --poison-color: #A040A0;
-  --poison-light: #C183C1;
-  --poison-dark: #682A68;
-  --psychic-color: #F85888;
-  --psychic-light: #FA92B2;
-  --psychic-dark: #F85888;
-  --rock-color: #B8A038;
-  --rock-light: #D1C17D;
-  --rock-dark: #786824;
-  --steel-color: #B8B8D0;
-  --steel-light: #D1D1E0;
-  --steel-dark: #787887;
-  --water-color: #6890F0;
-  --water-dark: #445E9C;
-  --water-light: #9DB7F5;
-  --bug-light: #C6D16E;
-  --bug-dark: #6D7815;
-  --dark-color: #705848;
-  --dark-light: #A29288;
-  --dark-dark: #49392F;
-  --dragon-color: #7038F8;
-  --dragon-light: #A27DFA;
-  --dragon-dark: #4924A1;
-  --electric-color: #F8D030;
-  --electric-light: #FAE078;
-  --electric-dark: #A1871F;
-  --fairy-color: #EE99AC;
-  --fairy-light: #F4BDC9;
-  --fairy-dark: #9B6470;
   --fighting-color: #C03028;
   --fighting-light: #D67873;
   --fighting-dark: #7D1F1A;
@@ -1454,7 +746,7 @@
   max-width: 252px;
   margin: inherit;
   padding: 0;
-  background: linear-gradient(151.98deg, rgb(250, 250, 250) 41.0515639586%, rgb(236, 235, 235) 85.8236802152%);
+  background: linear-gradient(151.98deg, #fafafa 41.0515639586%, #ecebeb 85.8236802152%);
   border-radius: 4px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1689,8 +981,7 @@
   color: transparent;
   background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
   background-clip: text;
-  -webkit-text-decoration: shadow whitesmoke;
-          text-decoration: shadow whitesmoke;
+  text-decoration: shadow whitesmoke;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1719,8 +1010,7 @@
   color: transparent;
   background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
   background-clip: text;
-  -webkit-text-decoration: shadow whitesmoke;
-          text-decoration: shadow whitesmoke;
+  text-decoration: shadow whitesmoke;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1802,7 +1092,7 @@
   font-size: 18px;
   line-height: 100%;
   text-transform: uppercase;
-  color: rgba(235, 152, 0, 0.9725490196);
+  color: #eb9800f8;
 }
 
 .TYPENAME {
@@ -2564,8 +1854,6 @@
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* Frame (hover) */
-/* Body */
 body {
   left: 1px;
 }
@@ -2588,46 +1876,20 @@ div > span:hover {
 }
 
 /* Division (hover) */
-#card-bg-gradient-fighting {
-  background-size: 600% 600%;
-  --borderWidth: 1px;
-  background-image: linear-gradient(to bottom, var(--fighting-light), var(--fighting-color));
-  border: var(--borderWidth) solid var(--fighting-dark);
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
-}
-
 #Page:hover #card-bg-gradient-fighting {
-  animation: rotateGradient 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+  --borderWidth: 1px 1px 4px 4px;
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: calc(-1 * --borderWidth);
+  left: 150px;
+  height: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+  width: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+  border-radius: calc(2 * (border-width(1px 1px 4px 4px)));
+  animation-name: animatedgradient;
+  animation: 3s ease alternate infinite;
+  background-size: 300% 300%;
+  animation-name: animatedgradient;
+  animation: 3s ease alternate infinite;
+  z-index: 235;
 }
-
-@keyframes rotateGradient {
-  0% {
-    --rotate: 0deg;
-    background-position: 0% 50%;
-    background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
-  }
-  25% {
-    --rotate: 30deg;
-    background: linear-gradient(121.52deg, #C03028 30.79%, #D67873 51.97%, #7D1F1A 91.76%);
-  }
-  50% {
-    --rotate: 90deg;
-    background-postion: 100% 50%;
-    background: linear-gradient(121.52deg, #D67873 9.79%, #7D1F1A 21.97%, #C03028 41.76%);
-  }
-  100% {
-    --rotate: 360deg;
-    background-position: 0% 50%;
-    background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
-  }
-}
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}/*# sourceMappingURL=pokecardv2.css.map */

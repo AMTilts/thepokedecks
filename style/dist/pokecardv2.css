@@ -181,6 +181,8 @@
 }
 
 .type-gradient-bug {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -190,6 +192,8 @@
 }
 
 .type-gradient-dark {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -199,6 +203,8 @@
 }
 
 .type-gradient-dragon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -208,6 +214,8 @@
 }
 
 .type-gradient-electric {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -217,6 +225,8 @@
 }
 
 .type-gradient-fairy {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -226,6 +236,8 @@
 }
 
 .type-gradient-fighting {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -235,15 +247,19 @@
 }
 
 .type-gradient-fire {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
   position: relative;
   z-index: 50;
-  background: linear-gradient(121.52deg, rgba(235, 152, 0, 0.9725490196) 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
+  background: linear-gradient(121.52deg, #eb9800f8 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
 }
 
 .type-gradient-flying {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -253,6 +269,8 @@
 }
 
 .type-gradient-ghost {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -262,6 +280,8 @@
 }
 
 .type-gradient-grass {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -271,6 +291,8 @@
 }
 
 .type-gradient-ground {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -280,6 +302,8 @@
 }
 
 .type-gradient-ice {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -289,6 +313,8 @@
 }
 
 .type-gradient-normal {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -298,6 +324,8 @@
 }
 
 .type-gradient-poison {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -307,6 +335,8 @@
 }
 
 .type-gradient-psychic {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -316,6 +346,8 @@
 }
 
 .type-gradient-rock {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -325,6 +357,8 @@
 }
 
 .type-gradient-steel {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -334,6 +368,8 @@
 }
 
 .type-gradient-water {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -342,6 +378,8 @@
 }
 
 .type-gradient-bug-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -352,6 +390,8 @@
 }
 
 .type-gradient-dark-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -361,6 +401,8 @@
 }
 
 .type-gradient-dragon-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -370,6 +412,8 @@
 }
 
 .type-gradient-electric-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -379,6 +423,8 @@
 }
 
 .type-gradient-fairy-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -388,6 +434,8 @@
 }
 
 .type-gradient-fighting-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -397,16 +445,20 @@
 }
 
 .type-gradient-fire-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
   position: relative;
   z-index: 50;
   z-index: 1000;
-  background: linear-gradient(121.52deg, rgba(235, 152, 0, 0.9725490196) 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
+  background: linear-gradient(121.52deg, #eb9800f8 9.79%, #9C531F 24.44%, #F5AC78 65.12%);
 }
 
 .type-gradient-flying-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -416,6 +468,8 @@
 }
 
 .type-gradient-ghost-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -425,6 +479,8 @@
 }
 
 .type-gradient-grass-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -434,6 +490,8 @@
 }
 
 .type-gradient-ground-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -443,6 +501,8 @@
 }
 
 .type-gradient-ice-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -452,6 +512,8 @@
 }
 
 .type-gradient-normal-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -461,6 +523,8 @@
 }
 
 .type-gradient-poison-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -470,6 +534,8 @@
 }
 
 .type-gradient-psychic-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -479,6 +545,8 @@
 }
 
 .type-gradient-rock-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -488,6 +556,8 @@
 }
 
 .type-gradient-steel-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -497,6 +567,8 @@
 }
 
 .type-gradient-water-bottom {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100vw;
   height: 1em;
@@ -716,8 +788,7 @@
 
 .Navbar_navbartitle {
   font-size: 60px;
-  -webkit-text-decoration: bold;
-          text-decoration: bold;
+  text-decoration: bold;
   font-family: "Oxygen", sans-serif;
   color: white;
 }
@@ -837,98 +908,82 @@
 
 #Page:hover #poke-name-fire {
   background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-fairy {
   background: linear-gradient(180deg, #EE99AC 0%, #ba62a1 18.75%, #002f3d 71.87%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-dark {
   background: linear-gradient(180deg, #705848 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-dragon {
   background: linear-gradient(180deg, #7038F8 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-electric {
   background: linear-gradient(180deg, #F8D030 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-fairy {
   background: linear-gradient(180deg, #EE99AC 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-flying {
   background: linear-gradient(180deg, #A890F0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-fighting {
   background: linear-gradient(180deg, #C03028 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-ghost {
   background: linear-gradient(180deg, #705898 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-ground {
   background: linear-gradient(180deg, #E0C068 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-ice {
   background: linear-gradient(180deg, #98D8D8 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-normal {
   background: linear-gradient(180deg, #A8A878 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-poison {
   background: linear-gradient(180deg, #A040A0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-psychic {
   background: linear-gradient(180deg, #F85888 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-rock {
   background: linear-gradient(180deg, #B8A038 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #poke-name-water {
   background: linear-gradient(180deg, #6890F0 0%, #082b1e 59.9%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 #Page:hover #frame-card-bg-white-fire {
@@ -1234,7 +1289,7 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
-  background: linear-gradient(138.83deg, rgb(245, 197, 25) 9.906817229%, rgb(0, 139, 23) 16.4960543717%, rgb(245, 25, 234) 22.071563002%, rgb(0, 124, 206) 41.8392722548%);
+  background: linear-gradient(138.83deg, #f5c519 9.906817229%, #008b17 16.4960543717%, #f519ea 22.071563002%, #007cce 41.8392722548%);
 }
 
 @keyframes animatedgradient {
@@ -1454,7 +1509,7 @@
   max-width: 252px;
   margin: inherit;
   padding: 0;
-  background: linear-gradient(151.98deg, rgb(250, 250, 250) 41.0515639586%, rgb(236, 235, 235) 85.8236802152%);
+  background: linear-gradient(151.98deg, #fafafa 41.0515639586%, #ecebeb 85.8236802152%);
   border-radius: 4px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1689,8 +1744,7 @@
   color: transparent;
   background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
   background-clip: text;
-  -webkit-text-decoration: shadow whitesmoke;
-          text-decoration: shadow whitesmoke;
+  text-decoration: shadow whitesmoke;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1719,8 +1773,7 @@
   color: transparent;
   background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
   background-clip: text;
-  -webkit-text-decoration: shadow whitesmoke;
-          text-decoration: shadow whitesmoke;
+  text-decoration: shadow whitesmoke;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1802,7 +1855,7 @@
   font-size: 18px;
   line-height: 100%;
   text-transform: uppercase;
-  color: rgba(235, 152, 0, 0.9725490196);
+  color: #eb9800f8;
 }
 
 .TYPENAME {
@@ -2630,4 +2683,4 @@ div > span:hover {
   100% {
     --rotate: 360deg;
   }
-}/*# sourceMappingURL=pokecardv2.css.map */
+}

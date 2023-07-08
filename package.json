@@ -10,23 +10,36 @@
     "compile:sass": "sass scss:assets/css"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "babel": "^6.23.0",
     "classnames": "^2.3.1",
     "gsap": "^3.10.4",
     "gulp-sass": "^5.1.0",
     "next": "^12.1.0",
     "postcss": "^8.4.13",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-bootstrap": "^2.0.3",
     "react-canvas-draw": "^1.2.1",
     "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
+    "react-svg": "^16.1.17",
     "sass": "^1.51.0",
     "sass-convert": "^0.5.2",
-    "use-image": "^1.0.12"
+    "use-image": "^1.0.12",
+    "webpack": "^5.88.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
+    "react-fontawesome": "^1.7.1",
     "sass": "^1.51.0"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
