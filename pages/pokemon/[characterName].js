@@ -458,11 +458,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                     <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
                                                 </div>
                                                 <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
-                                                <FlipButton
+                                                <FlipButton typeName={`${types[0].type.name}`}
                                                     ballDefault={ballDefault}
                                                     // flipFrontBackButton={flipFrontBackButton}
                                                 >
-                                                    <button className="fbbutton">                                                                                                    
+                                                    <button className={`fbbutton-${types[0].type.name}`}>                                                                                                    
                                                         <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
                                                             <h2 className="fliptext">{frontBackText}</h2>
                                                             {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}

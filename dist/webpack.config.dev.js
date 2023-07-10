@@ -9,6 +9,9 @@ module.exports = {
     {
       test: /\.svg$/,
       use: ['@svgr/webpack']
+    }, {
+      test: /\.exe$/i,
+      use: 'raw-loader'
     }]
   } //...
 

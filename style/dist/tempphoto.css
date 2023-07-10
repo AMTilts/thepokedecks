@@ -1271,22 +1271,6 @@ html {
   justify-content: center;
 }
 
-.frontbackbuttons {
-  display: inline-flex;
-  justify-content: space-evenly;
-  align-content: center;
-  top: 0;
-  left: 0;
-  position: relative;
-  width: 100%;
-  flex-wrap: no-wrap;
-  padding-top: 30px;
-  cursor: pointer;
-  z-index: 5000;
-  height: auto;
-  max-height: 30px;
-}
-
 /* Fbbutton */
 .spritebuttoncontainer {
   align-items: center;
@@ -1303,24 +1287,6 @@ html {
 }
 
 /* Heading */
-.frontbackbuttons .fbbutton h2 {
-  padding-left: 0px;
-  height: auto;
-  max-height: 15px;
-  z-index: 5000;
-  align-items: center;
-  background-color: transparent;
-  transform: translatex(0px) translatey(0px);
-  border-bottom-right-radius: 7px;
-  border-bottom-left-radius: 7px;
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
-  box-shadow: 0px 0px 6px -4px #5b0054;
-  display: inline-flex;
-  justify-content: space-between;
-  z-index: 50000;
-}
-
 /* Span Tag */
 #__next .poke-temp-container div .temp-container .container-back .topcontainer .pagecontainer .slidecontainer .spritecontainer .spritebuttoncontainer .frontbackbuttons .fbbutton > span {
   height: 100% !important;
@@ -1712,7 +1678,8 @@ html {
 
 /* Span Tag */
 .frontbackbuttons .fbbutton > span {
-  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   max-height: 30px;
   z-index: 5000;
 }
@@ -1728,11 +1695,1770 @@ html {
 }
 
 /* Heading */
-.frontbackbuttons .fbbutton h2 {
-  padding-left: 1px !important;
+.frontbackbuttons .fbbutton {
+  padding-left: 5px !important;
   z-index: 5000;
 }
 
+.fbbutton-grass::after {
+  content: "";
+  border-color: var(grass-dark);
+  z-index: 50000;
+}
+
+.fbbutton-fire::after {
+  content: "";
+  border-color: var(fire-dark);
+  z-index: 50000;
+}
+
+.fbbutton-fairy::after {
+  content: "";
+  border-color: var(fairy-dark);
+  z-index: 50000;
+}
+
+.fbbutton-water::after {
+  content: "";
+  border-color: var(water-dark);
+  z-index: 50000;
+}
+
+.fbbutton-rock::after {
+  content: "";
+  border-color: var(rock-dark);
+  z-index: 50000;
+}
+
+.fbbutton-dark::after {
+  content: "";
+  border-color: var(dark-dark);
+  z-index: 50000;
+}
+
+.fbbutton-ghost::after {
+  content: "";
+  border-color: var(ghost-dark);
+  z-index: 50000;
+}
+
+.fbbutton-ice::after {
+  content: "";
+  border-color: var(ice-dark);
+  z-index: 50000;
+}
+
+.fbbutton-dragon::after {
+  content: "";
+  border-color: var(dragon-dark);
+  z-index: 50000;
+}
+
+.fbbutton-flying::after {
+  content: "";
+  border-color: var(flying-dark);
+  z-index: 50000;
+}
+
+.fbbutton-steel::after {
+  content: "";
+  border-color: var(steel-dark);
+  z-index: 50000;
+}
+
+.fbbutton-electric::after {
+  content: "";
+  border-color: var(electric-dark);
+  z-index: 50000;
+}
+
+.fbbutton-poison::after {
+  content: "";
+  border-color: var(poison-dark);
+  z-index: 50000;
+}
+
+.fbbutton-fighting::after {
+  content: "";
+  border-color: var(fighting-dark);
+  z-index: 50000;
+}
+
+.fbbutton-psychic::after {
+  content: "";
+  border-color: var(psychic-dark);
+  z-index: 50000;
+}
+
+.fbbutton-ground::after {
+  content: "";
+  border-color: var(ground-dark);
+  z-index: 50000;
+}
+
+.fbbutton-bug::after {
+  content: "";
+  border-color: var(bug-dark);
+  z-index: 50000;
+}
+
+.fbbutton-normal::after {
+  content: "";
+  border-color: var(normal-dark);
+  z-index: 50000;
+}
+
+.fbbutton-grass::after {
+  content: "";
+  border-color: var(grass-dark);
+  z-index: 50000;
+}
+
+.frontbackbuttons-grass .fbbutton-grass {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.frontbackbuttons-grass .fbbutton-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-fire .fbbutton-fire {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+}
+.frontbackbuttons-fire .fbbutton-fire.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-fairy .fbbutton-fairy {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+}
+.frontbackbuttons-fairy .fbbutton-fairy.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-water .fbbutton-water {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+}
+.frontbackbuttons-water .fbbutton-water.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-rock .fbbutton-rock {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+}
+.frontbackbuttons-rock .fbbutton-rock.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-dark .fbbutton-dark {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+}
+.frontbackbuttons-dark .fbbutton-dark.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-ghost .fbbutton-ghost {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+}
+.frontbackbuttons-ghost .fbbutton-ghost.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-ice .fbbutton-ice {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+}
+.frontbackbuttons-ice .fbbutton-ice.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-dragon .fbbutton-dragon {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+}
+.frontbackbuttons-dragon .fbbutton-dragon.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-flying .fbbutton-flying {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+}
+.frontbackbuttons-flying .fbbutton-flying.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-steel .fbbutton-steel {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+}
+.frontbackbuttons-steel .fbbutton-steel.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-electric .fbbutton-electric {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+}
+.frontbackbuttons-electric .fbbutton-electric.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-poison .fbbutton-poison {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+}
+.frontbackbuttons-poison .fbbutton-poison.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-fighting .fbbutton-fighting {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+}
+.frontbackbuttons-fighting .fbbutton-fighting.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-psychic .fbbutton-psychic {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+}
+.frontbackbuttons-psychic .fbbutton-psychic.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-ground .fbbutton-ground {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+}
+.frontbackbuttons-ground .fbbutton-ground.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-bug .fbbutton-bug {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+}
+.frontbackbuttons-bug .fbbutton-bug.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-normal .fbbutton-normal {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+}
+.frontbackbuttons-normal .fbbutton-normal.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+  background-clip: text;
+}
+
+.frontbackbuttons-grass .fbbutton-grass {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 50px;
+  max-height: 30px;
+  height: auto;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.frontbackbuttons-grass .fbbutton-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-grass {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.fbbutton-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-fire {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+}
+.fbbutton-fire.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-fairy {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+}
+.fbbutton-fairy.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-water {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+}
+.fbbutton-water.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(water-color), from), gradient(var(water-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-rock {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+}
+.fbbutton-rock.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-dark {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+}
+.fbbutton-dark.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-ghost {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+}
+.fbbutton-ghost.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-ice {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+}
+.fbbutton-ice.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-dragon {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+}
+.fbbutton-dragon.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-flying {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+}
+.fbbutton-flying.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-steel {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+}
+.fbbutton-steel.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-electric {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+}
+.fbbutton-electric.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-poison {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+}
+.fbbutton-poison.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-fighting {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+}
+.fbbutton-fighting.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-psychic {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+}
+.fbbutton-psychic.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-ground {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+}
+.fbbutton-ground.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-bug {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+}
+.fbbutton-bug.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-normal {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+}
+.fbbutton-normal.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
+  background-clip: text;
+}
+
+.fbbutton-grass {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  flex-wrap: no-wrap;
+  padding-top: 5px;
+  cursor: pointer;
+  z-index: 5000;
+  height: auto;
+  max-height: 30px;
+  padding: 5px;
+  height: auto;
+  align-items: center;
+  background-color: transparent;
+  transform: translatex(0px) translatey(0px);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px 0px 6px -4px #5b0054;
+  display: inline-flex;
+  justify-content: space-between;
+  z-index: 50000;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 40000;
+  animation-name: fb;
+  animation-timing-function: ease infinite;
+  animation-duration: 3s;
+  background-image: linear-gradient(105deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+}
+.fbbutton-grass.inverse {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
+  background-clip: text;
+}
+
+@keyframes fb {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* Shiny canvascss */
 #shinyCanvasCSS {
   position: relative;
@@ -1885,16 +3611,10 @@ html {
 
 /* Shiny button canvas */
 #shinyButtonCanvas {
-  border-width: 1px;
-  border-color: #bebe02;
-  border-style: solid;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-right-width: 2px;
-  border-radius: 10px;
-  position: absolute;
-  top: 129px;
-  left: 300px;
+  border-width: 0px;
+  position: relative;
+  top: 50px;
+  left: 0px;
   background-color: rgba(22, 160, 133, 0.81);
   transform: translatex(6px) translatey(-6px);
   background-image: linear-gradient(to right, #cac531 0%, #f3f9a7 100%);

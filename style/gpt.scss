@@ -1,1233 +1,1233 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
 
-:root {
-    width: 100vw;
-    --types: --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
+// :root {
+//     width: 100vw;
+//     --types: --card-height: 65vh;
+//     --card-width: calc(var(--card-height) / 1.5);
 
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
+//     --fighting-color: #C03028;
+//     --fighting-light: #D67873;
+//     --fighting-dark: #7D1F1A;
+//     --fighting-hover: #D67873;
 
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
+//     --fighting-color: #C03028;
+//     --fighting-light: #D67873;
+//     --fighting-dark: #7D1F1A;
+//     --fighting-hover: #D67873;
 
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-}
+//     --fighting-color: #C03028;
+//     --fighting-light: #D67873;
+//     --fighting-dark: #7D1F1A;
+//     --fighting-hover: #D67873;
+// }
 
-$pokecolors: ("bug-color": #A8B820,
+// $pokecolors: ("bug-color": #A8B820,
 
-"fighting-color": #C03028,
-"fighting-light": #D67873,
-"fighting-dark": #7D1F1A,
-"fighting-hover": #D67873,
-
-
-$types: ("grass",
-
-"fighting",
-
-@each $type in $types {
-    .type-c-#{$type} {
-        content: url(images/type_c21_#{$type}.svg)
-    }
-}
-
-@mixin typegradient {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 100vw;
-    height: 1em;
-    position: relative;
-    z-index: 50;
-}
-
-@mixin typegradient-bottom {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 100vw;
-    height: 1em;
-    position: relative;
-    z-index: 50;
-}
+// "fighting-color": #C03028,
+// "fighting-light": #D67873,
+// "fighting-dark": #7D1F1A,
+// "fighting-hover": #D67873,
 
 
-$fighting-color: #C03028;
-$fighting-light: #D67873;
-$fighting-maincolor: #C03028;
-$fighting-dark: #7D1F1A;
-$fighting-hover: #D67873;
+// $types: ("grass",
+
+// "fighting",
+
+// @each $type in $types {
+//     .type-c-#{$type} {
+//         content: url(images/type_c21_#{$type}.svg)
+//     }
+// }
+
+// @mixin typegradient {
+//     display: -webkit-inline-box;
+//     display: -ms-inline-flexbox;
+//     display: inline-flex;
+//     width: 100vw;
+//     height: 1em;
+//     position: relative;
+//     z-index: 50;
+// }
+
+// @mixin typegradient-bottom {
+//     display: -webkit-inline-box;
+//     display: -ms-inline-flexbox;
+//     display: inline-flex;
+//     width: 100vw;
+//     height: 1em;
+//     position: relative;
+//     z-index: 50;
+// }
 
 
-
-@mixin infobg {
-    margin-top: 20px;
-    display: flex;
-    width: 30%;
-    justify-content: center;
-}
-
-.infocontainergrass {
-    @include infobg;
-    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-}
-
-//top gradient bar
-
-.type-gradient-fighting {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
-}
-
-.type-gradient-fighting-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
-}
+// $fighting-color: #C03028;
+// $fighting-light: #D67873;
+// $fighting-maincolor: #C03028;
+// $fighting-dark: #7D1F1A;
+// $fighting-hover: #D67873;
 
 
 
-@each $type,
-$gradient in $types {
-    .frontswitch-#{$type} {
-        background-image:linear-gradient(105deg,
-        gradient(var(#{$type}-color), from),
-        gradient(var(#{$type}-dark), to));
-        border-radius: .3rem;
-        margin-left: 10px;
-        &.inverse {
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-image-source:linear-gradient(100deg,
-            gradient(var(#{$type}-color), from),
-            gradient(var(#{$type}-dark), to));
-        }
-    }
-}
+// @mixin infobg {
+//     margin-top: 20px;
+//     display: flex;
+//     width: 30%;
+//     justify-content: center;
+// }
 
-.Navbar_navbartitle {
-    font-size: 60px;
-    text-decoration: bold;
-    font-family: 'Oxygen', sans-serif;
-    color: white;
-}
+// .infocontainergrass {
+//     @include infobg;
+//     background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+// }
 
-.tempcontainersprites {
-    display: grid;
-    grid-gap: 10px;
-    width: 100%;
-    grid-row: auto;
-    grid-template-areas: 'default info' 'default info' 'back back' 'pic3 pic4 pic5'
-}
+// //top gradient bar
 
-.shinyfront {
-    display: inline-block;
-    width: 200px;
-}
+// .type-gradient-fighting {
+//     @include typegradient;
+//     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
+// }
 
-.picdefault {
-    display: inline-flex;
-    align-items: flex-start;
-    grid-area: default;
-    position: relative;
-    // z-index: 10;
-    /* background-color: yellow; */
-    min-width: 350px;
-    width: 40%;
-    animation-name: frontback;
-    animation-duration: 2s;
-}
+// .type-gradient-fighting-bottom {
+//     @include typegradient-bottom;
+//     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
+// }
 
-.spriteback {
-    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
-}
 
-.tempinfo {
-    grid-area: info;
-    width: 300px;
-    height: 400px;
-    background-color: sienna;
-}
 
-@mixin type-logo {
-    position: relative;
-    z-index: 10;
-    pointer-events: none;
-    margin-left: 9px;
-    // width: 100%;
-    // max-width: 25px;
-    //height: 128.57142857142858%;
-    height: 25px;
-    max-height: 25px;
-    margin-top: -5px;
-    padding-right: 0px;
-    align-self: center;
-    align-items: center;
-}
+// @each $type,
+// $gradient in $types {
+//     .frontswitch-#{$type} {
+//         background-image:linear-gradient(105deg,
+//         gradient(var(#{$type}-color), from),
+//         gradient(var(#{$type}-dark), to));
+//         border-radius: .3rem;
+//         margin-left: 10px;
+//         &.inverse {
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+//             border-image-source:linear-gradient(100deg,
+//             gradient(var(#{$type}-color), from),
+//             gradient(var(#{$type}-dark), to));
+//         }
+//     }
+// }
 
-#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
-    transform: translateY(-2px) translateX(-7px);
-}
+// .Navbar_navbartitle {
+//     font-size: 60px;
+//     text-decoration: bold;
+//     font-family: 'Oxygen', sans-serif;
+//     color: white;
+// }
 
-@mixin type-name {
-    position: relative;
-    z-index: 12;
-    pointer-events: none;
-    // margin-left: 18px;
-    padding-left: 8px;
-    margin-top: 5px;
-    align-items: center;
-    // min-width: 33px;
-    // margin-bottom: 15.560000000000002px;
-    // min-height: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-self: center;
-    font-style: normal;
-    font-family: Rubik;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 100%;
-    text-transform: uppercase;
-}
+// .tempcontainersprites {
+//     display: grid;
+//     grid-gap: 10px;
+//     width: 100%;
+//     grid-row: auto;
+//     grid-template-areas: 'default info' 'default info' 'back back' 'pic3 pic4 pic5'
+// }
 
-@mixin pokename {
-    position: relative;
-    z-index: 17;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 203px;
-    min-width: 203px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    min-height: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* color: rgba(0, 0, 0, 1); */
-    font-style: normal;
-    font-family: Rubik;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 125%;
-    text-transform: uppercase;
-    color: transparent;
-    background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
-    background-clip: text;
-    text-decoration: shadow whitesmoke;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+// .shinyfront {
+//     display: inline-block;
+//     width: 200px;
+// }
 
-.websiteBody {
-    margin: 0;
-}
+// .picdefault {
+//     display: inline-flex;
+//     align-items: flex-start;
+//     grid-area: default;
+//     position: relative;
+//     // z-index: 10;
+//     /* background-color: yellow; */
+//     min-width: 350px;
+//     width: 40%;
+//     animation-name: frontback;
+//     animation-duration: 2s;
+// }
 
-#Page .Page {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    // margin: 1rem 1rem 1rem 1rem;
-    width: 100%;
-    height: auto;
-    pointer-events: auto;
-    // box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+// .spriteback {
+//     transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+// }
+
+// .tempinfo {
+//     grid-area: info;
+//     width: 300px;
+//     height: 400px;
+//     background-color: sienna;
+// }
+
+// @mixin type-logo {
+//     position: relative;
+//     z-index: 10;
+//     pointer-events: none;
+//     margin-left: 9px;
+//     // width: 100%;
+//     // max-width: 25px;
+//     //height: 128.57142857142858%;
+//     height: 25px;
+//     max-height: 25px;
+//     margin-top: -5px;
+//     padding-right: 0px;
+//     align-self: center;
+//     align-items: center;
+// }
+
+// #Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
+//     transform: translateY(-2px) translateX(-7px);
+// }
+
+// @mixin type-name {
+//     position: relative;
+//     z-index: 12;
+//     pointer-events: none;
+//     // margin-left: 18px;
+//     padding-left: 8px;
+//     margin-top: 5px;
+//     align-items: center;
+//     // min-width: 33px;
+//     // margin-bottom: 15.560000000000002px;
+//     // min-height: 15px;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-self: center;
+//     font-style: normal;
+//     font-family: Rubik;
+//     font-weight: 500;
+//     font-size: 18px;
+//     line-height: 100%;
+//     text-transform: uppercase;
+// }
+
+// @mixin pokename {
+//     position: relative;
+//     z-index: 17;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 203px;
+//     min-width: 203px;
+//     margin-top: 0px;
+//     margin-bottom: 0px;
+//     min-height: 30px;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     /* color: rgba(0, 0, 0, 1); */
+//     font-style: normal;
+//     font-family: Rubik;
+//     font-weight: 700;
+//     font-size: 28px;
+//     line-height: 125%;
+//     text-transform: uppercase;
+//     color: transparent;
+//     background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
+//     background-clip: text;
+//     text-decoration: shadow whitesmoke;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+
+// .websiteBody {
+//     margin: 0;
+// }
+
+// #Page .Page {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+//     // margin: 1rem 1rem 1rem 1rem;
+//     width: 100%;
+//     height: auto;
+//     pointer-events: auto;
+//     // box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+//     transition: transform 0.3s ease;
     
-}
+// }
 
-#Page {
+// #Page {
 
-    transition: transform 0.3s ease;
+//     transition: transform 0.3s ease;
     
-}
-
-
-
-
-.Page-outer {
-    position: relative;
-    display: flex;
-    pointer-events: auto;
-    z-index: 1;
-    margin: 0;
-    padding: 10px 10px;
-    transition: all 0.5s ease-in;
-}
-
-#Page:hover #card-img {
-    --angle: 40;
-    position: relative;
-    z-index: 14;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    min-height: 203px;
-    /* content:url(images/card_img.png); */
-    transform: scale(1);
-    /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: 1;
-    // box-shadow: 1px 8px 20px grey;
-    -webkit-transition:  box-shadow .6s ease-in;
-   
-}
-
-#Page:hover #card-img2 {
-    position: relative;
-    z-index: 14;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    min-height: 203px;
-    /* content:url(images/card_img.png); */
-    transform: scale(1);
-    /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease-in;
-}
-
-#totalcard {
-    transform: scale(0);
-}
-
-#totalcard:hover, #Page:hover #frame{
-    transform: scale(1);
-    transition: transfrom .6s ease-in;
-}
-
-
-#Page:hover #poke-name-fighting {
-    background: linear-gradient(180deg, $fighting-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-// .gradient-border {
-//   --borderWidth: 1px 1px 4px 4px;
-//   background: #1D1F20;
-//   position: relative;
-//   border-radius: var(--borderWidth);
-// }
-// .gradient-border:after {
-//   content: '';
-//   position: absolute;
-//   top: calc(-1 * var(--borderWidth));
-//   left: calc(-1 * var(--borderWidth));
-//   height: calc(100% + var(--borderWidth) * 2);
-//   width: calc(100% + var(--borderWidth) * 2);
-//   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-//   border-radius: calc(2 * var(--borderWidth));
-//   z-index: -1;
-//   animation: animatedgradient 3s ease alternate infinite;
-//   background-size: 300% 300%;
-// }
-@mixin card-gradient {
-    --borderWidth: 1px 1px 4px 4px;
-    position: relative;
-    width: 100%;
-    height: 102%;
-    z-index: 5;
-    pointer-events: none;
-    margin-left: 0%;
-    margin-top: 0%;
-    border: 1px;
-    border-color: lime;
-    border-radius: var(--borderWidth);
-}
-
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-        opacity: 0;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-        transition: opacity(1);
-        transform: rotateX('50deg');
-        transform: rotateY(60deg);
-        background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
-    }
-}
-
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
-    100% {
-        --rotate: 360deg;
-    }
-}
-
-@mixin cardspin {
-    --borderWidth: 1px 1px 4px 4px;
-    content: '';
-    position: absolute;
-    z-index: 5;
-    top: calc(-1 * --borderWidth);
-    left: 150px;
-    height: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
-    width: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
-    border-radius: calc(2 * (border-width(1px 1px 4px 4px)));
-    animation-name: animatedgradient;
-    animation: 3s ease alternate infinite;
-    background-size: 300% 300%;
-}
-
-
-#card-bg-gradient-fighting {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
-}
-
-
-
-.card-bg-gradient-outer {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: 4;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-
-#Page:hover #card-bg-gradient-outer::after {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-}
-
-.card-bg-gradient {
-    @include card-gradient;
-    background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
-}
-
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-:root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-    --rotate: 75deg;
-
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
- 
-}
-
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
-    100% {
-        --rotate: 360deg;
-    }
-}
-
-#Page:hover #frame-card-bg-white-grass {
-    // background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-    // filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-fairy {
-    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-fighting {
-    background: linear-gradient(180deg, #ffffff 0%, $fighting-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-fairy {
-    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-bug {
-    background: linear-gradient(180deg, #ffffff 0%, $bug-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-dark {
-    background: linear-gradient(180deg, #ffffff 0%, $dark-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-dragon {
-    background: linear-gradient(180deg, #ffffff 0%, $dragon-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-electric {
-    background: linear-gradient(180deg, #ffffff 0%, $electric-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-flying {
-    background: linear-gradient(180deg, #ffffff 0%, $flying-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ghost {
-    background: linear-gradient(180deg, #ffffff 0%, $ghost-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-grass {
-    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ground {
-    background: linear-gradient(180deg, #ffffff 0%, $ground-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ice {
-    background: linear-gradient(180deg, #ffffff 0%, $ice-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-normal {
-    background: linear-gradient(180deg, #ffffff 0%, $normal-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-poison {
-    background: linear-gradient(180deg, #ffffff 0%, $poison-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-psychic {
-    background: linear-gradient(180deg, #ffffff 0%, $psychic-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-rock {
-    background: linear-gradient(180deg, #ffffff 0%, $rock-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-steel {
-    background: linear-gradient(180deg, #ffffff 0%, $steel-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-water {
-    background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
-    filter: brightness(150%);
-    animation-name: spin;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-}
-
-.Frame {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-    width: 100%;
-    margin-left: 0;
-    max-width: 252px;
-    margin: inherit;
-    padding: 0;
-    background: linear-gradient( 151.98deg, rgba(250, 250, 250, 1) 41.051563958595864%, rgb(236, 235, 235) 85.82368021521708%);
-    // filter:  
-    border-radius: 4px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
-}
-
-// #Page:hover #frame  {
-    // filter:  
-    // box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-    // -webkit-transition:  box-shadow .5s;
 // }
 
-// #totalcard:hover {
-//     top: 2px;
-//     left: -2px;
+
+
+
+// .Page-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: auto;
+//     z-index: 1;
+//     margin: 0;
+//     padding: 10px 10px;
+//     transition: all 0.5s ease-in;
 // }
 
-.Frame-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.frame-card-outline {
-    position: relative;
-    z-index: 3;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 252px;
-    min-width: 252px;
-    height: 285px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    min-height: 285px;
-}
-
-.frame-card-outline-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.Frame-card-elements {
-    position: relative;
-    z-index: 5;
-    pointer-events: none;
-    margin-left: 0.3968253968253968%;
-    width: 99.2063492063492%;
-    height: 100%;
-    margin-top: 1.1904761904761905%;
-}
-
-.Frame-card-elements-outer {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: 5;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-
-
-/* .frame-white-bg-card, .frame-white-bg-card-fire , .frame-white-bg-card-grass, .frame-white-bg-card-fairy, .frame-white-bg-card-fighting, .frame-white-bg-card-flying, .frame-white-bg-card-dragon, .frame-white-bg-card-ghost, .frame-white-bg-card-rock, .frame-white-bg-card-normal, .frame-white-bg-card-water, .frame-white-bg-card-dragon, .frame-white-bg-card-psychic, .frame-white-bg-card-bug, .frame-white-bg-card-ground{
-  position: relative;
-  z-index: 6;
-  pointer-events: none;
-  margin-left: 0px;
-  width: 252px;
-  min-width: 250px;
-  height: 285px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  min-height: 285px;
-  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
-} */
-
-.frame-card-bg-white {
-    position: relative;
-    z-index: 6;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 252px;
-    min-width: 250px;
-    height: 285px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    min-height: 285px;
-    background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
-    border-radius: 1px 1px 4px 4px;
-}
-
-
-/* .frame-card-bg-white:hover {
-  position: relative;
-  z-index: 6;
-  pointer-events: none;
-  margin-left: 0px;
-  width: 252px;
-  min-width: 250px;
-  height: 285px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  min-height: 285px;
-  background: linear-gradient(180deg, #ffffff 0%, #fff2de 100%);
-} */
-
-.frame-card-bg-white-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 6;
-}
-
-.frame-card-img {
-    position: relative;
-    z-index: 13;
-    pointer-events: none;
-    margin-left: 28px;
-    width: 197px;
-    min-width: 197px;
-    height: 195px;
-    margin-top: -256px;
-    margin-bottom: 61px;
-    min-height: 195px;
-}
-
-.frame-card-img-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 13;
-}
-
-.card-img {
-    position: relative;
-    z-index: 14;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    min-height: 203px;
-    /* content:url(images/card_img.png); */
-    transform: scale(0.9);
-    /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: .9;
-}
-
-.card-img2 {
-    position: relative;
-    z-index: 14;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    /* min-height:203px;
-    content:url(images/card_img.png); */
-    transform: scale(0.9);
-    /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: 1;
-}
-
-.card-img-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 14;
-    justify-content: center;
-}
-
-.frame-pokemon-name {
-    position: relative;
-    z-index: 15;
-    pointer-events: none;
-    margin-left: -2px;
-    width: 250px;
-    height: 45px;
-    margin-top: 224px;
-}
-
-.frame-pokemon-name-outer {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: 15;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    align-items: center;
-}
-
-.card-frame-name {
-    position: relative;
-    z-index: 16;
-    pointer-events: none;
-    margin-left: 24px;
-    width: 203px;
-    min-width: 203px;
-    height: 30px;
-    margin-top: 8px;
-    margin-bottom: 7px;
-    min-height: 30px;
-    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
-    border-radius: 4px;
-}
-
-.card-frame-name-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 16;
-}
-
-.poke-name,
-.poke-name-grass,
-.poke-name-fire,
-.poke-name-fairy {
-    @include pokename;
-}
-
-.poke-name-fire {
-    @include pokename;
-}
-
-#Page:hover .poke-name {
-    transform: translateY(-5px) translateX(-5px);
-}
-
-.poke-name-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 17;
-}
-
-.frame-type-logo-name {
-    position: relative;
-    z-index: 7;
-    pointer-events: none;
-    margin-left: 0.4%;
-    width: 100%;
-    height: 15.985964912280702%;
-    margin-top: 0px;
-    margin-right: 5px;
-}
-
-.frame-type-logo-name-outer {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: 7;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    padding-right: 50px;
-    margin-right: 4px;
-}
-
-.frame-type-name {
-    display: inline-flex;
-    flex-direction: row;
-    position: relative;
-    z-index: 11;
-    pointer-events: none;
-    margin-left: 35px;
-    width: 45px;
-    min-width: 40px;
-    height: 45.56px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    min-height: 45.56px;
-    align-content: center;
-    align-items: center;
-}
-
-.frame-type-name-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 11;
-}
-
-#TYPENAME-fire {
-    @include type-name;
-    // margin-top: 10px;
-    // margin-left: 12px;
-    color: $fire-color;
-}
-
-.TYPENAME {
-    @include type-name;
-    color: #09bac7;
-}
-
-#TYPENAME-grass {
-    @include type-name;
-    color: $grass-color;
-}
-
-#TYPENAME-fairy {
-    @include type-name;
-    color: $fairy-color;
-}
-
-#TYPENAME-water {
-    @include type-name;
-    color: $water-color;
-    filter: brightness(50%);
-}
-
-#TYPENAME-bug {
-    @include type-name;
-    color: $bug-dark;
-}
-
-#TYPENAME-dark {
-    @include type-name;
-    color: $dark-color;
-}
-
-#TYPENAME-dragon {
-    @include type-name;
-    color: $dragon-color;
-}
-
-#TYPENAME-electric {
-    @include type-name;
-    color: $electric-color;
-    filter: brightness(75%);
-    font-style: shadow;
-}
-
-#TYPENAME-fighting {
-    @include type-name;
-    color: $fighting-color;
-}
-
-#TYPENAME-flying {
-    @include type-name;
-    color: $flying-color;
-}
-
-#TYPENAME-ghost {
-    @include type-name;
-    color: $ghost-color;
-}
-
-#TYPENAME-ground {
-    @include type-name;
-    color: $ground-color;
-}
-
-#TYPENAME-ice {
-    @include type-name;
-    color: $ice-color;
-}
-
-#TYPENAME-normal {
-    @include type-name;
-    color: $normal-color;
-}
-
-#TYPENAME-poison {
-    @include type-name;
-    color: $poison-color;
-}
-
-#TYPENAME-psychic {
-    @include type-name;
-    color: $psychic-color;
-}
-
-#TYPENAME-rock {
-    @include type-name;
-    color: $rock-color;
-}
-
-#TYPENAME-steel {
-    @include type-name;
-    color: $steel-color;
-}
-
-#Page:hover .TYPENAME {
-    transform: translateY(-5px) translateX(-5px);
-}
-
-.TYPENAME-logo {
-    position: relative;
-    z-index: 8;
-    pointer-events: none;
-    // margin-left: 8px;
-    // width: 28px;
-    // min-width: 25px;
-    // height: 43px;
-    padding: 0px 2px 0px 0px;
-    overflow: visible;
-}
-
-.TYPENAME-logo-outer {
-    position: relative;
-    display: flex;
-    pointer-events: auto;
-    z-index: 8;
-    width: 100%;
-    // padding-right: 5px;
-    // margin-right: 5px;
-}
-
-.Frame-4 {
-    position: relative;
-    z-index: 9;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 100%;
-    min-width: 25px;
-    height: 28px;
-    margin-top: 8px;
-    margin-bottom: 7px;
-    min-height: 28px;
-}
-
-.Frame-4-outer {
-    position: relative;
-    display: flex;
-    pointer-events: none;
-    z-index: 9;
-    margin-right: 0px;
-    padding-right: 0px;
-    margin-top: -40px;
-    margin-left: 5px;
-    width: 100%;
-}
-
-
-
-.type-logo-TYPENAME {
-    @include type-logo;
-    content: url(images/type_c21_fire.svg);
-}
-
-#type-logo-TYPENAME-fire {
-    @include type-logo;
-    content: url(images/type_c21_fire.svg);
-}
-
-.TYPENAME-logo-fire {
-    @include type-logo;
-    content: url(images/type_c21_fire.svg);
-}
-
-#type-logo-TYPENAME-fairy {
-    @include type-logo;
-    content: url(images/type_c21_fairy.svg);
-}
-
-#type-logo-TYPENAME-grass {
-    @include type-logo;
-    content: url(images/type_c21_grass.svg);
-}
-
-#type-logo-TYPENAME-dark {
-    @include type-logo;
-    content: url(images/type_c21_dark.svg);
-}
-
-#type-logo-TYPENAME-bug {
-    @include type-logo;
-    content: url(images/type_c21_bug.svg);
-}
-
-#type-logo-TYPENAME-dragon {
-    @include type-logo;
-    content: url(images/type_c21_dragon.svg);
-}
-
-#type-logo-TYPENAME-electric {
-    @include type-logo;
-    content: url(images/type_c21_electric.svg);
-}
-
-#type-logo-TYPENAME-fighting {
-    @include type-logo;
-    content: url(images/type_c21_fighting.svg);
-}
-
-#type-logo-TYPENAME-flying {
-    @include type-logo;
-    content: url(images/type_c21_flying.svg);
-}
-
-#type-logo-TYPENAME-ghost {
-    @include type-logo;
-    content: url(images/type_c21_ghost.svg);
-}
-
-#type-logo-TYPENAME-ground {
-    @include type-logo;
-    content: url(images/type_c21_ground.svg);
-}
-
-#type-logo-TYPENAME-ice {
-    @include type-logo;
-    content: url(images/type_c21_ice.svg);
-}
-
-#type-logo-TYPENAME-normal {
-    @include type-logo;
-    content: url(images/type_c21_normal.svg);
-}
-
-#type-logo-TYPENAME-poison {
-    @include type-logo;
-    content: url(images/type_c21_poison.svg);
-}
-
-#type-logo-TYPENAME-psychic {
-    @include type-logo;
-    content: url(images/type_c21_psychic.svg);
-}
-
-#type-logo-TYPENAME-rock {
-    @include type-logo;
-    content: url(images/type_c21_rock.svg);
-}
-
-#type-logo-TYPENAME-steel {
-    @include type-logo;
-    content: url(images/type_c21_steel.svg);
-}
-
-#type-logo-TYPENAME-water {
-    @include type-logo;
-    // max-width: 18px;
-    content: url(images/type_c21_water.svg);
-}
-
-.type-logo-TYPENAME-outer {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-
-
-#Page:hover::after #Frame {
-    content: '';
-    opacity: 1;
-}
-
-#Page:hover #Frame {
-
-    width: 100%;
-    height: 100%;
-    // opacity: 0;
-    transform: translateY(-5px) translateX(-5px);
-    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out, opacity .3s ease-in-out;
-    color: rgba(0, 0, 0, 0.25);
-
-}
-
-#Page:hover {
-
-    transition: transform 0.3s ease-in-out;
-}
-
-
-
-
-#Frame {
-    // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
-    width: 100%;
-    transition: transform .5s ease;
-
-}
-
-.Page {
-    width: 100%;
-    height: 100%;
-    // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
-}
-
-
-#Frame{
-    box-shadow:none;
-   }
+// #Page:hover #card-img {
+//     --angle: 40;
+//     position: relative;
+//     z-index: 14;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 205px;
+//     height: 203px;
+//     margin-top: 0px;
+//     margin-bottom: -8px;
+//     min-height: 203px;
+//     /* content:url(images/card_img.png); */
+//     transform: scale(1);
+//     /* [2] Transition property for smooth transformation of images */
+//     transition: transform 0.5s ease;
+//     opacity: 1;
+//     // box-shadow: 1px 8px 20px grey;
+//     -webkit-transition:  box-shadow .6s ease-in;
    
-   /* Division */
-   #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(2) a:nth-child(1) div:nth-child(1) #Page div:nth-child(1) #Frame > div:nth-child(1){
-    box-shadow:0px 0px 3px 0px #0000ee !important;
-   }
-   
-   /* Page */
-   #Page{
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+// }
 
-   }
-   
+// #Page:hover #card-img2 {
+//     position: relative;
+//     z-index: 14;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 205px;
+//     height: 203px;
+//     margin-top: 0px;
+//     margin-bottom: -8px;
+//     min-height: 203px;
+//     /* content:url(images/card_img.png); */
+//     transform: scale(1);
+//     /* [2] Transition property for smooth transformation of images */
+//     transition: transform 0.5s ease-in;
+// }
 
-   body{
-    left:1px;
-   }
-   
-   /* Image (hover) */
-   #Page:hover img {
-    transform:scale(1.10) rotateY(-2deg) translatex(2px) translatey(-3px);
-    perspective:399px;
-   }
-   
-   /* Span Tag (hover) */
-   div > span:hover{
-    transform:scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
-    perspective:584px;
-   }
-   
-   /* Span Tag (hover) */
-   #Page span span:hover{
-    transform:scale(0.52);
-   }
-   
-   /* Division (hover) */
+// #totalcard {
+//     transform: scale(0);
+// }
 
-//    #Page:hover #card-bg-gradient-fighting {
-//     @include cardspin;
-//     // @include cardspin;
+// #totalcard:hover, #Page:hover #frame{
+//     transform: scale(1);
+//     transition: transfrom .6s ease-in;
+// }
+
+
+// #Page:hover #poke-name-fighting {
+//     background: linear-gradient(180deg, $fighting-color 0%, #082b1e 59.9%);
+//     background-clip: text;
+// }
+
+// // .gradient-border {
+// //   --borderWidth: 1px 1px 4px 4px;
+// //   background: #1D1F20;
+// //   position: relative;
+// //   border-radius: var(--borderWidth);
+// // }
+// // .gradient-border:after {
+// //   content: '';
+// //   position: absolute;
+// //   top: calc(-1 * var(--borderWidth));
+// //   left: calc(-1 * var(--borderWidth));
+// //   height: calc(100% + var(--borderWidth) * 2);
+// //   width: calc(100% + var(--borderWidth) * 2);
+// //   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+// //   border-radius: calc(2 * var(--borderWidth));
+// //   z-index: -1;
+// //   animation: animatedgradient 3s ease alternate infinite;
+// //   background-size: 300% 300%;
+// // }
+// @mixin card-gradient {
+//     --borderWidth: 1px 1px 4px 4px;
+//     position: relative;
+//     width: 100%;
+//     height: 102%;
+//     z-index: 5;
+//     pointer-events: none;
+//     margin-left: 0%;
+//     margin-top: 0%;
+//     border: 1px;
+//     border-color: lime;
+//     border-radius: var(--borderWidth);
+// }
+
+// @keyframes animatedgradient {
+//     0% {
+//         background-position: 0% 50%;
+//         opacity: 0;
+//     }
+//     50% {
+//         background-position: 100% 50%;
+//     }
+//     100% {
+//         background-position: 0% 50%;
+//         transition: opacity(1);
+//         transform: rotateX('50deg');
+//         transform: rotateY(60deg);
+//         background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+//     }
+// }
+
+// @keyframes spin {
+//     0% {
+//         --rotate: 0deg;
+//     }
+//     100% {
+//         --rotate: 360deg;
+//     }
+// }
+
+// @mixin cardspin {
+//     --borderWidth: 1px 1px 4px 4px;
+//     content: '';
+//     position: absolute;
+//     z-index: 5;
+//     top: calc(-1 * --borderWidth);
+//     left: 150px;
+//     height: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+//     width: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
+//     border-radius: calc(2 * (border-width(1px 1px 4px 4px)));
 //     animation-name: animatedgradient;
 //     animation: 3s ease alternate infinite;
+//     background-size: 300% 300%;
+// }
 
-//     z-index: 235;
 
-    #card-bg-gradient-fighting {
-        --borderWidth: 1;
-        background-image: linear-gradient(
-            to bottom,
-            var(--fighting-light),
-            var(--fighting-color)
-        );
-        border: var(--borderWidth) solid var(--fighting-dark);
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
+// #card-bg-gradient-fighting {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+// }
+
+
+
+// .card-bg-gradient-outer {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 4;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+// }
+
+// #Page:hover #card-bg-gradient-outer::after {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: -1;
+//     top: calc(-1 * var(--borderWidth));
+//     left: calc(-1 * var(--borderWidth));
+//     height: calc(100% + var(--borderWidth) * 2);
+//     width: calc(100% + var(--borderWidth) * 2);
+// }
+
+// .card-bg-gradient {
+//     @include card-gradient;
+//     background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
+// }
+
+// @keyframes animatedgradient {
+//     0% {
+//         background-position: 0% 50%;
+//     }
+//     50% {
+//         background-position: 100% 50%;
+//     }
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
+
+// :root {
+//     --card-height: 65vh;
+//     --card-width: calc(var(--card-height) / 1.5);
+//     --rotate: 75deg;
+
+//     --fighting-color: #C03028;
+//     --fighting-light: #D67873;
+//     --fighting-dark: #7D1F1A;
+//     --fighting-hover: #D67873;
+
+//     --fighting-color: #C03028;
+//     --fighting-light: #D67873;
+//     --fighting-dark: #7D1F1A;
+//     --fighting-hover: #D67873;
+ 
+// }
+
+// @keyframes spin {
+//     0% {
+//         --rotate: 0deg;
+//     }
+//     100% {
+//         --rotate: 360deg;
+//     }
+// }
+
+// #Page:hover #frame-card-bg-white-grass {
+//     // background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+//     // filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-fairy {
+//     background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-fighting {
+//     background: linear-gradient(180deg, #ffffff 0%, $fighting-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-fairy {
+//     background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-bug {
+//     background: linear-gradient(180deg, #ffffff 0%, $bug-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-dark {
+//     background: linear-gradient(180deg, #ffffff 0%, $dark-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-dragon {
+//     background: linear-gradient(180deg, #ffffff 0%, $dragon-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-electric {
+//     background: linear-gradient(180deg, #ffffff 0%, $electric-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-flying {
+//     background: linear-gradient(180deg, #ffffff 0%, $flying-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-ghost {
+//     background: linear-gradient(180deg, #ffffff 0%, $ghost-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-grass {
+//     background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-ground {
+//     background: linear-gradient(180deg, #ffffff 0%, $ground-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-ice {
+//     background: linear-gradient(180deg, #ffffff 0%, $ice-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-normal {
+//     background: linear-gradient(180deg, #ffffff 0%, $normal-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-poison {
+//     background: linear-gradient(180deg, #ffffff 0%, $poison-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-psychic {
+//     background: linear-gradient(180deg, #ffffff 0%, $psychic-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-rock {
+//     background: linear-gradient(180deg, #ffffff 0%, $rock-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-steel {
+//     background: linear-gradient(180deg, #ffffff 0%, $steel-color 100%);
+//     filter: brightness(150%);
+// }
+
+// #Page:hover #frame-card-bg-white-water {
+//     background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
+//     filter: brightness(150%);
+//     animation-name: spin;
+//     animation-timing-function: cubic-bezier(1, 0, 0, 1);
+// }
+
+// .Frame {
+//     position: relative;
+//     z-index: 2;
+//     pointer-events: none;
+//     width: 100%;
+//     margin-left: 0;
+//     max-width: 252px;
+//     margin: inherit;
+//     padding: 0;
+//     background: linear-gradient( 151.98deg, rgba(250, 250, 250, 1) 41.051563958595864%, rgb(236, 235, 235) 85.82368021521708%);
+//     // filter:  
+//     border-radius: 4px;
+//     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+// }
+
+// // #Page:hover #frame  {
+//     // filter:  
+//     // box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+//     // -webkit-transition:  box-shadow .5s;
+// // }
+
+// // #totalcard:hover {
+// //     top: 2px;
+// //     left: -2px;
+// // }
+
+// .Frame-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 2;
+// }
+
+// .frame-card-outline {
+//     position: relative;
+//     z-index: 3;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 252px;
+//     min-width: 252px;
+//     height: 285px;
+//     margin-top: 0px;
+//     margin-bottom: 5px;
+//     min-height: 285px;
+// }
+
+// .frame-card-outline-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 3;
+// }
+
+// .Frame-card-elements {
+//     position: relative;
+//     z-index: 5;
+//     pointer-events: none;
+//     margin-left: 0.3968253968253968%;
+//     width: 99.2063492063492%;
+//     height: 100%;
+//     margin-top: 1.1904761904761905%;
+// }
+
+// .Frame-card-elements-outer {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 5;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+// }
+
+
+// /* .frame-white-bg-card, .frame-white-bg-card-fire , .frame-white-bg-card-grass, .frame-white-bg-card-fairy, .frame-white-bg-card-fighting, .frame-white-bg-card-flying, .frame-white-bg-card-dragon, .frame-white-bg-card-ghost, .frame-white-bg-card-rock, .frame-white-bg-card-normal, .frame-white-bg-card-water, .frame-white-bg-card-dragon, .frame-white-bg-card-psychic, .frame-white-bg-card-bug, .frame-white-bg-card-ground{
+//   position: relative;
+//   z-index: 6;
+//   pointer-events: none;
+//   margin-left: 0px;
+//   width: 252px;
+//   min-width: 250px;
+//   height: 285px;
+//   margin-top: 0px;
+//   margin-bottom: 0px;
+//   min-height: 285px;
+//   background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+// } */
+
+// .frame-card-bg-white {
+//     position: relative;
+//     z-index: 6;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 252px;
+//     min-width: 250px;
+//     height: 285px;
+//     margin-top: 0px;
+//     margin-bottom: 0px;
+//     min-height: 285px;
+//     background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+//     border-radius: 1px 1px 4px 4px;
+// }
+
+
+// /* .frame-card-bg-white:hover {
+//   position: relative;
+//   z-index: 6;
+//   pointer-events: none;
+//   margin-left: 0px;
+//   width: 252px;
+//   min-width: 250px;
+//   height: 285px;
+//   margin-top: 0px;
+//   margin-bottom: 0px;
+//   min-height: 285px;
+//   background: linear-gradient(180deg, #ffffff 0%, #fff2de 100%);
+// } */
+
+// .frame-card-bg-white-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 6;
+// }
+
+// .frame-card-img {
+//     position: relative;
+//     z-index: 13;
+//     pointer-events: none;
+//     margin-left: 28px;
+//     width: 197px;
+//     min-width: 197px;
+//     height: 195px;
+//     margin-top: -256px;
+//     margin-bottom: 61px;
+//     min-height: 195px;
+// }
+
+// .frame-card-img-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 13;
+// }
+
+// .card-img {
+//     position: relative;
+//     z-index: 14;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 205px;
+//     height: 203px;
+//     margin-top: 0px;
+//     margin-bottom: -8px;
+//     min-height: 203px;
+//     /* content:url(images/card_img.png); */
+//     transform: scale(0.9);
+//     /* [2] Transition property for smooth transformation of images */
+//     transition: transform 0.5s ease;
+//     opacity: .9;
+// }
+
+// .card-img2 {
+//     position: relative;
+//     z-index: 14;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 205px;
+//     height: 203px;
+//     margin-top: 0px;
+//     margin-bottom: -8px;
+//     /* min-height:203px;
+//     content:url(images/card_img.png); */
+//     transform: scale(0.9);
+//     /* [2] Transition property for smooth transformation of images */
+//     transition: transform 0.5s ease;
+//     opacity: 1;
+// }
+
+// .card-img-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 14;
+//     justify-content: center;
+// }
+
+// .frame-pokemon-name {
+//     position: relative;
+//     z-index: 15;
+//     pointer-events: none;
+//     margin-left: -2px;
+//     width: 250px;
+//     height: 45px;
+//     margin-top: 224px;
+// }
+
+// .frame-pokemon-name-outer {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 15;
+//     justify-content: center;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+//     align-items: center;
+// }
+
+// .card-frame-name {
+//     position: relative;
+//     z-index: 16;
+//     pointer-events: none;
+//     margin-left: 24px;
+//     width: 203px;
+//     min-width: 203px;
+//     height: 30px;
+//     margin-top: 8px;
+//     margin-bottom: 7px;
+//     min-height: 30px;
+//     filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+//     border-radius: 4px;
+// }
+
+// .card-frame-name-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 16;
+// }
+
+// .poke-name,
+// .poke-name-grass,
+// .poke-name-fire,
+// .poke-name-fairy {
+//     @include pokename;
+// }
+
+// .poke-name-fire {
+//     @include pokename;
+// }
+
+// #Page:hover .poke-name {
+//     transform: translateY(-5px) translateX(-5px);
+// }
+
+// .poke-name-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 17;
+// }
+
+// .frame-type-logo-name {
+//     position: relative;
+//     z-index: 7;
+//     pointer-events: none;
+//     margin-left: 0.4%;
+//     width: 100%;
+//     height: 15.985964912280702%;
+//     margin-top: 0px;
+//     margin-right: 5px;
+// }
+
+// .frame-type-logo-name-outer {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 7;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+//     padding-right: 50px;
+//     margin-right: 4px;
+// }
+
+// .frame-type-name {
+//     display: inline-flex;
+//     flex-direction: row;
+//     position: relative;
+//     z-index: 11;
+//     pointer-events: none;
+//     margin-left: 35px;
+//     width: 45px;
+//     min-width: 40px;
+//     height: 45.56px;
+//     margin-top: 0px;
+//     margin-bottom: 0px;
+//     min-height: 45.56px;
+//     align-content: center;
+//     align-items: center;
+// }
+
+// .frame-type-name-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 11;
+// }
+
+// #TYPENAME-fire {
+//     @include type-name;
+//     // margin-top: 10px;
+//     // margin-left: 12px;
+//     color: $fire-color;
+// }
+
+// .TYPENAME {
+//     @include type-name;
+//     color: #09bac7;
+// }
+
+// #TYPENAME-grass {
+//     @include type-name;
+//     color: $grass-color;
+// }
+
+// #TYPENAME-fairy {
+//     @include type-name;
+//     color: $fairy-color;
+// }
+
+// #TYPENAME-water {
+//     @include type-name;
+//     color: $water-color;
+//     filter: brightness(50%);
+// }
+
+// #TYPENAME-bug {
+//     @include type-name;
+//     color: $bug-dark;
+// }
+
+// #TYPENAME-dark {
+//     @include type-name;
+//     color: $dark-color;
+// }
+
+// #TYPENAME-dragon {
+//     @include type-name;
+//     color: $dragon-color;
+// }
+
+// #TYPENAME-electric {
+//     @include type-name;
+//     color: $electric-color;
+//     filter: brightness(75%);
+//     font-style: shadow;
+// }
+
+// #TYPENAME-fighting {
+//     @include type-name;
+//     color: $fighting-color;
+// }
+
+// #TYPENAME-flying {
+//     @include type-name;
+//     color: $flying-color;
+// }
+
+// #TYPENAME-ghost {
+//     @include type-name;
+//     color: $ghost-color;
+// }
+
+// #TYPENAME-ground {
+//     @include type-name;
+//     color: $ground-color;
+// }
+
+// #TYPENAME-ice {
+//     @include type-name;
+//     color: $ice-color;
+// }
+
+// #TYPENAME-normal {
+//     @include type-name;
+//     color: $normal-color;
+// }
+
+// #TYPENAME-poison {
+//     @include type-name;
+//     color: $poison-color;
+// }
+
+// #TYPENAME-psychic {
+//     @include type-name;
+//     color: $psychic-color;
+// }
+
+// #TYPENAME-rock {
+//     @include type-name;
+//     color: $rock-color;
+// }
+
+// #TYPENAME-steel {
+//     @include type-name;
+//     color: $steel-color;
+// }
+
+// #Page:hover .TYPENAME {
+//     transform: translateY(-5px) translateX(-5px);
+// }
+
+// .TYPENAME-logo {
+//     position: relative;
+//     z-index: 8;
+//     pointer-events: none;
+//     // margin-left: 8px;
+//     // width: 28px;
+//     // min-width: 25px;
+//     // height: 43px;
+//     padding: 0px 2px 0px 0px;
+//     overflow: visible;
+// }
+
+// .TYPENAME-logo-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: auto;
+//     z-index: 8;
+//     width: 100%;
+//     // padding-right: 5px;
+//     // margin-right: 5px;
+// }
+
+// .Frame-4 {
+//     position: relative;
+//     z-index: 9;
+//     pointer-events: none;
+//     margin-left: 0px;
+//     width: 100%;
+//     min-width: 25px;
+//     height: 28px;
+//     margin-top: 8px;
+//     margin-bottom: 7px;
+//     min-height: 28px;
+// }
+
+// .Frame-4-outer {
+//     position: relative;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 9;
+//     margin-right: 0px;
+//     padding-right: 0px;
+//     margin-top: -40px;
+//     margin-left: 5px;
+//     width: 100%;
+// }
+
+
+
+// .type-logo-TYPENAME {
+//     @include type-logo;
+//     content: url(images/type_c21_fire.svg);
+// }
+
+// #type-logo-TYPENAME-fire {
+//     @include type-logo;
+//     content: url(images/type_c21_fire.svg);
+// }
+
+// .TYPENAME-logo-fire {
+//     @include type-logo;
+//     content: url(images/type_c21_fire.svg);
+// }
+
+// #type-logo-TYPENAME-fairy {
+//     @include type-logo;
+//     content: url(images/type_c21_fairy.svg);
+// }
+
+// #type-logo-TYPENAME-grass {
+//     @include type-logo;
+//     content: url(images/type_c21_grass.svg);
+// }
+
+// #type-logo-TYPENAME-dark {
+//     @include type-logo;
+//     content: url(images/type_c21_dark.svg);
+// }
+
+// #type-logo-TYPENAME-bug {
+//     @include type-logo;
+//     content: url(images/type_c21_bug.svg);
+// }
+
+// #type-logo-TYPENAME-dragon {
+//     @include type-logo;
+//     content: url(images/type_c21_dragon.svg);
+// }
+
+// #type-logo-TYPENAME-electric {
+//     @include type-logo;
+//     content: url(images/type_c21_electric.svg);
+// }
+
+// #type-logo-TYPENAME-fighting {
+//     @include type-logo;
+//     content: url(images/type_c21_fighting.svg);
+// }
+
+// #type-logo-TYPENAME-flying {
+//     @include type-logo;
+//     content: url(images/type_c21_flying.svg);
+// }
+
+// #type-logo-TYPENAME-ghost {
+//     @include type-logo;
+//     content: url(images/type_c21_ghost.svg);
+// }
+
+// #type-logo-TYPENAME-ground {
+//     @include type-logo;
+//     content: url(images/type_c21_ground.svg);
+// }
+
+// #type-logo-TYPENAME-ice {
+//     @include type-logo;
+//     content: url(images/type_c21_ice.svg);
+// }
+
+// #type-logo-TYPENAME-normal {
+//     @include type-logo;
+//     content: url(images/type_c21_normal.svg);
+// }
+
+// #type-logo-TYPENAME-poison {
+//     @include type-logo;
+//     content: url(images/type_c21_poison.svg);
+// }
+
+// #type-logo-TYPENAME-psychic {
+//     @include type-logo;
+//     content: url(images/type_c21_psychic.svg);
+// }
+
+// #type-logo-TYPENAME-rock {
+//     @include type-logo;
+//     content: url(images/type_c21_rock.svg);
+// }
+
+// #type-logo-TYPENAME-steel {
+//     @include type-logo;
+//     content: url(images/type_c21_steel.svg);
+// }
+
+// #type-logo-TYPENAME-water {
+//     @include type-logo;
+//     // max-width: 18px;
+//     content: url(images/type_c21_water.svg);
+// }
+
+// .type-logo-TYPENAME-outer {
+//     position: absolute;
+//     display: flex;
+//     pointer-events: none;
+//     z-index: 10;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+// }
+
+
+// #Page:hover::after #Frame {
+//     content: '';
+//     opacity: 1;
+// }
+
+// #Page:hover #Frame {
+
+//     width: 100%;
+//     height: 100%;
+//     // opacity: 0;
+//     transform: translateY(-5px) translateX(-5px);
+//     box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+//     transition: transform 0.3s ease-in-out, opacity .3s ease-in-out;
+//     color: rgba(0, 0, 0, 0.25);
+
+// }
+
+// #Page:hover {
+
+//     transition: transform 0.3s ease-in-out;
+// }
+
+
+
+
+// #Frame {
+//     // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+//     width: 100%;
+//     transition: transform .5s ease;
+
+// }
+
+// .Page {
+//     width: 100%;
+//     height: 100%;
+//     // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+// }
+
+
+// #Frame{
+//     box-shadow:none;
+//    }
+   
+//    /* Division */
+//    #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(2) a:nth-child(1) div:nth-child(1) #Page div:nth-child(1) #Frame > div:nth-child(1){
+//     box-shadow:0px 0px 3px 0px #0000ee !important;
+//    }
+   
+//    /* Page */
+//    #Page{
+//     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+//    }
+   
+
+//    body{
+//     left:1px;
+//    }
+   
+//    /* Image (hover) */
+//    #Page:hover img {
+//     transform:scale(1.10) rotateY(-2deg) translatex(2px) translatey(-3px);
+//     perspective:399px;
+//    }
+   
+//    /* Span Tag (hover) */
+//    div > span:hover{
+//     transform:scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
+//     perspective:584px;
+//    }
+   
+//    /* Span Tag (hover) */
+//    #Page span span:hover{
+//     transform:scale(0.52);
+//    }
+   
+//    /* Division (hover) */
+
+// //    #Page:hover #card-bg-gradient-fighting {
+// //     @include cardspin;
+// //     // @include cardspin;
+// //     animation-name: animatedgradient;
+// //     animation: 3s ease alternate infinite;
+
+// //     z-index: 235;
+
+//     #card-bg-gradient-fighting {
+//         --borderWidth: 1;
+//         background-image: linear-gradient(
+//             to bottom,
+//             var(--fighting-light),
+//             var(--fighting-color)
+//         );
+//         border: var(--borderWidth) solid var(--fighting-dark);
+//         border-radius: 8px;
+//         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+//     }
     
 
-}
+// }

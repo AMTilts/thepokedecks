@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
 
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+    
+
 :root {
     width: 100vw;
     --types: --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+    --card-height: 65vh;
     --card-width: calc(var(--card-height) / 1.5);
     --bug-light: #C6D16E;
     --bug-dark: #6D7815;
@@ -665,6 +674,7 @@ $gradient in $types {
         margin-left: 10px;
         &.inverse {
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             border-image-source:linear-gradient(100deg,
             gradient(var(#{$type}-color), from),
@@ -1049,7 +1059,7 @@ $gradient in $types {
     margin-top: 0%;
     border: 1px;
     border-color: lime;
-    border-radius: var(--borderWidth);
+    border-width: var(--borderWidth);
 }
 
 @keyframes animatedgradient {
@@ -2222,7 +2232,7 @@ $gradient in $types {
    
    /* Division (hover) */
 
-   #card-bg-gradient-fighting {
+#card-bg-gradient-fighting {
     background-size: 600% 600%;
     --borderWidth: 1px;
     background-image: linear-gradient(
@@ -2234,6 +2244,42 @@ $gradient in $types {
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+    }
+
+#card-bg-gradient-fighting:hover::before {
+    content: '';
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        var(--rotate)
+        , $fighting-color, $fighting-light 43%,
+        $fighting-dark);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+#card-bg-gradient-fighting:hover::after {
+    position: absolute;
+    content: '';
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+        var(--rotate)
+        , #5ddcff, #3c67e3 43%, #4e00c2);
+        opacity: 1;
+      transition: opacity .5s;
+      animation: spin 2.5s linear infinite;
 }
 
 #Page:hover #card-bg-gradient-fighting{
@@ -2272,4 +2318,5 @@ $gradient in $types {
         --rotate: 360deg;
     }
 }
+
 

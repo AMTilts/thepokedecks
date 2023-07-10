@@ -5,7 +5,7 @@ class FrontBackButton extends Component {
 
   render(props) {
   	return (
-    	<div className="frontbackbuttons" onClick={this.props.ballDefault}>{this.props.children}</div>
+    	<div className={`frontbackbuttons-${this.props.typeName}`} onClick={this.props.ballDefault}>{this.props.children}</div>
  		)
 	}
 }

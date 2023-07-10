@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap");
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
 :root {
   width: 100vw;
   --types: --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+  --card-height: 65vh;
   --card-width: calc(var(--card-height) / 1.5);
   --bug-light: #C6D16E;
   --bug-dark: #6D7815;
@@ -584,6 +591,7 @@
 }
 .frontswitch-grass.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
 }
@@ -595,6 +603,7 @@
 }
 .frontswitch-fire.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fire-color), from), gradient(var(fire-dark), to));
 }
@@ -606,6 +615,7 @@
 }
 .frontswitch-fairy.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fairy-color), from), gradient(var(fairy-dark), to));
 }
@@ -617,6 +627,7 @@
 }
 .frontswitch-water.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(water-color), from), gradient(var(water-dark), to));
 }
@@ -628,6 +639,7 @@
 }
 .frontswitch-rock.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(rock-color), from), gradient(var(rock-dark), to));
 }
@@ -639,6 +651,7 @@
 }
 .frontswitch-dark.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(dark-color), from), gradient(var(dark-dark), to));
 }
@@ -650,6 +663,7 @@
 }
 .frontswitch-ghost.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ghost-color), from), gradient(var(ghost-dark), to));
 }
@@ -661,6 +675,7 @@
 }
 .frontswitch-ice.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ice-color), from), gradient(var(ice-dark), to));
 }
@@ -672,6 +687,7 @@
 }
 .frontswitch-dragon.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(dragon-color), from), gradient(var(dragon-dark), to));
 }
@@ -683,6 +699,7 @@
 }
 .frontswitch-flying.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(flying-color), from), gradient(var(flying-dark), to));
 }
@@ -694,6 +711,7 @@
 }
 .frontswitch-steel.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(steel-color), from), gradient(var(steel-dark), to));
 }
@@ -705,6 +723,7 @@
 }
 .frontswitch-electric.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(electric-color), from), gradient(var(electric-dark), to));
 }
@@ -716,6 +735,7 @@
 }
 .frontswitch-poison.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(poison-color), from), gradient(var(poison-dark), to));
 }
@@ -727,6 +747,7 @@
 }
 .frontswitch-fighting.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(fighting-color), from), gradient(var(fighting-dark), to));
 }
@@ -738,6 +759,7 @@
 }
 .frontswitch-psychic.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(psychic-color), from), gradient(var(psychic-dark), to));
 }
@@ -749,6 +771,7 @@
 }
 .frontswitch-ground.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(ground-color), from), gradient(var(ground-dark), to));
 }
@@ -760,6 +783,7 @@
 }
 .frontswitch-bug.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(bug-color), from), gradient(var(bug-dark), to));
 }
@@ -771,6 +795,7 @@
 }
 .frontswitch-normal.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(normal-color), from), gradient(var(normal-dark), to));
 }
@@ -782,6 +807,7 @@
 }
 .frontswitch-grass.inverse {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-image-source: linear-gradient(100deg, gradient(var(grass-color), from), gradient(var(grass-dark), to));
 }
@@ -1025,7 +1051,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: radial-gradient(121.52deg, #EE99AC 9.79%, #F4BDC9 24.44%, #9B6470 65.12%);
 }
 
@@ -1040,7 +1066,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #A8B820 9.79%, #C6D16E 21.97%, #6D7815 41.76%);
 }
 
@@ -1055,7 +1081,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   animation: spin 2.5s linear infinite;
   background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 21.97%, #9DB7F5 41.76%);
 }
@@ -1086,7 +1112,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #B8A038 9.79%, #D1C17D 21.97%, #786824 41.76%);
 }
 
@@ -1101,7 +1127,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #A8A878 9.79%, #C6C6A7 21.97%, #6D6D4E 41.76%);
 }
 
@@ -1116,7 +1142,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #F8D030 9.79%, #FAE078 21.97%, #A1871F 41.76%);
 }
 
@@ -1131,7 +1157,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #98D8D8 9.79%, #BCE6E6 21.97%, #638D8D 41.76%);
 }
 
@@ -1146,7 +1172,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #F85888 9.79%, #FA92B2 21.97%, #F85888 41.76%);
 }
 
@@ -1161,7 +1187,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #705848 9.79%, #A29288 21.97%, #49392F 41.76%);
 }
 
@@ -1176,7 +1202,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #7038F8 9.79%, #A27DFA 21.97%, #4924A1 41.76%);
 }
 
@@ -1191,7 +1217,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #F8D030 9.79%, #FAE078 21.97%, #A1871F 41.76%);
 }
 
@@ -1206,7 +1232,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #A040A0 9.79%, #C183C1 21.97%, #682A68 41.76%);
 }
 
@@ -1221,7 +1247,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #A890F0 9.79%, #C6B7F5 21.97%, #6D5E9C 41.76%);
 }
 
@@ -1236,7 +1262,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #705898 9.79%, #A292BC 21.97%, #493963 41.76%);
 }
 
@@ -1251,7 +1277,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(121.52deg, #E0C068 9.79%, #EBD69D 21.97%, #787887 41.76%);
 }
 
@@ -1288,7 +1314,7 @@
   margin-top: 0%;
   border: 1px;
   border-color: lime;
-  border-radius: var(--borderWidth);
+  border-width: var(--borderWidth);
   background: linear-gradient(138.83deg, #f5c519 9.906817229%, #008b17 16.4960543717%, #f519ea 22.071563002%, #007cce 41.8392722548%);
 }
 
@@ -2649,6 +2675,37 @@ div > span:hover {
   border-radius: 4px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(121.52deg, #C03028 9.79%, #D67873 21.97%, #7D1F1A 41.76%);
+}
+
+#card-bg-gradient-fighting:hover::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #C03028, #D67873 43%, #7D1F1A);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+#card-bg-gradient-fighting:hover::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
 }
 
 #Page:hover #card-bg-gradient-fighting {
