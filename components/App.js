@@ -10,6 +10,7 @@ import loading from '../loading/loading.gif'
 import Navbar from './Navbar'
 import Link from 'next/link'
 import Image from 'next/image'
+import ReactPaginate from 'react-paginate'
 // import styles from "./Button.module.css";
 
 // import '../style/pokecard.css'
@@ -19,10 +20,10 @@ import Image from 'next/image'
 function App() {
 
 
-    const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
+    const baseUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex/id';
     const [ nextUrl, setNextUrl ] = useState('');
     const [ prevUrl, setPrevUrl ] = useState('null');
-    const [ currentUrl, setCurrentUrl ] = useState('https://pokeapi.co/api/v2/pokemon');
+    const [ currentUrl, setCurrentUrl ] = useState('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex/id');
     const [ imageUrls, setImageUrls ] = useState([]);
     const [ sprites, setSprites ] = useState([]);
     const [ names, setNames ] = useState([]);
@@ -45,6 +46,8 @@ function App() {
             }
         }
     };
+
+
     
 
     useEffect(() => {
@@ -59,6 +62,7 @@ function App() {
         }    
         fetchData();
     }, [currentUrl])
+
 
     const next = async () => {
         setLoading(true);
@@ -108,7 +112,15 @@ function App() {
         return (
             <>
                 <div>
-                    {loading ? <Image width="200px" height="209px" alt="loading" src="/loading/loading.gif" /> : (
+                    {loading ? 
+                        <>
+                        <div id="loadingDiv">
+                            <div id="loadingDivPokemon">
+                                <Image width="200px" height="209px" alt="loading" src="/loading/loading.gif" id="loadingPokemon" style={{ width: 200, height: 200 }} />
+                                <span><h2 id="loadingh2">LOADING...</h2></span>
+                            </div>
+                        </div>
+                        </> : (
                         <>
                             <div className="btn-div-border">
                                 <Pagination 
@@ -136,4 +148,4 @@ function App() {
 
 
 
-export default App;
+export default App; 
