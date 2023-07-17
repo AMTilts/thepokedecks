@@ -481,6 +481,17 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             :   <div className="middlediv">
                                                 </div>)
                                         }
+                                                                             <div className={`templateinfodiv-${types[0].type.name}`}>
+                                            <ul>
+                                                <li className="typeli"><b>Type(s):</b> {types[0].type.name} 
+                                                    {/* <Image src={`/images/type_logo_${types[0].type.name}.svg`} /> */}
+                                                    {/* {typeTwo}  */}
+                                                </li>
+                                                <li className="typeli"><b>Ability:</b> {abilities[0].ability.name}</li>
+                                                <li className="typeli"><b>{abilityTwo}</b></li>
+                                                {/* { `${abilities[1].ability.name}` != ability ? <li className="typeli">{abilities[1].ability.name}</li>  : null } */}
+                                            </ul>
+                                        </div>
                                         <div>
                                             {/* <Image
                                                 src={sparkleImage}
@@ -526,17 +537,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             style={{ position: 'absolute', 'z-index': 5 }}
                                          /> */}
                                         {/* <Image src="/images/sparkle.png" id="sparkleImg-before"  width={35} height={35} /> */}
-                                        <div className={`templateinfodiv-${types[0].type.name}`}>
-                                            <ul>
-                                                <li className="typeli"><b>Type(s):</b> {types[0].type.name} 
-                                                    {/* <Image src={`/images/type_logo_${types[0].type.name}.svg`} /> */}
-                                                    {/* {typeTwo}  */}
-                                                </li>
-                                                <li className="typeli"><b>Ability:</b> {abilities[0].ability.name}</li>
-                                                <li className="typeli"><b>{abilityTwo}</b></li>
-                                                {/* { `${abilities[1].ability.name}` != ability ? <li className="typeli">{abilities[1].ability.name}</li>  : null } */}
-                                            </ul>
-                                        </div>
+
                                     </div>
 
                                     {/* <div className="numbertext">

@@ -665,6 +665,7 @@ $gradient in $types {
         margin-left: 10px;
         &.inverse {
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             border-image-source:linear-gradient(100deg,
             gradient(var(#{$type}-color), from),
@@ -1055,17 +1056,19 @@ $gradient in $types {
 @keyframes animatedgradient {
     0% {
         background-position: 0% 50%;
+        transform: rotate(0);
         opacity: 0;
     }
     50% {
         background-position: 100% 50%;
+        opacity:(1);
+        transform: rotate(180);
     }
     100% {
         background-position: 0% 50%;
         transition: opacity(1);
         transform: rotateX('50deg');
         transform: rotateY(60deg);
-        background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
     }
 }
 
@@ -1081,6 +1084,7 @@ $gradient in $types {
 @mixin cardspin {
     --borderWidth: 1px 1px 4px 4px;
     content: '';
+    background-position: 100% 100%;
     position: absolute;
     z-index: 5;
     top: calc(-1 * --borderWidth);
@@ -1110,29 +1114,55 @@ $gradient in $types {
 }
 
 #card-bg-gradient-water {
+    z-index: 40;
     @include card-gradient;
-    animation: spin 2.5s linear infinite;
+    animation: animatedgradient 2.5s linear infinite;
+    transition: var(--rotate) 3s ease infinite;
     background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
 }
 
 
 
+@keyframes spin {
+    0% {
+        var:(--rotate (0deg));
+    }
+    50% {
+        var:(--rotate: (180deg));
+    }
+    100% {
+        var:(--rotate: (360deg));
+    }
+}
 
 
-
-#card-bg-gradient-water::after {
+ #card-bg-gradient-water:hover::after {
     content: '';
     position: absolute;
-    z-index: -1;
+    z-index: 500;
     top: calc(-1 * var(--borderWidth));
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
     border-radius: calc(2 * var(--borderWidth));
-    animation-name: animatedgradient;
-    animation: 3s ease alternate infinite;
     background-size: 300% 300%;
-    background: linear-gradient(60deg, $water-color, $water-dark, $water-light);
+    background: linear-gradient(60deg, $fire-color, $fire-dark, $fire-light);
+}
+
+@keyframes animatedgradient {
+    0% {
+        // background-position: 0% 50%;
+        transform: rotate(0);
+    }
+    50% {
+        // background-position: 100% 50%;
+        transform: rotate(180);
+    }
+    100% {
+        // background-position: 0% 50%;
+        transform: rotateX('50deg');
+        transform: rotateY(60deg);
+    }
 }
 
 #card-bg-gradient-rock {

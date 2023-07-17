@@ -202,7 +202,7 @@ $color in $colorcolors {
 $color in $darkcolors {
     .templateinfodiv-#{$type} {
         @include templateinfodiv;
-        border-color: $color;
+        border-color: #{$type}-color;
         z-index: 200;
     }
 }
@@ -470,8 +470,9 @@ $d: a;
 
 /* Spritecontainer */
 .pagecontainer .spritecontainer{
-    min-width:20%;
-    width:20% !important;
+    min-width:70%;
+    width:100% !important;
+    min-height: 70%;
     z-index:10;
    }
    

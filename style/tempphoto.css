@@ -510,7 +510,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D7815;
+  border-color: bug-color;
   z-index: 200;
 }
 
@@ -520,7 +520,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #49392F;
+  border-color: dark-color;
   z-index: 200;
 }
 
@@ -530,7 +530,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #4924A1;
+  border-color: dragon-color;
   z-index: 200;
 }
 
@@ -540,7 +540,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #A1871F;
+  border-color: electric-color;
   z-index: 200;
 }
 
@@ -550,7 +550,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #9B6470;
+  border-color: fairy-color;
   z-index: 200;
 }
 
@@ -560,7 +560,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #7D1F1A;
+  border-color: fighting-color;
   z-index: 200;
 }
 
@@ -570,7 +570,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #9C531F;
+  border-color: fire-color;
   z-index: 200;
 }
 
@@ -580,7 +580,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D5E9C;
+  border-color: flying-color;
   z-index: 200;
 }
 
@@ -590,7 +590,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #493963;
+  border-color: ghost-color;
   z-index: 200;
 }
 
@@ -600,7 +600,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #4E8234;
+  border-color: grass-color;
   z-index: 200;
 }
 
@@ -610,7 +610,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #927D44;
+  border-color: ground-color;
   z-index: 200;
 }
 
@@ -620,7 +620,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #638D8D;
+  border-color: ice-color;
   z-index: 200;
 }
 
@@ -630,7 +630,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D6D4E;
+  border-color: normal-color;
   z-index: 200;
 }
 
@@ -640,7 +640,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #682A68;
+  border-color: poison-color;
   z-index: 200;
 }
 
@@ -650,7 +650,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #F85888;
+  border-color: psychic-color;
   z-index: 200;
 }
 
@@ -660,7 +660,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #786824;
+  border-color: rock-color;
   z-index: 200;
 }
 
@@ -670,7 +670,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #787887;
+  border-color: steel-color;
   z-index: 200;
 }
 
@@ -680,7 +680,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #445E9C;
+  border-color: water-color;
   z-index: 200;
 }
 
@@ -1254,8 +1254,9 @@ html {
 
 /* Spritecontainer */
 .pagecontainer .spritecontainer {
-  min-width: 20%;
-  width: 20% !important;
+  min-width: 70%;
+  width: 100% !important;
+  min-height: 70%;
   z-index: 10;
 }
 

@@ -993,17 +993,19 @@
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
+    transform: rotate(0);
     opacity: 0;
   }
   50% {
     background-position: 100% 50%;
+    opacity: 1;
+    transform: rotate(180);
   }
   100% {
     background-position: 0% 50%;
     transition: opacity(1);
     transform: rotateX("50deg");
     transform: rotateY(60deg);
-    background: linear-gradient(121.52deg, #6890F0 9.79%, #9DB7F5 21.97%, #445E9C 41.76%);
   }
 }
 @keyframes spin {
@@ -1045,6 +1047,7 @@
 }
 
 #card-bg-gradient-water {
+  z-index: 40;
   --borderWidth: 1px 1px 4px 4px;
   position: relative;
   width: 100%;
@@ -1056,25 +1059,47 @@
   border: 1px;
   border-color: lime;
   border-radius: var(--borderWidth);
-  animation: spin 2.5s linear infinite;
+  animation: animatedgradient 2.5s linear infinite;
+  transition: var(--rotate) 3s ease infinite;
   background: linear-gradient(121.52deg, #6890F0 9.79%, #445E9C 21.97%, #9DB7F5 41.76%);
 }
 
-#card-bg-gradient-water::after {
+@keyframes spin {
+  0% {
+    var: --rotate 0deg;
+  }
+  50% {
+    var--rotate: 180deg;
+  }
+  100% {
+    --rotate: (360deg);
+  }
+}
+#card-bg-gradient-water:hover::after {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 500;
   top: calc(-1 * var(--borderWidth));
   left: calc(-1 * var(--borderWidth));
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
   border-radius: calc(2 * var(--borderWidth));
-  animation-name: animatedgradient;
-  animation: 3s ease alternate infinite;
   background-size: 300% 300%;
-  background: linear-gradient(60deg, #6890F0, #445E9C, #9DB7F5);
+  background: linear-gradient(60deg, #eb9800f8, #9C531F, #F5AC78);
 }
 
+@keyframes animatedgradient {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180);
+  }
+  100% {
+    transform: rotateX("50deg");
+    transform: rotateY(60deg);
+  }
+}
 #card-bg-gradient-rock {
   --borderWidth: 1px 1px 4px 4px;
   position: relative;
