@@ -199,7 +199,7 @@ function PokeCard({ p }) {
                         <div className="card-img-outer">
                           <Image
                             id="card-img"
-                            src={p.sprites.front_default}
+                            src={p.assets.image}
                             data-name="card-img"
                             alt="Pokemon Image"
                             className="card-img"
@@ -266,7 +266,7 @@ function PokeCard({ p }) {
                             <div className="Frame-4-outer">
                               <div id="Frame-4" data-name="Frame 4" className="Frame-4">
                                 <div className="type-logo-TYPENAME-outer">
-                                  <img
+                                  <Image
                                     id={logoType}
                                     data-name="type-logo-TYPENAME"
                                     alt="Pokemon Type"
