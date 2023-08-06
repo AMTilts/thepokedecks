@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
 import Image from 'next/image';
+
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -22,23 +23,23 @@ import Image from 'next/image';
 // if ({p.types[]})
 /* 
 function typeCheck(p) {
-  const isGrass = p.types[0].type.name === "grass";
-  const isWater = p.types[0].type.name === "water";
-  const isFire = p.types[0].type.name === "fire";
+  const isGrass = type === "grass";
+  const isWater = type === "water";
+  const isFire = type === "fire";
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ p }) {
-  // if ("grass" === p.types[0].type.name) {
+function PokeCard({ id, name, image, type, lowerCaseData }) {
+  // if ("grass" === type) {
 
   //   return ;
-  // }else if(p.types[0].type.name === "water") {
+  // }else if(type === "water") {
   //   return <TypeWater />;
-  // }else if(p.types[0].type.name === "fighting") {
+  // }else if(type === "fighting") {
   //   return <TypeFire />;
-  // }else if(p.types[0].type.name === "normal")
+  // }else if(type === "normal")
 
-  // console.log(p.types[0].type.name)
+  // console.log(type)
 
   // function waterType() {
   //         return (
@@ -49,122 +50,136 @@ function PokeCard({ p }) {
   //             }>
   //         )
   //     }
+
+  
+  const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
+  
+  const cardFrame = pokemonTypes.map((type) => {
+    return `frame-card-bg-white-${type}`;
+  })
+
   const cardWhite = classNames({
-    'frame-card-bg-white-grass': `${p.types[0].type.name}` === 'grass',
-    'frame-card-bg-white-fire': `${p.types[0].type.name}` === 'fire',
-    'frame-card-bg-white-fairy': `${p.types[0].type.name}` === 'fairy',
-    'frame-card-bg-white-water': `${p.types[0].type.name}` === 'water',
-    'frame-card-bg-white-rock': `${p.types[0].type.name}` === 'rock',
-    'frame-card-bg-white-dark': `${p.types[0].type.name}` === 'dark',
-    'frame-card-bg-white-ghost': `${p.types[0].type.name}` === 'ghost',
-    'frame-card-bg-white-ice': `${p.types[0].type.name}` === 'ice',
-    'frame-card-bg-white-dragon': `${p.types[0].type.name}` === 'dragon',
-    'frame-card-bg-white-flying': `${p.types[0].type.name}` === 'flying',
-    'frame-card-bg-white-steel': `${p.types[0].type.name}` === 'steel',
-    'frame-card-bg-white-electric': `${p.types[0].type.name}` === 'electric',
-    'frame-card-bg-white-poison': `${p.types[0].type.name}` === 'poison',
-    'frame-card-bg-white-fighting': `${p.types[0].type.name}` === 'fighting',
-    'frame-card-bg-white-psychic': `${p.types[0].type.name}` === 'psychic',
-    'frame-card-bg-white-ground': `${p.types[0].type.name}` === 'ground',
-    'frame-card-bg-white-bug': `${p.types[0].type.name}` === 'bug',
-    'frame-card-bg-white-normal': `${p.types[0].type.name}` === 'normal',
+    'frame-card-bg-white-grass': `${type}` === 'grass',
+    'frame-card-bg-white-fire': `${type}` === 'fire',
+    'frame-card-bg-white-fairy': `${type}` === 'fairy',
+    'frame-card-bg-white-water': `${type}` === 'water',
+    'frame-card-bg-white-rock': `${type}` === 'rock',
+    'frame-card-bg-white-dark': `${type}` === 'dark',
+    'frame-card-bg-white-ghost': `${type}` === 'ghost',
+    'frame-card-bg-white-ice': `${type}` === 'ice',
+    'frame-card-bg-white-dragon': `${type}` === 'dragon',
+    'frame-card-bg-white-flying': `${type}` === 'flying',
+    'frame-card-bg-white-steel': `${type}` === 'steel',
+    'frame-card-bg-white-electric': `${type}` === 'electric',
+    'frame-card-bg-white-poison': `${type}` === 'poison',
+    'frame-card-bg-white-fighting': `${type}` === 'fighting',
+    'frame-card-bg-white-psychic': `${type}` === 'psychic',
+    'frame-card-bg-white-ground': `${type}` === 'ground',
+    'frame-card-bg-white-bug': `${type}` === 'bug',
+    'frame-card-bg-white-normal': `${type}` === 'normal',
 
   });
 
   const logoType = classNames({
-    'type-logo-TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'type-logo-TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'type-logo-TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy',
-    'type-logo-TYPENAME-water': `${p.types[0].type.name}` === 'water',
-    'type-logo-TYPENAME-rock': `${p.types[0].type.name}` === 'rock',
-    'type-logo-TYPENAME-dark': `${p.types[0].type.name}` === 'dark',
-    'type-logo-TYPENAME-ghost': `${p.types[0].type.name}` === 'ghost',
-    'type-logo-TYPENAME-ice': `${p.types[0].type.name}` === 'ice',
-    'type-logo-TYPENAME-dragon': `${p.types[0].type.name}` === 'dragon',
-    'type-logo-TYPENAME-flying': `${p.types[0].type.name}` === 'flying',
-    'type-logo-TYPENAME-steel': `${p.types[0].type.name}` === 'steel',
-    'type-logo-TYPENAME-electric': `${p.types[0].type.name}` === 'electric',
-    'type-logo-TYPENAME-poison': `${p.types[0].type.name}` === 'poison',
-    'type-logo-TYPENAME-fighting': `${p.types[0].type.name}` === 'fighting',
-    'type-logo-TYPENAME-psychic': `${p.types[0].type.name}` === 'psychic',
-    'type-logo-TYPENAME-ground': `${p.types[0].type.name}` === 'ground',
-    'type-logo-TYPENAME-bug': `${p.types[0].type.name}` === 'bug',
-    'type-logo-TYPENAME-normal': `${p.types[0].type.name}` === 'normal'
+    'type-logo-TYPENAME-grass': `${type}` === 'grass',
+    'type-logo-TYPENAME-fire': `${type}` === 'fire',
+    'type-logo-TYPENAME-fairy': `${type}` === 'fairy',
+    'type-logo-TYPENAME-water': `${type}` === 'water',
+    'type-logo-TYPENAME-rock': `${type}` === 'rock',
+    'type-logo-TYPENAME-dark': `${type}` === 'dark',
+    'type-logo-TYPENAME-ghost': `${type}` === 'ghost',
+    'type-logo-TYPENAME-ice': `${type}` === 'ice',
+    'type-logo-TYPENAME-dragon': `${type}` === 'dragon',
+    'type-logo-TYPENAME-flying': `${type}` === 'flying',
+    'type-logo-TYPENAME-steel': `${type}` === 'steel',
+    'type-logo-TYPENAME-electric': `${type}` === 'electric',
+    'type-logo-TYPENAME-poison': `${type}` === 'poison',
+    'type-logo-TYPENAME-fighting': `${type}` === 'fighting',
+    'type-logo-TYPENAME-psychic': `${type}` === 'psychic',
+    'type-logo-TYPENAME-ground': `${type}` === 'ground',
+    'type-logo-TYPENAME-bug': `${type}` === 'bug',
+    'type-logo-TYPENAME-normal': `${type}` === 'normal'
   });
 
-  const pokeName = classNames({
-    'poke-name-grass': `${p.types[0].type.name}` === 'grass',
-    'poke-name-fire': `${p.types[0].type.name}` === 'fire',
-    'poke-name-fairy': `${p.types[0].type.name}` === 'fairy',
-    'poke-name-water': `${p.types[0].type.name}` === 'water',
-    'poke-name-rock': `${p.types[0].type.name}` === 'rock',
-    'poke-name-dark': `${p.types[0].type.name}` === 'dark',
-    'poke-name-ghost': `${p.types[0].type.name}` === 'ghost',
-    'poke-name-ice': `${p.types[0].type.name}` === 'ice',
-    'poke-name-dragon': `${p.types[0].type.name}` === 'dragon',
-    'poke-name-flying': `${p.types[0].type.name}` === 'flying',
-    'poke-name-steel': `${p.types[0].type.name}` === 'steel',
-    'poke-name-electric': `${p.types[0].type.name}` === 'electric',
-    'poke-name-poison': `${p.types[0].type.name}` === 'poison',
-    'poke-name-fighting': `${p.types[0].type.name}` === 'fighting',
-    'poke-name-psychic': `${p.types[0].type.name}` === 'psychic',
-    'poke-name-ground': `${p.types[0].type.name}` === 'ground',
-    'poke-name-bug': `${p.types[0].type.name}` === 'bug',
-    'poke-name-normal': `${p.types[0].type.name}` === 'normal',
-    'poke-name-grass': `${p.types[0].type.name}` === 'grass',
-    'poke-name-fire': `${p.types[0].type.name}` === 'fire',
-    'poke-name-fairy': `${p.types[0].type.name}` === 'fairy'
+ const pokeName = classNames({
+    'poke-name-grass': `${type}` === 'grass',
+    'poke-name-fire': `${type}` === 'fire',
+    'poke-name-fairy': `${type}` === 'fairy',
+    'poke-name-water': `${type}` === 'water',
+    'poke-name-rock': `${type}` === 'rock',
+    'poke-name-dark': `${type}` === 'dark',
+    'poke-name-ghost': `${type}` === 'ghost',
+    'poke-name-ice': `${type}` === 'ice',
+    'poke-name-dragon': `${type}` === 'dragon',
+    'poke-name-flying': `${type}` === 'flying',
+    'poke-name-steel': `${type}` === 'steel',
+    'poke-name-electric': `${type}` === 'electric',
+    'poke-name-poison': `${type}` === 'poison',
+    'poke-name-fighting': `${type}` === 'fighting',
+    'poke-name-psychic': `${type}` === 'psychic',
+    'poke-name-ground': `${type}` === 'ground',
+    'poke-name-bug': `${type}` === 'bug',
+    'poke-name-normal': `${type}` === 'normal',
+    'poke-name-grass': `${type}` === 'grass',
+    'poke-name-fire': `${type}` === 'fire',
+    'poke-name-fairy': `${type}` === 'fairy'
   });
 
   const typeName = classNames({
-    'TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy',
-    'TYPENAME-water': `${p.types[0].type.name}` === 'water',
-    'TYPENAME-rock': `${p.types[0].type.name}` === 'rock',
-    'TYPENAME-dark': `${p.types[0].type.name}` === 'dark',
-    'TYPENAME-ghost': `${p.types[0].type.name}` === 'ghost',
-    'TYPENAME-ice': `${p.types[0].type.name}` === 'ice',
-    'TYPENAME-dragon': `${p.types[0].type.name}` === 'dragon',
-    'TYPENAME-flying': `${p.types[0].type.name}` === 'flying',
-    'TYPENAME-steel': `${p.types[0].type.name}` === 'steel',
-    'TYPENAME-electric': `${p.types[0].type.name}` === 'electric',
-    'TYPENAME-poison': `${p.types[0].type.name}` === 'poison',
-    'TYPENAME-fighting': `${p.types[0].type.name}` === 'fighting',
-    'TYPENAME-psychic': `${p.types[0].type.name}` === 'psychic',
-    'TYPENAME-ground': `${p.types[0].type.name}` === 'ground',
-    'TYPENAME-bug': `${p.types[0].type.name}` === 'bug',
-    'TYPENAME-normal': `${p.types[0].type.name}` === 'normal',
-    'TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy'
+    'TYPENAME-grass': `${type}` === 'grass',
+    'TYPENAME-fire': `${type}` === 'fire',
+    'TYPENAME-fairy': `${type}` === 'fairy',
+    'TYPENAME-water': `${type}` === 'water',
+    'TYPENAME-rock': `${type}` === 'rock',
+    'TYPENAME-dark': `${type}` === 'dark',
+    'TYPENAME-ghost': `${type}` === 'ghost',
+    'TYPENAME-ice': `${type}` === 'ice',
+    'TYPENAME-dragon': `${type}` === 'dragon',
+    'TYPENAME-flying': `${type}` === 'flying',
+    'TYPENAME-steel': `${type}` === 'steel',
+    'TYPENAME-electric': `${type}` === 'electric',
+    'TYPENAME-poison': `${type}` === 'poison',
+    'TYPENAME-fighting': `${type}` === 'fighting',
+    'TYPENAME-psychic': `${type}` === 'psychic',
+    'TYPENAME-ground': `${type}` === 'ground',
+    'TYPENAME-bug': `${type}` === 'bug',
+    'TYPENAME-normal': `${type}` === 'normal',
+    'TYPENAME-grass': `${type}` === 'grass',
+    'TYPENAME-fire': `${type}` === 'fire',
+    'TYPENAME-fairy': `${type}` === 'fairy'
   });
 
   const cardGradient = classNames({
-    'card-bg-gradient-grass': `${p.types[0].type.name}` === 'grass',
-    'card-bg-gradient-fire': `${p.types[0].type.name}` === 'fire',
-    'card-bg-gradient-fairy': `${p.types[0].type.name}` === 'fairy',
-    'card-bg-gradient-water': `${p.types[0].type.name}` === 'water',
-    'card-bg-gradient-rock': `${p.types[0].type.name}` === 'rock',
-    'card-bg-gradient-dark': `${p.types[0].type.name}` === 'dark',
-    'card-bg-gradient-ghost': `${p.types[0].type.name}` === 'ghost',
-    'card-bg-gradient-ice': `${p.types[0].type.name}` === 'ice',
-    'card-bg-gradient-dragon': `${p.types[0].type.name}` === 'dragon',
-    'card-bg-gradient-flying': `${p.types[0].type.name}` === 'flying',
-    'card-bg-gradient-steel': `${p.types[0].type.name}` === 'steel',
-    'card-bg-gradient-electric': `${p.types[0].type.name}` === 'electric',
-    'card-bg-gradient-poison': `${p.types[0].type.name}` === 'poison',
-    'card-bg-gradient-fighting': `${p.types[0].type.name}` === 'fighting',
-    'card-bg-gradient-psychic': `${p.types[0].type.name}` === 'psychic',
-    'card-bg-gradient-ground': `${p.types[0].type.name}` === 'ground',
-    'card-bg-gradient-bug': `${p.types[0].type.name}` === 'bug',
-    'card-bg-gradient-normal': `${p.types[0].type.name}` === 'normal',
-    'card-bg-gradient-grass': `${p.types[0].type.name}` === 'grass',
-    'card-bg-gradient-fire': `${p.types[0].type.name}` === 'fire',
-    'card-bg-gradient-fairy': `${p.types[0].type.name}` === 'fairy'
+    'card-bg-gradient-grass': `${type}` === 'grass',
+    'card-bg-gradient-fire': `${type}` === 'fire',
+    'card-bg-gradient-fairy': `${type}` === 'fairy',
+    'card-bg-gradient-water': `${type}` === 'water',
+    'card-bg-gradient-rock': `${type}` === 'rock',
+    'card-bg-gradient-dark': `${type}` === 'dark',
+    'card-bg-gradient-ghost': `${type}` === 'ghost',
+    'card-bg-gradient-ice': `${type}` === 'ice',
+    'card-bg-gradient-dragon': `${type}` === 'dragon',
+    'card-bg-gradient-flying': `${type}` === 'flying',
+    'card-bg-gradient-steel': `${type}` === 'steel',
+    'card-bg-gradient-electric': `${type}` === 'electric',
+    'card-bg-gradient-poison': `${type}` === 'poison',
+    'card-bg-gradient-fighting': `${type}` === 'fighting',
+    'card-bg-gradient-psychic': `${type}` === 'psychic',
+    'card-bg-gradient-ground': `${type}` === 'ground',
+    'card-bg-gradient-bug': `${type}` === 'bug',
+    'card-bg-gradient-normal': `${type}` === 'normal',
+    'card-bg-gradient-grass': `${type}` === 'grass',
+    'card-bg-gradient-fire': `${type}` === 'fire',
+    'card-bg-gradient-fairy': `${type}` === 'fairy'
   })
 
+  function loadedData() {
+    if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
+      console.log(lowerCaseData.primaryType.names.English)
+    } console.log('nope mannn')
+  };
 
+  loadedData;
 
   return (
     <div className="Page-outer">
@@ -197,15 +212,20 @@ function PokeCard({ p }) {
                         className="frame-card-img"
                       >
                         <div className="card-img-outer">
+                        {image ? ( // Check if 'image' is not null
                           <Image
                             id="card-img"
-                            src={p.assets.image}
+                            src={image}
                             data-name="card-img"
-                            alt="Pokemon Image"
+                            alt={name}
                             className="card-img"
-                            width="205px"
-                            height="203px"
+                            width={150}
+                            height={160}
                           />
+                          ) : (
+                          // If 'image' is null, render a placeholder image or handle it accordingly
+                            <img src="/default-image.jpg" alt="Default Image" />
+                          )}
                         </div>
                       </div>
                     </div>
@@ -227,7 +247,7 @@ function PokeCard({ p }) {
                                 data-name="poke-name"
                                 className="poke-name"
                               >
-                                <div key="0">{p.name}</div>
+                                <div key="0">{name}</div>
                               </div>
                             </div>
                           </div>
@@ -253,7 +273,7 @@ function PokeCard({ p }) {
                                 className="TYPENAME"
                               >
                                 <div key="0">
-                                  {p.types[0].type.name}
+                                  {type}
                                 </div>
                               </div>
                             </div>
@@ -266,14 +286,23 @@ function PokeCard({ p }) {
                             <div className="Frame-4-outer">
                               <div id="Frame-4" data-name="Frame 4" className="Frame-4">
                                 <div className="type-logo-TYPENAME-outer">
-                                  <Image
-                                    id={logoType}
-                                    data-name="type-logo-TYPENAME"
-                                    alt="Pokemon Type"
-                                    className="type-logo-TYPENAME"
-                                    height={25}
-                                    width={25}
-                                  />
+                                {!lowerCaseData ? (
+                                    console.log('no data broseph')
+                                ) : (
+                                    <Image
+                                        id={`type-logo-TYPENAME-${type}`}
+                                        src={
+                                            lowerCaseData.primaryType && lowerCaseData.primaryType.names
+                                                ? `/images/type_c21_${lowerCaseData.primaryType.names.English}.svg`
+                                                : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                        }
+                                        data-name="type-logo-TYPENAME"
+                                        alt={`${type} Type`}
+                                        className="type-logo-TYPENAME"
+                                        height={25}
+                                        width={25}
+                                    />
+                                )}
                                 </div>
                               </div>
                             </div>
@@ -281,7 +310,7 @@ function PokeCard({ p }) {
                         </div>
                       </div>
                     </div>
-                    {/* <div className={`type-gradient-${p.types[0].type.name}`}>
+                    {/* <div className={`type-gradient-${type}`}>
 
                   </div> */}
                 </div>

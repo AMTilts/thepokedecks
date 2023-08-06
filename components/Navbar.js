@@ -27,7 +27,7 @@ function pokeNavbar() {
             <Navbar.Brand href="#home" className={styles.navbartitle}>POKEDEX-ICLES</Navbar.Brand>
             <Navbar className={styles.navlinks}>
               <Nav.Link className="navlink" href="#home">HOME</Nav.Link>
-              <Nav.Link classname="navlink" href="#features">POKEDEX</Nav.Link>
+              <Nav.Link className="navlink" href="#features">POKEDEX</Nav.Link>
               <Nav.Link className="navlink" href="#pricing">TYPES</Nav.Link>
             </Navbar>
             {/* <Form inline className={styles.justify-content-end">
