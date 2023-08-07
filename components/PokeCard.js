@@ -29,7 +29,7 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems }) {
   // if ("grass" === type) {
 
   //   return ;
