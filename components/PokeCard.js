@@ -55,8 +55,10 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
   
   const cardFrame = pokemonTypes.map((type) => {
-    return `frame-card-bg-white-${type}`;
+      return `frame-card-bg-white-${type}`;
   })
+
+  console.log(cardFrame)
 
   const cardWhite = classNames({
     'frame-card-bg-white-grass': `${type}` === 'grass',
@@ -173,164 +175,155 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
     'card-bg-gradient-fairy': `${type}` === 'fairy'
   })
 
-  function loadedData() {
-    if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
-      console.log(lowerCaseData.primaryType.names.English)
-    } console.log('nope mannn')
-  };
-
-  loadedData;
-
-  return (
-    <div className="Page-outer">
-      <div id="Page" data-name="Artboards" className="Page">
-        <div className="Frame-outer">
-          <div id="Frame" data-name="card-parent" className="Frame">
-            <div className="frame-card-outline-outer">
-              <div
-                id="frame-card-outline"
-                data-name="frame-card-outline"
-                className="frame-card-outline"
-              >
-                <div className="Frame-card-elements-outer">
+    return (
+        <div className="Page-outer">
+          <div id="Page" data-name="Artboards" className="Page">
+            <div className="Frame-outer">
+              <div id="Frame" data-name="card-parent" className="Frame">
+                <div className="frame-card-outline-outer">
                   <div
-                    id="Frame-card-elements"
-                    data-name="Frame-card-elements"
-                    className="Frame-card-elements"
+                    id="frame-card-outline"
+                    data-name="frame-card-outline"
+                    className="frame-card-outline"
                   >
-                    <div className="frame-card-bg-white-outer">
+                    <div className="Frame-card-elements-outer">
                       <div
-                        data-name="frame-card-bg-white"
-                        id={cardWhite}
-                        className="frame-card-bg-white"
-                      ></div>
-                    </div>
-                    <div className="frame-card-img-outer">
-                      <div
-                        id="frame-card-img"
-                        data-name="frame-card-img"
-                        className="frame-card-img"
+                        id="Frame-card-elements"
+                        data-name="Frame-card-elements"
+                        className="Frame-card-elements"
                       >
-                        <div className="card-img-outer">
-                        {image ? ( // Check if 'image' is not null
-                          <Image
-                            id="card-img"
-                            src={image}
-                            data-name="card-img"
-                            alt={name}
-                            className="card-img"
-                            width={150}
-                            height={160}
-                          />
-                          ) : (
-                          // If 'image' is null, render a placeholder image or handle it accordingly
-                            <img src="/default-image.jpg" alt="Default Image" />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="frame-pokemon-name-outer">
-                      <div
-                        id="frame-pokemon-name"
-                        data-name="frame-pokemon-name"
-                        className="frame-pokemon-name"
-                      >
-                        <div className="card-frame-name-outer">
+                        <div className="frame-card-bg-white-outer">
                           <div
-                            id="card-frame-name"
-                            data-name="card-frame-name"
-                            className="card-frame-name"
+                            data-name="frame-card-bg-white"
+                            id={cardWhite}
+                            className="frame-card-bg-white"
+                          ></div>
+                        </div>
+                        <div className="frame-card-img-outer">
+                          <div
+                            id="frame-card-img"
+                            data-name="frame-card-img"
+                            className="frame-card-img"
                           >
-                            <div className="poke-name-outer">
-                              <div
-                                id={pokeName}
-                                data-name="poke-name"
-                                className="poke-name"
-                              >
-                                <div key="0">{name}</div>
-                              </div>
+                            <div className="card-img-outer">
+                            {image ? ( // Check if 'image' is not null
+                              <Image
+                                id="card-img"
+                                src={image}
+                                data-name="card-img"
+                                alt={name}
+                                className="card-img"
+                                width={150}
+                                height={160}
+                              />
+                              ) : (
+                              // If 'image' is null, render a placeholder image or handle it accordingly
+                                <img src="/default-image.jpg" alt="Default Image" />
+                              )}
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="frame-type-logo-name-outer">
-                      <div
-                        id="frame-type-logo-name"
-                        data-name="frame-type-logo-name"
-                        className="frame-type-logo-name"
-                      >
-                        <div className="frame-type-name-outer">
+                        <div className="frame-pokemon-name-outer">
                           <div
-                            id="frame-type-name"
-                            data-name="frame-type-name"
-                            className="frame-type-name"
+                            id="frame-pokemon-name"
+                            data-name="frame-pokemon-name"
+                            className="frame-pokemon-name"
                           >
-                            <div className="TYPENAME-outer">
+                            <div className="card-frame-name-outer">
                               <div
-                                id={typeName}
-                                data-name="TYPENAME"
-                                className="TYPENAME"
+                                id="card-frame-name"
+                                data-name="card-frame-name"
+                                className="card-frame-name"
                               >
-                                <div key="0">
-                                  {type}
+                                <div className="poke-name-outer">
+                                  <div
+                                    id={pokeName}
+                                    data-name="poke-name"
+                                    className="poke-name"
+                                  >
+                                    <div key="0">{name}</div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="TYPENAME-logo-outer">
+                        <div className="frame-type-logo-name-outer">
                           <div
-                            id="TYPENAME-logo"
-                            data-name="TYPENAME-logo">
-                            <div className="Frame-4-outer">
-                              <div id="Frame-4" data-name="Frame 4" className="Frame-4">
-                                <div className="type-logo-TYPENAME-outer">
-                                {!lowerCaseData ? (
-                                    console.log('no data broseph')
-                                ) : (
-                                    <Image
-                                        id={`type-logo-TYPENAME-${type}`}
-                                        src={
-                                            lowerCaseData.primaryType && lowerCaseData.primaryType.names
-                                                ? `/images/type_c21_${lowerCaseData.primaryType.names.English}.svg`
-                                                : '/images/default.svg' // Replace 'default.svg' with your default image path
-                                        }
-                                        data-name="type-logo-TYPENAME"
-                                        alt={`${type} Type`}
-                                        className="type-logo-TYPENAME"
-                                        height={25}
-                                        width={25}
-                                    />
-                                )}
+                            id="frame-type-logo-name"
+                            data-name="frame-type-logo-name"
+                            className="frame-type-logo-name"
+                          >
+                            <div className="frame-type-name-outer">
+                              <div
+                                id="frame-type-name"
+                                data-name="frame-type-name"
+                                className="frame-type-name"
+                              >
+                                <div className="TYPENAME-outer">
+                                    <div
+                                      id={`TYPENAME-${type}`}
+                                      className="TYPENAME"
+                                    >
+                                      <div key="0">
+                                        {type}
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="TYPENAME-logo-outer">
+                              <div
+                                id="TYPENAME-logo"
+                                data-name="TYPENAME-logo">
+                                <div className="Frame-4-outer">
+                                  <div id="Frame-4" data-name="Frame 4" className="Frame-4">
+                                    <div className="type-logo-TYPENAME-outer">
+                                    {!lowerCaseData ? (
+                                        console.log('no data broseph')
+                                    ) : (
+                                        <Image
+                                            id={`type-logo-TYPENAME-${type}`}
+                                            src={
+                                                lowerCaseData.primaryType
+                                                    ? `images/type_c21_{${type}.toLowerCase}.svg`
+                                                    : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                            }
+                                            data-name="type-logo-TYPENAME"
+                                            alt={`${type} Type`}
+                                            className="type-logo-TYPENAME"
+                                            height={25}
+                                            width={25}
+                                        />
+                                    )}
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    {/* <div className={`type-gradient-${type}`}>
+                        {/* <div className={`type-gradient-${type}`}>
 
-                  </div> */}
-                </div>
-                <div className="card-bg-gradient-outer">
-                  <div
-                    id={cardGradient}
-                    data-name="card-bg-gradient"
-                    alt="card-bg-gradient"
-                    className="card-bg-gradient"
-                    >              
+                      </div> */}
+                    </div>
+                    <div className="card-bg-gradient-outer">
+                      <div
+                        id={`card-bg-gradient-${type}`}
+                        data-name="card-bg-gradient"
+                        alt="card-bg-gradient"
+                        className="card-bg-gradient"
+                        >              
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>  
-  );
+      </div>  
+    );
 }
 
 export default PokeCard;
