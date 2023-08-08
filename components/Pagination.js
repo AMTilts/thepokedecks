@@ -10,12 +10,12 @@ export default function Pagination({ data }) {
   const [itemOffset, setItemOffset] = useState(0); // Add this line to define itemOffset state
 
 
-  const fetchPogo = async (data) => {
+  const fetchPogo = async () => {
     try {
       const startOffset = itemOffset;
       const endOffset = itemOffset + itemsPerPage;
-      console.log(data.slice(startOffset,endOffset))
       await setCurrentItems(data.slice(startOffset, endOffset));
+      await console.log(currentItems.slice(startOffset,endOffset))
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -25,7 +25,7 @@ export default function Pagination({ data }) {
 
   useEffect(() => {
     fetchPogo();
-  }, [itemOffset, data, currentItems]); // Add data as a dependency for useEffect
+  }, [itemOffset, data]); // Add data as a dependency for useEffect
 
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage;
@@ -33,7 +33,7 @@ export default function Pagination({ data }) {
     setItemOffset(newOffset);
   };
 
-  console.log(currentItems);
+  // console.log(currentItems.slice(itemOffset, endOffset));
 
   return (
     <>
