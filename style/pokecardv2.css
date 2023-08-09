@@ -2194,7 +2194,7 @@
   position: relative;
   z-index: 8;
   pointer-events: none;
-  padding: 0px 2px 0px 0px;
+  padding: 0px 0px 0px 0px;
   overflow: visible;
 }
 
@@ -2236,9 +2236,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2250,9 +2252,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2264,9 +2268,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2278,9 +2284,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2292,9 +2300,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2306,9 +2316,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2320,9 +2332,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2334,9 +2348,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2348,9 +2364,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2362,9 +2380,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2376,9 +2396,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2390,9 +2412,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2404,9 +2428,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2418,9 +2444,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2432,9 +2460,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2446,9 +2476,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2460,9 +2492,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2474,9 +2508,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2488,9 +2524,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2502,9 +2540,11 @@
   z-index: 10;
   pointer-events: none;
   margin-left: 9px;
-  height: 25px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: auto;
   max-height: 25px;
-  margin-top: -5px;
+  margin-top: 0pxpx;
   padding-right: 0px;
   align-self: center;
   align-items: center;
@@ -2637,9 +2677,6 @@ div > span:hover {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  margin-top: 10px;
-  padding-top: 10px;
-
 }
 
 #loadingDivPokemon {
@@ -2651,200 +2688,16 @@ div > span:hover {
   height: 100%;
 }
 
-/* Heading */
-#loadingDivPokemon span h2{
-  animation: loadingAnimationDiv 3.5s linear infinite;
- }
- 
-
-@keyframes loadingAnimationDiv {
-  0% {
-    transform: translatex(0px) skewx(0deg) !important;
-  }
-  50% {
-    transform: scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
-    opacity: 0;
-  }
-  100% {
-    transform: translatex(0px) skewx(0deg) !important;
-  }
-}
-
 #loadingPokemon {
   display: block;
   justify-content: center;
   align-items: center;
   max-width: 200px;
   max-height: 200px;
-  padding-top: 10px;
 }
 
 #loadingh2 {
   font-family: sans-serif;
   font-weight: 600;
   font-size: 40px;
-  color: #000000;
-  text-align: center;
 }/*# sourceMappingURL=pokecardv2.css.map */
-
-#pagination, .btn-div-border {
-  width: 100%;
-  display: inline-flex;
-  position: relative;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-bottom: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: Rubik, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 100%;
-  text-transform: uppercase;
-  color: #000000;
-
-}
-
-ul {
-  display: flex;
-  justify-content:space-around;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 0px;
-  margin-bottom: 5px;
-  padding: 5px;
-  width: 100%;
-}
-
-body > ul > li {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-grow: 1;
-  width: 100%;
-  height: 100px;
-  list-style-position: outside;       /* NEW */
-  text-indent: -1em;                 /* NEW */
-  padding-left: 1em;                 /* NEW */
-
-}
-
-.btn-div-border {
-  width: 100vw;
-  max-height: 20px;
-  display: inline-flex;
-}
-
-ul {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  max-height: 20px;
-  max-width: 60%
-}
-
-/* List */
-#pagination ul{
-  transform:translatex(0px) translatey(0px);
-  margin-bottom:0px;
-  padding-bottom:0px;
-  padding-top:0px;
-  padding-right:0px;
-  padding-left:0px;
-  overflow:visible;
-  align-self:center;
-  display:inline-flex;
- }
- 
- /* Pagination */
- #pagination{
-  display:inline-flex;
-  justify-content:center;
-  padding-bottom:0px;
-  padding-top:0px;
-  margin-bottom:0px;
-  max-height:20px;
-  width:100%;
- }
- 
- /* Div border */
- .container-fluid div .btn-div-border{
-  justify-content:center;
-  padding-bottom:0px;
-  margin-bottom:0px;
-  padding-top:0px;
-  align-items:center;
- }
- 
- /* Previous */
- #pagination ul .previous{
-  padding-right:5px;
-  margin-right:15px;
- }
- 
- /* Previous */
- #__next .container-fluid .row .col div div .btn-div-border #pagination ul .previous{
-  width:100px !important;
- }
- 
- /* Link */
- #pagination .previous a{
-  position:relative;
- }
- 
- /* Link */
- #pagination ul a{
-  margin-left:0px;
-  padding-left:2px;
-  padding-right:2px;
-  position:relative;
-  max-width:30px;
-  display:inline-block;
-  left:5px;
- }
- 
- /* List Item */
- #pagination ul li{
-  padding-right:0px !important;
-  padding-top:0px;
-  margin-right:0px !important;
-  margin-left:0px;
-  padding-left:5px;
-  position:relative;
-  max-width:20px;
- }
- 
- /* Link */
- #__next .container-fluid .row .col div div .btn-div-border #pagination ul li a{
-  width:auto !important;
- }
- 
- /* Col */
- .container-fluid .col{
-  transform:translatex(0px) translatey(0px);
- }
- 
- /* List Item */
- #__next .container-fluid .row .col div div .btn-div-border #pagination ul li{
-  width:auto !important;
- }
- 
- /* Next */
- #pagination ul .next{
-  top:0px;
-  padding-left:0px;
-  padding-bottom:0px;
-  margin-top:0px;
-  max-width:40px;
- }
- 
- /* Next */
- #__next .container-fluid .row .col div div .btn-div-border #pagination ul .next{
-  width:auto !important;
- }
- 
- 

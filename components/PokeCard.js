@@ -29,7 +29,7 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p }) {
   // if ("grass" === type) {
 
   //   return ;
@@ -179,6 +179,8 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
     } console.log('nope mannn')
   };
 
+  const lowerCaseType = p.toLowerCase(); 
+  
   loadedData;
 
   return (
@@ -268,7 +270,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
                           >
                             <div className="TYPENAME-outer">
                               <div
-                                id={typeName}
+                                id={`TYPENAME-${lowerCaseType}`}
                                 data-name="TYPENAME"
                                 className="TYPENAME"
                               >
@@ -286,14 +288,14 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
                             <div className="Frame-4-outer">
                               <div id="Frame-4" data-name="Frame 4" className="Frame-4">
                                 <div className="type-logo-TYPENAME-outer">
-                                {!lowerCaseData ? (
-                                    console.log('no data broseph')
+                                {!lowerCaseType ? (
+                                    console.log('no type icon')
                                 ) : (
                                     <Image
-                                        id={`type-logo-TYPENAME-${type}`}
+                                        id={`type-logo-TYPENAME-${lowerCaseType}`}
                                         src={
-                                            lowerCaseData.primaryType && lowerCaseData.primaryType.names
-                                                ? `/images/type_c21_${lowerCaseData.primaryType.names.English}.svg`
+                                            !lowerCaseType
+                                                ? `/images/type_c21_${lowerCaseType}.svg`
                                                 : '/images/default.svg' // Replace 'default.svg' with your default image path
                                         }
                                         data-name="type-logo-TYPENAME"
@@ -316,7 +318,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems })
                 </div>
                 <div className="card-bg-gradient-outer">
                   <div
-                    id={cardGradient}
+                    id={`card-bg-gradient-${lowerCaseType}`} 
                     data-name="card-bg-gradient"
                     alt="card-bg-gradient"
                     className="card-bg-gradient"

@@ -61,7 +61,7 @@ export default function Pagination({ data }) {
                 name={p.names.English}
                 image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
                 type={p.primaryType.names.English}
-                lowerCaseData={p} // Pass the individual data object instead of lowerCaseData function
+                p={p.primaryType.names.English} // Pass the individual data object instead of lowerCaseData function
               />
             </div>
           ))}
