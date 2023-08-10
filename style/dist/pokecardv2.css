@@ -2754,3 +2754,34 @@ div > span:hover {
   font-weight: 600;
   font-size: 40px;
 }
+
+.frame-type-name {
+  display: inline-flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+  /* margin-left: 35px; */
+  width: 100%;
+  min-width: 40px;
+  height: 45.56px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 45.56px;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.frame-card-img {
+  position: relative;
+  z-index: 13;
+  pointer-events: none;
+  margin-left: 28px;
+  width: 100%;
+  /* min-width: 197px; */
+  height: 100%;
+  margin-top: -256px;
+  margin-bottom: 61px;
+  /* min-height: 195px; */
+}

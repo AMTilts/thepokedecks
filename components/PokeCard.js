@@ -3,6 +3,7 @@ import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
 import Image from 'next/image';
+import FixImage from './FixImage';
 
 
 `query MyQuery {
@@ -50,6 +51,18 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
   //             }>
   //         )
   //     }
+
+//  function fixImage(image) {
+//     var img = new Image();
+//     img.src = {image}
+//     var imageWidth = img.width;
+//     var imageHieight = img.height;
+
+//     console.log(imageWidth && imageHieight);
+//  }
+
+
+
 
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
@@ -213,22 +226,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
                         data-name="frame-card-img"
                         className="frame-card-img"
                       >
-                        <div className="card-img-outer">
-                        {image ? ( // Check if 'image' is not null
-                          <Image
-                            id="card-img"
-                            src={image}
-                            data-name="card-img"
-                            alt={name}
-                            className="card-img"
-                            width={150}
-                            height={160}
-                          />
-                          ) : (
-                          // If 'image' is null, render a placeholder image or handle it accordingly
-                            <img src="/default-image.jpg" alt="Default Image" />
-                          )}
-                        </div>
+                        <FixImage image={image} name={name} />
                       </div>
                     </div>
                     <div className="frame-pokemon-name-outer">
