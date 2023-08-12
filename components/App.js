@@ -14,6 +14,7 @@ import ReactPaginate from 'react-paginate'
 import { faAssistiveListeningSystems } from '@fortawesome/free-solid-svg-icons';
 import useSwr from 'swr'
 
+
 // import styles from "./Button.module.css";
 
 // import '../style/pokecard.css'
@@ -61,10 +62,15 @@ function App() {
     async function getServerSideProps() {
         const res = await fetch(pokeUrl);
         const data = await res.json();
-
+        let img = await data.assets.image;
+        let imageWidth = img.width;
+        let imageHeight = img.height;
         return {
             props: {
-                data
+                data,
+                img,
+                imageWidth,
+                imageHeight 
             }
         };
     }
@@ -196,12 +202,18 @@ function App() {
             let pokeName = await getPokeData(pokemon.dexNr)
             let pType = await getPokeData(pokemon.primaryType);
             let pImg = await getPokeData(pokemon.assets.image[0])
-            console.log(pokeRecord);
-            console.log(data.dexNr);
+            let img = await pokemon.assets.image;
+            let imageWidth = await img.width;
+            let imageHeight = await img.height;
+            console.log(imageWidth);
+            console.log(imageHeight);
            
             return {
                 pokeRecord,
                 pokeId,
+                img,
+                imageWidth,
+                imageHeight,
                 image: image || '', // Use a default value if 'image' is not available in the 'assets' property
             }
         }))

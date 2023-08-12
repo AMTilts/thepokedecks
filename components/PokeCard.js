@@ -18,6 +18,27 @@ import FixImage from './FixImage';
     }
   }`;
 
+  const getStaticProps = async (p) => {
+    const images = [
+        await imgArray
+    ];
+
+    const imgsWithSizes = await Promise.all(
+      images.map(async(image) => {
+        const imgWithSize = image;
+        imageWithSize.size = await probe(image.assets.image)
+
+        return imgWithSize;
+      })
+    )
+
+    return {
+      props: {
+        images: imgsWithSizes
+    }
+  }
+}
+
 // if( {p.types[1].type.name} == "Water") {
 //     waterType();
 // }
@@ -30,7 +51,10 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg }) {
+
+  const [imgArray, setImgArray] = useState([]);
+
   // if ("grass" === type) {
 
   //   return ;
@@ -62,7 +86,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
 //  }
 
 
-
+console.log({imageWidth} && {imageHeigh})
 
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
@@ -196,6 +220,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
   
   loadedData;
 
+
   return (
     <div className="Page-outer">
       <div id="Page" data-name="Artboards" className="Page">
@@ -217,8 +242,8 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
                       <div
                         data-name="frame-card-bg-white"
                         id={cardWhite}
-                        className="frame-card-bg-white"
-                      ></div>
+                        className="frame-card-bg-white">
+                    </div>
                     </div>
                     <div className="frame-card-img-outer">
                       <div
@@ -226,7 +251,22 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
                         data-name="frame-card-img"
                         className="frame-card-img"
                       >
-                        <FixImage image={image} name={name} />
+                    <div className="card-img-outer">
+                      {image ? ( // Check if 'image' is not null
+                        <Image
+                          id="card-img"
+                          src={image}
+                          data-name="card-img"
+                          alt={name}
+                          className="card-img"
+                          width = {imageWidth ? imageWidth : 105}
+                          height = {imageHeight ? imageHeight : 150}
+                        />
+                      ) : (
+                // If 'image' is null, render a pl                                                                                                                                                                                                                                                                                                                                                          aceholder image or handle it accordingly
+                    <img src="/default-image.jpg" alt="Default Image" />
+            )}
+        </div>
                       </div>
                     </div>
                     <div className="frame-pokemon-name-outer">
