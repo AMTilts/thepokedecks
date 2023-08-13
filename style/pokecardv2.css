@@ -2729,11 +2729,11 @@ div > span:hover {
   position: relative;
   z-index: 13;
   pointer-events: none;
-  margin-left: 28px;
+  margin-left: 0px;
   width: 100%;
-  height: 100%;
-  margin-top: -256px;
-  margin-bottom: 61px;
+  height: 100;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* List */

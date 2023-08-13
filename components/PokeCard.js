@@ -4,6 +4,7 @@ import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
 import Image from 'next/image';
 import FixImage from './FixImage';
+import lquip from 'lqip-modern'
 
 
 `query MyQuery {
@@ -18,6 +19,41 @@ import FixImage from './FixImage';
     }
   }`;
 
+  const handleImageLoad = (event) => {
+    setImageDimensions({
+      width: event.target.width,
+      height: event.target.height,
+    });
+    console.log(imageDimensions);
+  };
+
+async function getStaticProps () {
+  const url = normalizeUrl({image});
+
+  const imgData = await fetch(image);
+  const arrayBufferData = await imgData.arrayBuffer();
+  const lqipData = await lqip(Buffer.from(arrayBufferData));
+
+  return {
+    props: {
+      image: {
+        src: url.href,
+        width: lqipData.metadata.originalWidth,
+        height: lqipData.metadata.orginalHeight,
+        blurDataURL: lqipData.metadata.dataURIBase64,
+      },
+    },
+  };
+};
+
+
+  LquipExampleProps = {
+    image: ImageProps, "src:": | "width" | "height" | "blurDataURL">;
+  };
+
+  DataBaseSchemaExample = {
+    src: {image}
+  }
 //   const getStaticProps = async (p) => {
 //     const images = [
 //         await imgArray
@@ -54,17 +90,8 @@ function typeCheck(p) {
 function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, imageWithSize }) {
 
   const [imgArray, setImgArray] = useState([]);
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
-  // if ("grass" === type) {
-
-  //   return ;
-  // }else if(type === "water") {
-  //   return <TypeWater />;
-  // }else if(type === "fighting") {
-  //   return <TypeFire />;
-  // }else if(type === "normal")
-
-  // console.log(type)
 
   // function waterType() {
   //         return (
@@ -86,8 +113,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
 //  }
 
 
-console.log({imgWidth} && {imgHeight})
-
+console.log(imageDimensions)
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
    
@@ -252,21 +278,28 @@ console.log({imgWidth} && {imgHeight})
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                      {p ? ( 
-                        <Image
-                          style={{width: 150, height: 'auto'}}
-                          src={image}
-                          data-name="card-img"
-                          alt={name}
-                          className="card-img"
-                          layout="fill"
-                          // width = {imageWithSize.width ? imageWithSize.width: 150}
-                          // height = {imgHeight ? imgHeight : '160'}
-                        />
-                      ) : (
-                // If 'image' is null, render a pl                                                                                                                                                                                                                                                                                                                                                          aceholder image or handle it accordingly
-                    <img src="/images/default.png" alt="Default Image" />
-            )}
+                    {image ? ( // Check if 'image' is not null
+                              <Image
+                                id="card-img"
+                                // style={{width: 150, height: 'auto'}}
+                                src={image.src}
+                                data-name="card-img"
+                                alt={name}
+                                className="card-img"
+                                width={image.width}
+                                height={image.height}
+                                onLoad={handleImageLoad}
+                                blurDataURL={image.blurDataURL}
+                              />
+                              ) : (
+                              // If 'image' is null, render a placeholder image or handle it accordingly
+                                <Image 
+                                  src="/images/default.png" 
+                                  alt="Default Image"
+                                  width={149}
+                                  height={150}
+                                  />
+                              )}
         </div>
                       </div>
                     </div>
