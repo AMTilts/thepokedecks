@@ -4,13 +4,21 @@ import PokeCard from './PokeCard';
 import Probe from 'probe-image-size';
 import NextImage from 'next/image'
 
-export default function Pagination({ data, imageWidth, imageHeight }) {
+
+
+export default function Pagination({ data }) {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
   const itemsPerPage = 20;
   const pageCount = Math.ceil(data.length / itemsPerPage);
   const [itemOffset, setItemOffset] = useState(0); // Add this line to define itemOffset state
   const imageRef = useRef(null);
+  const [imgArray, setImgArray] = useState([]);
+  const [imgWidth, setImgWidth] = useState([]);
+  const [imgHeight, setImgHeight] = useState([]);
+
+  
+
 
   const fetchPogo = async () => {
     try {
@@ -47,7 +55,6 @@ export default function Pagination({ data, imageWidth, imageHeight }) {
 
   // console.log(currentItems.slice(itemOffset, endOffset));
 
-  
 
   return (
     <>
@@ -68,9 +75,7 @@ export default function Pagination({ data, imageWidth, imageHeight }) {
         </div>
         <div className="div-container">
           {currentItems && currentItems.map((p, fImg ) => (
-            {images ? images.map((image) => (
               <div key={p.dexNr}>
-              <div key={image}
                 <PokeCard
                   key={p.dexNr}
                   id={p.dexNr}
@@ -78,8 +83,8 @@ export default function Pagination({ data, imageWidth, imageHeight }) {
                   image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
                   type={p.primaryType.names.English}
                   p={p.primaryType.names.English}
-                  imageWidth={fImg.current ? fImg.current.width: ''}
-                  imageHeight={fImg.current ? fImg.current.height: ''} // Pass the individual data object instead of lowerCaseData function
+                  // imgWidth={pWidth ? pWidth : ''}
+                  // imgHeight={pHeight ? pHeight : ''} // Pass the individual data object instead of lowerCaseData function
                 />
               </div>
           ))}

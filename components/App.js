@@ -50,21 +50,22 @@ function App() {
     const [ dat, setDat] = useState([]);
     const [ dataType, setDataType ] = useState([]);
     const pokeUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex/id'
-
+    const [imgWidth, setImgWidth] = useState(null);
+    const [imgHeight, setImgHeight] = useState(null);
         
     const fetcher = (...args) => {
         fetch(...args).then((res) => res.json());
     };
       
 
-    
+
 
     async function getServerSideProps() {
         const res = await fetch(pokeUrl);
         const data = await res.json();
         let img = await data.assets.image;
-        let imageWidth = img.width;
-        let imageHeight = img.height;
+        setImgWidth(img.width);
+        setImgHeight(img.height);;
         return {
             props: {
                 data,
@@ -254,6 +255,8 @@ function App() {
                 ) : (
                     <Pagination 
                         data={data}
+                        imgHeight={imgHeight}
+                        imgWidth={imgWidth}
                     />
                 )}
               </div>

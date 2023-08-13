@@ -18,26 +18,26 @@ import FixImage from './FixImage';
     }
   }`;
 
-  const getStaticProps = async (p) => {
-    const images = [
-        await imgArray
-    ];
+//   const getStaticProps = async (p) => {
+//     const images = [
+//         await imgArray
+//     ];
 
-    const imgsWithSizes = await Promise.all(
-      images.map(async(image) => {
-        const imgWithSize = image;
-        imageWithSize.size = await probe(image.assets.image)
+//     const imgsWithSizes = await Promise.all(
+//       images.map(async(image) => {
+//         const imgWithSize = image;
+//         imageWithSize.size = await probe(image.assets.image)
 
-        return imgWithSize;
-      })
-    )
+//         return imgWithSize;
+//       })
+//     )
 
-    return {
-      props: {
-        images: imgsWithSizes
-    }
-  }
-}
+//     return {
+//       props: {
+//         images: imgsWithSizes
+//     }
+//   }
+// }
 
 // if( {p.types[1].type.name} == "Water") {
 //     waterType();
@@ -51,7 +51,7 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, imageWithSize }) {
 
   const [imgArray, setImgArray] = useState([]);
 
@@ -86,11 +86,11 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
 //  }
 
 
-console.log({imageWidth} && {imageHeigh})
+console.log({imgWidth} && {imgHeight})
 
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
-  
+   
   const cardFrame = pokemonTypes.map((type) => {
     return `frame-card-bg-white-${type}`;
   })
@@ -252,19 +252,20 @@ console.log({imageWidth} && {imageHeigh})
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                      {image ? ( // Check if 'image' is not null
+                      {p ? ( 
                         <Image
-                          id="card-img"
+                          style={{width: 150, height: 'auto'}}
                           src={image}
                           data-name="card-img"
                           alt={name}
                           className="card-img"
-                          width = {imageWidth ? imageWidth : 105}
-                          height = {imageHeight ? imageHeight : 150}
+                          layout="fill"
+                          // width = {imageWithSize.width ? imageWithSize.width: 150}
+                          // height = {imgHeight ? imgHeight : '160'}
                         />
                       ) : (
                 // If 'image' is null, render a pl                                                                                                                                                                                                                                                                                                                                                          aceholder image or handle it accordingly
-                    <img src="/default-image.jpg" alt="Default Image" />
+                    <img src="/images/default.png" alt="Default Image" />
             )}
         </div>
                       </div>
