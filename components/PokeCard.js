@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
 import Image from 'next/image';
 import FixImage from './FixImage';
-import lquip from 'lqip-modern'
-
+import imageSize from 'image-size';
+import probe from 'probe-image-size'
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
       edges {
+
         node {
           extension
           dir
@@ -19,42 +20,75 @@ import lquip from 'lqip-modern'
     }
   }`;
 
-  const handleImageLoad = (event) => {
-    setImageDimensions({
-      width: event.target.width,
-      height: event.target.height,
-    });
-    console.log(imageDimensions);
+
+
+  // export const getServerSideProps = async () => {
+  
+  //   const imgData = await fetch(url);
+  //   const arrayBufferData = await imgData.arrayBuffer();
+  //   const lqipData = await lqip(Buffer.from(arrayBufferData));
+  
+  //   return {
+  //     props: {
+  //       image: {
+  //         src: url.href,
+  //         width: lqipData.metadata.originalWidth,
+  //         height: lqipData.metadata.orginalHeight,
+  //         blurDataURL: lqipData.metadata.dataURIBase64,
+  //       },
+  //     },
+  //   };
+  // };
+
+  const url = ('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+
+  async function getServerSideProps(url) {
+    const res = await fetch(url)
+    const fetchedData = await res.json();
+    const imgUrl = `${fetchedData.assets.image}`;
+    console.log(imgUrl)
+    const images = [
+        {url: `${imgUrl}`}
+      ];
+  
+    const imagesWithSizes = await Promise.all(
+      images.map(async (image) => {
+        const imageWithSize = image;
+        console.log(images)
+        imageWithSize.size = await probe(image.url);
+
+        return imageWithSize;
+      })
+    );
+
+    return {
+      props: {
+        fetchedData,
+        imgUrl,
+        images: imagesWithSizes
+      }
+    };
   };
 
-async function getStaticProps () {
-  const url = normalizeUrl({image});
 
-  const imgData = await fetch(image);
-  const arrayBufferData = await imgData.arrayBuffer();
-  const lqipData = await lqip(Buffer.from(arrayBufferData));
+  export async function getStaticProps() {
+    const imgPath = {imgUrl};
 
-  return {
-    props: {
-      image: {
-        src: url.href,
-        width: lqipData.metadata.originalWidth,
-        height: lqipData.metadata.orginalHeight,
-        blurDataURL: lqipData.metadata.dataURIBase64,
-      },
-    },
-  };
-};
+    const img = fs.createReadStream(path.join(process.cwd(), imgPath));
 
+    const probedImg = await probe(img);
 
-  LquipExampleProps = {
-    image: ImageProps, "src:": | "width" | "height" | "blurDataURL">;
-  };
-
-  DataBaseSchemaExample = {
-    src: {image}
+    return {
+      props: {
+        img: {
+          width: probedImg.width,
+          height: probedImg.height,
+          src: imgPath,
+          alt: "image"
+        }
+      }
+    }
   }
-//   const getStaticProps = async (p) => {
 //     const images = [
 //         await imgArray
 //     ];
@@ -87,10 +121,29 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, imageWithSize }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props }) {
+
+console.log(imgUrl)
+  
+
+    // DataBaseSchemaExample = {
+    //   src: {image}
+    // }
+  
+  //   const file = {image};
+    
+    
+  //  const lqipPalette = () => { 
+  //   lqip.palette(file) = `../images/${name}.png`
+  
+  //     lqip.palette(file).then(res => {
+  //       console.log(res);
+  //     })
+   
+  // }
+  // //   c
 
   const [imgArray, setImgArray] = useState([]);
-  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
 
   // function waterType() {
@@ -113,7 +166,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p
 //  }
 
 
-console.log(imageDimensions)
+console.log(images)
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
    
@@ -246,7 +299,6 @@ console.log(imageDimensions)
   
   loadedData;
 
-
   return (
     <div className="Page-outer">
       <div id="Page" data-name="Artboards" className="Page">
@@ -278,29 +330,31 @@ console.log(imageDimensions)
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                    {image ? ( // Check if 'image' is not null
-                              <Image
-                                id="card-img"
-                                // style={{width: 150, height: 'auto'}}
-                                src={image.src}
-                                data-name="card-img"
-                                alt={name}
-                                className="card-img"
-                                width={image.width}
-                                height={image.height}
-                                onLoad={handleImageLoad}
-                                blurDataURL={image.blurDataURL}
+                      {images ? 
+                        (images.map((image) => ( // Check if 'image' is not null
+                          <Image
+                            key={props.img.src}
+                            id="card-img"
+                            // style={{width: 150, height: 'auto'}}
+                            src={props.img.src}
+                            data-name="card-img"
+                            alt={name}
+                            className="card-img"
+                            width={props.img.width}
+                            height={props.img.height}
+
+                            blurDataURL={image.blurDataURL}
+                          />
+                          ))) : (
+                          // If 'image' is null, render a placeholder image or handle it accordingly
+                            <Image 
+                              src="/images/default.png" 
+                              alt="Default Image"
+                              width={149}
+                              height={150}
                               />
-                              ) : (
-                              // If 'image' is null, render a placeholder image or handle it accordingly
-                                <Image 
-                                  src="/images/default.png" 
-                                  alt="Default Image"
-                                  width={149}
-                                  height={150}
-                                  />
-                              )}
-        </div>
+                          )}
+                    </div>
                       </div>
                     </div>
                     <div className="frame-pokemon-name-outer">
