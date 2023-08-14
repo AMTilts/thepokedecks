@@ -3,24 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node -r dotenv/config ./node_modules/.bin/next",
+    "build": "node -r dotenv/config ./node_modules/.bin/next build",
+    "start": "node -r dotenv/config ./node_modules/.bin/next start",
     "lint": "next lint",
     "compile:sass": "sass scss:assets/css"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@plaiceholder/next": "^3.0.0",
     "axios": "^1.4.0",
     "babel": "^6.23.0",
     "classnames": "^2.3.1",
+    "dotenv": "^16.3.1",
     "gsap": "^3.10.4",
     "gulp-sass": "^5.1.0",
     "image-size": "^1.0.2",
-    "lqip": "^2.1.0",
     "lqip-modern": "^2.0.0",
     "next": "^12.1.0",
+    "plaiceholder": "^3.0.0",
     "postcss": "^8.4.13",
     "probe-image-size": "^7.2.3",
     "prop-types": "^15.8.1",
@@ -45,7 +45,6 @@
     "eslint-config-next": "12.1.6",
     "lqip-loader": "^2.2.1",
     "node-loader": "^2.0.0",
-    "react-fontawesome": "^1.7.1",
     "sass": "^1.51.0"
   },
   "browser": {

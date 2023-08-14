@@ -11,8 +11,7 @@ import Navbar from './Navbar'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactPaginate from 'react-paginate'
-import { faAssistiveListeningSystems } from '@fortawesome/free-solid-svg-icons';
-import useSwr from 'swr'
+import 'dotenv/config'
 
 
 // import styles from "./Button.module.css";

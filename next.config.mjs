@@ -1,14 +1,20 @@
+import withPlaiceholder from "@plaiceholder/next";
+
 const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = {
+export default withPlaiceholder({
+  images: {
+    domains: ["github.io"]
+  },
   webpack: (config, { isServer }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.('.svg'),
-    )
+      rule.test?.test?.('.svg')
+    );
 
-    config.module.rules.push({
+    config.module.rules.push(
+      {
         ...fileLoaderRule,
         test: /\.svg$/i,
         resourceQuery: /url/, // *.svg?url
@@ -19,11 +25,10 @@ module.exports = {
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
         use: ['@svgr/webpack'],
-      },
-  )
+      }
+    );
 
-  fileLoaderRule.exclude = /\.svg$/i
-
+    fileLoaderRule.exclude = /\.svg$/i;
 
     if (!isServer) {
       config.resolve.fallback = {
@@ -46,9 +51,9 @@ module.exports = {
   },
   ...nextConfig,
   images: {
-    domains: ['raw.githubusercontent.com', 'mprice.one'],
+    domains: ['raw.githubusercontent.com', 'mprice.one', 'github.io'],
   },
   future: {
     webpack5: true,
   },
-};
+});

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import classNames from 'classnames';
@@ -6,6 +6,8 @@ import Image from 'next/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
+import { getPlaiceholder } from 'plaiceholder';
+import { PATTERNLIKE_TYPES } from '@babel/types';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -19,6 +21,7 @@ import probe from 'probe-image-size'
       }
     }
   }`;
+
 
 
 
@@ -42,53 +45,53 @@ import probe from 'probe-image-size'
 
   const url = ('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
 
-  async function getServerSideProps(url) {
-    const res = await fetch(url)
-    const fetchedData = await res.json();
-    const imgUrl = `${fetchedData.assets.image}`;
-    console.log(imgUrl)
-    const images = [
-        {url: `${imgUrl}`}
-      ];
+  // async function getServerSideProps(url) {
+  //   const res = await fetch(url)
+  //   const fetchedData = await res.json();
+  //   const imgUrl = `${fetchedData.assets.image}`;
+  //   console.log(imgUrl)
+  //   const images = [
+  //       {url: `${imgUrl}`}
+  //     ];
   
-    const imagesWithSizes = await Promise.all(
-      images.map(async (image) => {
-        const imageWithSize = image;
-        console.log(images)
-        imageWithSize.size = await probe(image.url);
+  //   const imagesWithSizes = await Promise.all(
+  //     images.map(async (image) => {
+  //       const imageWithSize = image;
+  //       console.log(images)
+  //       imageWithSize.size = await probe(image.url);
 
-        return imageWithSize;
-      })
-    );
+  //       return imageWithSize;
+  //     })
+  //   );
 
-    return {
-      props: {
-        fetchedData,
-        imgUrl,
-        images: imagesWithSizes
-      }
-    };
-  };
+  //   return {
+  //     props: {
+  //       fetchedData,
+  //       imgUrl,
+  //       images: imagesWithSizes
+  //     }
+  //   };
+  // };
 
 
-  export async function getStaticProps() {
-    const imgPath = {imgUrl};
+  // export async function getStaticProps() {
+  //   const imgPath = {imgUrl};
 
-    const img = fs.createReadStream(path.join(process.cwd(), imgPath));
+  //   const img = fs.createReadStream(path.join(process.cwd(), imgPath));
 
-    const probedImg = await probe(img);
+  //   const probedImg = await probe(img);
 
-    return {
-      props: {
-        img: {
-          width: probedImg.width,
-          height: probedImg.height,
-          src: imgPath,
-          alt: "image"
-        }
-      }
-    }
-  }
+  //   return {
+  //     props: {
+  //       img: {
+  //         width: probedImg.width,
+  //         height: probedImg.height,
+  //         src: imgPath,
+  //         alt: "image"
+  //       }
+  //     }
+  //   }
+  // }
 //     const images = [
 //         await imgArray
 //     ];
@@ -121,9 +124,42 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props }) {
+export default function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props }) {
 
-console.log(imgUrl)
+const getImages = async () => {
+  try {
+    const src = `https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm${p.dexNr}.icon.png`;
+  
+    const buffer = await fetch(src).then(async (res) =>
+      Buffer.from(await res.arrayBuffer())
+    );
+    const {
+      css,
+      metadata: { height, width },
+      ...getPlaiceholder
+    } = await getPlaiceholder(buffer);
+
+    console.log(css);
+  } catch (err) {
+    err;
+  }
+
+  // const getImages = async () => {
+  //   Promise;all(
+  //     glob.sync(pattern).map(async(file) => {
+  //       const src = file.replace("./public","");
+  //       const buffer = await fs.readFile(file);
+
+  //       const {
+  //         metadata: { height, width },
+  //         ...getPlaiceholder
+  //       } = await getPlaiceholder(buffer);
+
+  //       return { ...getPlaiceholder, img: {src, width, height } };
+  //     })
+  //   );
+
+
   
 
     // DataBaseSchemaExample = {
@@ -143,9 +179,39 @@ console.log(imgUrl)
   // }
   // //   c
 
+  // const getImage = async () => {
+  //   const buffer = await fetch(url).then(async (res) =>
+  //     Buffer.from(await(res.arrayBuffer())
+  //     ),
+
+  //   const {
+  //     metadata: { height, width },
+  //     ...getPlaiceholder
+  //   } = await getPlaiceholder(buffer, {size: 10 });
+
+  //   return {
+  //     ...getPlaiceholder,
+  //     img: {src, height, width },
+  //   };
+  // };
   const [imgArray, setImgArray] = useState([]);
+  const imageRef = useRef(null)
 
+  const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(url);
+        const data = await res.json()
+        const imgUrl = await data.assets.image;
+        imageUrl.onload()
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
   // function waterType() {
   //         return (
   //             <Card style={
@@ -332,28 +398,27 @@ console.log(images)
                     <div className="card-img-outer">
                       {images ? 
                         (images.map((image) => ( // Check if 'image' is not null
+                          console.log({image}),
                           <Image
-                            key={props.img.src}
+                            key={image.url} // Use image.url as the key
                             id="card-img"
-                            // style={{width: 150, height: 'auto'}}
-                            src={props.img.src}
+                            src={image.url} // Use image.url as the source
                             data-name="card-img"
                             alt={name}
                             className="card-img"
-                            width={props.img.width}
-                            height={props.img.height}
-
+                            width={image.size.width} // Use image dimensions from the image object
+                            height={image.size.height} // Use image dimensions from the image object
                             blurDataURL={image.blurDataURL}
                           />
-                          ))) : (
-                          // If 'image' is null, render a placeholder image or handle it accordingly
-                            <Image 
-                              src="/images/default.png" 
-                              alt="Default Image"
-                              width={149}
-                              height={150}
-                              />
-                          )}
+                        ))) : (
+                          // If 'images' is null, render a placeholder image or handle it accordingly
+                          <Image 
+                            src="/images/default.png" 
+                            alt="Default Image"
+                            width={149}
+                            height={150}
+                          />
+                        )}
                     </div>
                       </div>
                     </div>
@@ -459,6 +524,4 @@ console.log(images)
     </div>
   </div>  
   );
-}
-
-export default PokeCard;
+}};
