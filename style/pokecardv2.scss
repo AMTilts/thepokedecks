@@ -1,3 +1,15 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+  }
+
+@property --border-width {
+    syntax: "width";
+    initial-value: 1px 1px  4px 4px;
+    inherits: false;
+    }
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
 
 :root {
@@ -101,7 +113,8 @@
     --fighting-hover: #D67873;
 }
 
-$pokecolors: ("bug-color": #A8B820,
+$pokecolors: (
+"bug-color": #A8B820,
 "bug-light": #C6D16E,
 "bug-dark": #6D7815,
 "dark-color": #705848,
@@ -156,91 +169,28 @@ $pokecolors: ("bug-color": #A8B820,
 "water-color": #6890F0,
 "water-dark": #445E9C,
 "water-light": #9DB7F5);
-// $bug: (
-//   light: #C6D16E,
-//   dark: #6D7815,
-//   color: #A8B820
-// );
-// $dark: (
-//   color: #705848,
-//   light: #A29288,
-//   dark: #49392F
-// );
-// $dragon: (
-//   color: #7038F8,
-//   light: #A27DFA,
-//   dark: #4924A1
-// );
-// $electric: (
-//   color: #F8D030,
-//   light: #FAE078,
-//   dark: #A1871F
-// );
-// $fairy: (
-//   color: #EE99AC,
-//   light: #F4BDC9,
-//   dark: #9B6470
-// );
-// $fighting: (
-//   color: #C030,
-//   light: #D678,
-//   dark: #7D1F1A  
-// );
-// $fire: (
-//   color: orange,
-//   light: #F5AC78,
-//   dark: #9C531F
-// );
-// $flying: (
-//   color: #A890F0,
-//   light: #C6B7F5,
-//   dark: #6D5E9C
-// );
-// $ghost: (
-//   color: #705898,
-//   light: #A292BC,
-//   dark: #493963
-// );
-// $ice: (
-//   color: #98D8D8,
-//   light: #BCE6E6,
-//   dark: #638D8D
-// );
-// $ground: (
-//   color: #E0C068,
-//   light: #EBD69D,
-//   dark: #927D44
-// );
-// $normal: (
-//   color: #A8A878,
-//   light: #C6C6A7,
-//   dark: #6D6D4E
-// );
-// $poison: (
-//   color: #A040A0,
-//   light: #C183C1,
-//   dark: #682A68
-// );
-// $ice: (
-//   color: #F85888,
-//   light: #FA92B2,
-//   dark: #F85888
-// );
-// $rock: (
-//   color: #B8A038,
-//   light: #D1C17D,
-//   dark: #786824
-// );
-// $steel: (
-//   color: #B8B8D0,
-//   light: #D1D1E0,
-//   dark: #787887
-// );
-// $water: (
-//   color: #6890F0,
-//   dark: #445E9C,
-//   light: #9DB7F5
-// );
+
+$types: (
+  bug: (#A8B820, #C6D16E, #6D7815),
+  dark: (#705848, #A29288, #49392F),
+  dragon: (#7038F8, #A27DFA, #4924A1),
+  electric: (#F8D030, #FAE078, #A1871F),
+  fairy: (#EE99AC, #F4BDC9, #9B6470),
+  fighting: (#C03028, #D67873, #7D1F1A),
+  fire: (orange, #F5AC78, #9C531F),
+  flying: (#A890F0, #C6B7F5, #6D5E9C),
+  ghost: (#705898, #A292BC, #493963),
+  grass: (#78C850, #A7DB8D, #4E8234),
+  ground: (#E0C068, #EBD69D, #927D44),
+  ice: (#98D8D8, #BCE6E6, #638D8D),
+  normal: (#A8A878, #C6C6A7, #6D6D4E),
+  poison: (#A040A0, #C183C1, #682A68),
+  psychic: (#F85888, #FA92B2, #F85888),
+  rock: (#B8A038, #D1C17D, #786824),
+  steel: (#B8B8D0, #D1D1E0, #787887),
+  water: (#6890F0, #9DB7F5, #445E9C)
+);
+
 $types: ("grass",
 "fire",
 "fairy",
@@ -260,18 +210,7 @@ $types: ("grass",
 "bug",
 "normal",
 "grass");
-// @each $type in $types {
-//   .type-gradient-#{$type}-bottom {
-//     width: 100%;
-//     z-index: 10;
-//     background: linear-gradient(121.52deg, var(--(#{$type}-color)) 9.79%, var(--(#{$type}-light)) 24.44%, var(--(#{$type}-dark)) 65.12%);
-//   }
-// };
-// @each $type in $types {
-//   .type1logo {
-//     content: url(images/type_c21_#{$type}.svg)
-//   }
-// }
+
 @each $type in $types {
     .type-c-#{$type} {
         content: url(images/type_c21_#{$type}.svg)
@@ -297,16 +236,8 @@ $types: ("grass",
     position: relative;
     z-index: 50;
 }
-// @function #{$type}($key) {
-//   @return map-get(#{$type}, $key);
-// }
-// @each $type, $bug, $dark, $dragon, $electric, $fairy, $fighting, $fire, $ghost, $grass, $ground, $ice, $poison, $psychic, $rock, $steel, $water, $normal in $types, $bugs, $darks, $dragons, $electrics, $fairies, $fightings, $fires, $ghosts, $grasses, $grounds, $ices, $poisons, $psychics, $rocks, $steels, $waters, $normals {
-//   .type-gradient-#{$type}-#{$bug}, .type-gradient-#{$type}-#{$dark}, .type-gradient-#{$type}-#{$dragon}, .type-gradient-#{$type}-#{$electric}, .type-gradient-#{$type}-#{$fairy}, .type-gradient-#{$type}-#{$fighting}, .type-gradient-#{$type}-#{$fire}, .type-gradient-#{$type}-#{$flying}, .type-gradient-#{$type}-#{$ghost}, .type-gradient-#{$type}-#{$grass},.type-gradient-#{$type}-#{$ground}, .type-gradient-#{$type}-#{$ice},.type-gradient-#{$type}-#{$normal},.type-gradient-#{$type}-#{$poison}, .type-gradient-#{$type}-#{$psychic}, .type-gradient-#{$type}-#{$rock}, .type-gradient-#{$type}-#{$water} {
-//     @include typegradient;
-//     background: linear-gradient(121.52deg, #{$type}-) 9.79%, bug(dark) 24.44%, bug(light) 65.12%)
-//   }
-// }
-//colors
+
+
 $dark-color: #705848;
 $dark-maincolor: #705848;
 $dark-light: #A29288;
@@ -658,8 +589,7 @@ $fighting-hover: #D67873;
 @each $type,
 $gradient in $types {
     .frontswitch-#{$type} {
-        background-image:linear-gradient(105deg,
-        gradient(var(#{$type}-color), from),
+        background-image:linear-gradient(--#{prefix}-rotate (var(#{$type}-color), from),
         gradient(var(#{$type}-dark), to));
         border-radius: .3rem;
         margin-left: 10px;
@@ -672,6 +602,26 @@ $gradient in $types {
         }
     }
 }
+// @each $type,
+// $gradient in $types {
+//     .type-logo-TYPENAME-#{$type} {
+//         --rotate: $rotate
+//         background-image:linear-gradient(element(##{$rotate})),
+//         gradient(var(#{$type}-color), from),
+//         gradient(var(#{$type}-dark), to));
+//         border-radius: .3rem;
+//         margin-left: 10px;
+//         &.inverse {
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+//             border-image-source:linear-gradient(100deg,
+//             gradient(var(#{$type}-color), from),
+//             gradient(var(#{$type}-dark), to));
+//         }
+//     }
+// }
+
+
 
 // @each $type in $types {
 //   .#{$type}-color {
@@ -775,7 +725,7 @@ $gradient in $types {
 
     z-index: 10;
     pointer-events: none;
-    margin-left: 9px;
+    margin-left: 10px;
     padding-bottom: 5px;
     // width: 100%;
     // max-width: 25px;
@@ -787,11 +737,10 @@ $gradient in $types {
     padding-right: 0px;
     align-self: center;
     align-items: center;
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
-#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
-    transform: translateY(-2px) translateX(-7px);
-}
 
 @mixin type-name {
     position: relative;
@@ -799,7 +748,7 @@ $gradient in $types {
     pointer-events: none;
     // margin-left: 18px;
     padding-left: 8px;
-    margin-top: 5px;
+    // margin-top: 5px;
     align-items: center;
     // min-width: 33px;
     // margin-bottom: 15.560000000000002px;
@@ -812,9 +761,10 @@ $gradient in $types {
     font-style: normal;
     font-family: Rubik;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 @mixin pokename {
@@ -842,6 +792,7 @@ $gradient in $types {
     background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
     background-clip: text;
     text-decoration: shadow whitesmoke;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -860,8 +811,7 @@ $gradient in $types {
     height: auto;
     pointer-events: auto;
     // box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-    
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;    
 }
 
 #Page {
@@ -874,8 +824,7 @@ $gradient in $types {
     // height: auto;
     // pointer-events: auto;
     // box-shadow: 0 5px 5px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-    
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;    
 }
 
 
@@ -888,7 +837,7 @@ $gradient in $types {
     z-index: 1;
     margin: 0;
     padding: 10px 10px;
-    transition: all 0.5s ease-in;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #Page:hover #card-img {
@@ -905,7 +854,7 @@ $gradient in $types {
     /* content:url(images/card_img.png); */
     transform: scale(1);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     opacity: 1;
     // box-shadow: 1px 8px 20px grey;
     -webkit-transition:  box-shadow .6s ease-in;
@@ -925,16 +874,19 @@ $gradient in $types {
     /* content:url(images/card_img.png); */
     transform: scale(1);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease-in;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #totalcard {
     transform: scale(0);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #totalcard:hover, #Page:hover #frame{
     transform: scale(1);
-    transition: transfrom .6s ease-in;
+    color: red;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    // transition: transfrom .6s ease-in;
 }
 
 #Page:hover #poke-name-fire {
@@ -1044,34 +996,83 @@ $gradient in $types {
 @mixin card-gradient {
     --borderWidth: 1px 1px 4px 4px;
     position: relative;
-    width: 100%;
+    width: 104%;
     height: 102%;
     z-index: 5;
     pointer-events: none;
     margin-left: 0%;
     margin-top: 0%;
-    border: 1px;
-    border-color: lime;
-    border-radius: var(--borderWidth);
+    // border: 1px;
+    // border-color: lime;
+    border-width: var(--borderWidth);
+    animation-name: animatedgradient;
+    // transform: var(--rotate);
+    animation: 3s ease alternate infinite;
 }
 
-@keyframes animatedgradient {
+#card-bg-gradient-fighting {
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--fighting-light),
+        var(--fighting-dark)
+    );
+    border: var(--borderWidth) solid var(--fighting-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-fighting{
+    animation: rotateGradient-fighting 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-fighting {
     0% {
+        --rotate: 0deg;
         background-position: 0% 50%;
-        opacity: 0;
-    }
-    50% {
-        background-position: 100% 50%;
+        background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
     }
     100% {
+        --rotate: 360deg;
         background-position: 0% 50%;
-        transition: opacity(1);
-        transform: rotateX('50deg');
-        transform: rotateY(60deg);
-        background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+        background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
     }
 }
 
+// @each $type, $values in $types {
+//     $type-color: nth($values, 1);
+//     $type-light: nth($values, 2);
+//     $type-dark: nth($values, 3);
+  
+//     #card-bg-gradient-#{$type} {
+//         --borderWidth: 1px 1px 4px 4px;
+//         position: relative;
+//         width: 104%;
+//         height: 102%;
+//         z-index: 5;
+//         pointer-events: none;
+//         margin-left: 0%;
+//         margin-top: 0%;
+//         background-size: 600% 600%;
+//         --borderWidth: 1px;
+//         background-image: linear-gradient(
+//             to bottom,
+//             var(#{$type-light}),
+//             var(#{$type-dark})
+//         );
+//         border: var(--borderWidth) solid var(#{$type-dark});
+//         border-radius: 4px;
+//         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+//         background: linear-gradient(
+//             --rotate,
+//             var(#{$type-color}) 9.79%,
+//             var(#{$type-light}) 21.97%,
+//             var(#{$type-dark}) 41.76%
+//         );
+//     }
+//   }
 @keyframes spin {
     0% {
         --rotate: 0deg;
@@ -1107,146 +1108,160 @@ $gradient in $types {
 //     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
 // }
 
-#card-bg-gradient-bug {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
-}
-
-#card-bg-gradient-water {
-    @include card-gradient;
-    animation: spin 2.5s linear infinite;
-    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
-}
-
-
-
-
-
-
-#card-bg-gradient-water::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    border-radius: calc(2 * var(--borderWidth));
-    animation-name: animatedgradient;
-    animation: 3s ease alternate infinite;
-    background-size: 300% 300%;
-    background: linear-gradient(60deg, $water-color, $water-dark, $water-light);
-}
-
-#card-bg-gradient-rock {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
-}
-
-#card-bg-gradient-normal {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
-}
-
-#card-bg-gradient-electric {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
-}
-
-#card-bg-gradient-ice {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
-}
-
-#card-bg-gradient-psychic {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
-}
-
-#card-bg-gradient-dark {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
-}
-
-#card-bg-gradient-dragon {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
-}
-
-#card-bg-gradient-electric {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
-}
-
-#card-bg-gradient-poison {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
-}
-
-#card-bg-gradient-flying {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-light 21.97%, $flying-dark 41.76%);
-}
-
-#card-bg-gradient-ghost {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
-}
-
-#card-bg-gradient-ground {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-light 21.97%, $steel-dark 41.76%);
-}
-
-// @keyframes animatedgradient {
-//     0% {
-//         background-position: 0% 50%;
-//     }
-//     50% {
-//         background-position: 100% 50%;
-//     }
-//     100% {
-//         background-position: 0% 50%;
-//     }
+// #card-bg-gradient-bug {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
 // }
+
+// #card-bg-gradient-water {
+//     @include card-gradient;
+//     animation: animatedgradient 2.5s linear infinite;
+//     background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
+// }
+
+// #card-bg-gradient-water::after {
+//     content: '';
+//     @include card-gradient;
+//     animation: animatedgradient 2.5s linear infinite;
+//     background: linear-gradient(var(--rotate), $water-color 19.79%, $water-dark 9.97%, $water-light 31.76%);
+
+// }
+
+
+
+
+
+// #Page:hover #card-bg-gradient-water {
+//     @include cardspin;
+//     content: "";
+//     width: 104%;
+//     height: 102%;
+//     border-radius: 8px;
+//     position: absolute;
+//     z-index: -1;
+//     top: -1%;
+//     left: -2%;
+//     animation: spin 2.5s linear infinite;
+// }
+
+// #card-bg-gradient-rock {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
+// }
+
+// #card-bg-gradient-normal {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
+// }
+
+// #card-bg-gradient-electric {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+// }
+
+// #card-bg-gradient-ice {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
+// }
+
+// #card-bg-gradient-psychic {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
+// }
+
+// #card-bg-gradient-dark {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
+// }
+
+// #card-bg-gradient-dragon {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
+// }
+
+// #card-bg-gradient-electric {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+// }
+
+// #card-bg-gradient-poison {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
+// }
+
+// #card-bg-gradient-flying {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-light 21.97%, $flying-dark 41.76%);
+// }
+
+// #card-bg-gradient-ghost {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
+// }
+
+// #card-bg-gradient-ground {
+//     @include card-gradient;
+//     background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-light 21.97%, $steel-dark 41.76%);
+// }
+
+
 
 .card-bg-gradient-outer {
     position: absolute;
     display: flex;
     pointer-events: none;
     z-index: 4;
-    width: 100%;
+    width: 101 %;
     height: 100%;
     left: 0;
     top: 0;
 }
 
-#Page:hover #card-bg-gradient-outer::after {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-}
+// #Page:hover #card-bg-gradient-outer::after {
+//     position: absolute;
+//     display: none;
+//     pointer-events: none;
+//     z-index: -1;
+//     padding-left: 14px;
+//     top: calc(-1 * var(--borderWidth));
+//     left: calc(-1 * var(--borderWidth));
+//     height: calc(100% + var(--borderWidth) * 2);
+//     width: calc(100% + var(--borderWidth) * 2);
+// }
 
-.card-bg-gradient {
-    @include card-gradient;
-    background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
-}
+// .card-bg-gradient {
+//     @include card-gradient;
+//     background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
+// }
+
+// @keyframes animatedgradient {
+//     0% {
+//         transform: rotatex(0deg) rotateY(0deg);
+//         color: (0deg);
+//     }
+//     50% {
+//         transform: rotatex(45deg) rotateY(45deg);
+//         color: (180deg);
+//     }
+//     100% {
+//         transform: rotatex(180deg) rotateY(180deg);
+//         background: linear-gradient(240deg);
+//     }
+// }
+
+
 
 @keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+        0% {
+        //    transform: var(--rotate) 0deg;
+           --rotate: 0deg;
+            // transform: rotatex(0deg) --rotatex(0deg)
+        }
+        100% {
+            // transform: var(--rotate) 60deg;
+            --rotate: 360deg;
+            // transform: rotatex(360deg) --rotatex(360deg)
+        }
 }
 
 :root {
@@ -1525,15 +1540,13 @@ $gradient in $types {
 #Page:hover #frame-card-bg-white-water {
     background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
     filter: brightness(150%);
-    animation-name: spin;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 .Frame {
     position: relative;
     z-index: 2;
     pointer-events: none;
-    width: 100%;
+    width: 101%;
     margin-left: 0;
     max-width: 252px;
     margin: inherit;
@@ -1542,6 +1555,7 @@ $gradient in $types {
     // filter:  
     border-radius: 4px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 // #Page:hover #frame  {
@@ -1693,7 +1707,7 @@ $gradient in $types {
     /* content:url(images/card_img.png); */
     transform: scale(0.9);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     opacity: .9;
 }
 
@@ -1710,7 +1724,7 @@ $gradient in $types {
     content:url(images/card_img.png); */
     transform: scale(0.9);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     opacity: 1;
 }
 
@@ -1779,7 +1793,9 @@ $gradient in $types {
 }
 
 #Page:hover .poke-name {
-    transform: translateY(-5px) translateX(-5px);
+    transform: translateY(-2px) translateX(-2px);
+    transition: transform 200.0ms ease-in-out 200.967ms,
+                box-shadow 200ms ease-in-out 0.967ms;
 }
 
 .poke-name-outer {
@@ -1790,37 +1806,54 @@ $gradient in $types {
 }
 
 .frame-type-logo-name {
+    display: inline-flex;
+    flex-direction: row;
     position: relative;
     z-index: 7;
     pointer-events: none;
-    margin-left: 0.4%;
-    width: 100%;
-    height: 15.985964912280702%;
+    height: 100%;
     margin-top: 0px;
-    margin-right: 5px;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.logo-name-parent-frame {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 5000;
+    width: 100%;
+    /* align-content: center; */
+    top: 0;
+    left: 0;
+    /* height: 100%; */
+    margin-top: 20px;
 }
 
 .frame-type-logo-name-outer {
     position: absolute;
-    display: flex;
+    display: inline-flex;
+    flex-direction: row;
     pointer-events: none;
     z-index: 7;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    padding-right: 50px;
+    // padding-right: 50px;
     margin-right: 4px;
 }
 
 .frame-type-name {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     position: relative;
     z-index: 11;
     pointer-events: none;
-    margin-left: 35px;
-    width: 45px;
+    width: 100%;
     min-width: 40px;
     height: 45.56px;
     margin-top: 0px;
@@ -1828,6 +1861,7 @@ $gradient in $types {
     min-height: 45.56px;
     align-content: center;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .frame-type-name-outer {
@@ -1938,32 +1972,49 @@ $gradient in $types {
 }
 
 #Page:hover .TYPENAME {
-    transform: translateY(-5px) translateX(-5px);
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+#Page:hover type-logo {
+    transform: translateY(0px) translateX(-1px);
+    overflow: visible;
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 .TYPENAME-logo {
     position: relative;
+    display: inline-block;
     z-index: 8;
     pointer-events: none;
-    // margin-left: 8px;
+    margin-left: 40px;
     // width: 28px;
     // min-width: 25px;
-    // height: 43px;
-    padding: 0px 0px 0px 0px;
+    height: 43px;
+    padding: 5px 5px 5px 5px;
     overflow: visible;
+    align-items: center;
+    align-self: center;
+    justify-content: flex-start;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    
 }
 
-.TYPENAME-logo-outer {
-    position: relative;
+
+.TYPENAME-logo-outer {    position: relative;
     display: flex;
     pointer-events: auto;
     z-index: 8;
     width: 100%;
+    align-items: center;
     // padding-right: 5px;
     // margin-right: 5px;
+    justify-content: flex-start;
+
 }
 
 .Frame-4 {
+    // display: flex;
     position: relative;
     z-index: 9;
     pointer-events: none;
@@ -1971,21 +2022,25 @@ $gradient in $types {
     width: 100%;
     min-width: 25px;
     height: 28px;
-    margin-top: 8px;
-    margin-bottom: 7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     min-height: 28px;
+    align-items: center;
 }
 
 .Frame-4-outer {
     position: relative;
-    display: flex;
+    // display: flex;
     pointer-events: none;
     z-index: 9;
     margin-right: 0px;
     padding-right: 0px;
-    margin-top: -40px;
+    margin-top: 0px;
     margin-left: 5px;
     width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+
 }
 
 
@@ -2096,7 +2151,6 @@ $gradient in $types {
     display: flex;
     pointer-events: none;
     z-index: 10;
-    width: 100%;
     height: 100%;
     left: 0;
     top: 0;
@@ -2129,29 +2183,77 @@ $gradient in $types {
 // }
 
 
-#Page:hover::after #Frame {
-    content: '';
+// #Page:hover::after #Frame{
+//     content: '';
+//     opacity: 1;
+//     color: #ff0000;
+// }
+
+#Page:hover::after #Frame{
     opacity: 1;
+    color: #ff0000;
 }
 
+#Frame{
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    transform: translate(0, 0);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+   }
+   
+
+//Card Hover Movement //
 #Page:hover #Frame {
     // content: '';
     // position: absolute;
-    // z-index: -1;
-    width: 100%;
-    height: 100%;
-    // opacity: 0;
-    transform: translateY(-5px) translateX(-5px);
-    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out, opacity .3s ease-in-out;
-    color: rgba(0, 0, 0, 0.25);
-
+    // z-index: -50;
+    transform: translate(-1px, -2px);
+    box-shadow: 5px 15px 20px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
-#Page:hover {
+#Page:hover::after #Frame {
+    // content: '';
+    // position: absolute;
+    // z-index: -50;
+    // height: 100%;
+    // width: 100%;
+    // opacity: 0;
+    // transform: translateY(-5px) translateX(-5px);
+    // box-shadow: 0px 7.5px 10px 0px rgba(0, 0, 0, 0.25);
+    // color: #ff0000;
+    // width: 102%;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+#Page:hover .Frame-outline-outer {
+    width: 150%;
+    height: 100%;
+    display: flex;
+    color: #fd0000;
+    border-width: 10px;
+}
+
+// HOVER ON TYPE LOGO //
+#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+// HOVER ON TYPE LOGO //
+#Page:hover div[class^='type-logo-'], div[className='type-logo-*'] {
+    transform: scale(1.0) translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+
+#Page:hover #Page::after {
     // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
-    // color: rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out;
+    color: rgba(0, 0, 0, 0.25);
+    border-width: 10px;
+    border-color: red;
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 // #Page:hover .Page {
@@ -2160,14 +2262,14 @@ $gradient in $types {
 
 
 
-#Frame {
-    // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
-    width: 100%;
-    transition: transform .5s ease;
-    // background-color: rgba(0, 0, 0, 0.54);
-    // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+// #Frame {
+//     // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+//     width: 102%;
+//     transition: transform .3s ease;
+//     // background-color: rgba(0, 0, 0, 0.54);
+//     // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
 
-}
+// }
 
 .Page {
     width: 100%;
@@ -2186,21 +2288,7 @@ $gradient in $types {
 
 // }
 
-#Frame{
-    box-shadow:none;
-   }
-   
-   /* Division */
-   #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(2) a:nth-child(1) div:nth-child(1) #Page div:nth-child(1) #Frame > div:nth-child(1){
-    box-shadow:0px 0px 3px 0px #0000ee !important;
-   }
-   
-   /* Page */
-   #Page{
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-   }
-   
    /* Frame (hover) */
 //    #Frame:hover{
 //     max-width:100%;
@@ -2213,19 +2301,21 @@ $gradient in $types {
    
    /* Image (hover) */
    #Page:hover img {
-    transform:scale(1.10) rotateY(-2deg) translatex(2px) translatey(-3px);
+    transform:scale(1.0) rotateY(0deg) translatex(0px) translatey(-1px);
     perspective:399px;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Span Tag (hover) */
    div > span:hover{
-    transform:scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
-    perspective:584px;
+    transform:scale(1.0) rotateX(0deg) rotateY(0deg) translatex(0px) translatey(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Span Tag (hover) */
    #Page span span:hover{
     transform:scale(0.52);
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Division (hover) */
@@ -2236,39 +2326,28 @@ $gradient in $types {
     background-image: linear-gradient(
         to bottom,
         var(--fighting-light),
-        var(--fighting-color)
+        var(--fighting-dark)
     );
     border: var(--borderWidth) solid var(--fighting-dark);
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+    background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
 }
 
 #Page:hover #card-bg-gradient-fighting{
-    animation: rotateGradient 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+    animation: rotateGradient 3.5s linear infinite;
 }
 
 @keyframes rotateGradient {
     0% {
         --rotate: 0deg;
         background-position: 0% 50%;
-        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
-    }
-
-    25% {
-        --rotate: 30deg;
-        background: linear-gradient(121.52deg, $fighting-color 30.79%, $fighting-light 51.97%, $fighting-dark 91.76%);
-    }
-
-    50% {
-        --rotate: 90deg;
-        background-postion: 100% 50%;
-        background: linear-gradient(121.52deg, $fighting-light 9.79%, $fighting-dark 21.97%, $fighting-color 41.76%);
+        background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
     }
     100% {
         --rotate: 360deg;
         background-position: 0% 50%;
-        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+        background: linear-gradient(var(--rotate), $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
     }
 }
 
@@ -2314,26 +2393,7 @@ max-height: 200px;
     font-size: 40px;
 }
 
-.frame-type-name {
 
-
-
-display: inline-flex;
-flex-direction: row;
-position: relative;
-z-index: 11;
-pointer-events: none;
-/* margin-left: 35px; */
-width: 100%;
-min-width: 40px;
-height: 45.56px;
-margin-top: 0px;
-margin-bottom: 0px;
-min-height: 45.56px;
-align-content: center;
-align-items: center;
-justify-content: space-around;
-}
 
 .frame-card-img {
     position: relative;
@@ -2449,17 +2509,569 @@ justify-content: space-around;
    }
    
    /* Div border */
-   .container-fluid div .btn-div-border{
-    display:flex;
-    justify-content:space-around;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    margin-top: 5px;
-   }
+//    .container-fluid div .btn-div-border{
+//     display:flex;
+//     justify-content:space-around;
+//     margin-bottom: 10px;
+//     padding-bottom: 10px;
+//     margin-top: 5px;
+//    }f
    
    /* Link (active) */
    #pagination ul a:active{
     font-weight:500;
    }
    
+   /* Division (hover) */
+// div:nth-child(2) > div:nth-child(2) > div:nth-child(1):hover{
+//     transform: translatex(-5px) translatey(-5px);
+//     width:auto;
+//     opacity: .5;
+//    }
    
+   /* Division */
+   #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    width:auto !important;
+   }
+   
+   /* Frame outer (hover) */
+#Page:hover #Frame-outer::after {
+    transform: translatex(0px) translatey(-2px);
+    opacity: 0;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+   }
+
+   #Page:hover .Frame-card-outline .frame-card-outline-outer {
+    width: 150%;
+    background-color: red;
+    border-width: 10px;
+    border-color: red;
+   }
+
+//    @each $type in $types {
+//     #card-bg-gradient-#{$type} {};
+//     //   width: 102%;
+//     //   height: 104%;
+//       background-size: 600% 600%;
+//         --borderWidth: 8px;
+//     //   background-image: linear-gradient(
+//     //       to bottom,
+//     //       var(--#{$type}-light),
+//     //       var(--#{$type}-dark)
+//     //   );
+//       border: var(--borderWidth) solid var(--#{$type}-dark);
+//       border-radius: 4px;
+//       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+//       background: linear-gradient(
+//           --rotate,
+//           var(--#{$type}-color) 9.79%,
+//           var(--#{$type}-light) 21.97%,
+//           var(--#{$type}-dark) 41.76%
+//       );
+//       z-index: 500;
+//       @include card-gradient;
+//     }
+  
+//     #Page:hover #card-bg-gradient-#{$type} {
+//       animation: rotateGradient 3.5s linear infinite;
+//     }
+//   }
+
+#card-bg-gradient-fire {
+    @include card-gradient;
+    // background-size: 600% 600%;
+    --borderWidth: 1px 1px 4px 4px;
+    // background-image: linear-gradient(
+    //     to bottom,
+    //     var(--fire-light),
+    //     var(--fire-dark)
+    // );
+    border-width: --borderWidth;
+    // border: var(--borderWidth) solid var(--fire-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $fire-color 9.79%, $fire-light 21.97%, $fire-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-fire{
+    animation: rotateGradient-fire 3.5s linear infinite;
+
+    
+}
+
+@keyframes rotateGradient-fire {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $fire-color 9.79%, $fire-light 21.97%, $fire-dark 41.76%);
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $fire-color 9.79%, $fire-light 21.97%, $fire-dark 41.76%);
+    }
+}
+
+#card-bg-gradient-grass {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--grass-light),
+        var(--grass-dark)
+    );
+    border: var(--borderWidth) solid var(--grass-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $grass-color 9.79%, $grass-light 21.97%, $grass-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-grass{
+    animation: rotateGradient-grass 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-grass {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $grass-color 9.79%, $grass-light 21.97%, $grass-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $grass-color 9.79%, $grass-light 21.97%, $grass-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-rock {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--rock-light),
+        var(--rock-dark)
+    );
+    border: var(--borderWidth) solid var(--rock-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-rock{
+    animation: rotateGradient-rock 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-rock {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
+    }
+}
+
+#card-bg-gradient-water {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px 1px 4px 4px
+    ;
+    background-image: linear-gradient(
+        to bottom,
+        var(--water-light),
+        var(--water-dark)
+    );
+    border: var(--borderWidth);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-water{
+    animation: rotateGradient-water 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-water {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-electric {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--electric-light),
+        var(--electric-dark)
+    );
+    border: var(--borderWidth) solid var(--electric-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-electric{
+    animation: rotateGradient-electric 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-electric {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
+    }
+}
+#card-bg-gradient-normal {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--normal-light),
+        var(--normal-dark)
+    );
+    border: var(--borderWidth) solid var(--normal-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-normal{
+    animation: rotateGradient-normal 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-normal {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
+    }
+}
+
+#card-bg-gradient-ghost {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--ghost-light),
+        var(--ghost-dark)
+    );
+    border: var(--borderWidth) solid var(--ghost-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-ghost{
+    animation: rotateGradient-ghost 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-ghost {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-poison {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--poison-light),
+        var(--poison-dark)
+    );
+    border: var(--borderWidth) solid var(--poison-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-poison{
+    animation: rotateGradient-poison 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-poison {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-bug {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--bug-light),
+        var(--bug-dark)
+    );
+    border: var(--borderWidth) solid var(--bug-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-bug{
+    animation: rotateGradient-bug 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-bug {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-ice {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--ice-light),
+        var(--ice-dark)
+    );
+    border: var(--borderWidth) solid var(--ice-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-ice{
+    animation: rotateGradient-ice 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-ice {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-dragon {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--dragon-light),
+        var(--dragon-dark)
+    );
+    border: var(--borderWidth) solid var(--dragon-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-dragon{
+    animation: rotateGradient-dragon 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-dragon {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-dark {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--dark-light),
+        var(--dark-dark)
+    );
+    border: var(--borderWidth) solid var(--dark-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-dark{
+    @include card-gradient;
+    animation: rotateGradient-dark 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-dark {
+    
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
+    }
+}
+
+#card-bg-gradient-psychic {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--psychic-light),
+        var(--psychic-dark)
+    );
+    border: var(--borderWidth) solid var(--psychic-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-psychic{
+    animation: rotateGradient-psychic 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-psychic {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
+    }
+}
+
+#card-bg-gradient-steel {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--steel-light),
+        var(--steel-dark)
+    );
+    border: var(--borderWidth) solid var(--steel-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $steel-color 9.79%, $steel-light 21.97%, $steel-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-steel{
+    animation: rotateGradient-steel 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-steel {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $steel-color 9.79%, $steel-light 21.97%, $steel-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $steel-color 9.79%, $steel-light 21.97%, $steel-dark 41.76%);
+    }
+}
+
+
+#card-bg-gradient-fairy {
+    @include card-gradient;
+    background-size: 600% 600%;
+    --borderWidth: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--fairy-light),
+        var(--fairy-dark)
+    );
+    // border: var(--borderWidth) solid var(--fairy-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(var(--rotate), $fairy-color 9.79%, $fairy-light 21.97%, $fairy-dark 41.76%);
+}
+
+#Page:hover #card-bg-gradient-fairy{
+    animation: rotateGradient-fairy 3.5s linear infinite;
+}
+
+@keyframes rotateGradient-fairy {
+    0% {
+        --rotate: 0deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $fairy-color 9.79%, $fairy-light 21.97%, $fairy-dark 41.76%);
+    }
+    100% {
+        --rotate: 360deg;
+        background-position: 0% 50%;
+        background: linear-gradient(var(--rotate), $fairy-color 9.79%, $fairy-light 21.97%, $fairy-dark 41.76%);
+    }
+}
+
+
+

@@ -302,7 +302,7 @@ console.log(images)
   return (
     <div className="Page-outer">
       <div id="Page" data-name="Artboards" className="Page">
-        <div className="Frame-outer">
+        <div id="Frame-outer" className="Frame-outer">
           <div id="Frame" data-name="card-parent" className="Frame">
             <div className="frame-card-outline-outer">
               <div
@@ -382,59 +382,61 @@ console.log(images)
                         </div>
                       </div>
                     </div>
-                    <div className="frame-type-logo-name-outer">
-                      <div
-                        id="frame-type-logo-name"
-                        data-name="frame-type-logo-name"
-                        className="frame-type-logo-name"
-                      >
-                        <div className="frame-type-name-outer">
-                          <div
-                            id="frame-type-name"
-                            data-name="frame-type-name"
-                            className="frame-type-name"
-                          >
-                            <div className="TYPENAME-outer">
-                              <div
-                                id={`TYPENAME-${lowerCaseType}`}
-                                data-name="TYPENAME"
-                                className="TYPENAME"
-                              >
-                                <div key="0">
-                                  {type}
+                    <div className="logo-name-parent-frame">
+                      <div className="frame-type-logo-name-outer">
+                      <div className="TYPENAME-logo-outer">
+                            <div
+                              id="TYPENAME-logo"
+                              data-name="TYPENAME-logo">
+                              <div className="Frame-4-outer">
+                                <div id="Frame-4" data-name="Frame 4" className="Frame-4">
+                                  <div className="type-logo-TYPENAME-outer">
+                                  {!lowerCaseType ? (
+                                      console.log('no type icon')
+                                  ) : (
+                                      <Image
+                                          id={`type-logo-TYPENAME-${lowerCaseType}`}
+                                          src={
+                                              !lowerCaseType
+                                                  ? `/images/type_c21_${lowerCaseType}.svg`
+                                                  : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                          }
+                                          data-name="type-logo-TYPENAME"
+                                          alt={`${type} Type`}
+                                          className="type-logo-TYPENAME"
+                                          height={25}
+                                          width={25}
+                                      />
+                                  )}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        <div
+                          id="frame-type-logo-name"
+                          data-name="frame-type-logo-name"
+                          className="frame-type-logo-name"
+                        >
+                          <div className="frame-type-name-outer">
+                            <div
+                              id="frame-type-name"
+                              data-name="frame-type-name"
+                              className="frame-type-name"
+                            >
+                              <div className="TYPENAME-outer">
+                                <div
+                                  id={`TYPENAME-${lowerCaseType}`}
+                                  data-name="TYPENAME"
+                                  className="TYPENAME"
+                                >
+                                  <div key="0">
+                                    {type}
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="TYPENAME-logo-outer">
-                          <div
-                            id="TYPENAME-logo"
-                            data-name="TYPENAME-logo">
-                            <div className="Frame-4-outer">
-                              <div id="Frame-4" data-name="Frame 4" className="Frame-4">
-                                <div className="type-logo-TYPENAME-outer">
-                                {!lowerCaseType ? (
-                                    console.log('no type icon')
-                                ) : (
-                                    <Image
-                                        id={`type-logo-TYPENAME-${lowerCaseType}`}
-                                        src={
-                                            !lowerCaseType
-                                                ? `/images/type_c21_${lowerCaseType}.svg`
-                                                : '/images/default.svg' // Replace 'default.svg' with your default image path
-                                        }
-                                        data-name="type-logo-TYPENAME"
-                                        alt={`${type} Type`}
-                                        className="type-logo-TYPENAME"
-                                        height={25}
-                                        width={25}
-                                    />
-                                )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                         </div>
                         </div>
                       </div>
                     </div>
