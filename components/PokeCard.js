@@ -6,6 +6,7 @@ import Image from 'next/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
+import { EntryOptionPlugin } from 'webpack';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -40,56 +41,80 @@ import probe from 'probe-image-size'
   //   };
   // };
 
-  const url = ('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+  // const url = ('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
 
-  async function getServerSideProps(url) {
-    const res = await fetch(url)
-    const fetchedData = await res.json();
-    const imgUrl = `${fetchedData.assets.image}`;
-    console.log(imgUrl)
-    const images = [
-        {url: `${imgUrl}`}
-      ];
+  // async function getServerSideProps(url) {
+  //   const res = await fetch(url)
+  //   const fetchedData = await res.json();
+  //   const imgUrl = `${fetchedData.assets.image}`;
+  //   console.log(imgUrl)
+  //   const images = [
+  //       {url: `${imgUrl}`}
+  //     ];
   
-    const imagesWithSizes = await Promise.all(
-      images.map(async (image) => {
-        const imageWithSize = image;
-        console.log(images)
-        imageWithSize.size = await probe(image.url);
+  //   const imagesWithSizes = await Promise.all(
+  //     images.map(async (image) => {
+  //       const imageWithSize = image;
+  //       console.log(images)
+  //       imageWithSize.size = await probe(image.url);
 
-        return imageWithSize;
-      })
-    );
+  //       return imageWithSize;
+  //     })
+  //   );
 
-    return {
-      props: {
-        fetchedData,
-        imgUrl,
-        images: imagesWithSizes
-      }
-    };
-  };
+  //   return {
+  //     props: {
+  //       fetchedData,
+  //       imgUrl,
+  //       images: imagesWithSizes
+  //     }
+  //   };
+  // };
 
 
-  export async function getStaticProps() {
-    const imgPath = {imgUrl};
+//   export async function getStaticProps() {
+//     const imgPath = {imgUrl};
 
-    const img = fs.createReadStream(path.join(process.cwd(), imgPath));
+//     const img = fs.createReadStream(path.join(process.cwd(), imgPath));
 
-    const probedImg = await probe(img);
+//     const probedImg = await probe(img);
 
-    return {
-      props: {
-        img: {
-          width: probedImg.width,
-          height: probedImg.height,
-          src: imgPath,
-          alt: "image"
-        }
-      }
+//     return {
+//       props: {
+//         img: {
+//           width: probedImg.width,
+//           height: probedImg.height,
+//           src: imgPath,
+//           alt: "image"
+//         }
+//       }
+//     }
+//   }
+
+export const getStaticProps = async () => {
+  const response = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+  const data = await response.json();
+
+  const imageUrls = data.map((entry) => entry.assets.image);
+
+  const imagesWithSizes = await Promise.all(
+    imageUrls.map(async (url) => {
+      const imageWithSize = {url};
+      imageWithSize.size = await probe(url);
+
+      return imageWithSize;
+    })
+  );
+
+  return {
+    proprs: {
+      images: imagesWithSizes
     }
-  }
-//     const images = [
+  };
+};
+
+
+// //     const images = [
 //         await imgArray
 //     ];
 
@@ -121,9 +146,42 @@ function typeCheck(p) {
 
   const typeGrass = useState(grass, setGrass); */
 
-function PokeCard({ id, name, image, type, lowerCaseData, data, curreentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props }) {
+function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
 
-console.log(imgUrl)
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const response = await fetch(image);
+//       const arrayBuffer = await response.arrayBuffer();
+
+//       const buffer = Buffer.from(arrayBuffer);
+
+//       const dimensions = sizeOf(buffer);
+//       console.log(dimensions.width, dimensions.height);
+//     } catch (error) {
+//       console.error('Error fetching image:', error);
+//     } return {
+//       props: {
+//         dimensions
+//       }
+//     }
+//   };
+
+//   fetchData();
+// }, [image]);
+
+// console.log(dimensions);
+
+  
+
+// const size = async () => {
+
+//   await probe(image)
+// }
+
+// console.log(size.width, size.height)
+
   
 
     // DataBaseSchemaExample = {
@@ -330,22 +388,21 @@ console.log(images)
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                      {images ? 
-                        (images.map((image) => ( // Check if 'image' is not null
+                      {image ? image.map((image) => {
                           <Image
-                            key={props.img.src}
+                            key={image.url}
                             id="card-img"
                             // style={{width: 150, height: 'auto'}}
-                            src={props.img.src}
+                            src={image.url}
                             data-name="card-img"
                             alt={name}
                             className="card-img"
-                            width={props.img.width}
-                            height={props.img.height}
+                            width={image.size.width}
+                            height={image.size.height}
 
                             blurDataURL={image.blurDataURL}
                           />
-                          ))) : (
+                      }) : (
                           // If 'image' is null, render a placeholder image or handle it accordingly
                             <Image 
                               src="/images/default.png" 

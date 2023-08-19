@@ -13,30 +13,15 @@ module.exports = {
         test: /\.ts$/, loader: "ts-loader" 
       },  
       { 
-        test: /\.node$/, 
-        use: "node-loader"
+        test: /\.node$/, use: "node-loader"
       },
+      { 
+        test: /\.css$/, use: ['style-loader', 'css-loader'] 
+      },
+      // custom loader added by me and installed using npm i file-loader
       {
-        /**
-         * OPTION A:
-         * default file-loader fallback
-         **/
-        test: /\.(png|jpe?g)$/,
-        loaders: [
-          {
-            loader: 'lqip-loader',
-            options: {
-              base64: true,
-              palette: false
-            }
-          },
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8000
-            }
-          }
-        ]
+        test: /\.(gif|svg|jpg|png)$/,  // add whatever files you wanna use within this regEx
+        use: ["file-loader"]
       }
     ],
   }

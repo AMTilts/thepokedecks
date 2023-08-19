@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import useImage from 'use-image';
+import Image from 'next/image'
 
 // const SparkleeImagee = () => {
 //   const {image} = useImage('/images/sparkle.png');
@@ -50,7 +51,7 @@ useEffect(() => {
     <stage width="{window.innerWidth}" height="{window.innerHeight}">
         <layer>
             <Image 
-              image={image}
+              image={imageRef.current}
               ref={imageRef.current}
               src={'/images/sparkle.png'} 
               x={props.x}

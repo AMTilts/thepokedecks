@@ -1,3 +1,5 @@
-// const createImage = (url) =>
-//     new Promise((resolve, reject)
 "use strict";
+
+var createImage = function createImage(url) {
+  return new Promise((resolve, reject));
+};

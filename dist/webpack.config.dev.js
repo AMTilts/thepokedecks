@@ -16,23 +16,13 @@ module.exports = {
       test: /\.node$/,
       use: "node-loader"
     }, {
-      /**
-       * OPTION A:
-       * default file-loader fallback
-       **/
-      test: /\.(png|jpe?g)$/,
-      loaders: [{
-        loader: 'lqip-loader',
-        options: {
-          base64: true,
-          palette: false
-        }
-      }, {
-        loader: 'url-loader',
-        options: {
-          limit: 8000
-        }
-      }]
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }, // custom loader added by me and installed using npm i file-loader
+    {
+      test: /\.(gif|svg|jpg|png)$/,
+      // add whatever files you wanna use within this regEx
+      use: ["file-loader"]
     }]
   } // output: {
   //   path: path.resolve(__dirname, 'dist'),

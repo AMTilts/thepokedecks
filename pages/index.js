@@ -4,8 +4,8 @@ import App from '../components/App.js';
 import Navbar from '../components/Navbar.js'
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col } from 'react-bootstrap'
-import Head from 'next/document'
 import Footer from '../components/Footer.js'
+import Head from 'next/head';
 
 
 

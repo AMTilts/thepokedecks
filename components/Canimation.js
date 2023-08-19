@@ -48,7 +48,7 @@ function Canimation() {
         };
     }, []);
 
-    return <canvas {...size} ref={canvasRef} imager={imager} />;
+    return <canvas {...size} ref={canvasRef} />;
 
 }
 

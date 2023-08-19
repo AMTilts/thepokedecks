@@ -1,2 +1,2 @@
 const createImage = (url) =>
-    new Promise((resolve, reject)
+    new Promise((resolve, reject))

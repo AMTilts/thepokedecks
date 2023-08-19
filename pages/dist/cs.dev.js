@@ -19,12 +19,7 @@
 // import Canimation from '../../components/Canimation';
 // import Sparkles from '../../components/Sparkles'
 // import PropTypes from 'prop-types';
-
-
-
-
 // const defaultEndpoint = 'https://pokeapi.co/api/v2/pokemon';
-
 // // export async function   getStaticProps({ query }) {
 // //     const { id } = query;
 // //     const res = await fetch(`${defaultEndpoint}/${id}`)
@@ -35,9 +30,7 @@
 // //             data
 // //          }
 // //     }
-
 // // }
-
 // // export async function getStaticProps({ params }) {
 // //     const results = await fetch(`${defaultEndpoint}/charmander`).then(res => res.json()) 
 // //     return {
@@ -46,37 +39,27 @@
 // //         }
 // //     }
 // // }
-
 // // export async function getStaticPaths() {
 // //     const res = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1130')
 // //     const characters = await res.json()
-    
 // //     const paths = characters.map((character) => ({
 // //         params: { characterName: character.name },
 // //     }))
-
 // //     return { paths, fallback: false }
 // // }
-
 // // export async function getStaticProps() {
 // //     const res = await fetch(`${defaultEndpoint}/${params.name}`)
 // //     const character = await res.json()
-
 // //     return { props: { character } }
 // // }
-
 // export async function getStaticPaths() {
 //     const res = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1130')
 //     const characters = await res.json()
 //     const paths = characters.results.map((character) => ({
 //         params: { characterName: character.name },
 //     }))
-
 //     return { paths, fallback: false }
 // }
-
-
-
 // const pogoAPI = 'https://pogoapi.net';
 // const candyToEvolveAPI = '/api/v1/pokemon_candy_to_evolve.json';
 // const maxCPAPI = '/api/v1/pokemon_max_cp.json';
@@ -85,7 +68,6 @@
 // const pokeStatsAPI = '/api/v1/pokemon_stats.json';
 // const shinyPokeAPI = 'api/v1/shiny_pokemon.json';
 // const typesAPI = '/api/v1/pokemon_types.json';
-
 // export async function getStaticProps( { params }) {
 //     const res = await fetch(`${defaultEndpoint}/${params.characterName}`)
 //     const character = await res.json()
@@ -94,15 +76,11 @@
 //     const pogoShinyData = await fetch(`${pogoAPI}/${shinyPokeAPI}`)
 //     const pogoStatsData = await fetch(`${pogoAPI}/${pokeStatsAPI}`)
 //     const typesData = await fetch(`${pogoAPI}${typesAPI}`)
-
 //     const shinyRes = await pogoShinyData.json()
 //     const statsRes = await pogoStatsData.json()
-
 //     return { props: { character, shiny, shinyArray, shinyRes, statsRes } 
 //     }
 // }
-
-
 // // const options = {
 // // 	method: 'GET',
 // // 	headers: {
@@ -110,16 +88,12 @@
 // // 		'X-RapidAPI-Key': '3c73397ccdmshd005240d8bef6dcp1e3d46jsn7001a22f4346'
 // // 	}
 // // };
-
 // // |
-
 // function useFetchData() {
 //     const [loading, setLoading] = React.useState([]);
 //     const [data, setData] = React.useState([]);
 // }
-
 // export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, renderFrame}) {
-    
 //     const { name, base_experience, types, sprites, abilities } = character;
 //     const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
 //     const [spriteShiny, setSpriteShiny] = useState(`${sprites.front_shiny}`);
@@ -164,8 +138,6 @@
 //     const imageSparkCanvasRef = useRef(null);
 //     const [imageSparkParticles, setImageSparkParticles] = useState([]);
 //     console.log(`This character has ${types.length} types!`);
-
-
 //     async function fetchType(character, characterName) {
 //         const res = await fetch(`${defaultEndpoint}/${characterName}`)
 //         const cdata = res.json()
@@ -182,12 +154,9 @@
 //         }
 //         };
 //     }
-
-
 //     const typeLogo = ({ src, width }) => {
 //         return `../../style/images/type_logo_${src}?w=${width}`
 //     }
-
 //     const typeLogoImg = (props) => {
 //         return (
 //             <Image
@@ -199,8 +168,6 @@
 //             />
 //         )
 //     };
-
-
 // //         // SHINY ANIMATION //
 // // const sparkle = useRef(null);
 // // const sparkles = useRef(null);
@@ -211,37 +178,27 @@
 // // const [sparkleStyle, setSparkleStyle] = useState('sparkle-style'); // Style class names. Meant to replace SPar
 // // const canvasRef = useRef(null);
 // // const contextRef = useRef(null)
-
-
 // // var drawImage = (ref) => {
 // //     console.log('this is the canvas DOM element you want', ref);
 // //     contextRef = sparkles.getContext('2d')
 // //     //Draw Balls
 // // }
-
 // // useEffect(() => {
 // //         const canvas = canvasRef.current;
 // //         canvas.width = window.innerWidth * 2;
 // //         canvas.height = window.innerHeight * 2;
 // //         canvas.style.width = `${window.innerWidth}px`;
 // //         canvas.style.height = `${window.innerHeight}px`;
-        
 // //         const context = canvas.getContext('2d')
 // //         context.scale(2,2)
 // //         contextRef.current = context;
 // // }, []);
-
-
-
-
 // // function addSparkles(){
 // //     for (var i = 0; i < 8; i++) particles.push({ "scale": 1, "radius": 60, "angle": 45 * i });
 // // }
-
 // // // requestContext = () => {
 // // //     this.drawSparkles(contextRef);
 // // // };
-
 // // function startDrawing(){
 // //     contextRef.current.canvasRef(0, 0, 256, 256);
 // //     for (p of particles){
@@ -255,11 +212,8 @@
 // //     p.radius += 5;
 // //     }
 // // }
-
 // // // function handleChange(event) {
-
 // // // }
-
 // // // shiny.ontouchstart = function(e){
 // // //     e.preventDefault();
 // // //   pokemon.onmouseup = pokemon.ontouchend = shiny.onmouseup = shiny.ontouchend = function(){
@@ -267,7 +221,6 @@
 // // //       reveal;
 // // //     }
 // // // }
-
 // // function reveal({Sparkle}){
 // //     setSparkling(true);
 // //     Sparkle.style.display = "none"; 
@@ -276,17 +229,14 @@
 // //     flash.style.transition = "opacity 0.6";
 // //     flash.style.opacity = 0;
 // // }
-
 // // function stopDrawing(){
 // //     clearInterval(drawer);
 // //     setParticles([]);
 // //     setSparkling(false);
 // // }
-
 // // const drawer = () => {
 // //     setInterval(drawSparkles, 50);
 // // }
-
 // // useEffect((e) => {
 // //         const canvas = canvasRef.current;
 // //         const ctx = canvas.getContext('2d');
@@ -294,10 +244,6 @@
 // //         ctx.fillStyle = '#FF0000'
 // //         ctx.fillRect(0, 0, context.canvas.width, context.canvas.height)
 // //     }, [])
-
-
-
-
 // //     useEffect(() => {
 // //         function changeShiny() {
 // //             console.log(isShiny)
@@ -326,9 +272,6 @@
 // //                 };
 // //         };
 // //     }, []);
-
-
-
 //     // function balls() {
 //     //     function clickBalls(e) {
 //     //         e.preventDefault();
@@ -340,10 +283,6 @@
 //     //         </a>
 //     //     );
 //     // }
-
-   
-   
-
 //     // function reveal({sparkle}){
 //     //     setSparkling(true);
 //     //     sparkle.style.display = "none"; 
@@ -352,16 +291,10 @@
 //     //     flash.style.transition = "opacity 0.6";
 //     //     flash.style.opacity = 0;
 //     // }
-    
-
-
-
-    
 //     // var drawImage = (ctx) => {
 //     //     console.log('this is the canvas DOM element you want', ctx);
 //     //     //Draw Balls
 //     // }
-  
 // //   function startDraw(ctx) {
 // //       for (p of particles){
 // //       var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
@@ -374,13 +307,6 @@
 // //       p.radius += 5;
 // //     }
 // // }
-    
-
-
-
-
-
-
 //     const ballDefault = event => {
 //         if (currentPosition == `${sprites.front_default}` && isFront === true) {
 //             setIsFront(false)
@@ -409,7 +335,6 @@
 //             // setPokeName('Eating Glizzies and Chewing Bubble GUm')
 //         }
 //     };
-
 //     const changeShinySprite = ( {shine}, event ) => {
 //         if (isFront === true && isShiny === false) {
 //             console.log(isFront);
@@ -422,8 +347,6 @@
 //             // return (
 //             // <Sparkles buttonRef={buttonRef} />
 //             // )
-            
-            
 //         }
 //         else if (isFront === true && isShiny === true) {
 //             setContainerBack('container-back')
@@ -450,13 +373,11 @@
 //             setIsShiny(false)
 //             };
 //     };
-
 //     function shineAnimation(shineOn) {
 //         if (shinePrecusor != true) return;
 //         shineOn;
 //         setShinyPrecursor(false);
 //     }
-
 //     function backDefault() {
 //         if (isDefault !== true) switchShiny;
 //         else if (currentPosition == `${sprites.back_default}`) flipFront;
@@ -467,27 +388,20 @@
 //         setCurrentPosition(`${sprites.front_default}`)
 //         setFrontBackText('Flip to Back');
 //     }
-
 //     function spriteBack() {
 //         setCurrentPosition(`${sprites.back_default}`)
 //     }
-
 //     // function twoTypes() {
 //     //     if (isTwoTypes === null) return;
 //     //     setTypeTwo(`${types[1].type.name}`);
-            
 //     // }
-    
 //     function twoAbilities() {
 //         if (isTwoAbilities === null) return;
 //         setAbilityTwo(`${abilities[1].ability.name}`);
 //     }
-
 //     function typeText() {
 //         setCurrentCaption(`${types[0].type.name}`)
 //     }
-
-
 //     function oneType() {
 //         console.log(`${character.types}`)
 //         if (`${character.types}` == 1) return
@@ -500,20 +414,15 @@
 //                 </div>  
 //             )   
 //         }
-
 //     function log() {
 //         console.log(`${character.character.types}.toString`)
 //         if (`${character.character.types}` === 1) console.log('type: 1')
 //         else if (`${character.character.types}` === 22) console.log('type: 22')
 //         else console.log(`${character.character.types}`)
 //     }
-
 //     function testShiny() {
 //         console.log('Shiny')
 //     }
-
-
-
 //     const shine = context => {
 //           if (!particles.current.length) {
 //           for (let i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
@@ -521,11 +430,9 @@
 //           setTimeout(stopDrawing, 1000);
 //         }
 //       };
-
 //     const drawSparkles = (context) => {
 //     //   const ctx = sparklesRef.current.getContext("2d");
 //         // context.clearRect(0, 0, 256, 256);
-    
 //         for (const p of particles.current) {
 //         const x = 128 + p.radius * Math.cos((p.angle * Math.PI) / 180);
 //         const y = 128 + p.radius * Math.sin((p.angle * Math.PI) / 180);
@@ -537,59 +444,41 @@
 //             scaled,
 //             scaled
 //         );
-    
 //         if (p.scale > 0.6) p.scale -= 0.2;
 //         else p.scale -= 0.05;
 //         p.angle -= 5;
 //         p.radius += 5;
 //         }
 //     };
-    
 //     const stopDrawing = () => {
 //         clearInterval(drawer);
 //         particles.current = [];
 //     };
-
-
 //     const addSparkles = () => {
 //         for (let i = 0; i < 8; i++) {
 //             particles.current.push({ scale: 1, radius: 60, angle: 45 * i });
 //         }
 //         };
-    
-    
-    
-
 //     // const sparkle = useRef(null);
 //     // const sparkles = useRef(null);
-    
-    
 //     // var drawImage = (ref) => {
 //     //     console.log('this is the canvas DOM element you want', ref);
 //     //     contextRef = sparkles.getContext('2d')
 //     //     //Draw Balls
 //     // }
-
-
 //     // var clearRect = (<canvas ref={(e) => activateDraw(e)}></canvas>)};
-
-
 //     // var [particles, setParticles] = useState([]);
 //     // const [drawer, setDrawer] = useState([]);
 //     // const [sparkling, setSparkling] = useState('sparkling-style')
 //     // const [flash, setFlash] = useState('flash') // Meant to replace flash.style.transition and flash.style.opacity
 //     // const [shinyAnim, setShinyAnim] = useState('shiny') //Meant to replace shiny.style.display methods being passed into function. These are going to be style class names that get changed using useState.
 //     // const [sparkleStyle, setSparkleStyle] = useState('sparkle-style') // Style class names. Meant to replace SPar
-
-
 //     // function addSparkles(){
 //     //     for (var i = 0; i < 8; i++) particles.push({ "scale": 1, "radius": 60, "angle": 45 * i });
 //     // }
-
 //     // // requestContext = () => {
 //     // //     this.drawSparkles(contextRef);
 //     // // };
-
 //     // function drawSparkles(contextRef){
 //     //     contextRef.clearRect(0, 0, 256, 256);
 //     //     for (p of particles){
@@ -603,15 +492,12 @@
 //     //     p.radius += 5;
 //     //     }
 //     // }
-
 //     // function handleChange(event, Shine) {
 //     //     console.log(<Shine />)
 //     // }
-
 //     // function addSparkles() {
 //     //     for (var i = 0; i < 8; i++) setImageSparkParticles(imageSparkParticles => [...imageSparkParticles({"scale": 1, "radius": 60, "angle": 45 * i})])
 //     // }
-
 //     // function shine() {
 //     //     if (!imageSparkParticles.length) {
 //     //         for (var i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
@@ -619,7 +505,6 @@
 //     //         setTimeout(stopDrawing, 1000);
 //     //         }
 //     // }
-
 //     // function drawSparkles() {
 //     //     ctx.clearRect(0, 0, 256, 256);
 //     //     for (p of imageSparkParticles) {
@@ -633,15 +518,9 @@
 //     //         p.radius -= 5;
 //     //     }
 //     // }
-
-
 //     // useEffect((shine) => {
-
 //     //     const canvas = imageSparkCanvasRef.current
 //     //     const context = canvas.getContext('2d')
-
-
-    
 //     //     function drawSparkles() {
 //     //         ctx.clearRect(0, 0, 256, 256);
 //     //         for (p of imageSparkParticles) {
@@ -655,27 +534,20 @@
 //     //             p.radius -= 5;
 //     //         }
 //     //     }
-
 //     //     function stopDrawing() {
 //     //         clearInterval(drawer);
 //     //         setImageSparkParticles([]);
 //     //     }
-    
-
-
 //     //     return () => {
 //     //         stopDrawing()
 //     //     }
 //     //  }, [shine()]);
-
-
 //     // shiny.ontouchstart = function(e){
 //     //     e.preventDefault();
 //     //   pokemon.onmouseup = pokemon.ontouchend = shiny.onmouseup = shiny.ontouchend = function(){
 //     //       flash.style.opacity = 0.4;
 //     //       reveal;
 //     //     }
-
 //     // function reveal({Sparkle}){
 //     //     setSparkling(true);
 //     //     Sparkle.style.display = "none"; 
@@ -684,17 +556,14 @@
 //     //     flash.style.transition = "opacity 0.6";
 //     //     flash.style.opacity = 0;
 //     // }
-
 //     // function stopDrawing(){
 //     //     clearInterval(drawer);
 //     //     setParticles([]);
 //     //     setSparkling(false);
 //     // }
-
 //     // const drawer = () => {
 //     //     setInterval(drawSparkles, 50);
 //     // }
-
 //     // function shine() {
 //     //     if (!particles.length){
 //     //         for (var i = 0; i < 5; i++) {
@@ -704,7 +573,6 @@
 //     //             }
 //     //         }
 //     // }
-
 //     // pokemon.onmouseup = pokemon.ontouchend = shiny.onmouseup = shiny.ontouchend = function(){
 //     //     if (!sparkling) {
 //     //         setSparkling('sparkling-style-none')
@@ -717,16 +585,13 @@
 //     //     clearInterval(autochecker);
 //     //     autostarter = null;
 //     //   }
-      
 //     //   document.getElementById("noflash").onchange = function(){
 //     //     noflash = this.checked;
 //     //   }
-      
 //     //   document.body.onkeydown = function(e){
 //     //       e.preventDefault();
 //     //       if (e.keyCode == 32 && !sparkling) reveal();
 //     //   }
-      
 //     //   pokemon.oncontextmenu = shiny.oncontextmenu = function(e){
 //     //     e.preventDefault();
 //     //     e.stopPropagation();
@@ -740,7 +605,6 @@
 //     //     setCurrentPosition2(`${sprites.front_default}`);
 //     //     setCurrentPosition1(`${sprites.front_shiny}`)
 //     // })
-
 //     // let imageURL="";
 //     // if (`${types[1].type.name}` != undefined)
 //     //     imageURL = typeLogoImgTwo;
@@ -752,7 +616,6 @@
 //     //     else 
 //     //         console.log('No Daddy');
 //     // }
-
 //     // function oneType() {
 //     //     return (
 //     //         <div className="temp-container-title">
@@ -762,8 +625,6 @@
 //     //         </div>
 //     //     )
 //     // }
-
-
 //     // function twoTypes() {
 //     //     return (
 //     //         <div className="temp-container-title">
@@ -773,9 +634,6 @@
 //     //         </div>
 //     //     )
 //     // }
-
-
-
 //     return (
 //         <div className="poke-temp-container">
 //             <Head>
@@ -783,7 +641,6 @@
 //                 <title>{pokeName}</title>
 //                 </div>
 //             </Head>
-
 //                 <div className={`second-line-top-${types[0].type.name}`}></div>
 //                 <div className={`type-gradient-${types[0].type.name}`}></div>
 //                 <div>
@@ -826,7 +683,6 @@
 //                                         {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
 //                                         { (`${sprites.front_shiny}` !==  null ?
 //                                                 <div className="middlediv">
-
 //                                                     <ShinyButton
 //                                                         className="shinybutton"
 //                                                         changeShinySprite={changeShinySprite}
@@ -864,7 +720,6 @@
 //                                             shineOn={shineOn}
 //                                             // style={{ position: 'absolute', 'z-index': -10 }}
 //                                         > */}
-                                        
 //                                         {/* <SparkleImg
 //                                             id={sparkleImgCSS}
 //                                             src={image}
@@ -877,7 +732,6 @@
 //                                                 height={30}
 //                                                 id={sparkleImgCSS}
 //                                             /> */}
-
 //                                         {/* </Canvas> */}
 //                                         {/* <Image
 //                                             src={sparkleImage}
@@ -899,12 +753,10 @@
 //                                             </ul>
 //                                         </div>
 //                                     </div>
-
 //                                     {/* <div className="numbertext">
 //                                         <Image src={currentPosition2} className="spritefrontshiny" />
 //                                         <Image src={currentPosition4} className="spritebackshiny" />
 //                                     </div>
-                                    
 //                                     <div className="mySlides">
 //                                     <div className="numbertext"><Image src={spriteCurrent} /></div>
 //                                         <Image src={sprites.front_shiny} className="picdefault" />
@@ -914,7 +766,6 @@
 //                                         <Image src={sprites.back_shiny} className="picdefault" />
 //                                     </div> */}
 //                                     <div>
-
 //                                     </div>
 //                                 </div>
 //                             </div>
@@ -926,3 +777,4 @@
 //         </div>
 //     );
 // }
+"use strict";
