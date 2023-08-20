@@ -6,7 +6,7 @@ import Image from 'next/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
-import { EntryOptionPlugin } from 'webpack';
+// import { EntryOptionPlugin } from 'webpack';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -23,73 +23,8 @@ import { EntryOptionPlugin } from 'webpack';
 
 
 
-  // export const getServerSideProps = async () => {
-  
-  //   const imgData = await fetch(url);
-  //   const arrayBufferData = await imgData.arrayBuffer();
-  //   const lqipData = await lqip(Buffer.from(arrayBufferData));
-  
-  //   return {
-  //     props: {
-  //       image: {
-  //         src: url.href,
-  //         width: lqipData.metadata.originalWidth,
-  //         height: lqipData.metadata.orginalHeight,
-  //         blurDataURL: lqipData.metadata.dataURIBase64,
-  //       },
-  //     },
-  //   };
-  // };
-
-  // const url = ('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
-
-  // async function getServerSideProps(url) {
-  //   const res = await fetch(url)
-  //   const fetchedData = await res.json();
-  //   const imgUrl = `${fetchedData.assets.image}`;
-  //   console.log(imgUrl)
-  //   const images = [
-  //       {url: `${imgUrl}`}
-  //     ];
-  
-  //   const imagesWithSizes = await Promise.all(
-  //     images.map(async (image) => {
-  //       const imageWithSize = image;
-  //       console.log(images)
-  //       imageWithSize.size = await probe(image.url);
-
-  //       return imageWithSize;
-  //     })
-  //   );
-
-  //   return {
-  //     props: {
-  //       fetchedData,
-  //       imgUrl,
-  //       images: imagesWithSizes
-  //     }
-  //   };
-  // };
 
 
-//   export async function getStaticProps() {
-//     const imgPath = {imgUrl};
-
-//     const img = fs.createReadStream(path.join(process.cwd(), imgPath));
-
-//     const probedImg = await probe(img);
-
-//     return {
-//       props: {
-//         img: {
-//           width: probedImg.width,
-//           height: probedImg.height,
-//           src: imgPath,
-//           alt: "image"
-//         }
-//       }
-//     }
-//   }
 
 export const getStaticProps = async () => {
   const response = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');

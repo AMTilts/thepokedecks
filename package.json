@@ -17,6 +17,7 @@
     "babel": "^6.23.0",
     "classnames": "^2.3.1",
     "file-loader": "^6.2.0",
+    "fs-loader": "^0.0.1",
     "gsap": "^3.10.4",
     "gulp-sass": "^5.1.0",
     "image-size": "^1.0.2",

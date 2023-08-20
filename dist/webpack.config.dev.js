@@ -9,10 +9,8 @@ module.exports = {
     {
       test: /\.svg$/,
       use: ['@svgr/webpack']
-    }, {
-      test: /\.ts$/,
-      loader: "ts-loader"
-    }, {
+    },
+    {
       test: /\.node$/,
       use: "node-loader"
     }, {
