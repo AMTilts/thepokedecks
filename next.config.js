@@ -27,7 +27,7 @@ module.exports = {
 
     if (!isServer) {
       config.resolve.fallback = {
-        fs: true,
+        fs: false,
         path: false,
         child_process: false,
         worker_threads: false,
@@ -39,7 +39,7 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     fallback: {
-      fs: true,
+      fs: false,
       child_process: false,
       worker_threads: false,
     },

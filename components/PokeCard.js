@@ -27,22 +27,23 @@ import probe from 'probe-image-size'
 
 
 export const getStaticProps = async () => {
-  const response = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+  const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+  const response = await fetch(url);
   const data = await response.json();
 
   const imageUrls = data.map((entry) => entry.assets.image);
-
+  console.log(imageUrls);
   const imagesWithSizes = await Promise.all(
     imageUrls.map(async (url) => {
       const imageWithSize = {url};
       imageWithSize.size = await probe(url);
-
+      console.log(imageWithSize.width)
       return imageWithSize;
     })
   );
 
   return {
-    proprs: {
+    props: {
       images: imagesWithSizes
     }
   };
@@ -82,6 +83,30 @@ function typeCheck(p) {
   const typeGrass = useState(grass, setGrass); */
 
 function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
+
+    
+  const getStaticProps = async () => {
+    const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+    const response = await fetch(url);
+    const data = await response.json();
+  
+    const imageUrls = data.map((entry) => entry.assets.image);
+    console.log(imageUrls);
+    const imagesWithSizes = await Promise.all(
+      imageUrls.map(async (url) => {
+        const imageWithSize = {url};
+        imageWithSize.size = await probe(url);
+        console.log(imageWithSize.width)
+        return imageWithSize;
+      })
+    );
+  
+    return {
+      props: {
+        images: imagesWithSizes
+      }
+    };
+  };
 
 
 // useEffect(() => {
@@ -159,7 +184,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p,
 //  }
 
 
-console.log(images)
+console.log(imagesWithSizes)
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
    
@@ -323,7 +348,7 @@ console.log(images)
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                      {image ? image.map((image) => {
+                      {images ? images.map((image) => {
                           <Image
                             key={image.url}
                             id="card-img"
@@ -332,10 +357,10 @@ console.log(images)
                             data-name="card-img"
                             alt={name}
                             className="card-img"
-                            width={image.size.width}
-                            height={image.size.height}
+                            width={imageWithSize.size.width}
+                            height={imageWithSize.size.height}
 
-                            blurDataURL={image.blurDataURL}
+                            blurDataURL={imageWithSize.blurDataURL}
                           />
                       }) : (
                           // If 'image' is null, render a placeholder image or handle it accordingly
