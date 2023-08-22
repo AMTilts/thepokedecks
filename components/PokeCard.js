@@ -84,18 +84,23 @@ function typeCheck(p) {
 
 function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
 
+  const [ imageArray, setImageArray ] = useState([]);
+  const [ pokeImage, setPokeImage ] = useState(null);
     
-  const getStaticProps = async () => {
+  const getServerSideProps = async () => {
     const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
     const response = await fetch(url);
     const data = await response.json();
-  
-    const imageUrls = data.map((entry) => entry.assets.image);
-    console.log(imageUrls);
+    setImageArray(data.assets.image);
+    console.log(imageArray);
+    const imageUrls = await data.map((imageUrl) => {
+      setPokeImage(imageUrl.assets.image)
+    })
+    console.log(pokeImage);
     const imagesWithSizes = await Promise.all(
-      imageUrls.map(async (url) => {
-        const imageWithSize = {url};
-        imageWithSize.size = await probe(url);
+      imageUrls.map(async (imgUrl) => {
+        const imageWithSize = await {imgUrl};
+        imageWithSize.size = await probe(imgUrl);
         console.log(imageWithSize.width)
         return imageWithSize;
       })
@@ -103,11 +108,67 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p,
   
     return {
       props: {
-        images: imagesWithSizes
+        images: imagesWithSizes,
+        imageUrls
       }
     };
   };
 
+  const imageFetch = async () => {
+    const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+    const response = await fetch(url);
+    const data = await response.json();
+    setImageArray(data.assets.image);
+    console.log(imageArray);
+    const imageUrls = await data.map((imageUrl) => {
+      setPokeImage(imageUrl.assets.image)
+    })
+    console.log(pokeImage);
+    const imagesWithSizes = await Promise.all(
+      imageUrls.map(async (imgUrl) => {
+        const imageWithSize = await {imgUrl};
+        imageWithSize.size = await probe(imgUrl);
+        console.log(imageWithSize.width)
+        return imageWithSize;
+      })
+    );
+  
+    return {
+      props: {
+        images: imagesWithSizes,
+        imageUrls
+      }
+    };
+  };
+
+  useEffect(() => {
+    const getImage = async () => {
+      const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+      const response = await fetch(url);
+      const data = await response.json();
+      setImageArray(data.assets.image);
+      console.log(imageArray);
+      const imageUrls = await data.map((imageUrl) => {
+      setPokeImage(imageUrl.assets.image)
+      })
+      console.log(pokeImage);
+      const imagesWithSizes = await Promise.all(
+        imageUrls.map(async (imgUrl) => {
+          const imageWithSize = await {imgUrl};
+          imageWithSize.size = await probe(imgUrl);
+          console.log(imageWithSize.width)
+          return imageWithSize;
+        })
+      );
+    
+      return {
+        props: {
+          images: imagesWithSizes,
+          imageUrls
+        }
+      };
+    };
+  })
 
 // useEffect(() => {
 //   const fetchData = async () => {
@@ -348,21 +409,21 @@ console.log(imagesWithSizes)
                         className="frame-card-img"
                       >
                     <div className="card-img-outer">
-                      {images ? images.map((image) => {
+                      {currentItems ? currentItems.map((image) => {
                           <Image
-                            key={image.url}
+                            key={props.imageWithSize}
                             id="card-img"
                             // style={{width: 150, height: 'auto'}}
-                            src={image.url}
+                            src={image}
                             data-name="card-img"
                             alt={name}
                             className="card-img"
-                            width={imageWithSize.size.width}
-                            height={imageWithSize.size.height}
+                            width={imageWithSize.width}
+                            height={imageWithSize.height}
 
                             blurDataURL={imageWithSize.blurDataURL}
                           />
-                      }) : (
+                          }) : (
                           // If 'image' is null, render a placeholder image or handle it accordingly
                             <Image 
                               src="/images/default.png" 

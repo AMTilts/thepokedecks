@@ -83,6 +83,7 @@ export default function Pagination({ data }) {
                   image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
                   type={p.primaryType.names.English}
                   p={p.primaryType.names.English}
+                  currentItems={currentItems}
                   // imgWidth={pWidth ? pWidth : ''}
                   // imgHeight={pHeight ? pHeight : ''} // Pass the individual data object instead of lowerCaseData function
                 />
