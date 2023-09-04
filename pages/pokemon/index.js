@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App.js';
-import Navbar from '../components/Navbar.js'
+import App from '../../components/App.js';
+import Navbar from '../../components/Navbar.js'
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col } from 'react-bootstrap'
-import Footer from '../components/Footer.js'
+import Footer from '../../components/Footer.js'
 import Head from 'next/head';
 
 

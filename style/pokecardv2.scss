@@ -720,26 +720,34 @@ $gradient in $types {
     background-color: sienna;
 }
 
-@mixin type-logo {
-    position: relative;
 
-    z-index: 10;
-    pointer-events: none;
-    margin-left: 10px;
-    padding-bottom: 5px;
-    // width: 100%;
-    // max-width: 25px;
-    width: 100%;
-    //height: 128.57142857142858%;
-    height: auto;
-    max-height: 25px;
-    margin-top: 0pxpx;
-    padding-right: 0px;
-    align-self: center;
-    align-items: center;
-    transform: translateY(0px) translateX(-1px);
-    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-}
+
+    @mixin type-logo {
+        position: relative;
+    
+        z-index: 10;
+        pointer-events: none;
+        margin-left: 5px;
+        padding-bottom: 0px;
+        margin-right: 3px;
+        // width: 100%;
+        // max-width: 25px;
+        width: 100%;
+        //height: 128.57142857142858%;
+        height: 25px;
+        max-height: 25px;
+        width: 25px;
+        top: 0px;
+        margin-top: 0px;
+        padding-right: 5px;
+        align-self: center;
+        align-items: center;
+        transform: translateY(0px) translateX(0px);
+        overflow: visible;
+        transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+        object-fit: contain;
+        }
+    
 
 
 @mixin type-name {
@@ -754,6 +762,7 @@ $gradient in $types {
     // margin-bottom: 15.560000000000002px;
     // min-height: 15px;
     text-align: center;
+    margin-left: 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -764,6 +773,7 @@ $gradient in $types {
     font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+    margin-right: 4px;
     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -1638,17 +1648,18 @@ $gradient in $types {
     pointer-events: none;
     margin-left: 0px;
     width: 252px;
+    left: .5px;
     min-width: 250px;
     height: 285px;
     margin-top: 0px;
     margin-bottom: 0px;
     min-height: 285px;
     background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
-    border-radius: 1px 1px 4px 4px;
+    border-radius: 3px 3px 4px 4px;
 }
 
 
-/* .frame-card-bg-white:hover {
+/* .frame-card-bg-white:hover { 
   position: relative;
   z-index: 6;
   pointer-events: none;
@@ -1794,8 +1805,8 @@ $gradient in $types {
 
 #Page:hover .poke-name {
     transform: translateY(-2px) translateX(-2px);
-    transition: transform 200.0ms ease-in-out 200.967ms,
-                box-shadow 200ms ease-in-out 0.967ms;
+    transition: transform 200.0ms ease-in-out 200ms,
+                box-shadow 200ms ease-in-out 200ms;
 }
 
 .poke-name-outer {
@@ -1977,7 +1988,8 @@ $gradient in $types {
 }
 
 #Page:hover type-logo {
-    transform: translateY(0px) translateX(-1px);
+    background-color: red;
+    transform: translateY(0px) translateX(0px);
     overflow: visible;
     transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
@@ -2000,8 +2012,45 @@ $gradient in $types {
     
 }
 
+/* Typename logo */
+#TYPENAME-logo{
+    transform:translatex(0px) translatey(0px);
+    height: 25px;
+    width: 25px;
+    overflow: visible;
+    top:0px;
 
-.TYPENAME-logo-outer {    position: relative;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+   }
+
+#Page:hover #TYPENAME-logo {
+    transform:translatex(-1px) translatey(0px);
+    overflow: visible;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+}
+
+#Page:hover #TYPENAME-logo::after {
+    content: '';
+    transform:translatex(0px) translatey(0px);
+    overflow: visible;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+}
+   
+   /* Span Tag */
+   #Page #TYPENAME-logo span span{
+    overflow:visible;
+   }
+   
+   /* Span Tag */
+   #TYPENAME-logo .Frame-4-outer .Frame-4 .type-logo-TYPENAME-outer > span{
+    overflow:visible;
+   }
+   
+
+.TYPENAME-logo-outer {    
+    position: relative;
     display: flex;
     pointer-events: auto;
     z-index: 8;
@@ -2047,76 +2096,91 @@ $gradient in $types {
 
 .type-logo-TYPENAME {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_fire.svg);
 }
 
 #type-logo-TYPENAME-fire {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_fire.svg);
 }
 
 .TYPENAME-logo-fire {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_fire.svg);
 }
 
 #type-logo-TYPENAME-fairy {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_fairy.svg);
 }
 
 #type-logo-TYPENAME-grass {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_grass.svg);
 }
 
 #type-logo-TYPENAME-dark {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_dark.svg);
 }
 
 #type-logo-TYPENAME-bug {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_bug.svg);
 }
 
 #type-logo-TYPENAME-dragon {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_dragon.svg);
 }
 
 #type-logo-TYPENAME-electric {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_electric.svg);
 }
 
 #type-logo-TYPENAME-fighting {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_fighting.svg);
 }
 
 #type-logo-TYPENAME-flying {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_flying.svg);
 }
 
 #type-logo-TYPENAME-ghost {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_ghost.svg);
 }
 
 #type-logo-TYPENAME-ground {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_ground.svg);
 }
 
 #type-logo-TYPENAME-ice {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_ice.svg);
 }
 
 #type-logo-TYPENAME-normal {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_normal.svg);
 }
 
@@ -2127,21 +2191,25 @@ $gradient in $types {
 
 #type-logo-TYPENAME-psychic {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_psychic.svg);
 }
 
 #type-logo-TYPENAME-rock {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_rock.svg);
 }
 
 #type-logo-TYPENAME-steel {
     @include type-logo;
+    overflow: visible;
     content: url(images/type_c21_steel.svg);
 }
 
 #type-logo-TYPENAME-water {
     @include type-logo;
+    overflow: visible;
     // max-width: 18px;
     content: url(images/type_c21_water.svg);
 }
@@ -2149,9 +2217,11 @@ $gradient in $types {
 .type-logo-TYPENAME-outer {
     position: absolute;
     display: flex;
+    overflow: visible;
     pointer-events: none;
     z-index: 10;
-    height: 100%;
+    height: 25px;
+    width: 25px;
     left: 0;
     top: 0;
 }
@@ -2235,16 +2305,18 @@ $gradient in $types {
 }
 
 // HOVER ON TYPE LOGO //
-#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
-    transform: translateY(0px) translateX(-1px);
-    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-}
+// #Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
+//     transform: translateY(0px) translateX(-1px);
+//     overflow: visible;
+//     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+// }
 
 // HOVER ON TYPE LOGO //
-#Page:hover div[class^='type-logo-'], div[className='type-logo-*'] {
-    transform: scale(1.0) translateY(0px) translateX(-1px);
-    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-}
+// #Page:hover div[class^='type-logo-'], div[className='type-logo-*'] {
+//     transform: translateY(-1px) translateX(-1px);
+//     overflow: visible;
+//     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+// }
 
 
 #Page:hover #Page::after {
@@ -2302,19 +2374,19 @@ $gradient in $types {
    /* Image (hover) */
    #Page:hover img {
     transform:scale(1.0) rotateY(0deg) translatex(0px) translatey(-1px);
-    perspective:399px;
     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Span Tag (hover) */
    div > span:hover{
     transform:scale(1.0) rotateX(0deg) rotateY(0deg) translatex(0px) translatey(-1px);
+    overflow: visible;
     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Span Tag (hover) */
    #Page span span:hover{
-    transform:scale(0.52);
+    overflow: visible;
     transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
@@ -2974,6 +3046,21 @@ max-height: 200px;
         background-position: 0% 50%;
         background: linear-gradient(var(--rotate), $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
     }
+}
+
+span {
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: visible;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    max-width: 100%;
 }
 
 #card-bg-gradient-psychic {

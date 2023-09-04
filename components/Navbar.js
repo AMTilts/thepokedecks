@@ -24,7 +24,7 @@ function pokeNavbar() {
               className={styles.d-inline-block align-middle"
               alt="Pokeballs Logo"
             /> */}
-            <Navbar.Brand href="#home" className={styles.navbartitle}>POKEDEX-ICLES</Navbar.Brand>
+            <Navbar.Brand href="#home" className={styles.navbartitle}>THE POKEDECKS</Navbar.Brand>
             <Navbar className={styles.navlinks}>
               <Nav.Link className="navlink" href="#home">HOME</Nav.Link>
               <Nav.Link className="navlink" href="#features">POKEDEX</Nav.Link>

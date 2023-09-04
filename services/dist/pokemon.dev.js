@@ -1,50 +1,27 @@
+// export async function getAllPokeData(url) {
+//     try {
+//         const response = await fetch(url);
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error('There was a problem with the fetch operation:', error);
+//         throw error;
+//     }
+// }
+// export async function getPokeData(url) {
+//     try {
+//         const response = await fetch(url);
+//         if (!response.ok) {
+//             throw new Error(`Error in Fetching URl. Error is:     ${response.status}`);
+//         }
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error('There was a problem with the fetch operation:', error);
+//         throw error;
+//     }
+// }
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getAllPokeData = getAllPokeData;
-exports.getPokeData = getPokeData;
-
-function getAllPokeData(url) {
-  return regeneratorRuntime.async(function getAllPokeData$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          return _context.abrupt("return", new Promise(function (resolve, reject) {
-            fetch(url).then(function (res) {
-              return res.json();
-            }).then(function (data) {
-              resolve(data);
-            });
-          }));
-
-        case 1:
-        case "end":
-          return _context.stop();
-      }
-    }
-  });
-}
-
-function getPokeData(url) {
-  return regeneratorRuntime.async(function getPokeData$(_context2) {
-    while (1) {
-      switch (_context2.prev = _context2.next) {
-        case 0:
-          console.log(url);
-          return _context2.abrupt("return", new Promise(function (resolve, reject) {
-            fetch(url).then(function (res) {
-              return res.json();
-            }).then(function (data) {
-              resolve(data);
-            });
-          }));
-
-        case 2:
-        case "end":
-          return _context2.stop();
-      }
-    }
-  });
-}

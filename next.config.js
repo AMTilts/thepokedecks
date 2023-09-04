@@ -3,6 +3,11 @@ const nextConfig = {
 };
 
 module.exports = {
+  experimental: {
+    images: {
+      layoutRaw: true
+    }
+  },
   webpack: (config, { isServer }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
