@@ -117,30 +117,11 @@ function App() {
     }
 
     
-    
-    async function getServerSideProps({ query }) {
-        const { id } = {query};
-        const res = await fetch(`${pokeUrl}/${id}.json`);
-        const data = await res.json();
-        console.log(res.json);
-        return {
-            props: {
-                data
-            }
-        }
-    };
-
-    // async function getServerSideProps({ query }) {
-    //     const {id} = {query};
-    //     const res = await fetch()
-    // }
-
-
-    
 
     useEffect(() => {
         const fetchData = async (loadingPokemon) => {
-            let response = await fetch(currentUrl)
+            let url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+            let response = await fetch(url)
             // getAllPokeData(currentUrl);  
             if (response == response.json) {
                 console.log(true)
@@ -158,20 +139,6 @@ function App() {
         fetchData();    
 
     }, [currentUrl]);
-
-    useEffect(() => {
-        const fetchNumber = async ({ query }) => {
-            const { id } = {query};
-            const res = await fetch(`${pokeUrl}/${id}.json`);
-            const data = await res.json();
-            console.log(res.json);
-            return {
-                props: {
-                    data
-                }
-            }}
-    }, []);
-
 
     const next = async (currentCount) => {
         setIsLoading(true);

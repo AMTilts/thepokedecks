@@ -16,6 +16,8 @@
     "axios": "^1.4.0",
     "babel": "^6.23.0",
     "classnames": "^2.3.1",
+    "deno": "^0.1.1",
+    "deno-cli": "^1.0.5",
     "file-loader": "^6.2.0",
     "fs-loader": "^0.0.1",
     "gsap": "^3.10.4",
@@ -52,6 +54,7 @@
     "eslint-config-next": "12.1.6",
     "lqip-loader": "^2.2.1",
     "node-loader": "^2.0.0",
+    "prettier": "3.0.3",
     "react-fontawesome": "^1.7.1",
     "sass": "^1.51.0"
   },

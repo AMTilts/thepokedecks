@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
-import classNames from 'classnames';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
+import { doExpression } from '@babel/types';
+import { raw } from 'fs-loader';
 // import { EntryOptionPlugin } from 'webpack';
 
 `query MyQuery {
@@ -20,11 +21,6 @@ import probe from 'probe-image-size'
       }
     }
   }`;
-
-
-
-
-
 
 export const getStaticProps = async () => {
   const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
@@ -49,126 +45,98 @@ export const getStaticProps = async () => {
   };
 };
 
+function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItems, p, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
 
-// //     const images = [
-//         await imgArray
-//     ];
+    const [ imageArray, setImageArray ] = useState([]);
+    const [ pokeImage, setPokeImage ] = useState(null);
+    const [imageURL, setImageURL] = useState('');
+    const [imageHeight, setImageHeight] = useState(undefined);
+    const [naturalWidth, setNaturalWidth] = useState(undefined);
 
-//     const imgsWithSizes = await Promise.all(
-//       images.map(async(image) => {
-//         const imgWithSize = image;
-//         imageWithSize.size = await probe(image.assets.image)
+    const [naturalHeight, setNaturalHeight] = useState(undefined);
+    const imageRef = useRef(null);
 
-//         return imgWithSize;
-//       })
-//     )
-
-//     return {
-//       props: {
-//         images: imgsWithSizes
-//     }
-//   }
-// }
-
-// if( {p.types[1].type.name} == "Water") {
-//     waterType();
-// }
-// if ({p.types[]})
-/* 
-function typeCheck(p) {
-  const isGrass = type === "grass";
-  const isWater = type === "water";
-  const isFire = type === "fire";
-
-  const typeGrass = useState(grass, setGrass); */
-
-function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p, imageWidth, imageHeight, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
-
-  const [ imageArray, setImageArray ] = useState([]);
-  const [ pokeImage, setPokeImage ] = useState(null);
     
-  const getServerSideProps = async () => {
-    const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
-    const response = await fetch(url);
-    const data = await response.json();
-    setImageArray(data.assets.image);
-    console.log(imageArray);
-    const imageUrls = await data.map((imageUrl) => {
-      setPokeImage(imageUrl.assets.image)
-    })
-    console.log(pokeImage);
-    const imagesWithSizes = await Promise.all(
-      imageUrls.map(async (imgUrl) => {
-        const imageWithSize = await {imgUrl};
-        imageWithSize.size = await probe(imgUrl);
-        console.log(imageWithSize.width)
-        return imageWithSize;
-      })
-    );
-  
-    return {
-      props: {
-        images: imagesWithSizes,
-        imageUrls
-      }
-    };
-  };
+    function handleImageURLChange(event) {
+        setImageURL(event.target.value);
+        setImageHeight(undefined);
+    }
 
-  const imageFetch = async () => {
-    const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
-    const response = await fetch(url);
-    const data = await response.json();
-    setImageArray(data.assets.image);
-    console.log(imageArray);
-    const imageUrls = await data.map((imageUrl) => {
-      setPokeImage(imageUrl.assets.image)
-    })
-    console.log(pokeImage);
-    const imagesWithSizes = await Promise.all(
-      imageUrls.map(async (imgUrl) => {
-        const imageWithSize = await {imgUrl};
-        imageWithSize.size = await probe(imgUrl);
-        console.log(imageWithSize.width)
-        return imageWithSize;
-      })
-    );
-  
-    return {
-      props: {
-        images: imagesWithSizes,
-        imageUrls
-      }
-    };
-  };
-
-  useEffect(() => {
-    const getImage = async () => {
-      const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
-      const response = await fetch(url);
-      const data = await response.json();
-      setImageArray(data.assets.image);
-      console.log(imageArray);
-      const imageUrls = await data.map((imageUrl) => {
-      setPokeImage(imageUrl.assets.image)
-      })
-      console.log(pokeImage);
-      const imagesWithSizes = await Promise.all(
-        imageUrls.map(async (imgUrl) => {
-          const imageWithSize = await {imgUrl};
-          imageWithSize.size = await probe(imgUrl);
-          console.log(imageWithSize.width)
-          return imageWithSize;
-        })
-      );
-    
-      return {
-        props: {
-          images: imagesWithSizes,
-          imageUrls
+    function handleImageLoad() {
+        if (imageRef.current) {
+            const { naturalWidth, naturalHeight } = imageRef.current;
+            setNaturalWidth(naturalWidth);
+            setNaturalHeight(naturalHeight);
+            setImageHeight(naturalHeight);
         }
-      };
-    };
-  })
+    }
+
+    // const imageFetch = async () => {
+    // const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+    // const response = await fetch(url);
+    // const data = await response.json();
+    // setImageArray(data.assets.image);
+    // console.log(imageArray);
+    // const imageUrls = await data.map((imageUrl) => {
+    //     setPokeImage(imageUrl.assets.image)
+    // })
+    // console.log(pokeImage);
+    // const imagesWithSizes = await Promise.all(
+    //     imageUrls.map(async (imgUrl) => {
+    //     const imageWithSize = await {imgUrl};
+    //     imageWithSize.size = await probe(imgUrl);
+    //     console.log(imageWithSize.width)
+    //     return imageWithSize;
+    //     })
+    // );
+
+    // return {
+    //     props: {
+    //     images: imagesWithSizes,
+    //     imageUrls
+    //     }
+    // };
+    // };
+
+  
+//   useEffect(() => {
+//     const getImage = async () => {
+//       const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
+//       const response = await fetch(url);
+//       const data = await response.json();
+//       // Assuming data is an array and each element has an 'assets' property
+//       const imageUrls = await data.map(({ assetForms, dexNr }) => (
+//          assetForms.map(({ image, index }) => {
+//             return { url: {image} };
+//              })
+//         ));
+
+//              console.log(imageUrls);
+    
+//       setPokeImage(imageUrls[0]?.url); // Assuming setPokeImage is a state setter
+  
+//       const imagesWithSizes = await Promise.all(
+//         imageUrls.map(async (u, image) => {
+//           const { url } = u;
+//           const size = await probe(url); // Assuming probe is an async function
+//           return { ...imgObj, size };
+//         })
+//       );
+  
+//       // Not sure where 'props' should go, as this is a hook.
+//       // You might want to set it to state or pass it to some function.
+//       return {
+//         props: {
+//           images: imagesWithSizes,
+//           imageUrls,
+//         },
+//       };
+//     };
+  
+//     // Actually call the function
+//     getImage();
+//   }, []); // Empty dependency array means this useEffect runs once
+  
 
 // useEffect(() => {
 //   const fetchData = async () => {
@@ -224,6 +192,7 @@ function PokeCard({ id, name, image, type, lowerCaseData, data, currentItems, p,
 
   const [imgArray, setImgArray] = useState([]);
 
+//   console.log(data && data[0]?.assets.image);
 
   // function waterType() {
   //         return (
@@ -253,120 +222,7 @@ console.log(imagesWithSizes)
     return `frame-card-bg-white-${type}`;
   })
 
-  const cardWhite = classNames({
-    'frame-card-bg-white-grass': `${type}` === 'grass',
-    'frame-card-bg-white-fire': `${type}` === 'fire',
-    'frame-card-bg-white-fairy': `${type}` === 'fairy',
-    'frame-card-bg-white-water': `${type}` === 'water',
-    'frame-card-bg-white-rock': `${type}` === 'rock',
-    'frame-card-bg-white-dark': `${type}` === 'dark',
-    'frame-card-bg-white-ghost': `${type}` === 'ghost',
-    'frame-card-bg-white-ice': `${type}` === 'ice',
-    'frame-card-bg-white-dragon': `${type}` === 'dragon',
-    'frame-card-bg-white-flying': `${type}` === 'flying',
-    'frame-card-bg-white-steel': `${type}` === 'steel',
-    'frame-card-bg-white-electric': `${type}` === 'electric',
-    'frame-card-bg-white-poison': `${type}` === 'poison',
-    'frame-card-bg-white-fighting': `${type}` === 'fighting',
-    'frame-card-bg-white-psychic': `${type}` === 'psychic',
-    'frame-card-bg-white-ground': `${type}` === 'ground',
-    'frame-card-bg-white-bug': `${type}` === 'bug',
-    'frame-card-bg-white-normal': `${type}` === 'normal',
 
-  });
-
-  const logoType = classNames({
-    'type-logo-TYPENAME-grass': `${type}` === 'grass',
-    'type-logo-TYPENAME-fire': `${type}` === 'fire',
-    'type-logo-TYPENAME-fairy': `${type}` === 'fairy',
-    'type-logo-TYPENAME-water': `${type}` === 'water',
-    'type-logo-TYPENAME-rock': `${type}` === 'rock',
-    'type-logo-TYPENAME-dark': `${type}` === 'dark',
-    'type-logo-TYPENAME-ghost': `${type}` === 'ghost',
-    'type-logo-TYPENAME-ice': `${type}` === 'ice',
-    'type-logo-TYPENAME-dragon': `${type}` === 'dragon',
-    'type-logo-TYPENAME-flying': `${type}` === 'flying',
-    'type-logo-TYPENAME-steel': `${type}` === 'steel',
-    'type-logo-TYPENAME-electric': `${type}` === 'electric',
-    'type-logo-TYPENAME-poison': `${type}` === 'poison',
-    'type-logo-TYPENAME-fighting': `${type}` === 'fighting',
-    'type-logo-TYPENAME-psychic': `${type}` === 'psychic',
-    'type-logo-TYPENAME-ground': `${type}` === 'ground',
-    'type-logo-TYPENAME-bug': `${type}` === 'bug',
-    'type-logo-TYPENAME-normal': `${type}` === 'normal'
-  });
-
- const pokeName = classNames({
-    'poke-name-grass': `${type}` === 'grass',
-    'poke-name-fire': `${type}` === 'fire',
-    'poke-name-fairy': `${type}` === 'fairy',
-    'poke-name-water': `${type}` === 'water',
-    'poke-name-rock': `${type}` === 'rock',
-    'poke-name-dark': `${type}` === 'dark',
-    'poke-name-ghost': `${type}` === 'ghost',
-    'poke-name-ice': `${type}` === 'ice',
-    'poke-name-dragon': `${type}` === 'dragon',
-    'poke-name-flying': `${type}` === 'flying',
-    'poke-name-steel': `${type}` === 'steel',
-    'poke-name-electric': `${type}` === 'electric',
-    'poke-name-poison': `${type}` === 'poison',
-    'poke-name-fighting': `${type}` === 'fighting',
-    'poke-name-psychic': `${type}` === 'psychic',
-    'poke-name-ground': `${type}` === 'ground',
-    'poke-name-bug': `${type}` === 'bug',
-    'poke-name-normal': `${type}` === 'normal',
-    'poke-name-grass': `${type}` === 'grass',
-    'poke-name-fire': `${type}` === 'fire',
-    'poke-name-fairy': `${type}` === 'fairy'
-  });
-
-  const typeName = classNames({
-    'TYPENAME-grass': `${type}` === 'grass',
-    'TYPENAME-fire': `${type}` === 'fire',
-    'TYPENAME-fairy': `${type}` === 'fairy',
-    'TYPENAME-water': `${type}` === 'water',
-    'TYPENAME-rock': `${type}` === 'rock',
-    'TYPENAME-dark': `${type}` === 'dark',
-    'TYPENAME-ghost': `${type}` === 'ghost',
-    'TYPENAME-ice': `${type}` === 'ice',
-    'TYPENAME-dragon': `${type}` === 'dragon',
-    'TYPENAME-flying': `${type}` === 'flying',
-    'TYPENAME-steel': `${type}` === 'steel',
-    'TYPENAME-electric': `${type}` === 'electric',
-    'TYPENAME-poison': `${type}` === 'poison',
-    'TYPENAME-fighting': `${type}` === 'fighting',
-    'TYPENAME-psychic': `${type}` === 'psychic',
-    'TYPENAME-ground': `${type}` === 'ground',
-    'TYPENAME-bug': `${type}` === 'bug',
-    'TYPENAME-normal': `${type}` === 'normal',
-    'TYPENAME-grass': `${type}` === 'grass',
-    'TYPENAME-fire': `${type}` === 'fire',
-    'TYPENAME-fairy': `${type}` === 'fairy'
-  });
-
-  const cardGradient = classNames({
-    'card-bg-gradient-grass': `${type}` === 'grass',
-    'card-bg-gradient-fire': `${type}` === 'fire',
-    'card-bg-gradient-fairy': `${type}` === 'fairy',
-    'card-bg-gradient-water': `${type}` === 'water',
-    'card-bg-gradient-rock': `${type}` === 'rock',
-    'card-bg-gradient-dark': `${type}` === 'dark',
-    'card-bg-gradient-ghost': `${type}` === 'ghost',
-    'card-bg-gradient-ice': `${type}` === 'ice',
-    'card-bg-gradient-dragon': `${type}` === 'dragon',
-    'card-bg-gradient-flying': `${type}` === 'flying',
-    'card-bg-gradient-steel': `${type}` === 'steel',
-    'card-bg-gradient-electric': `${type}` === 'electric',
-    'card-bg-gradient-poison': `${type}` === 'poison',
-    'card-bg-gradient-fighting': `${type}` === 'fighting',
-    'card-bg-gradient-psychic': `${type}` === 'psychic',
-    'card-bg-gradient-ground': `${type}` === 'ground',
-    'card-bg-gradient-bug': `${type}` === 'bug',
-    'card-bg-gradient-normal': `${type}` === 'normal',
-    'card-bg-gradient-grass': `${type}` === 'grass',
-    'card-bg-gradient-fire': `${type}` === 'fire',
-    'card-bg-gradient-fairy': `${type}` === 'fairy'
-  })
 
   function loadedData() {
     if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
@@ -398,7 +254,7 @@ console.log(imagesWithSizes)
                     <div className="frame-card-bg-white-outer">
                       <div
                         data-name="frame-card-bg-white"
-                        id={cardWhite}
+                        id={`frame-card-bg-white-${lowerCaseType}`}
                         className="frame-card-bg-white">
                     </div>
                     </div>
@@ -406,32 +262,31 @@ console.log(imagesWithSizes)
                       <div
                         id="frame-card-img"
                         data-name="frame-card-img"
-                        className="frame-card-img"
-                      >
+                        className="frame-card-img"                        >
                     <div className="card-img-outer">
-                      {currentItems ? currentItems.map((image) => {
-                          <Image
-                            key={props.imageWithSize}
-                            id="card-img"
-                            // style={{width: 150, height: 'auto'}}
-                            src={image}
-                            data-name="card-img"
-                            alt={name}
-                            className="card-img"
-                            width={imageWithSize.width}
-                            height={imageWithSize.height}
-
-                            blurDataURL={imageWithSize.blurDataURL}
-                          />
-                          }) : (
-                          // If 'image' is null, render a placeholder image or handle it accordingly
-                            <Image 
-                              src="/images/default.png" 
-                              alt="Default Image"
-                              width={149}
-                              height={150}
-                              />
-                          )}
+                        {currentItems ? (
+                            <Image
+                                id="card-img"
+                                // style={{width: 150, height: 'auto'}}
+                                src={image}
+                                data-name="card-img"
+                                alt={name}
+                                className="card-img"
+                                width={150}
+                                height={imageHeight}
+                                onLoadingComplete={handleImageLoad}
+                                ref={imageRef}
+                                layout={raw}
+                            />
+                        ) : (
+                                <Image 
+                                    src="/images/default.png" 
+                                    alt="Default Image"
+                                    width={149}
+                                    height={150}
+                                />
+                          )
+                        }
                     </div>
                       </div>
                     </div>
@@ -449,7 +304,7 @@ console.log(imagesWithSizes)
                           >
                             <div className="poke-name-outer">
                               <div
-                                id={pokeName}
+                                id={`poke-name-${lowerCaseType}`}
                                 data-name="poke-name"
                                 className="poke-name"
                               >

@@ -808,8 +808,8 @@
   margin-top: 0px;
   margin-bottom: -8px;
   min-height: 203px;
+  transform: translateX(-2px) translateY(-4px);
   /* content:url(images/card_img.png); */
-  transform: scale(1);
   /* [2] Transition property for smooth transformation of images */
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   opacity: 1;
@@ -826,8 +826,8 @@
   margin-top: 0px;
   margin-bottom: -8px;
   min-height: 203px;
+  transform: translateX(-2px) translateY(-2px);
   /* content:url(images/card_img.png); */
-  transform: scale(1);
   /* [2] Transition property for smooth transformation of images */
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
@@ -1118,91 +1118,118 @@
 }
 #Page:hover #frame-card-bg-white-fairy {
   background: linear-gradient(180deg, #ffffff 0%, #EE99AC 100%);
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-fighting {
   background: linear-gradient(180deg, #ffffff 0%, #C03028 100%);
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-fairy {
   background: linear-gradient(180deg, #ffffff 0%, #EE99AC 100%);
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-bug {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #A8B820 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-dark {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #705848 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-dragon {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #7038F8 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-electric {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #F8D030 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-flying {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #A890F0 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-ghost {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #705898 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-grass {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #78C850 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-ground {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #E0C068 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-ice {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #98D8D8 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-normal {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #A8A878 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-poison {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #A040A0 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-psychic {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #F85888 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-rock {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #B8A038 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-steel {
+  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   background: linear-gradient(180deg, #ffffff 0%, #B8B8D0 100%);
   filter: brightness(150%);
 }
 
 #Page:hover #frame-card-bg-white-water {
   background: linear-gradient(180deg, #ffffff 0%, #6890F0 100%);
+  opacity: 1;
+  transition: transform 200ms ease-in-out 200ms, background-image 200ms box-shadow 200ms ease-in-out 200ms;
+  filter: brightness(150%);
+}
+
+#frame-card-bg-white-water::after {
+  content: "";
+  background: radial-gradient(180deg, #ffffff 0%, #6890F0 0%);
+  opacity: 0;
+  transition: transform 200ms ease-in-out 200ms, background 200ms box-shadow 200ms ease-in-out 200ms;
   filter: brightness(150%);
 }
 
@@ -1353,7 +1380,7 @@
   margin-bottom: -8px;
   min-height: 203px;
   /* content:url(images/card_img.png); */
-  transform: scale(0.9);
+  transform: translateY(-2px) translateX(-3px);
   /* [2] Transition property for smooth transformation of images */
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   opacity: 0.9;
@@ -1370,7 +1397,7 @@
   margin-bottom: -8px;
   /* min-height:203px;
   content:url(images/card_img.png); */
-  transform: scale(0.9);
+  transform: translateY(-2px) translateX(-3px);
   /* [2] Transition property for smooth transformation of images */
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   opacity: 1;
@@ -2466,7 +2493,7 @@ body {
 
 /* Image (hover) */
 #Page:hover img {
-  transform: scale(1) rotateY(0deg) translatex(0px) translatey(-1px);
+  transform: translatex(-2px) translatey(-2px);
   perspective: 399px;
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }

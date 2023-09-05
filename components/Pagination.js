@@ -80,7 +80,8 @@ export default function Pagination({ data }) {
                   key={p.dexNr}
                   id={p.dexNr}
                   name={p.names.English}
-                  image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
+                  image={p.assets?.image}
+                //   image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
                   type={p.primaryType.names.English}
                   p={p.primaryType.names.English}
                   currentItems={currentItems}
