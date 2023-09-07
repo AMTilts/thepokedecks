@@ -803,42 +803,38 @@
   z-index: 14;
   pointer-events: none;
   margin-left: 0px;
-  width: 205px;
-  height: 203px;
   margin-top: 0px;
-  margin-bottom: -8px;
+  margin-bottom: 0px;
   min-height: 203px;
-  transform: translateX(-2px) translateY(-4px);
+  transform: translateX(-3px) translateY(-4px);
   /* content:url(images/card_img.png); */
   /* [2] Transition property for smooth transformation of images */
-  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-  opacity: 1;
+  transition: transform 250ms ease-in-out 200ms, box-shadow 200ms ease-in-out 250ms;
   -webkit-transition: box-shadow 0.6s ease-in;
 }
 
-#Page:hover #card-img2 {
+#Page:hover #card-img::after {
+  --angle: 40;
+  content: "";
   position: relative;
   z-index: 14;
   pointer-events: none;
   margin-left: 0px;
-  width: 205px;
-  height: 203px;
   margin-top: 0px;
-  margin-bottom: -8px;
+  margin-bottom: 0px;
   min-height: 203px;
-  transform: translateX(-2px) translateY(-2px);
+  transform: translateX(0px) translateY(0px);
   /* content:url(images/card_img.png); */
   /* [2] Transition property for smooth transformation of images */
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+  -webkit-transition: box-shadow 0.6s ease-in;
 }
 
 #totalcard {
-  transform: scale(0);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #totalcard:hover, #Page:hover #frame {
-  transform: scale(1);
   color: red;
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
@@ -984,8 +980,8 @@
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -1219,10 +1215,10 @@
 }
 
 #Page:hover #frame-card-bg-white-water {
-  background: linear-gradient(180deg, #ffffff 0%, #6890F0 100%);
+  background: radial-gradient(90deg, #ffffff 0%, #6890F0 50%);
   opacity: 1;
   transition: transform 200ms ease-in-out 200ms, background-image 200ms box-shadow 200ms ease-in-out 200ms;
-  filter: brightness(150%);
+  filter: brightness(100%);
 }
 
 #frame-card-bg-white-water::after {
@@ -1349,9 +1345,6 @@
   position: relative;
   z-index: 13;
   pointer-events: none;
-  width: 100%;
-  height: 100%;
-  align-content: center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -1371,36 +1364,11 @@
 
 .card-img {
   position: relative;
-  z-index: 14;
+  z-index: 140;
   pointer-events: none;
-  margin-left: 0px;
-  width: 205px;
-  height: 203px;
-  margin-top: 0px;
-  margin-bottom: -8px;
-  min-height: 203px;
-  /* content:url(images/card_img.png); */
-  transform: translateY(-2px) translateX(-3px);
+  transform: translateY(0px) translateX(0px);
   /* [2] Transition property for smooth transformation of images */
-  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-  opacity: 0.9;
-}
-
-.card-img2 {
-  position: relative;
-  z-index: 14;
-  pointer-events: none;
-  margin-left: 0px;
-  width: 205px;
-  height: 203px;
-  margin-top: 0px;
-  margin-bottom: -8px;
-  /* min-height:203px;
-  content:url(images/card_img.png); */
-  transform: translateY(-2px) translateX(-3px);
-  /* [2] Transition property for smooth transformation of images */
-  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-  opacity: 1;
+  transition: transform 250ms ease-in-out 250ms, box-shadow 200ms ease-in-out 250ms;
 }
 
 .card-img-outer {
@@ -1409,13 +1377,17 @@
   pointer-events: none;
   z-index: 14;
   justify-content: center;
+  height: 70%;
+  width: 150px;
 }
 
 .frame-pokemon-name {
   position: relative;
   z-index: 15;
   pointer-events: none;
-  margin-left: -2px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   width: 250px;
   height: 45px;
   margin-top: 224px;
@@ -1615,6 +1587,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: rgba(235, 152, 0, 0.9725490196);
 }
@@ -1636,6 +1609,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #09bac7;
 }
@@ -1657,6 +1631,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #78C850;
 }
@@ -1678,6 +1653,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #EE99AC;
 }
@@ -1699,6 +1675,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #6890F0;
   filter: brightness(50%);
@@ -1721,6 +1698,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #6D7815;
 }
@@ -1742,6 +1720,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #705848;
 }
@@ -1763,6 +1742,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #7038F8;
 }
@@ -1784,6 +1764,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #F8D030;
   filter: brightness(75%);
@@ -1807,6 +1788,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #C03028;
 }
@@ -1828,6 +1810,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #A890F0;
 }
@@ -1849,6 +1832,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #705898;
 }
@@ -1870,6 +1854,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #E0C068;
 }
@@ -1891,6 +1876,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #98D8D8;
 }
@@ -1912,6 +1898,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #A8A878;
 }
@@ -1933,6 +1920,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #A040A0;
 }
@@ -1954,6 +1942,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #F85888;
 }
@@ -1975,6 +1964,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #B8A038;
 }
@@ -1996,6 +1986,7 @@
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   color: #B8B8D0;
 }
@@ -2016,8 +2007,8 @@
   display: inline-block;
   z-index: 8;
   pointer-events: none;
-  margin-left: 40px;
-  height: 43px;
+  margin-left: 20px;
+  height: 40px;
   padding: 5px 5px 5px 5px;
   overflow: visible;
   align-items: center;
@@ -2067,16 +2058,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_fire.svg);
 }
@@ -2085,16 +2075,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_fire.svg);
 }
@@ -2103,16 +2092,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_fire.svg);
 }
@@ -2121,16 +2109,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_fairy.svg);
 }
@@ -2139,16 +2126,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_grass.svg);
 }
@@ -2157,16 +2143,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_dark.svg);
 }
@@ -2175,16 +2160,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_bug.svg);
 }
@@ -2193,16 +2177,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_dragon.svg);
 }
@@ -2211,16 +2194,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_electric.svg);
 }
@@ -2229,16 +2211,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_fighting.svg);
 }
@@ -2247,16 +2228,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_flying.svg);
 }
@@ -2265,16 +2245,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_ghost.svg);
 }
@@ -2283,16 +2262,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_ground.svg);
 }
@@ -2301,16 +2279,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_ice.svg);
 }
@@ -2319,16 +2296,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_normal.svg);
 }
@@ -2337,16 +2313,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_poison.svg);
 }
@@ -2355,16 +2330,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_psychic.svg);
 }
@@ -2373,16 +2347,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_rock.svg);
 }
@@ -2391,16 +2364,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_steel.svg);
 }
@@ -2409,16 +2381,15 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 100%;
   height: auto;
   max-height: 25px;
-  margin-top: 0pxpx;
+  margin-top: 0px;
   padding-right: 0px;
   align-self: center;
   align-items: center;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
   content: url(images/type_c21_water.svg);
 }
@@ -2440,7 +2411,6 @@
 
 #Frame {
   box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.5);
-  transform: translate(0, 0);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -2451,6 +2421,7 @@
 }
 
 #Page:hover::after #Frame {
+  content: "";
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -2468,7 +2439,7 @@
 }
 
 #Page:hover div[class^=type-logo-], div[className="type-logo-*"] {
-  transform: scale(1) translateY(0px) translateX(-1px);
+  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -2476,7 +2447,6 @@
   color: rgba(0, 0, 0, 0.25);
   border-width: 10px;
   border-color: red;
-  transform: translateY(0px) translateX(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -2492,21 +2462,13 @@ body {
 }
 
 /* Image (hover) */
-#Page:hover img {
-  transform: translatex(-2px) translatey(-2px);
-  perspective: 399px;
-  transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
-}
-
 /* Span Tag (hover) */
 div > span:hover {
-  transform: scale(1) rotateX(0deg) rotateY(0deg) translatex(0px) translatey(-1px);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 /* Span Tag (hover) */
 #Page span span:hover {
-  transform: scale(0.52);
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
@@ -2582,7 +2544,7 @@ div > span:hover {
   pointer-events: none;
   margin-left: 0px;
   width: 100%;
-  height: 100;
+  height: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -2694,17 +2656,14 @@ div > span:hover {
 /* Link (active) */
 #pagination ul a:active {
   font-weight: 500;
+  color: red;
 }
 
 /* Division (hover) */
 /* Division */
-#__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
-  width: auto !important;
-}
-
 /* Frame outer (hover) */
 #Page:hover #Frame-outer::after {
-  transform: translatex(0px) translatey(-2px);
+  transform: translatex(0px) translatey(0px);
   opacity: 0;
   transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
@@ -2723,8 +2682,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2761,8 +2720,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2798,8 +2757,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2835,8 +2794,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2872,8 +2831,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2909,8 +2868,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2946,8 +2905,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -2983,8 +2942,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3020,8 +2979,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3057,8 +3016,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3094,8 +3053,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3131,8 +3090,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3152,8 +3111,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3179,8 +3138,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3216,8 +3175,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
@@ -3253,8 +3212,8 @@ div > span:hover {
   height: 102%;
   z-index: 5;
   pointer-events: none;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -1px;
+  margin-top: -4px;
   border-width: var(--borderWidth);
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;

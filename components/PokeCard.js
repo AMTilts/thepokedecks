@@ -65,6 +65,7 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItem
     function handleImageLoad() {
         if (imageRef.current) {
             const { naturalWidth, naturalHeight } = imageRef.current;
+            setImageHeight(naturalHeight)
             setNaturalWidth(naturalWidth);
             setNaturalHeight(naturalHeight);
             setImageHeight(naturalHeight);
@@ -214,7 +215,7 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItem
 //  }
 
 
-console.log(imagesWithSizes)
+console.log(imageWidth)
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
    
@@ -259,37 +260,36 @@ console.log(imagesWithSizes)
                     </div>
                     </div>
                     <div className="frame-card-img-outer">
-                      <div
-                        id="frame-card-img"
-                        data-name="frame-card-img"
-                        className="frame-card-img"                        >
-                    <div className="card-img-outer">
-                        {currentItems ? (
-                            <Image
-                                id="card-img"
-                                // style={{width: 150, height: 'auto'}}
-                                src={image}
-                                data-name="card-img"
-                                alt={name}
-                                className="card-img"
-                                width={150}
-                                height={imageHeight}
-                                onLoadingComplete={handleImageLoad}
-                                ref={imageRef}
-                                layout={raw}
-                            />
-                        ) : (
-                                <Image 
-                                    src="/images/default.png" 
-                                    alt="Default Image"
-                                    width={149}
-                                    height={150}
-                                />
-                          )
-                        }
-                    </div>
-                      </div>
-                    </div>
+                        <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
+                            <div className="card-img-outer">
+                                <div >
+                                    {currentItems ? currentItems.map((pokemon) => (
+                                            <Image
+                                                key={pokemon.dexNr}
+                                                id="card-img"
+                                                src={image}
+                                                data-name="card-img"
+                                                alt={pokemon.id}
+                                                className="card-img"
+                                                onLoadingComplete={handleImageLoad}
+                                                ref={imageRef.current}
+                                                style={{objectFit: 'contain', width: '100%'}}
+                                                fill={true}
+                                                sizes="100%"
+                                                layout="intrinsic"
+                                            />
+                                        )) : (
+                                            <Image
+                                                src="/images/default.png"
+                                                alt="Default Image"
+                                                width={149}
+                                                height={150}
+                                            />
+                                        )
+                                    }
+                                </div>    
+                            </div>
+                        </div>
                     <div className="frame-pokemon-name-outer">
                       <div
                         id="frame-pokemon-name"
@@ -392,7 +392,8 @@ console.log(imagesWithSizes)
         </div>
       </div>
     </div>
-  </div>  
+  </div> 
+  </div> 
   );
 }
 

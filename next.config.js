@@ -3,6 +3,16 @@ const nextConfig = {
 };
 
 module.exports = {
+  images: {
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'raw.githubusercontent.com',
+            port: '',
+            pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
+        }
+    ]
+  },
   webpack: (config, { isServer }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
@@ -45,9 +55,9 @@ module.exports = {
     },
   },
   ...nextConfig,
-  images: {
-    domains: ['raw.githubusercontent.com', 'mprice.one'],
-  },
+//   images: {
+//     domains: ['raw.githubusercontent.com', 'mprice.one'],
+//   },
   future: {
     webpack5: true,
   },
