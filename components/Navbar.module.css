@@ -48,6 +48,23 @@
     color: white;
 }
 
+.navbarDecks {
+    font-size: 60px;
+    text-decoration: bold;
+    font-style: italic;
+    font-family: 'Rubik', sans-seriff;
+    
+    background: linear-gradient(to right, #c73939, #e0cccc); /* From deep red to white */
+
+    border-width: 1px;
+    border-color: white;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
 a.navbarbrand {
     padding-left: 5px;
     padding-right: 0px;

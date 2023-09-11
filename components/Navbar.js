@@ -13,7 +13,7 @@ function pokeNavbar() {
             src="/balllogorev2.svg"
             width="55"
             height="55"
-            alt="PokeDex-Ticles Logo"
+            alt="The PokeDECKS Logo"
             className={styles.logo}
            />
           </div>
@@ -24,7 +24,7 @@ function pokeNavbar() {
               className={styles.d-inline-block align-middle"
               alt="Pokeballs Logo"
             /> */}
-            <Navbar.Brand href="#home" className={styles.navbartitle}>POKEDEX-ICLES</Navbar.Brand>
+            <Navbar.Brand href="#home" className={styles.navbartitle}>Poke</Navbar.Brand><Navbar className={styles.navbarDecks}>DECKS</Navbar>
             <Navbar className={styles.navlinks}>
               <Nav.Link className="navlink" href="#home">HOME</Nav.Link>
               <Nav.Link className="navlink" href="#features">POKEDEX</Nav.Link>
