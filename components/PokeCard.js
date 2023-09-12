@@ -255,7 +255,7 @@ console.log(imageWidth)
                     <div className="frame-card-bg-white-outer">
                       <div
                         data-name="frame-card-bg-white"
-                        id={`frame-card-bg-white-${lowerCaseType}`}
+                        id={`frame-card-bg-white-${lowerCaseType}-light`}
                         className="frame-card-bg-white">
                     </div>
                     </div>
