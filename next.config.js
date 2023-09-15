@@ -8,7 +8,7 @@ module.exports = {
         {
             protocol: 'https',
             hostname: 'raw.githubusercontent.com',
-            port: '',
+            port: '443',
             pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
         }
     ]
@@ -46,19 +46,13 @@ module.exports = {
 
     return config;
   },
-  resolve: {
-    extensions: ['.js'],
-    fallback: {
-      fs: false,
-      child_process: false,
-      worker_threads: false,
-    },
-  },
-  ...nextConfig,
-//   images: {
-//     domains: ['raw.githubusercontent.com', 'mprice.one'],
-//   },
-  future: {
-    webpack5: true,
-  },
+  // resolve: {
+  //   extensions: ['.js'],
+  //   fallback: {
+  //     fs: false,
+  //     child_process: false,
+  //     worker_threads: false,
+  //   },
+  // },
+  ...nextConfig
 };
