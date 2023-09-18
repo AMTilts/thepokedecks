@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import Image from 'next/future/image';
@@ -8,6 +8,7 @@ import probe from 'probe-image-size'
 import { doExpression } from '@babel/types';
 import { raw } from 'fs-loader';
 // import { EntryOptionPlugin } from 'webpack';
+import {shinyIcon} from '/images/shinyblack.svg';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -72,147 +73,9 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItem
         }
     }
 
-    // const imageFetch = async () => {
-    // const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
-    // const response = await fetch(url);
-    // const data = await response.json();
-    // setImageArray(data.assets.image);
-    // console.log(imageArray);
-    // const imageUrls = await data.map((imageUrl) => {
-    //     setPokeImage(imageUrl.assets.image)
-    // })
-    // console.log(pokeImage);
-    // const imagesWithSizes = await Promise.all(
-    //     imageUrls.map(async (imgUrl) => {
-    //     const imageWithSize = await {imgUrl};
-    //     imageWithSize.size = await probe(imgUrl);
-    //     console.log(imageWithSize.width)
-    //     return imageWithSize;
-    //     })
-    // );
-
-    // return {
-    //     props: {
-    //     images: imagesWithSizes,
-    //     imageUrls
-    //     }
-    // };
-    // };
-
-  
-//   useEffect(() => {
-//     const getImage = async () => {
-//       const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
-//       const response = await fetch(url);
-//       const data = await response.json();
-//       // Assuming data is an array and each element has an 'assets' property
-//       const imageUrls = await data.map(({ assetForms, dexNr }) => (
-//          assetForms.map(({ image, index }) => {
-//             return { url: {image} };
-//              })
-//         ));
-
-//              console.log(imageUrls);
-    
-//       setPokeImage(imageUrls[0]?.url); // Assuming setPokeImage is a state setter
-  
-//       const imagesWithSizes = await Promise.all(
-//         imageUrls.map(async (u, image) => {
-//           const { url } = u;
-//           const size = await probe(url); // Assuming probe is an async function
-//           return { ...imgObj, size };
-//         })
-//       );
-  
-//       // Not sure where 'props' should go, as this is a hook.
-//       // You might want to set it to state or pass it to some function.
-//       return {
-//         props: {
-//           images: imagesWithSizes,
-//           imageUrls,
-//         },
-//       };
-//     };
-  
-//     // Actually call the function
-//     getImage();
-//   }, []); // Empty dependency array means this useEffect runs once
-  
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const response = await fetch(image);
-//       const arrayBuffer = await response.arrayBuffer();
-
-//       const buffer = Buffer.from(arrayBuffer);
-
-//       const dimensions = sizeOf(buffer);
-//       console.log(dimensions.width, dimensions.height);
-//     } catch (error) {
-//       console.error('Error fetching image:', error);
-//     } return {
-//       props: {
-//         dimensions
-//       }
-//     }
-//   };
-
-//   fetchData();
-// }, [image]);
-
-// console.log(dimensions);
-
-  
-
-// const size = async () => {
-
-//   await probe(image)
-// }
-
-// console.log(size.width, size.height)
-
-  
-
-    // DataBaseSchemaExample = {
-    //   src: {image}
-    // }
-  
-  //   const file = {image};
-    
-    
-  //  const lqipPalette = () => { 
-  //   lqip.palette(file) = `../images/${name}.png`
-  
-  //     lqip.palette(file).then(res => {
-  //       console.log(res);
-  //     })
-   
-  // }
-  // //   c
 
   const [imgArray, setImgArray] = useState([]);
 
-//   console.log(data && data[0]?.assets.image);
-
-  // function waterType() {
-  //         return (
-  //             <Card style={
-  //                 background-image: linear-gradient(-60deg, #f12711 0%, #f5af19 100%)
-  //                 border-width: 2px 5px 7.5px 2px
-  //                 border-color: rgb(0, 194, 212);
-  //             }>
-  //         )
-  //     }
-
-//  function fixImage(image) {
-//     var img = new Image();
-//     img.src = {image}
-//     var imageWidth = img.width;
-//     var imageHieight = img.height;
-
-//     console.log(imageWidth && imageHieight);
-//  }
 
 
 console.log(imageWidth)
@@ -258,11 +121,31 @@ console.log(imageWidth)
                         id={`frame-card-bg-white-${lowerCaseType}-light`}
                         className="frame-card-bg-white">
                     </div>
+                        <div className="icon-container" style={{zIndex: 5000}}>
+                            {currentItems ? (currentItems.map((pokemon) => {
+                                pokemon.assets.shinyImage ? (
+                                    <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
+                                )
+                                 :
+                                (
+                                    <Image src={shinyIcon} alt="icon" className="icon" style={{zIndex: 500}}>
+                                        <div className="light"></div>
+                                    </Image>    
+                                )
+                                }))
+                                :
+                                (
+                                <div className="nocurrent">
+                                </div>
+                                )
+                            }
+                        </div>
+                        <div className="sparkle-icon"></div> 
                     </div>
                     <div className="frame-card-img-outer">
                         <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
                             <div className="card-img-outer">
-                                <div >
+                                <div>
                                     {currentItems ? currentItems.map((pokemon) => (
                                             <Image
                                                 key={pokemon.dexNr}
