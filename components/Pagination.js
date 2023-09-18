@@ -3,13 +3,14 @@ import ReactPaginate from 'react-paginate';
 import PokeCard from './PokeCard';
 import Probe from 'probe-image-size';
 import NextImage from 'next/image'
+import paginationStyles from '../style/paginationStyles.module.css'
 
 
 
 export default function Pagination({ data }) {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
-  const itemsPerPage = 20;
+  const itemsPerPage = 40;
   const pageCount = Math.ceil(data.length / itemsPerPage);
   const [itemOffset, setItemOffset] = useState(0); // Add this line to define itemOffset state
   const imageRef = useRef(null);
@@ -69,6 +70,10 @@ export default function Pagination({ data }) {
               pageCount={pageCount}
               previousLabel="< previous"
               renderOnZeroPageCount={null}
+              containerClassName={paginationStyles.container}
+              pageClassName={paginationStyles.page}
+              activeClassName={paginationStyles.active}
+              forcePage={currentItems}
               id="pagination"
             />
           </div>
