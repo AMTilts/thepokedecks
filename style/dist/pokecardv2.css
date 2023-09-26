@@ -13386,3 +13386,118 @@ col, div.col {
   background-image: radial-gradient(circle at 50%, white, var(--normal-light));
   filter: brightness(150%);
 }
+
+/* List */
+#pagination ul {
+  display: inline-flex;
+  align-self: center;
+  padding-left: 0px;
+  background-color: transparent;
+}
+
+/* Link */
+#pagination .previous a {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 13px;
+  padding-top: 0px;
+  min-height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Col */
+.container-fluid .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Link */
+#__next .container-fluid .row .col div div .btn-div-border #pagination ul .previous a {
+  height: 100% !important;
+}
+
+/* Link */
+#pagination .next a {
+  margin-bottom: 0px;
+  height: 100%;
+  position: relative;
+  min-height: 24px;
+  display: inline-flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* Next */
+#pagination ul .next {
+  height: 100%;
+  min-height: 24px;
+}
+
+/* Link (active) */
+#pagination li:active {
+  border-width: 1px;
+  border-radius: 10px;
+  color: #9b9ef2;
+}
+
+#pagination li:disabled {
+  border-width: 1px;
+  border-radius: 10px;
+  color: #9b9ef2;
+}
+
+/* Navbar */
+.container-fluid .row .col > .navbar {
+  transform: translatex(0px) translatey(0px);
+}
+
+/* Link */
+#pagination li:nth-child(2) a {
+  color: #050505;
+}
+
+/* Link (hover) */
+#pagination li a:hover {
+  color: #7b4141;
+  cursor: pointer;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.paginate-inactive {
+  color: darkgray;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #8b0303;
+}
+
+#search-div {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-box {
+  border-width: 2px;
+  border-color: #8b0303;
+  border-radius: 4px;
+}
+
+/* Division */
+.container-fluid .row .col > div > div {
+  transform: translatex(0px) translatey(0px);
+}
+
+/* Div border */
+.container-fluid div .btn-div-border {
+  flex-direction: column;
+}
+
+/* Search div */
+#search-div {
+  width: auto !important;
+}

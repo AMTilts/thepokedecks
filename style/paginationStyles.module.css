@@ -9,9 +9,12 @@
     width: 40px;
   }
   
-  .disabled-page {
-    color: #808e9b;
-  }
+  .disabled-page6 {
+    border-width: 1px;
+    border-radius: 10px;
+    color:#9b9ef2;
+   }
+   
   
   .active {
     border: solid 1px #808e9b;
@@ -19,9 +22,7 @@
     color: #808e9b;
   }
   
-  .break-me {
-  }
-  
+
   .next {
     border-left: solid 1px #808e9b;
     font-size: 4px;
@@ -41,6 +42,9 @@
     list-style-type: none;
     position: relative;
     width: 1000px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-between;
   }
   
   .page {
