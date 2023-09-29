@@ -8,15 +8,31 @@ function pokeNavbar() {
     return (
         <>
           <Navbar className={styles.navbarcontainer}>
-          <div className={styles.navbarlogo}>
-          <Image 
-            src="/balllogorev2.svg"
-            width="55"
-            height="55"
-            alt="The PokeDECKS Logo"
-            className={styles.logo}
-           />
-          </div>
+          {/* <div className={styles.navbarlogo}> */}
+            <div className="logo-frame">
+              <div className="logo-outline">
+                <Image 
+                  src="/images/logo-cardoutline.svg"
+                  width="421"
+                  height="102"
+                  alt="The PokeDECKS Logo"
+              />
+              </div>
+
+              <div className="logo-frame-text">
+                <div className="poke">
+                  Poke
+                </div>
+                <div className="decks">
+                  Decks
+                </div>
+                <div className="com">
+                  .com
+                </div>
+              </div>
+            </div>
+          
+          {/* </div> */}
           {/* <img
               src="/pokeballs-rotated.png"
               width="44px"
@@ -24,7 +40,7 @@ function pokeNavbar() {
               className={styles.d-inline-block align-middle"
               alt="Pokeballs Logo"
             /> */}
-            <Navbar.Brand href="#home" className={styles.navbartitle}>Poke</Navbar.Brand><Navbar className={styles.navbarDecks}>DECKS</Navbar>
+            {/* <Navbar.Brand href="#home" className={styles.navbartitle}>Poke</Navbar.Brand><Navbar className={styles.navbarDecks}>DECKS</Navbar> */}
             <Navbar className={styles.navlinks}>
               <Nav.Link className="navlink" href="#home">HOME</Nav.Link>
               <Nav.Link className="navlink" href="#features">POKEDEX</Nav.Link>

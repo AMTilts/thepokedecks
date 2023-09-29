@@ -38,18 +38,18 @@
     height: 35px;
 }
 
-.navbarlight {
+/* .navbarlight {
     color: white;
-}
+} */
 
-.navbarbrand {
+/* .navbarbrand {
     font-size: 60px;
     text-decoration: bold;
     font-family: 'Oxygen', sans-serif;
     color: white;
-}
+} */
 
-.navbarDecks {
+/* .navbarDecks {
     font-size: 60px;
     text-decoration: bold;
     font-style: italic;
@@ -57,16 +57,16 @@
     
     background: linear-gradient(to right, #c73939, #e0cccc); /* From deep red to white */
 
-    border-width: 1px;
+    /* border-width: 1px;
     border-color: white;
     -webkit-background-clip: text;
     color: transparent;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 
-}
+/* } */
 
-a.navbarbrand {
+/* a.navbarbrand {
     padding-left: 5px;
     padding-right: 0px;
     margin-right: 0px;
@@ -77,14 +77,14 @@ a.navbarbrand {
     font-weight: bold;
     font-size: 50px;
     text-decoration: none;
-}
+} */
 
-.navbartitle2 {
+/* .navbartitle2 {
     color: whitesmoke;
     font-family: 'Rubik';
     font-weight: 50px;
     margin-right: 5px;
-}
+} */
 
 
 /* .mlauto {
@@ -96,7 +96,7 @@ a.navbarbrand {
     font-weight: 600;
     justify-items: flex-end;
 } */
-
+/* 
 .logo {
     margin-left: 0px;
     margin-right: 10px;
@@ -108,4 +108,4 @@ a.navbarbrand {
     color: white;
     justify-content: flex-start;
     text-shadow: black 1px 1px;
-}
+} */

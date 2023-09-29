@@ -1818,3 +1818,93 @@ max-height: 200px;
    #search-div{
     width:auto !important;
    }
+
+
+   .logo-frame {
+        display: inline-flex;
+        padding: 3px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+   }
+
+   .logo-frame-text {
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        position: absolute;
+        right: 17.76px;
+        top: 17px;
+   }
+
+   .logo-outline {
+        width: 421px;
+        height: 102px;
+   }
+
+   .poke {
+        width: 136.601px;
+        height: 44.448px;
+        transform: rotate(-3.707deg);
+
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Rubik;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        background: linear-gradient(93deg, #FFFEFE 26.35%, #EEEBEB 82.62%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+   }
+
+   .com {
+        width: 58px;
+        height: 26px;
+        transform: rotate(0.534deg);
+
+        position: absolute;
+        right: 0px;
+        bottom: 7.73px;
+
+        color: #FFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Rubik;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .decks {
+        width: 162.809px;
+        height: 54.154px;
+        transform: rotate(2.628deg);
+
+        position: absolute;
+        right: 58.119px;
+        bottom: 0px;
+
+        text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
+        font-family: Rubik;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        background: linear-gradient(93deg, #FFDE00 40.69%, #E2C70C 83.75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
