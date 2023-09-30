@@ -13454,22 +13454,24 @@ col, div.col {
 
 .logo-frame {
   display: inline-flex;
-  padding: 3px;
+  padding: 0px 3px 3px 0px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
 .logo-frame-text {
   display: flex;
-  padding: 10px;
+  width: 424px;
+  padding: 9px 15px 10px 0px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   position: absolute;
-  right: 17.76px;
-  top: 17px;
+  top: 13.906px;
 }
 
 .logo-outline {
@@ -13482,18 +13484,9 @@ col, div.col {
   height: 44.448px;
   transform: rotate(-3.707deg);
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 10px;
+  top: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Rubik;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  background: linear-gradient(93deg, #FFFEFE 26.35%, #EEEBEB 82.62%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .com {
@@ -13518,15 +13511,34 @@ col, div.col {
   transform: rotate(2.628deg);
   position: absolute;
   right: 58.119px;
+  top: 15px;
   bottom: 0px;
-  text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
-  font-family: Rubik;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  background: linear-gradient(93deg, #FFDE00 40.69%, #E2C70C 83.75%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.frame-poke {
+  display: flex;
+  padding-left: 0px;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.frame-decks {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.frame-com {
+  display: flex;
+  padding-top: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
 }/*# sourceMappingURL=pokecardv2.css.map */

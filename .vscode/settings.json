@@ -3,5 +3,6 @@
     "deno.enable": true,
     "deno.lint": true,
     "deno.unstable": true,
-    "prettier.withNodeModules": true
+    "prettier.withNodeModules": true,
+    "figma.autocompleteBlocks": true
 }

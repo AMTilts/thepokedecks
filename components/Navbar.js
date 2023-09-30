@@ -10,27 +10,51 @@ function pokeNavbar() {
           <Navbar className={styles.navbarcontainer}>
           {/* <div className={styles.navbarlogo}> */}
             <div className="logo-frame">
-              <div className="logo-outline">
+                <Image
+                    src="/images/logo-4x.png"
+                    width={424}
+                    height={105}
+                    alt="PokeDECKS Logo"
+                />
+              {/* <div className="logo-outline">
                 <Image 
-                  src="/images/logo-cardoutline.svg"
+                  src="/images/logo-outline.png"
                   width="421"
                   height="102"
-                  alt="The PokeDECKS Logo"
-              />
+                  alt="PokeDecks logo card outline"
+                />
               </div>
 
               <div className="logo-frame-text">
-                <div className="poke">
-                  Poke
+                <div className="frame-poke">
+                    <Image 
+                        src="/images/poke-text.png"
+                        width="136"
+                        height="44"
+                        alt="The PokeDECKS Logo"
+                        className="poke"
+                    />
                 </div>
-                <div className="decks">
-                  Decks
+                <div className="frame-decks">
+                    <Image 
+                        src="/images/decks-text.png"
+                        width="126"
+                        height="45"
+                        alt="Decks text"
+                        className="decks"
+                    />
                 </div>
-                <div className="com">
-                  .com
-                </div>
+                <div className="frame-com">
+                    <Image                            
+                        src="/images/com-text.png"
+                        className="com"
+                        width="58"
+                        height="26"
+                        alt="com text"
+                    />
+                    </div>
+                </div> */}
               </div>
-            </div>
           
           {/* </div> */}
           {/* <img
