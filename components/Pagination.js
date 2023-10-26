@@ -8,96 +8,56 @@ import Search from './Search'
 
 
 
-export default function Pagination(search) {
+export default function Pagination() {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
   const itemsPerPage = 40;  
 
   const [itemOffset, setItmOffset] = useState(0); // Add this line to define itemOffset state
-  const imageRef = useRef(null);
-  const [imgArray, setImgArray] = useState([]);
-  const [imgWidth, setImgWidth] = useState([]);
-  const [imgHeight, setImgHeight] = useState([]);
   const [query, setQuery] = useState('');
   const [data, setData] = useState([])
   const pageCount = Math.ceil(data.length / itemsPerPage);
-
-
-  
- 
-
-  const fetchPogo = async () => {
-    try {
-      const response = await fetch(pogoAPIUrl);
-      const fetchedData = await response.json();
-      setData(fetchedData);
-      const startOffset = itemOffset;
-      const endOffset = itemOffset + itemsPerPage;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-      await setCurrentItems(data.slice(startOffset, endOffset));
-      await console.log(currentItems.slice(startOffset,endOffset))
-      await setImgArray(data.assets.image)
-      const fImg = imageRef.current;
-      const search = async (e) => {
-            e.preventDefault();
-
-            const filteredData = Array.isArray(data.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase())));
-      }
-      
-      setCurrentItems(filteredData);
-      
-      return {
-        props: {
-         fImg,
-         search,
-         filteredData
-        //  filteredData;
-      }}
-     } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-
-
-
-  
- 
-  
-  
-    // const res = await fetch(`${pogoAPIUrl}/search?query=${encodeURIComponent(query)}`);
-    // const data = await res.json();
-  
-    // Ensure that this function/component returns JSX
-    return (
-      <>
-        {data ? data.map((p) => (
-          <div key={p.dexNr}>
-            <PokeCard
-              key={p.dexNr}
-              id={p.dexNr}
-              name={p.names.English}
-              image={p.assets?.image}
-              type={p.primaryType.names.English}
-              p={p.primaryType.names.English}
-            />
-          </div>
-        )) : null}
-      </>
-    );
-  };
-  
-  
-
+  const [searchResults, setSearchResults] = useState([]);
+  const [unfilteredItems, setUnfilteredItems] = useState([]);
    
 
-   useEffect(() => {
-    fetchPogo();
-  }, [itemOffset, data]); // Add data as a dependency for useEffect
+  const fetchPogo = async () => {
+    const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
+      try {
+        const response = await fetch(pogoAPIUrl);
+        const fetchedData = await response.json();
+        setData(fetchedData);
+        setUnfilteredItems(fetchedData);
+      } catch (error) {
+          console.error('Error fetching data:', error);
+          }
+        };
+
+    useEffect(() => {
+      fetchPogo();    
+    }, []); // Fetch data when component mounts
+
+    useEffect((fetchedData) => {
+      const filteredData = fetchedData.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase()));
+      setCurrentItems(filteredData);
+    }, [data, query]); // Update currentItems when data⁴
+
+
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
+    const filteredData = Array.isArray(fetchedData.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase())));
+    setSearchResults(filteredData);
+    setCurrentItems(filteredData);
+  }
+   
 
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage;
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-    setCurrentItems(data.slice(newOffset, newOffset + itemsPerPage));
+    setCurrentItems(dunfilteredItems.slice(newOffset, newOffset + itemsPerPage));
   };
-  // console.log(currentItems.slice(itemOffset, endOffset));
 
 
   return (
@@ -106,7 +66,8 @@ export default function Pagination(search) {
         <div className="btn-div-border">
           <div id="search">
             <Search 
-              onChange={search}
+              onChange={handleSearch}
+              onSearch={setQuery}
               currentItems={currentItems}
             />
           </div>
@@ -130,21 +91,18 @@ export default function Pagination(search) {
           </div>
         </div>
         <div className="div-container">
-          {currentItems && currentItems.map((p, fImg ) => (
-              <div key={p.dexNr}>
-                <PokeCard
-                  key={p.dexNr}
-                  id={p.dexNr}
-                  name={p.names.English}
-                  image={p.assets?.image}
-                //   image={p.assets ? p.assets.image : ''} // Use a default value if 'p.assets' is null or undefined
-                  type={p.primaryType.names.English}
-                  p={p.primaryType.names.English}
-                  currentItems={currentItems}
-                  // imgWidth={pWidth ? pWidth : ''}
-                  // imgHeight={pHeight ? pHeight : ''} // Pass the individual data object instead of lowerCaseData function
-                />
-              </div>
+          {currentItems.map((p) => (
+            <div key={p.dexNr}>
+              <PokeCard
+                key={p.dexNr}
+                id={p.dexNr}
+                name={p.names.English}
+                image={p.assets?.image}
+                type={p.primaryType.names.English}
+                p={p.primaryType.names.English}
+              />
+            </div>
+            
           ))}
         </div>
       </div>

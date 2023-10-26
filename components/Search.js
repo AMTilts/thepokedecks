@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Search(currentItems) {
+function Search({ currentItems, onSearch }) {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -9,20 +9,16 @@ function Search(currentItems) {
     useEffect(() => {
         if (!query) return;
 
-        const fetchData = async () => {
-            setLoading(true);
-            setError(null);
+        const filteredData = currentItems.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase()));
+        setResults(filteredData);
+        }, [query, currentItems]);
 
-            const response = await fetch(currentItems);
-            const data = await response.json();
-            setResults(data.results);
-            setLoading(false);
-        }
 
-    const timeoutId = setTimeout(fetchData, 500);
-    return () => clearTimeout(timeoutId);
-
-    }, [query]);
+    const handleInputChange = (e) => {
+        setQuery(e.target.value);
+        onSearch(e.target.value);
+    }
+    
 
     return (
         <div id="search-div">
@@ -30,16 +26,14 @@ function Search(currentItems) {
                 id="search-box"
                 type="text"
                 value={query}
-                onChange={e => setQuery(e.target.value)}
+                onChange={handleInputChange}
                 placeholder="Search..."
             />
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            <ul>
-                {results.map(result => {
-                    <li key={result.div}>{result.name}</li>
-                })}
-            </ul>
+            {/* <ul>
+                {results.map(result => (
+                    <li key={result.dexNr}>{result.names.English}</li>
+                ))}
+            </ul> */}
         </div>
     )
 }
