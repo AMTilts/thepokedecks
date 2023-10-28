@@ -46,7 +46,7 @@ export const getStaticProps = async () => {
   };
 };
 
-function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItems, p, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
+function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItems, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
 
     const [ imageArray, setImageArray ] = useState([]);
     const [ pokeImage, setPokeImage ] = useState(null);
@@ -122,7 +122,7 @@ console.log(imageWidth)
                         className="frame-card-bg-white">
                     </div>
                         <div className="icon-container" style={{zIndex: 5000}}>
-                            {currentItems ? (currentItems.map((pokemon) => {
+                            {filteredData ? (filteredData.map((pokemon) => {
                                 pokemon.assets.shinyImage ? (
                                     <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
                                 )
@@ -148,9 +148,9 @@ console.log(imageWidth)
                                 <div>
                                     {currentItems ? currentItems.map((pokemon) => (
                                             <Image
-                                                key={pokemon.dexNr}
+                                                key={key}
                                                 id="card-img"
-                                                src={image}
+                                                src={pokemon.assets?.image}
                                                 data-name="card-img"
                                                 alt={pokemon.id}
                                                 className="card-img"

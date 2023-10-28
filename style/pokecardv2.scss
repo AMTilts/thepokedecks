@@ -1573,11 +1573,11 @@ max-height: 200px;
             left: 0;
             right: 0;
             z-index: -1;
-            height: 102%;
-            width: 102%;
+            height: 101%;
+            width: 101%;
             margin: 0 auto;
             transform: scale(0.8);
-            filter: blur(calc(var(--card-height) / 63));
+            filter: blur(calc(var(--card-height) / 50));
             animation: rotateGradient-#{$type} 3.5s linear infinite;
             transition: opacity .5s;
         }
@@ -1800,7 +1800,7 @@ max-height: 200px;
    #search-box {
     border-width: 2px;
     border-color: $poke-color;
-    border-radius: 8px;
+    border-radius: 6px;
 
    }
 

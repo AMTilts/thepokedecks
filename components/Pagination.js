@@ -8,7 +8,7 @@ import Search from './Search'
 
 
 
-export default function Pagination() {
+export default function Pagination({ filteredData  }) {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
   const itemsPerPage = 40;  
@@ -35,12 +35,21 @@ export default function Pagination() {
 
     useEffect(() => {
       fetchPogo();    
-    }, []); // Fetch data when component mounts
+    }, []); // Fetch data when component mount
 
-    useEffect((fetchedData) => {
-      const filteredData = fetchedData.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase()));
+    
+    useEffect((data) => {
+      const filteredData = data.filter(pokemon =>
+        pokemon.names && 
+        pokemon.names.English && 
+        pokemon.names.English.toLowerCase().includes(query.toLowerCase())
+      );
       setCurrentItems(filteredData);
-    }, [data, query]); // Update currentItems when data⁴
+      console.log(data);
+    }, [data, query]);
+
+
+   
 
 
 
@@ -56,9 +65,10 @@ export default function Pagination() {
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage;
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-    setCurrentItems(dunfilteredItems.slice(newOffset, newOffset + itemsPerPage));
+    setCurrentItems(currentItems.slice(newOffset, newOffset + itemsPerPage));
   };
 
+  console.log(currentItems)
 
   return (
     <>
@@ -91,7 +101,7 @@ export default function Pagination() {
           </div>
         </div>
         <div className="div-container">
-          {currentItems.map((p) => (
+          {currentItems ? currentItems.map((p) => (
             <div key={p.dexNr}>
               <PokeCard
                 key={p.dexNr}
@@ -103,7 +113,10 @@ export default function Pagination() {
               />
             </div>
             
-          ))}
+          ))
+          :
+          <h1>None</h1>
+        }
         </div>
       </div>
     </>

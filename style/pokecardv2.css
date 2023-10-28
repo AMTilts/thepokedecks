@@ -1574,11 +1574,11 @@ div > span:hover {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-bug 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -2235,11 +2235,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-dark 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -2896,11 +2896,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-dragon 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -3557,11 +3557,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-electric 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -4218,11 +4218,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-fairy 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -4879,11 +4879,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-fighting 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -5540,11 +5540,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-fire 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -6201,11 +6201,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-flying 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -6862,11 +6862,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-ghost 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -7523,11 +7523,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-grass 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -8184,11 +8184,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-ground 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -8845,11 +8845,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-ice 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -9506,11 +9506,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-normal 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -10167,11 +10167,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-poison 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -10828,11 +10828,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-psychic 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -11489,11 +11489,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-rock 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -12150,11 +12150,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-steel 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -12811,11 +12811,11 @@ col, div.col {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   margin: 0 auto;
   transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 63));
+  filter: blur(calc(var(--card-height) / 50));
   animation: rotateGradient-water 3.5s linear infinite;
   transition: opacity 0.5s;
 }
@@ -13434,7 +13434,7 @@ col, div.col {
 #search-box {
   border-width: 2px;
   border-color: #8b0303;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 /* Division */
