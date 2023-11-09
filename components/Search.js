@@ -9,11 +9,11 @@ function Search({ currentItems, onSearch }) {
     useEffect(() => {
         if (!query) return;
 
-        const filteredData = currentItems.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase()));
-        setResults(filteredData);
+        const filterData = currentItems.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase()));
+        setResults(filterData);
         }, [query, currentItems]);
 
-
+                               
     const handleInputChange = (e) => {
         setQuery(e.target.value);
         onSearch(e.target.value);

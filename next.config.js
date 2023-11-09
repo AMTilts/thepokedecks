@@ -8,7 +8,7 @@ module.exports = {
         {
             protocol: 'https',
             hostname: 'raw.githubusercontent.com',
-            port: '',
+            port: '*',
             pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
         }
     ]

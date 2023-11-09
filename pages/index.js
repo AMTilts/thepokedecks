@@ -18,7 +18,6 @@ function indexPage() {
             <Head>
                 <meta charSet="utf-8" />
                 <title>PokeDex Desticles</title>
-            
             </Head>
             </Helmet>
             <Row>

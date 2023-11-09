@@ -46,7 +46,7 @@ export const getStaticProps = async () => {
   };
 };
 
-function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItems, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions}) {
+function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, pokesImage, shinyImage}) {
 
     const [ imageArray, setImageArray ] = useState([]);
     const [ pokeImage, setPokeImage ] = useState(null);
@@ -76,9 +76,6 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, data, currentItem
 
   const [imgArray, setImgArray] = useState([]);
 
-
-
-console.log(imageWidth)
   
   const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
    
@@ -123,7 +120,7 @@ console.log(imageWidth)
                     </div>
                         <div className="icon-container" style={{zIndex: 5000}}>
                             {filteredData ? (filteredData.map((pokemon) => {
-                                pokemon.assets.shinyImage ? (
+                                pokemon.assets?.shinyImage ? (
                                     <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
                                 )
                                  :
@@ -150,8 +147,8 @@ console.log(imageWidth)
                                             <Image
                                                 key={key}
                                                 id="card-img"
-                                                src={pokemon.assets?.image}
-                                                data-name="card-img"
+                                                src={pokeImage}
+                                                dataName="card-img"
                                                 alt={pokemon.id}
                                                 className="card-img"
                                                 onLoadingComplete={handleImageLoad}

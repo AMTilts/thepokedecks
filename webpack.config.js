@@ -1,38 +1,33 @@
-const webpack = require('webpack');
-
 module.exports = {
   entry: './src/index.js',
   module: {
     rules: [
       //...
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
       { 
-        test: /\.ts$/, loader: "ts-loader" 
+        test: /\.ts$/, 
+        loader: "ts-loader" 
       },  
       { 
-        test: /\.node$/, use: "node-loader"
+        test: /\.node$/, 
+        use: "node-loader"
       },
       { 
-        test: /\.css$/, use: ['style-loader', 'css-loader'] 
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader'] 
       },
-      // custom loader added by me and installed using npm i file-loader
       {
-        test: /\.(gif|svg|jpg|png)$/,  // add whatever files you wanna use within this regEx
-        use: ["file-loader"]
+        test: /\.(gif|svg|jpg|png)$/,  // Combined the SVG rule with this rule
+        use: ["file-loader", '@svgr/webpack']  // Added '@svgr/webpack' here for handling SVG files
       }
     ],
-  }
-  // output: {
-  //   path: path.resolve(__dirname, 'dist'),
-  //   filename: 'bundle.js'
-  //   },
-  //   plugins: [
-  //   new webpack.ProvidePlugin({
-  //     Buffer: 'buffer'
-  //   })
-  //   ]
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      Buffer: 'buffer'
+    })
+  ]
 };
-  //...};

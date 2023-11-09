@@ -8,7 +8,7 @@ import Search from './Search'
 
 
 
-export default function Pagination({ filteredData  }) {
+export default function Pagination({ filteredData }) {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
   const itemsPerPage = 40;  
@@ -19,7 +19,9 @@ export default function Pagination({ filteredData  }) {
   const pageCount = Math.ceil(data.length / itemsPerPage);
   const [searchResults, setSearchResults] = useState([]);
   const [unfilteredItems, setUnfilteredItems] = useState([]);
-   
+  const [pokesImage, setPokesImage] = useState('');
+  const [shinyImage, setShinyImage] = useState('');
+  const [pImage, setPImage] = useState('');
 
   const fetchPogo = async () => {
     const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
@@ -28,25 +30,42 @@ export default function Pagination({ filteredData  }) {
         const fetchedData = await response.json();
         setData(fetchedData);
         setUnfilteredItems(fetchedData);
+        console.log()
       } catch (error) {
           console.error('Error fetching data:', error);
+          }
+
+          return {
+            fetchedData: {
+              assets: {
+              }
+            }
           }
         };
 
     useEffect(() => {
       fetchPogo();    
-    }, []); // Fetch data when component mount
+    }, [filteredData]); // Fetch data when component mount
 
     
-    useEffect((data) => {
+    useEffect(() => {
       const filteredData = data.filter(pokemon =>
         pokemon.names && 
         pokemon.names.English && 
         pokemon.names.English.toLowerCase().includes(query.toLowerCase())
       );
       setCurrentItems(filteredData);
-      console.log(data);
-    }, [data, query]);
+      setPImage(data.map((p) => {
+
+      }))
+      const pImage = filteredData.map((p) => {
+        setPokesImage(p.assets?.image);
+      })
+      const sImage = currentItems.map((p) => {
+        setShinyImage(p.assets?.shinyImage)
+      })
+      console.log(currentItems);
+    }, [data, query, filteredData]);
 
 
    
@@ -68,7 +87,7 @@ export default function Pagination({ filteredData  }) {
     setCurrentItems(currentItems.slice(newOffset, newOffset + itemsPerPage));
   };
 
-  console.log(currentItems)
+  console.log(filteredData)
 
   return (
     <>
@@ -107,9 +126,13 @@ export default function Pagination({ filteredData  }) {
                 key={p.dexNr}
                 id={p.dexNr}
                 name={p.names.English}
-                image={p.assets?.image}
+                image={pokesImage}
+                shinyImage={shinyImage}
                 type={p.primaryType.names.English}
                 p={p.primaryType.names.English}
+                currentItems={filteredData}
+                filteredData={currentItems}
+                // currentItems={currentItems}
               />
             </div>
             
