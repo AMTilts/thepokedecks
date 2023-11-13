@@ -1532,18 +1532,18 @@ div > span:hover {
 
 #Page:hover #card-bg-gradient-bug::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #9AC11A 9.79%, #CDE559 21.97%, #637D0A 41.76%, #CDE559 60.23%, #9AC11A 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-bug 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-bug::after {
@@ -1561,10 +1561,10 @@ div > span:hover {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --bug-bold: hsl(from #9AC11A) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #9AC11A 9.79%, #CDE559 21.97%, #637D0A 41.76%, #CDE559 60.23%, #9AC11A 72.21%);
   background-size: 200% 100%;
@@ -2193,18 +2193,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-dark::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #705848 9.79%, #A29288 21.97%, #49392F 41.76%, #A29288 60.23%, #705848 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-dark 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-dark::after {
@@ -2222,10 +2222,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --dark-bold: hsl(from #705848) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #705848 9.79%, #A29288 21.97%, #49392F 41.76%, #A29288 60.23%, #705848 72.21%);
   background-size: 200% 100%;
@@ -2854,18 +2854,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-dragon::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #6A2EF9 9.79%, #9E6FFC 21.97%, #460EA1 41.76%, #9E6FFC 60.23%, #6A2EF9 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-dragon 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-dragon::after {
@@ -2883,10 +2883,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --dragon-bold: hsl(from #6A2EF9) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #6A2EF9 9.79%, #9E6FFC 21.97%, #460EA1 41.76%, #9E6FFC 60.23%, #6A2EF9 72.21%);
   background-size: 200% 100%;
@@ -3515,18 +3515,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-electric::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #FFD700 9.79%, #FFE765 21.97%, #AF850F 41.76%, #FFE765 60.23%, #FFD700 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-electric 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-electric::after {
@@ -3544,10 +3544,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --electric-bold: hsl(from #FFD700) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #FFD700 9.79%, #FFE765 21.97%, #AF850F 41.76%, #FFE765 60.23%, #FFD700 72.21%);
   background-size: 200% 100%;
@@ -4176,18 +4176,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-fairy::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #FF7B9C 9.79%, #FFB4D0 21.97%, #A44D64 41.76%, #FFB4D0 60.23%, #FF7B9C 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-fairy 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-fairy::after {
@@ -4205,10 +4205,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --fairy-bold: hsl(from #FF7B9C) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #FF7B9C 9.79%, #FFB4D0 21.97%, #A44D64 41.76%, #FFB4D0 60.23%, #FF7B9C 72.21%);
   background-size: 200% 100%;
@@ -4837,18 +4837,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-fighting::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #D11412 9.79%, #E36760 21.97%, #861815 41.76%, #E36760 60.23%, #D11412 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-fighting 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-fighting::after {
@@ -4866,10 +4866,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --fighting-bold: hsl(from #D11412) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #D11412 9.79%, #E36760 21.97%, #861815 41.76%, #E36760 60.23%, #D11412 72.21%);
   background-size: 200% 100%;
@@ -5498,18 +5498,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-fire::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #FF6F00 9.79%, #FFAC5F 21.97%, #A13F00 41.76%, #FFAC5F 60.23%, #FF6F00 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-fire 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-fire::after {
@@ -5527,10 +5527,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --fire-bold: hsl(from #FF6F00) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #FF6F00 9.79%, #FFAC5F 21.97%, #A13F00 41.76%, #FFAC5F 60.23%, #FF6F00 72.21%);
   background-size: 200% 100%;
@@ -6159,18 +6159,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-flying::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #8F7AFA 9.79%, #B49BFF 21.97%, #604A9F 41.76%, #B49BFF 60.23%, #8F7AFA 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-flying 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-flying::after {
@@ -6188,10 +6188,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --flying-bold: hsl(from #8F7AFA) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #8F7AFA 9.79%, #B49BFF 21.97%, #604A9F 41.76%, #B49BFF 60.23%, #8F7AFA 72.21%);
   background-size: 200% 100%;
@@ -6820,18 +6820,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-ghost::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #7D4AB0 9.79%, #AA89D3 21.97%, #412465 41.76%, #AA89D3 60.23%, #7D4AB0 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-ghost 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-ghost::after {
@@ -6849,10 +6849,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --ghost-bold: hsl(from #7D4AB0) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #7D4AB0 9.79%, #AA89D3 21.97%, #412465 41.76%, #AA89D3 60.23%, #7D4AB0 72.21%);
   background-size: 200% 100%;
@@ -7481,18 +7481,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-grass::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #67D821 9.79%, #8FEB7A 21.97%, #3C7E25 41.76%, #8FEB7A 60.23%, #67D821 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-grass 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-grass::after {
@@ -7510,10 +7510,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --grass-bold: hsl(from #67D821) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #67D821 9.79%, #8FEB7A 21.97%, #3C7E25 41.76%, #8FEB7A 60.23%, #67D821 72.21%);
   background-size: 200% 100%;
@@ -8142,18 +8142,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-ground::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #E5B755 9.79%, #F3D290 21.97%, #8F7533 41.76%, #F3D290 60.23%, #E5B755 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-ground 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-ground::after {
@@ -8171,10 +8171,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --ground-bold: hsl(from #E5B755) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #E5B755 9.79%, #F3D290 21.97%, #8F7533 41.76%, #F3D290 60.23%, #E5B755 72.21%);
   background-size: 200% 100%;
@@ -8803,18 +8803,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-ice::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #7BDADA 9.79%, #ACEEEE 21.97%, #4D8D8D 41.76%, #ACEEEE 60.23%, #7BDADA 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-ice 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-ice::after {
@@ -8832,10 +8832,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --ice-bold: hsl(from #7BDADA) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #7BDADA 9.79%, #ACEEEE 21.97%, #4D8D8D 41.76%, #ACEEEE 60.23%, #7BDADA 72.21%);
   background-size: 200% 100%;
@@ -9464,18 +9464,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-normal::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #9C9C68 9.79%, #CCCC92 21.97%, #5F5F37 41.76%, #CCCC92 60.23%, #9C9C68 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-normal 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-normal::after {
@@ -9493,10 +9493,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --normal-bold: hsl(from #9C9C68) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #9C9C68 9.79%, #CCCC92 21.97%, #5F5F37 41.76%, #CCCC92 60.23%, #9C9C68 72.21%);
   background-size: 200% 100%;
@@ -10125,18 +10125,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-poison::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #B300B3 9.79%, #D657D6 21.97%, #662266 41.76%, #D657D6 60.23%, #B300B3 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-poison 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-poison::after {
@@ -10154,10 +10154,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --poison-bold: hsl(from #B300B3) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #B300B3 9.79%, #D657D6 21.97%, #662266 41.76%, #D657D6 60.23%, #B300B3 72.21%);
   background-size: 200% 100%;
@@ -10786,18 +10786,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-psychic::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #FF4664 9.79%, #FF85A1 21.97%, #FF4664 41.76%, #FF85A1 60.23%, #FF4664 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-psychic 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-psychic::after {
@@ -10815,10 +10815,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --psychic-bold: hsl(from #FF4664) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #FF4664 9.79%, #FF85A1 21.97%, #FF4664 41.76%, #FF85A1 60.23%, #FF4664 72.21%);
   background-size: 200% 100%;
@@ -11447,18 +11447,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-rock::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #B89F24 9.79%, #DCC767 21.97%, #766117 41.76%, #DCC767 60.23%, #B89F24 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-rock 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-rock::after {
@@ -11476,10 +11476,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --rock-bold: hsl(from #B89F24) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #B89F24 9.79%, #DCC767 21.97%, #766117 41.76%, #DCC767 60.23%, #B89F24 72.21%);
   background-size: 200% 100%;
@@ -12108,18 +12108,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-steel::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #A9A9C5 9.79%, #C5C5E2 21.97%, #616178 41.76%, #C5C5E2 60.23%, #A9A9C5 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-steel 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-steel::after {
@@ -12137,10 +12137,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --steel-bold: hsl(from #A9A9C5) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #A9A9C5 9.79%, #C5C5E2 21.97%, #616178 41.76%, #C5C5E2 60.23%, #A9A9C5 72.21%);
   background-size: 200% 100%;
@@ -12769,18 +12769,18 @@ col, div.col {
 
 #Page:hover #card-bg-gradient-water::before {
   content: "";
-  --card-height: 104%;
-  width: 104%;
-  height: 104%;
+  --card-height: 102%;
+  width: 102%;
+  height: 102%;
   border-radius: 8px;
   background: linear-gradient(var(--rotate), #4A7AFA 9.79%, #80A4FF 21.97%, #2D4494 41.76%, #80A4FF 60.23%, #4A7AFA 72.21%);
-  background-size: 200% 100%;
+  background-size: 125% 100%;
   animation: rotateGradient-water 3.5s linear infinite;
   position: absolute;
   z-index: -1;
   top: -1%;
   left: -4px;
-  filter: blur(20px);
+  filter: blur(5px);
 }
 
 #Page:hover #card-bg-gradient-water::after {
@@ -12798,10 +12798,10 @@ col, div.col {
   animation-name: animatedgradient;
   animation: 3s ease alternate infinite;
   --water-bold: hsl(from #4A7AFA) h s calc(l - 80%);
-  --card-height: 104%;
+  --card-height: 102%;
   --borderWidth: 1px 1px 4px 4px;
   border-width: --borderWidth;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: linear-gradient(var(--rotate), #4A7AFA 9.79%, #80A4FF 21.97%, #2D4494 41.76%, #80A4FF 60.23%, #4A7AFA 72.21%);
   background-size: 200% 100%;

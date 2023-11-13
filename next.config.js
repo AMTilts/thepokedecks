@@ -1,14 +1,11 @@
 const nextConfig = {
   reactStrictMode: true,
-};
-
-module.exports = {
   images: {
+    domains: ['raw.githubusercontent.com'],
     remotePatterns: [
         {
             protocol: 'https',
             hostname: 'raw.githubusercontent.com',
-            port: '*',
             pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
         }
     ]
@@ -54,5 +51,6 @@ module.exports = {
   //     worker_threads: false,
   //   },
   // },
-  ...nextConfig
 };
+
+module.exports = nextConfig;

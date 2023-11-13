@@ -55,17 +55,9 @@ export default function Pagination({ filteredData }) {
         pokemon.names.English.toLowerCase().includes(query.toLowerCase())
       );
       setCurrentItems(filteredData);
-      setPImage(data.map((p) => {
 
-      }))
-      const pImage = filteredData.map((p) => {
-        setPokesImage(p.assets?.image);
-      })
-      const sImage = currentItems.map((p) => {
-        setShinyImage(p.assets?.shinyImage)
-      })
       console.log(currentItems);
-    }, [data, query, filteredData]);
+    }, [data, query]);
 
 
    
@@ -120,26 +112,20 @@ export default function Pagination({ filteredData }) {
           </div>
         </div>
         <div className="div-container">
-          {currentItems ? currentItems.map((p) => (
-            <div key={p.dexNr}>
+          {currentItems.length > 0 ? (
+            currentItems.map((p) => (
               <PokeCard
                 key={p.dexNr}
                 id={p.dexNr}
                 name={p.names.English}
-                image={pokesImage}
-                shinyImage={shinyImage}
+                image={p.assets?.image}
+                shinyImage={p.assets?.shinyImage}
                 type={p.primaryType.names.English}
-                p={p.primaryType.names.English}
-                currentItems={filteredData}
-                filteredData={currentItems}
-                // currentItems={currentItems}
               />
-            </div>
-            
-          ))
-          :
-          <h1>None</h1>
-        }
+            ))
+          ) : (
+            <h1>No Pokemon found</h1>
+          )}
         </div>
       </div>
     </>

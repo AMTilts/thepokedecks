@@ -1535,25 +1535,25 @@ max-height: 200px;
 
         #Page:hover #card-bg-gradient-#{$type}::before {
             content: "";
-            --card-height: 104%;
-            width: 104%;
-            height: 104%;
+            --card-height: 102%;
+            width: 102%;
+            height: 102%;
             border-radius: 8px;
             background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
-            background-size: 200% 100%;
+            background-size: 125% 100%;
             animation: rotateGradient-#{$type} 3.5s linear infinite;
             position: absolute;
             z-index: -1;
             top: -1%;
             left: -4px;
-            filter: blur(20px);
+            filter: blur(5px);
         }
 
         #Page:hover #card-bg-gradient-#{$type}::after {
             content: '';
             @include card-gradient;
             --#{$type}-bold: hsl(from #{$type-color}) h s calc(l - 80%); 
-            --card-height: 104%;
+            --card-height: 102%;
             // background-size: 600% 600%;
             --borderWidth: 1px 1px 4px 4px;
             // background-image: linear-gradient(
@@ -1563,7 +1563,7 @@ max-height: 200px;
             // );
             border-width: --borderWidth;
             // border: var(--borderWidth) solid var(--fire-dark);
-            border-radius: 8px;
+            border-radius: 6px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
             background-size: 200% 100%;

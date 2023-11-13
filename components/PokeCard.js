@@ -46,7 +46,7 @@ export const getStaticProps = async () => {
   };
 };
 
-function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, pokesImage, shinyImage}) {
+function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, shinyImage}) {
 
     const [ imageArray, setImageArray ] = useState([]);
     const [ pokeImage, setPokeImage ] = useState(null);
@@ -91,7 +91,7 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
     } console.log('nope mannn')
   };
 
-  const lowerCaseType = p.toLowerCase(); 
+  const lowerCaseType = type.toLowerCase(); 
   
   loadedData;
 
@@ -143,13 +143,13 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                         <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
                             <div className="card-img-outer">
                                 <div>
-                                    {currentItems ? currentItems.map((pokemon) => (
+                                    {image && (
                                             <Image
                                                 key={key}
                                                 id="card-img"
-                                                src={pokeImage}
+                                                src={image}
                                                 dataName="card-img"
-                                                alt={pokemon.id}
+                                                alt={name}
                                                 className="card-img"
                                                 onLoadingComplete={handleImageLoad}
                                                 ref={imageRef.current}
@@ -158,15 +158,15 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                                                 sizes="100%"
                                                 layout="intrinsic"
                                             />
-                                        )) : (
-                                            <Image
-                                                src="/images/default.png"
-                                                alt="Default Image"
-                                                width={149}
-                                                height={150}
-                                            />
-                                        )
-                                    }
+                                        // )) : (
+                                        //     <Image
+                                        //         src="/images/default.png"
+                                        //         alt="Default Image"
+                                        //         width={149}
+                                        //         height={150}
+                                        //     />
+                                        // )
+                                    )}
                                 </div>    
                             </div>
                         </div>
