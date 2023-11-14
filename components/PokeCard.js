@@ -8,7 +8,7 @@ import probe from 'probe-image-size'
 import { doExpression } from '@babel/types';
 import { raw } from 'fs-loader';
 // import { EntryOptionPlugin } from 'webpack';
-import {shinyIcon} from '/images/shinyblack.svg';
+import {shinyBlack} from './shinyblack.png';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
@@ -83,7 +83,33 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
     return `frame-card-bg-white-${type}`;
   })
 
+  useEffect(() => {
+    const icon = document.querySelector('.sparkling-icon');
+    function randomizeAnimation() {
+        let randomDuration = Math.random() * (5 - 3) + 3; // Duration between 3 and 5 seconds
+        icon.style.animationDuration = `${randomDuration}s`;
+    }
+    const intervalId = setInterval(randomizeAnimation, 5000); // Adjust interval as needed
 
+    return () => clearInterval(intervalId);
+}, []);
+
+
+  useEffect(() => {
+    function triggerShine() {
+        const button = document.querySelector('.shiny-button');
+        button.classList.add('shine');
+        setTimeout(() => {
+            button.classList.remove('shine');
+        }, 500); // Duration of the CSS animation
+    }
+
+    const interval = setInterval(() => {
+        triggerShine();
+    }, Math.random() * 10000 + 5000); // Randomly between 5 to 15 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   function loadedData() {
     if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
@@ -167,6 +193,18 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                                         //     />
                                         // )
                                     )}
+                                     {/* Display the shiny image icon if available */}
+                                    {shinyImage && (
+                                      <div className="shiny-icon-container">
+                                        <Image
+                                          src="/shinyblack.svg"
+                                          className="sparkling-icon"
+                                          alt={`Shiny ${name}`}
+                                          width={30}
+                                          height={30}
+                                        />
+                                      </div>
+                                    )}
                                 </div>    
                             </div>
                         </div>
@@ -189,6 +227,7 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                                 className="poke-name"
                               >
                                 <div key="0">{name}</div>
+                                
                               </div>
                             </div>
                           </div>
@@ -274,6 +313,8 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
     </div>
   </div> 
   </div> 
+  
+  
   );
 }
 

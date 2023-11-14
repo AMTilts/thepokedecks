@@ -1917,3 +1917,68 @@ max-height: 200px;
         gap: 10px;
         align-self: stretch;
     }
+
+    .shiny-icon-container {
+        position: relative;
+        display: inline-block; /* or any other display type as per your layout */
+        top: 10px;
+        left: 80px;
+    }
+
+    .sparkling-icon {
+        display: block;
+        width: 30px; /* Adjust as needed */
+        height: auto;
+        animation: sparkling 2s infinite ease-in-out;
+    }
+    
+    @keyframes sparkling {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+    }
+
+    .shiny-button.shine::after {
+        animation: quickShine 0.5s ease forwards;
+    }
+    .shiny-button {
+        position: relative;
+        background-color: #af4caa; /* Example color */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .shiny-button::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+        display: none;
+    }
+    
+    @keyframes quickShine {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    
