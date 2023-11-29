@@ -46,7 +46,7 @@ export const getStaticProps = async () => {
   };
 };
 
-function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, shinyImage}) {
+function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, shinyImage}) {
 
     const [ imageArray, setImageArray ] = useState([]);
     const [ pokeImage, setPokeImage ] = useState(null);
@@ -95,21 +95,6 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
 }, []);
 
 
-  useEffect(() => {
-    function triggerShine() {
-        const button = document.querySelector('.shiny-button');
-        button.classList.add('shine');
-        setTimeout(() => {
-            button.classList.remove('shine');
-        }, 500); // Duration of the CSS animation
-    }
-
-    const interval = setInterval(() => {
-        triggerShine();
-    }, Math.random() * 10000 + 5000); // Randomly between 5 to 15 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   function loadedData() {
     if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
@@ -118,6 +103,7 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
   };
 
   const lowerCaseType = type.toLowerCase(); 
+  const lowerCaseSecondaryType = secondaryType?.toLowerCase(); 
   
   loadedData;
 
@@ -195,15 +181,26 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                                     )}
                                      {/* Display the shiny image icon if available */}
                                     {shinyImage && (
-                                      <div className="shiny-icon-container">
-                                        <Image
-                                          src="/shinyblack.svg"
-                                          className="sparkling-icon"
-                                          alt={`Shiny ${name}`}
-                                          width={30}
-                                          height={30}
-                                        />
-                                      </div>
+                                      <>
+                                        <div className="shiny-icon-container">
+                                          <Image
+                                            src="/shinyblack.svg"
+                                            className="sparkling-icon"
+                                            alt={`Shiny ${name}`}
+                                            width={30}
+                                            height={30}
+                                          />
+                                        </div>
+                                        <div className="shinyImageContainer">
+                                          <Image
+                                            src={shinyImage}
+                                            alt={`Shiny ${name}`}
+                                            width={50}
+                                            height={50}
+                                            className="shiny-img"
+                                          />
+                                        </div>
+                                      </>
                                     )}
                                 </div>    
                             </div>
@@ -246,19 +243,34 @@ function PokeCard({ id, name, key, image, type, lowerCaseData, currentItems, dat
                                   {!lowerCaseType ? (
                                       console.log('no type icon')
                                   ) : (
-                                      <Image
-                                          id={`type-logo-TYPENAME-${lowerCaseType}`}
-                                          src={
-                                              !lowerCaseType
-                                                  ? `/images/type_c21_${lowerCaseType}.svg`
-                                                  : '/images/default.svg' // Replace 'default.svg' with your default image path
-                                          }
-                                          data-name="type-logo-TYPENAME"
-                                          alt={`${type} Type`}
-                                          className="type-logo-TYPENAME"
-                                          height={25}
-                                          width={25}
-                                      />
+                                      <>
+                                        <Image
+                                            id={`type-logo-TYPENAME-${lowerCaseType}`}
+                                            src={
+                                                !lowerCaseType
+                                                    ? `/images/type_c21_${lowerCaseType}.svg`
+                                                    : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                            }
+                                            data-name="type-logo-TYPENAME"
+                                            alt={`${type} Type`}
+                                            className="type-logo-TYPENAME"
+                                            height={25}
+                                            width={25}
+                                        />
+                                        <Image
+                                            id={`type-logo-TYPENAME-${lowerCaseSecondaryType}`}
+                                            src={
+                                                !lowerCaseSecondaryType
+                                                    ? `/images/type_c21_${lowerCaseSecondaryType}.svg`
+                                                    : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                            }
+                                            data-name="type-logo-TYPENAME"
+                                            alt={`${secondaryType} Type`}
+                                            className="type-logo-TYPENAME"
+                                            height={25}
+                                            width={25}
+                                        />
+                                      </>
                                   )}
                                   </div>
                                 </div>

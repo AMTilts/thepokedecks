@@ -20,13 +20,13 @@ import { getImageSize } from 'next/dist/server/image-optimizer';
 
 
 
-const defaultEndpoint = 'https://pokeapi.co/api/v2/pokemon';
+const defaultEndpoint = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
 
 
 export async function getStaticPaths() {
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1130')
+    const res = await fetch(defaultEndpoint)
     const characters = await res.json()
-    const paths = characters.results.map((character) => ({
+    const paths = characters.names.English.toLowerCase().map((character) => ({
         params: { characterName: character.name },
     }))
 
@@ -47,16 +47,16 @@ const typesAPI = '/api/v1/pokemon_types.json';
 export async function getStaticProps( { params }) {
     const res = await fetch(`${defaultEndpoint}/${params.characterName}`)
     const character = await res.json()
-    const shiny = (`${character.sprites.front_shiny}`)
-    const shinyArray = ([`${character.sprites[1]}`])
-    const pogoShinyData = await fetch(`${pogoAPI}/${shinyPokeAPI}`)
+    const shiny = (`${character.assets.shinyImage}`)
+    const shinyArray = ([`${character.assets[1]}`])
+    const pogoShinyData = (`${character.assets.shinyImage}`)
     const pogoStatsData = await fetch(`${pogoAPI}/${pokeStatsAPI}`)
-    const typesData = await fetch(`${pogoAPI}${typesAPI}`)
+    const typesData = await fetch(`${character.primaryType.names.English}`)
 
     const shinyRes = await pogoShinyData.json()
     const statsRes = await pogoStatsData.json()
 
-    return { props: { character, shiny, shinyArray, shinyRes, statsRes } 
+    return { props: { character, shiny, shinyArray, shinyRes, statsRes, typesData } 
     }
 }
 

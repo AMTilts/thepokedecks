@@ -731,7 +731,8 @@
 .frame-type-logo-name-outer {
   position: absolute;
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-start;
   pointer-events: none;
   z-index: 7;
   width: 100%;
@@ -800,12 +801,13 @@
 
 .TYPENAME-logo {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   z-index: 8;
   pointer-events: none;
   margin-left: 20px;
   height: 40px;
-  padding: 5px 5px 5px 5px;
+  margin-bottom: 3px;
   overflow: visible;
   align-items: center;
   align-self: center;
@@ -815,11 +817,14 @@
 
 .TYPENAME-logo-outer {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   pointer-events: auto;
+  margin-left: 3px;
   z-index: 8;
+  padding-left: 5px;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -1192,7 +1197,8 @@
 
 .type-logo-TYPENAME-outer {
   position: absolute;
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   pointer-events: none;
   z-index: 10;
   height: 100%;
@@ -13594,11 +13600,25 @@ col, div.col {
 }
 
 .shiny-icon-container {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  display: flex;
   /* or any other display type as per your layout */
-  top: 10px;
+  top: -30px;
+  left: 160px;
+}
+
+.shinyImageContainer {
+  position: relative;
+  display: block;
+  /* or any other display type as per your layout */
+  top: 70px;
   left: 80px;
+}
+
+.shiny-img {
+  top: -20px;
+  left: 80px;
+  opacity: 0.5;
 }
 
 .sparkling-icon {

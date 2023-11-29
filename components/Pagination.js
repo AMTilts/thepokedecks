@@ -121,6 +121,7 @@ export default function Pagination({ filteredData }) {
                 image={p.assets?.image}
                 shinyImage={p.assets?.shinyImage}
                 type={p.primaryType.names.English}
+                secondaryType={p.secondaryType?.names.English}
               />
             ))
           ) : (
