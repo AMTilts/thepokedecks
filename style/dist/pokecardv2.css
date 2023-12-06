@@ -13679,3 +13679,25 @@ col, div.col {
     transform: translateX(100%);
   }
 }
+@keyframes streak {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+#shiny {
+  /* Adjust the width and height to fit your SVG */
+  width: 200px;
+  height: 200px;
+  /* Initial black background */
+  background-color: black;
+  /* Linear gradient for the streak */
+  background-image: linear-gradient(to right, black, lightgray, black);
+  /* Set the initial position of the gradient off-screen */
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  /* Animation */
+  animation: streak 1s linear forwards;
+}
