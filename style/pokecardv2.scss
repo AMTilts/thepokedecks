@@ -172,6 +172,26 @@ $types: ("grass",
 "normal",
 "grass");
 
+$typeNames: (
+"fire",
+"fairy",
+"water",
+"rock",
+"dark",
+"ghost",
+"ice",
+"dragon",
+"flying",
+"steel",
+"electric",
+"poison",
+"fighting",
+"psychic",
+"ground",
+"bug",
+"normal",
+"grass");
+
 $types-light: ("grass-light",
 "fire-light",
 "fairy-light",
@@ -294,22 +314,7 @@ $types: (
 }
 
 
-@each $type,
-$gradient in $types {
-    .frontswitch-#{$type} {
-        background-image:linear-gradient(--#{prefix}-rotate (var(#{$type}-color), from),
-        gradient(var(#{$type}-dark), to));
-        border-radius: .3rem;
-        margin-left: 10px;
-        &.inverse {
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-image-source:linear-gradient(100deg,
-            gradient(var(#{$type}-color), from),
-            gradient(var(#{$type}-dark), to));
-        }
-    }
-}
+
 
 .Navbar_navbartitle {
     font-size: 60px;
@@ -360,16 +365,40 @@ $gradient in $types {
 
     z-index: 10;
     pointer-events: none;
-    margin-left: 5px;
-    margin-right: 9px;
+    margin-left: 0px;
+    margin-right: 0px;
     // width: 100%;
     // max-width: 25px;
-    width: 100%;
+    width: 100px;
     //height: 128.57142857142858%;
     height: auto;
     max-height: 25px;
     margin-top: 0px;
-    padding-right: 3px;
+    padding-right: 0px;
+    align-self: center;
+    align-items: center;
+    justify-content: flex-start;
+    // transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+@mixin type-logo-2 {
+    position: relative;
+
+    z-index: 10;
+    pointer-events: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    // width: 100%;
+    // max-width: 25px;
+    width: 80%;
+    //height: 128.57142857142858%;
+    height: auto;
+    max-height: 25px;
+    margin-top: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    justify-content: flex-start;
     align-self: center;
     align-items: center;
     // transform: translateY(0px) translateX(-1px);
@@ -382,7 +411,34 @@ $gradient in $types {
     z-index: 12;
     pointer-events: none;
     // margin-left: 18px;
-    padding-left: 8px;
+    padding-left: 0px;
+    // margin-top: 5px;
+    align-items: center;
+    // min-width: 33px;
+    // margin-bottom: 15.560000000000002px;
+    // min-height: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: center;
+    font-style: normal;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+@mixin type-name-2 {
+    // padding-top: 10px;
+    position: relative;
+    z-index: 12;
+    pointer-events: none;
+    // margin-left: 18px;
+    padding-left: 2px;
     // margin-top: 5px;
     align-items: center;
     // min-width: 33px;
@@ -938,7 +994,7 @@ $gradient in $types {
     flex-direction: column;
     z-index: 8;
     pointer-events: none;
-    margin-left: 20px;
+    margin-left: 3px;
     // width: 28px;
     // min-width: 25px;
     height: 40px;
@@ -951,15 +1007,14 @@ $gradient in $types {
     
 }
 
-
 .TYPENAME-logo-outer {    
     position: relative;
     display: inline-flex;
     flex-direction: column;
     pointer-events: auto;
-    margin-left: 3px;
+    margin-left: 0px;
     z-index: 8;
-    padding-left: 5px;
+    padding-left: 0px;
     width: 100%;
     align-items: flex-start;
     // padding-right: 5px;
@@ -968,23 +1023,46 @@ $gradient in $types {
 
 }
 
+
 .Frame-4 {
     // display: flex;
     position: relative;
+    display: inline-flex;
+    flex-direction: column;
     z-index: 9;
     pointer-events: none;
     margin-left: 0px;
-    width: 100%;
+    width: 150px;
     min-width: 25px;
     height: 28px;
     margin-top: 0px;
     margin-bottom: 0px;
-    min-height: 28px;
-    align-items: center;
+    min-height: 26px;
+    align-items: flex-start;
 }
+
+.Frame-4-2 {
+    // display: flex;y
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    z-index: 9;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 75px;
+    min-width: 25px;
+    height: 28px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 26px;
+    align-items: flex-start;
+}
+
 
 .Frame-4-outer {
     position: relative;
+    display: inline-flex;
+    flex-direction: column;
     // display: flex;
     pointer-events: none;
     z-index: 9;
@@ -998,6 +1076,12 @@ $gradient in $types {
 
 }
 
+
+@each $typeName in $typeNames {
+    #type-logo-TYPENAME-2-#{$typeName} {
+        @include type-logo-2;
+        }
+    }
 
 
 .type-logo-TYPENAME {
@@ -1104,10 +1188,23 @@ $gradient in $types {
 .type-logo-TYPENAME-outer {
     position: absolute;
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     pointer-events: none;
     z-index: 10;
     height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.type-logo-TYPENAME-2-outer {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: row;
+    pointer-events: none;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
     left: 0;
     top: 0;
 }
@@ -1411,9 +1508,9 @@ max-height: 200px;
 //    }
    
    /* Division */
-    #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    // #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
         // width:auto !important;
-    }
+    // }
     
     /* Frame outer (hover) */
     #Page:hover #Frame-outer::after {
@@ -1514,6 +1611,14 @@ max-height: 200px;
             // margin-left: 12px;
             color: $type-color;
         }
+
+        #TYPENAME-2-#{$type} {
+            @include type-name-2;
+            // margin-top: 10px;
+            // margin-left: 12px;
+            color: $type-color;
+        }
+
 
         #card-bg-gradient-#{$type}{
             @include card-gradient;

@@ -50,9 +50,9 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
 
     const [ imageArray, setImageArray ] = useState([]);
     const [ pokeImage, setPokeImage ] = useState(null);
-    const [imageURL, setImageURL] = useState('');
-    const [imageHeight, setImageHeight] = useState(undefined);
-    const [naturalWidth, setNaturalWidth] = useState(undefined);
+    const [ imageURL, setImageURL] = useState('');
+    const [ imageHeight, setImageHeight] = useState(undefined);
+    const [ naturalWidth, setNaturalWidth] = useState(undefined);
 
     const [naturalHeight, setNaturalHeight] = useState(undefined);
     const imageRef = useRef(null);
@@ -170,14 +170,7 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                                   sizes="100%"
                                                   layout="intrinsic"
                                               />
-                                          // )) : (
-                                          //     <Image
-                                          //         src="/images/default.png"
-                                          //         alt="Default Image"
-                                          //         width={149}
-                                          //         height={150}
-                                          //     />
-                                          // )
+             
                                       )}
                                       {/* Display the shiny image icon if available */}
                                       {shinyImage && (
@@ -249,7 +242,7 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                               src={
                                                   !lowerCaseType
                                                       ? `/images/type_c21_${lowerCaseType}.svg`
-                                                      : '/images/default.svg' // Replace 'default.svg' with your default image path
+                                                      : '/images/default.svg'
                                               }
                                               data-name="type-logo-TYPENAME"
                                               alt={`${type} Type`}
@@ -257,45 +250,48 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                               height={25}
                                               width={25}
                                           />
-                                          <div className="TYPENAME-outer">
-                                            <div id={`TYPENAME-${lowerCaseType}`} data-name="TYPENAME" className="TYPENAME">
-                                                <div key="0">
-                                                    {type}
-                                                </div>
-                                            </div>
-                                        </div>     
+                                          <div id={`TYPENAME-${lowerCaseType}`} data-name="TYPENAME" className="TYPENAME">
+                                              <div key="0">
+                                                  {type}
+                                              </div>
+                                          </div>  
                                         </>
                                       )
-                                    }                                                                                                                                                                                                </div>
-                                      {!lowerCaseSecondaryType
-                                          ? 
-                                          (
-                                            console.log('no type icon')
-                                          ) 
-                                          :
-                                          (
-                                          <>
-                                            <Image
-                                                id={`type-logo-TYPENAME-${lowerCaseSecondaryType}`}
-                                                src={
-                                                    !lowerCaseSecondaryType
-                                                        ? `/images/type_c21_${lowerCaseSecondaryType}.svg`
-                                                        : '/images/default.svg' // Replace 'default.svg' with your default image path
-                                                }
-                                                data-name="type-logo-TYPENAME"
-                                                alt={`${secondaryType} Type`}
-                                                className="type-logo-TYPENAME"
-                                                height={25}
-                                                width={25}
-                                              />
-                                              <div id={`TYPENAME-${lowerCaseSecondaryType}`} data-name="TYPENAME" className="TYPENAME">
-                                                  <div key="0">
-                                                      {secondaryType}
-                                                  </div>
-                                              </div>
+                                    }
+                                    </div>  
+                                  </div>
+                                <div id="Frame-4-2" data-name="Frame 4" className="Frame-4-2"> 
+                                  <div className="type-logo-TYPENAME-outer-2">                                                                               </div>
+                                  {!lowerCaseSecondaryType
+                                      ? 
+                                      (
+                                        console.log('no type icon')
+                                      ) 
+                                      :
+                                      (
+                                      <>
+                                      <Image
+                                          id={`type-logo-TYPENAME-2-${lowerCaseSecondaryType}`}
+                                          src={
+                                                lowerCaseSecondaryType
+                                                  ? `/images/type_c22_${lowerCaseSecondaryType}.svg`
+                                                  : '/images/default.svg'
+                                          }
+                                          data-name="type-logo-TYPENAME"
+                                          alt={`${secondaryType} Type`}
+                                          className="type-logo-TYPENAME-2"
+                                          height={25}
+                                          width={25}
+                                        />
+                                        <div id={`TYPENAME-2-${lowerCaseSecondaryType}`} data-name="TYPENAME">
+                                            <div key="0">
+                                                {secondaryType}
+                                            </div>
+                                        </div>
                                           </>
                                           )
                                         }
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -305,7 +301,7 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                             data-name="frame-type-logo-name"
                             className="frame-type-logo-name"
                           >
-                            <div className="frame-type-name-outer">
+                            {/* <div className="frame-type-name-outer" >
                               <div
                                 id="frame-type-name"
                                 data-name="frame-type-name"
@@ -321,7 +317,7 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                       {type}
                                     </div>
                                     <div
-                                    id={`TYPENAME-${lowerCaseSecondaryType}`}
+                                    id={`TYPENAME-2-${lowerCaseSecondaryType}`}
                                     data-name="TYPENAME"
                                     className="TYPENAME"
                                   >
@@ -332,7 +328,7 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                           </div>
                         </div>
@@ -356,7 +352,6 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
