@@ -22,12 +22,16 @@ export default function Pagination({ filteredData }) {
   const [pokesImage, setPokesImage] = useState('');
   const [shinyImage, setShinyImage] = useState('');
   const [pImage, setPImage] = useState('');
+  const [pokemons, setPokemons] = useState([]);
+  const primaryTypeName = data?.primaryType?.names?.English;
+  const secondaryTypeName = data?.secondaryType?.names?.English;
 
   const fetchPogo = async () => {
     const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
       try {
         const response = await fetch(pogoAPIUrl);
         const fetchedData = await response.json();
+        setPokemons(fetchedData);
         setData(fetchedData);
         setUnfilteredItems(fetchedData);
         console.log()
@@ -60,8 +64,6 @@ export default function Pagination({ filteredData }) {
     }, [data, query]);
 
 
-   
-
 
 
   const handleSearch = async (e) => {
@@ -79,8 +81,57 @@ export default function Pagination({ filteredData }) {
     setCurrentItems(currentItems.slice(newOffset, newOffset + itemsPerPage));
   };
 
-  console.log(filteredData)
+  console.log(filteredData);
 
+  function getTypeColor(type) {
+    const typeColors = {
+      'Bug': '#9AC11A',
+      'Dark': '#705848',
+      'Dragon': '#6A2EF9',
+      'Electric': '#FFD700',
+      'Fairy': '#FF7B9C',
+      'Fighting': '#D11412',
+      'Fire': '#FF6F00',
+      'Flying': '#8F7AFA',
+      'Ghost': '#7D4AB0',
+      'Grass': '#67D821',
+      'Ground': '#E5B755',
+      'Ice': '#7BDADA',
+      'Normal': '#9C9C68',
+      'Poison': '#B300B3',
+      'Psychic': '#FF4664',
+      'Rock': '#B89F24',
+      'Steel': '#A9A9C5',
+      'Water': '#4A7AFA'
+    };
+    
+    return typeColors[type] || '#FFFFFF';
+  }
+
+  function getDarkColor(type) {
+    const darkColors = {
+      'Bug': '#637D0A',
+      'Dark': '#49392F',
+      'Dragon': '#460EA1',
+      'Electric': '#AF850F',
+      'Fairy': '#A44D64',
+      'Fighting': '#861815',
+      'Fire': '#A13F00',
+      'Flying': '#604A9F',
+      'Ghost': '#412465',
+      'Grass': '#3C7E25',
+      'Ground': '#8F7533',
+      'Ice': '#4D8D8D',
+      'Normal': '#5F5F37',
+      'Poison': '#662266',
+      'Psychic': '#C8003C',
+      'Rock': '#766117',
+      'Steel': '#616178',
+      'Water': '#2D4494'
+    };
+
+    return darkColors[type];
+  }
   return (
     <>
       <div>
@@ -122,6 +173,10 @@ export default function Pagination({ filteredData }) {
                 shinyImage={p.assets?.shinyImage}
                 type={p.primaryType.names.English}
                 secondaryType={p.secondaryType?.names.English}
+                p={p}
+                primaryColor={getTypeColor(p.primaryType.names.English)}
+                secondaryColor={getTypeColor(p.secondaryType?.names.English)}
+                primaryDarkColor={getDarkColor(p.primaryType.names.English)}
               />
             ))
           ) : (

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useEffect, useState, useRef } from "react";
 import NavbarTemplate from '../../components/NavbarTemplate';
 import ShinyButton from '../../components/ShinyButton'
-import Alert from '../../components/Alert';
 import Image from 'next/image';
 import ReactDOM from 'react-dom';
 import { NavItem } from 'react-bootstrap';
@@ -23,14 +22,34 @@ import { getImageSize } from 'next/dist/server/image-optimizer';
 const defaultEndpoint = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
 
 
-export async function getStaticPaths() {
-    const res = await fetch(defaultEndpoint)
-    const characters = await res.json()
-    const paths = characters.names.English.toLowerCase().map((character) => ({
-        params: { characterName: character.name },
-    }))
+// export async function getStaticPaths() {
+//     const res = await fetch(defaultEndpoint)
+//     const characters = await res.json()
+//     const paths = characters.names.toLowerCase().map((character) => ({
+//         params: { characterName: character.name },
+//     }))
 
-    return { paths, fallback: false }
+//     return { paths, fallback: false }
+// }
+
+export async function getStaticPaths() {
+    const res = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+    const characters = await res.json();
+
+    // Debugging: Log the fetched data
+    console.log("Fetched characters:", characters);
+
+    // Ensure the data structure is as expected
+    if (!Array.isArray(characters)) {
+        console.error("Unexpected data structure:", characters);
+        return { paths: [], fallback: false };
+    }
+
+    const paths = characters.map((character) => ({
+        params: { characterName: character.names.English.toLowerCase() },
+    }));
+
+    return { paths, fallback: false };
 }
 
 
@@ -56,9 +75,13 @@ export async function getStaticProps( { params }) {
     const shinyRes = await pogoShinyData.json()
     const statsRes = await pogoStatsData.json()
 
-    return { props: { character, shiny, shinyArray, shinyRes, statsRes, typesData } 
+    return { props: { 
+                character, shiny, shinyArray, shinyRes, statsRes, typesData
+            },
+            invalidate: 3600,
+        };
+            
     }
-}
 
 
 function useFetchData() {
