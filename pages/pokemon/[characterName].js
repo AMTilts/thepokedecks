@@ -64,10 +64,11 @@ const shinyPokeAPI = 'api/v1/shiny_pokemon.json';
 const typesAPI = '/api/v1/pokemon_types.json';
 
 export async function getStaticProps( { params }) {
-    const res = await fetch(`${defaultEndpoint}/${params.characterName}`)
+    const res = await fetch(`${defaultEndpoint}`)
     const character = await res.json()
-    const shiny = (`${character.assets.shinyImage}`)
-    const shinyArray = ([`${character.assets[1]}`])
+    const shiny = (`${character.assets?.shinyImage}`)
+    const shinyArray = characters.map((c) => {
+        shinyAll = ([`${character.assets`])
     const pogoShinyData = (`${character.assets.shinyImage}`)
     const pogoStatsData = await fetch(`${pogoAPI}/${pokeStatsAPI}`)
     const typesData = await fetch(`${character.primaryType.names.English}`)
