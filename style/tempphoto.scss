@@ -1,6 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Signika+Negative:wght@500;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
+
+// Bolder Versions
+/* More vibrant SASS Variables - Poketype color palette */
+$poke-color: #8b0303;
+$bug-color: #9AC11A;
+$bug-light: #CDE559;
+$bug-dark: #637D0A;
+$dark-color: #705848;
+$dark-light: #A29288;
+$dark-dark: #49392F;
+$dragon-color: #6A2EF9;
+$dragon-light: #9E6FFC;
+$dragon-dark: #460EA1;
+$electric-color: #FFD700;
+$electric-light: #FFE765;
+$electric-dark: #AF850F;
+$fairy-color: #FF7B9C;
+$fairy-light: #FFB4D0;
+$fairy-dark: #A44D64;
+$fighting-color: #D11412;
+$fighting-light: #E36760;
+$fighting-dark: #861815;
+$fighting-hover: #E36760;
+$fire-color: #FF6F00;
+$fire-light: #FFAC5F;
+$fire-dark: #A13F00;
+$flying-color: #8F7AFA;
+$flying-light: #B49BFF;
+$flying-dark: #604A9F;
+$ghost-color: #7D4AB0;
+$ghost-light: #AA89D3;
+$ghost-dark: #412465;
+$grass-color: #67D821;
+$grass-light: #8FEB7A;
+$grass-dark: #3C7E25;
+$ground-color: #E5B755;
+$ground-light: #F3D290;
+$ground-dark: #8F7533;
+$ice-color: #7BDADA;
+$ice-light: #ACEEEE;
+$ice-dark: #4D8D8D;
+$normal-color: #9C9C68;
+$normal-light: #CCCC92;
+$normal-dark: #5F5F37;
+$poison-color: #B300B3;
+$poison-light: #D657D6;
+$poison-dark: #662266;
+$psychic-color: #FF4664;
+$psychic-light: #FF85A1;
+$psychic-dark: #FF4664;
+$rock-color: #B89F24;
+$rock-light: #DCC767;
+$rock-dark: #766117;
+$steel-color: #A9A9C5;
+$steel-light: #C5C5E2;
+$steel-dark: #616178;
+$water-color: #4A7AFA;
+$water-light: #80A4FF;
+$water-dark: #2D4494;
+
+
 .poke-temp-container {
     // -webkit-box-sizing: border-box;
     // box-sizing: border-box;
@@ -131,45 +193,70 @@ html {
     // top: 250px;
 }
 
-$darkcolors: ( "bug": #6D7815,
-"dark": #49392F,
-"dragon": #4924A1,
-"electric": #A1871F,
-"fairy": #9B6470,
-"fighting": #7D1F1A,
-"fire": #9C531F,
-"flying": #6D5E9C,
-"ghost": #493963,
-"grass": #4E8234,
-"ground": #927D44,
-"ice": #638D8D,
-"normal": #6D6D4E,
-"poison": #682A68,
-"psychic": #F85888,
-"rock": #786824,
-"steel": #787887,
-"water": #445E9C,
+$darkcolors: (
+  "bug": #637D0A,
+  "dark": #49392F,
+  "dragon": #460EA1,
+  "electric": #AF850F,
+  "fairy": #A44D64,
+  "fighting": #861815,
+  "fire": #A13F00,
+  "flying": #604A9F,
+  "ghost": #412465,
+  "grass": #3C7E25,
+  "ground": #8F7533,
+  "ice": #4D8D8D,
+  "normal": #5F5F37,
+  "poison": #662266,
+  "psychic": #FF4664,
+  "rock": #766117,
+  "steel": #616178,
+  "water": #2D4494
 );
 
-$colorcolors: ( 
-"dark": #705848,
-"dragon": #7038F8,
-"electric": #F8D030,
-"fairy": #EE99AC,
-"fighting": #C03028,
-"bug": #A8B820,
-"fire": #F08030,
-"flying": #A890F0,
-"ghost": #705898,
-"grass": #78C850,
-"ground": #E0C068,
-"ice": #98D8D8,
-"normal": #A8A878,
-"poison": #A040A0,
-"psychic": #F85888,
-"rock": #B8A038,
-"steel": #B8B8D0,
-"water": #6890F0);
+$colorcolors: (
+  "poke": #8b0303,
+  "bug": #9AC11A,
+  "dark": #705848,
+  "dragon": #6A2EF9,
+  "electric": #FFD700,
+  "fairy": #FF7B9C,
+  "fighting": #D11412,
+  "fire": #FF6F00,
+  "flying": #8F7AFA,
+  "ghost": #7D4AB0,
+  "grass": #67D821,
+  "ground": #E5B755,
+  "ice": #7BDADA,
+  "normal": #9C9C68,
+  "poison": #B300B3,
+  "psychic": #FF4664,
+  "rock": #B89F24,
+  "steel": #A9A9C5,
+  "water": #4A7AFA
+);
+
+$lightcolors: (
+  "bug": #CDE559,
+  "dark": #A29288,
+  "dragon": #9E6FFC,
+  "electric": #FFE765,
+  "fairy": #FFB4D0,
+  "fighting": #E36760,
+  "fire": #FFAC5F,
+  "flying": #B49BFF,
+  "ghost": #AA89D3,
+  "grass": #8FEB7A,
+  "ground": #F3D290,
+  "ice": #ACEEEE,
+  "normal": #CCCC92,
+  "poison": #D657D6,
+  "psychic": #FF85A1,
+  "rock": #DCC767,
+  "steel": #C5C5E2,
+  "water": #80A4FF
+);
+
 
 $types: ("grass","fire","fairy","water","rock","dark","ghost","ice","dragon","flying","steel","electric","poison","fighting","psychic","ground","bug","normal","grass");
 

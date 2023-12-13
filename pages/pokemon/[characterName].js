@@ -54,35 +54,46 @@ export async function getStaticPaths() {
 
 
 
-const pogoAPI = 'https://pogoapi.net';
-const candyToEvolveAPI = '/api/v1/pokemon_candy_to_evolve.json';
-const maxCPAPI = '/api/v1/pokemon_max_cp.json';
-const fastMovesAPI = '/api/v1/fast_moves.json';
-const chargedMovesAPI = '/api/v1/charged_moves.json';
-const pokeStatsAPI = '/api/v1/pokemon_stats.json';
-const shinyPokeAPI = 'api/v1/shiny_pokemon.json';
-const typesAPI = '/api/v1/pokemon_types.json';
+// const pogoAPI = 'https://pogoapi.net';
+// const candyToEvolveAPI = '/api/v1/pokemon_candy_to_evolve.json';
+// const maxCPAPI = '/api/v1/pokemon_max_cp.json';
+// const fastMovesAPI = '/api/v1/fast_moves.json';
+// const chargedMovesAPI = '/api/v1/charged_moves.json';
+// const pokeStatsAPI = '/api/v1/pokemon_stats.json';
+// const shinyPokeAPI = 'api/v1/shiny_pokemon.json';
+// const typesAPI = '/api/v1/pokemon_types.json';
 
-export async function getStaticProps( { params }) {
-    const res = await fetch(`${defaultEndpoint}`)
-    const character = await res.json()
-    const shiny = (`${character.assets?.shinyImage}`)
-    const shinyArray = characters.map((c) => {
-        shinyAll = ([`${character.assets`])
-    const pogoShinyData = (`${character.assets.shinyImage}`)
-    const pogoStatsData = await fetch(`${pogoAPI}/${pokeStatsAPI}`)
-    const typesData = await fetch(`${character.primaryType.names.English}`)
+export async function getStaticProps({ params }) {
+    // Fetch the entire JSON file
+    const res = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
+    const allPokemon = await res.json();
 
-    const shinyRes = await pogoShinyData.json()
-    const statsRes = await pogoStatsData.json()
+    // Find the specific Pokémon based on characterName
+    const character = allPokemon.find(pokemon => pokemon.names.English.toLowerCase() === params.characterName);
 
-    return { props: { 
-                character, shiny, shinyArray, shinyRes, statsRes, typesData
-            },
-            invalidate: 3600,
+    // Handle the case where the Pokémon is not found
+    if (!character) {
+        return {
+            notFound: true,
         };
-            
     }
+
+    // Extract specific properties if needed
+    const shiny = character.assets?.shinyImage;
+    const primaryType = character.primaryType?.names.English;
+    const name = character.names.English;
+
+    // Return the specific data as props
+    return { 
+        props: { 
+            character, 
+            shiny, 
+            primaryType,
+            // Include other properties as needed
+        },
+        revalidate: 3600, // ISR (Incremental Static Regeneration) interval
+    };
+}
 
 
 function useFetchData() {
@@ -92,13 +103,13 @@ function useFetchData() {
 
 export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, sparkleRef, shinyBlackRef, renderFrame, ...props}) {
     
-    const { name, base_experience, types, sprites, abilities } = character;
-    const [spriteCurrent, setSpriteCurrent] = useState(`${sprites.front_default}`);
-    const [spriteShiny, setSpriteShiny] = useState(`${sprites.front_shiny}`);
-    const [currentPosition, setCurrentPosition] = useState(`${sprites.front_default}`);
-    const [currentPosition2, setCurrentPosition2] = useState(`${sprites.front_shiny}`);
-    const [currentPosition3, setCurrentPosition3] = useState(`${sprites.back_default}`);
-    const [currentPosition4, setCurrentPosition4] = useState(`${sprites.back_shiny}`);
+    const { name, base_experience, types, abilities } = character;
+    const [spriteCurrent, setSpriteCurrent] = useState(character.assets.image);
+    const [spriteShiny, setSpriteShiny] = useState(character.assets?.shinyImage);
+    const [currentPosition, setCurrentPosition] = useState(character.assets.image);
+    const [currentPosition2, setCurrentPosition2] = useState(character.assets?.shinyImage);
+    const [currentPosition3, setCurrentPosition3] = useState(`${character.assets.image}`); // Check if back image is different
+    const [currentPosition4, setCurrentPosition4] = useState(`${character.assets?.shinyImage}`); // Check if back shiny image is different
     const [spriteButton, setSpriteButton] = useState(null);
     const [spriteToggle, setSpriteToggle] = useState(true);
     const [currentCaption, setCurrentCaption] = useState('SHINY')
@@ -110,24 +121,23 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [isTwoAbilities, setIsTwoAbilities] = useState(false);
     const [frontBackText, setFrontBackText]  = useState('Flip');
     const [isTypeTwo, setIsTypeTwo] = useState(false)
-    const [numberTypes, setNumberTypes] = useState(`${character.types.length}`)
-    const [slotNumber, setSlotNumber] = useState([]);    const [data, setData] = useState([]);
+    const [slotNumber, setSlotNumber] = useState([]);    
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [isPokeShiny, setIsPokeShiny] = useState(false);
     const [array, setArray] = useState({shinyArray});
     const [frontBackDefault, setFrontBackDefault] = useState('Flip to Back');
     const [isShiny, setIsShiny] = useState(false);
     const [isFront, setIsFront] = useState(true);
-    const [pokeName, setPokeName] = useState(`${character.species.name}`)
+    const [pokeName, setPokeName] = useState(`${character.names.English}`);
     const [containerBack, setContainerBack] = useState('container-back');
     const [pageContainer, setPageContainer] = useState('pagecontainer');
     const [shinyAnimation, setShinyAnimation] = useState('shiny-animation')
-    // const [sparkleImg, setSparkleImg] = useState('sparkleImg')
     const [shinePrecursor, setShinePrecursor] = useState(false);
     const [sparkling, setSparkling] = useState(false);
     const sparkles = useRef('sparkle-Img-before');
-    const [flash, setFlash] = useState('flash') ;// Meant to replace flash.style.transition and flash.style.opacity
-    const [shinyAnim, setShinyAnim] = useState('shiny'); //Meant to replace shiny.style.display methods being passed 
+    const [flash, setFlash] = useState('flash');
+    const [shinyAnim, setShinyAnim] = useState('shiny');
     const [sparkleImgCSS, setSparkleImgCSS] = useState('sparkleImg-before')
     const [canvasVisible, setCanvasVisible] = useState(true);
     const particleRef = useRef(null)    
@@ -135,12 +145,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const imageSparkCanvasRef = useRef(null);
     const [imageSparkParticles, setImageSparkParticles] = useState([]);
     const [isSpriteFront, setIsSpriteFront] = useState(true);
-    console.log(`This character has ${types.length} types!`);
+
+
+
 
 
 
     async function fetchType(character, characterName) {
-        const res = await fetch(`${defaultEndpoint}/${characterName}`)
+        const res = await fetch(`${defaultEndpoint}`)
         const cdata = res.json()
         const types = cdata.types
         const sprites = cdata.sprites
@@ -165,7 +177,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         return (
             <Image
                 loader={typeLogo}
-                src={`../../style/images/${types[0].type.name}.png`}
+                src={`../../style/images/${character.primaryType.names.English}.png`}
                 alt="Pokemon Type One (Main Type)"
                 width={20}
                 height={20}
@@ -174,25 +186,25 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     };
 
     const ballDefault = event => {
-        if (currentPosition == `${sprites.front_default}` && isFront === true) {
+        if (currentPosition == `${character.assets.image}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_default}`)
             // setPokeName('Rippin Fat Farts.Balls')
             setFrontBackText('Front')
-        } else if (currentPosition == `${sprites.front_shiny}` && isFront === true) {
+        } else if (currentPosition == `${shiny}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_shiny}`)
             // setPokeName('So many balls, so little time')
             setFrontBackText('Front')
         } else if (currentPosition == `${sprites.back_shiny}` && isFront === false) {
             setIsFront(true)
-            setCurrentPosition(`${sprites.front_shiny}`)
+            setCurrentPosition(`${shiny}`)
             setFrontBackText('Back')
             // setPokeName('BIG BLACK BALLS')
             setIsFront(true)
         } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
             setIsFront(true)
-            setCurrentPosition(`${sprites.front_default}`)
+            setCurrentPosition(`${character.assets.image}`)
             setFrontBackText('Back')
             setIsFront(true)
             // setPokeName('Why are you so gay?')
@@ -213,14 +225,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setContainerBack('container-back-shiny')
             setShinePrecursor(true)
             console.log({shine});
-            setCurrentPosition(`${sprites.front_shiny}`)
+            setCurrentPosition(`${shiny}`)
             setIsShiny(true)       
             
         }
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${sprites.front_default}`)
+            setCurrentPosition(`${character.assets.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -230,8 +242,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setCurrentPosition(`${sprites.back_shiny}`)
             setIsShiny(true)
         }
-        // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${sprites.front_default}`) {
+        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -253,7 +265,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const changeShinySpriteTT = () => {
         setContainerBack('container-back')
         setPageContainer('pagecontainer')
-        setCurrentPosition(`${sprites.front_default}`)
+        setCurrentPosition(`${character.assets.image}`)
         setIsShiny(false)
     }
 
@@ -261,7 +273,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         setContainerBack('container-back-shiny')
         setPageContainer('pagecontainer-shiny')
         setShinePrecursor(true)
-        setCurrentPosition(`${sprites.front_shiny}`)
+        setCurrentPosition(`${shiny}`)
         setIsShiny(true)
     }
 
@@ -280,7 +292,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setContainerBack('container-back-shiny')
             setShinePrecursor(true)
             console.log({shine});
-            setCurrentPosition(`${sprites.front_shiny}`)
+            setCurrentPosition(`${shiny}`)
             setIsShiny(true)
             {handleshineButtonclick};          
             
@@ -288,7 +300,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${sprites.front_default}`)
+            setCurrentPosition(`${character.assets.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -301,8 +313,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <Sparkles shine={shine} sparkleRef={sparkleRef} />
                 )
         }
-        // if (currentPosition.toString() != `${sprites.front_default}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${sprites.front_default}`) {
+        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -320,11 +332,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     function backDefault() {
         if (isDefault !== true) switchShiny;
         else if (currentPosition == `${sprites.back_default}`) flipFront;
-        else if (currentPosition == `${sprites.front_default}`) {
+        else if (currentPosition == `${character.assets.image}`) {
             setCurrentPosition(`${sprites.back_default}`)
             setFrontBackText('Front');
         };
-        setCurrentPosition(`${sprites.front_default}`)
+        setCurrentPosition(`${character.assets.image}`)
         setFrontBackText('Back');
     }
 
@@ -346,7 +358,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     }
 
     function typeText() {
-        setCurrentCaption(`${types[0].type.name}`)
+        setCurrentCaption(`${character.primaryType.names.English}`)
     }
 
     // function addSparkles() {
@@ -447,7 +459,9 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     //     }
     // };
     
-
+    const lowerCaseType = character.primaryType.names.English.toLowerCase(); 
+    const lowerCaseSecondaryType = character.secondaryType?.names.English.toLowerCase(); 
+    const lowerCaseName = character.names.English.toLowerCase();
 
     return (
         <div className="poke-temp-container">
@@ -457,15 +471,15 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 </div>
             </Head>
 
-                <div className={`second-line-top-${types[0].type.name}`}></div>
-                <div className={`type--${types[0].type.name}`}></div>
+                <div className={`second-line-top-${lowerCaseType}`}></div>
+                <div className={`type-${character.primaryType.names.English}`}></div>
                     <div>
                     <div className="temp-container">
                         
                         <div className={containerBack}>
                             <div className="temp-container-title">
                                 <h1 className="title">
-                                    {pokeName} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${character.types[0].type.name}.svg`} className="titletypelogo" width={45} height={45} /> { numberTypes == 2 ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" width={45} height={45} /> : null }
+                                    {name} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${lowerCaseType}.svg`} className="titletypelogo" width={45} height={45} /> { character.secondaryType ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} className="titletypelogo" width={45} height={45} /> : null }
                                 </h1>
                             </div>    {/* <>
                                     {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }fd
@@ -490,14 +504,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                         <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
                                                             <h2 className="fliptext">{frontBackText}</h2>
                                                             {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-                                                            {/* <button className={`frontswitch-${types[0].type.name}`} onClick={frontBackFront}>{frontBackText}}</button> */}
+                                                            {/* <button className={`frontswitch-${character.primaryType.names.English}`} onClick={frontBackFront}>{frontBackText}}</button> */}
                                                     </button>
                                                 </FlipButton>
                                                 {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
                                             </div>
                                         </div>
                                         {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
-                                        { (`${sprites.front_shiny}` !==  null ?
+                                        { (`${shiny}` !==  null ?
                                                 <div className="middlediv">
 
                                                    
@@ -550,14 +564,14 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             style={{ position: 'absolute', 'z-index': 5 }}
                                          /> */}
                                         {/* <Image src="/images/sparkle.png" id="sparkleImg-before"  width={35} height={35} /> */}
-                                        <div className={`templateinfodiv-${types[0].type.name}`}>
+                                        <div className={`templateinfodiv-${lowerCaseType}`}>
                                             <ul>
-                                                <li className="typeli"><b>Type(s):</b> {types[0].type.name} 
-                                                    {/* <Image src={`/images/type_logo_${types[0].type.name}.svg`} /> */}
+                                                <li className="typeli"><b>Type(s):</b> {character.primaryType.names.English} 
+                                                    {/* <Image src={`/images/type_logo_${character.primaryType.names.English}.svg`} /> */}
                                                     {/* {typeTwo}  */}
                                                 </li>
-                                                <li className="typeli"><b>Ability:</b> {abilities[0].ability.name}</li>
-                                                <li className="typeli"><b>{abilityTwo}</b></li>
+                                                {/* <li className="typeli"><b>Ability:</b> {abilities[0].ability.name}</li> */}
+                                                {/* <li className="typeli"><b>{abilityTwo}</b></li> */}
                                                 {/* { `${abilities[1].ability.name}` != ability ? <li className="typeli">{abilities[1].ability.name}</li>  : null } */}
                                             </ul>
                                         </div>
@@ -570,7 +584,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                     
                                     <div className="mySlides">
                                     <div className="numbertext"><Image src={spriteCurrent} /></div>
-                                        <Image src={sprites.front_shiny} className="picdefault" />
+                                        <Image src={shiny} className="picdefault" />
                                     </div>
                                     <div className="mySlides">
                                         <div className="numbertext"></div>
@@ -584,8 +598,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                         </div>
                     </div>
                 </div>
-                <div className={`second-line-bottom-${types[0].type.name}`} style={{height: '1px'}}></div>
-                <div className={`type-gradient-${types[0].type.name}`} style={{height: '3px', marginBottom: '0px'}}></div>
+                <div className={`second-line-bottom-${character.primaryType.names.English}`} style={{height: '1px'}}></div>
+                <div className={`type-gradient-${character.primaryType.names.English}`} style={{height: '3px', marginBottom: '0px'}}></div>
         </div>
     );
 }
