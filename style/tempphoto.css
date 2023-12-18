@@ -57,230 +57,230 @@ html {
 
 .second-line-top-poke {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #8b0303;
 }
 
 .second-line-top-bug {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #9AC11A;
 }
 
 .second-line-top-dark {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #705848;
 }
 
 .second-line-top-dragon {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #6A2EF9;
 }
 
 .second-line-top-electric {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #FFD700;
 }
 
 .second-line-top-fairy {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #FF7B9C;
 }
 
 .second-line-top-fighting {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #D11412;
 }
 
 .second-line-top-fire {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #FF6F00;
 }
 
 .second-line-top-flying {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #8F7AFA;
 }
 
 .second-line-top-ghost {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #7D4AB0;
 }
 
 .second-line-top-grass {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #67D821;
 }
 
 .second-line-top-ground {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #E5B755;
 }
 
 .second-line-top-ice {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #7BDADA;
 }
 
 .second-line-top-normal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #9C9C68;
 }
 
 .second-line-top-poison {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #B300B3;
 }
 
 .second-line-top-psychic {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #FF4664;
 }
 
 .second-line-top-rock {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #B89F24;
 }
 
 .second-line-top-steel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #A9A9C5;
 }
 
 .second-line-top-water {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #4A7AFA;
 }
 
 .second-line-bottom-poke {
@@ -293,7 +293,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #8b0303;
 }
 
 .second-line-bottom-bug {
@@ -306,7 +305,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #9AC11A;
 }
 
 .second-line-bottom-dark {
@@ -319,7 +317,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #705848;
 }
 
 .second-line-bottom-dragon {
@@ -332,7 +329,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #6A2EF9;
 }
 
 .second-line-bottom-electric {
@@ -345,7 +341,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #FFD700;
 }
 
 .second-line-bottom-fairy {
@@ -358,7 +353,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #FF7B9C;
 }
 
 .second-line-bottom-fighting {
@@ -371,7 +365,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #D11412;
 }
 
 .second-line-bottom-fire {
@@ -384,7 +377,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #FF6F00;
 }
 
 .second-line-bottom-flying {
@@ -397,7 +389,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #8F7AFA;
 }
 
 .second-line-bottom-ghost {
@@ -410,7 +401,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #7D4AB0;
 }
 
 .second-line-bottom-grass {
@@ -423,7 +413,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #67D821;
 }
 
 .second-line-bottom-ground {
@@ -436,7 +425,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #E5B755;
 }
 
 .second-line-bottom-ice {
@@ -449,7 +437,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #7BDADA;
 }
 
 .second-line-bottom-normal {
@@ -462,7 +449,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #9C9C68;
 }
 
 .second-line-bottom-poison {
@@ -475,7 +461,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #B300B3;
 }
 
 .second-line-bottom-psychic {
@@ -488,7 +473,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #FF4664;
 }
 
 .second-line-bottom-rock {
@@ -501,7 +485,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #B89F24;
 }
 
 .second-line-bottom-steel {
@@ -514,7 +497,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #A9A9C5;
 }
 
 .second-line-bottom-water {
@@ -527,7 +509,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #4A7AFA;
 }
 
 .templateinfodiv-bug {

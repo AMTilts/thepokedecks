@@ -1,4 +1,4 @@
-import { normalizeConfig } from 'next/dist/server/config-shared';
+    import { normalizeConfig } from 'next/dist/server/config-shared';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from "react";
@@ -145,6 +145,104 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const imageSparkCanvasRef = useRef(null);
     const [imageSparkParticles, setImageSparkParticles] = useState([]);
     const [isSpriteFront, setIsSpriteFront] = useState(true);
+    const primaryTypeName = character?.primaryType?.names?.English;
+    const secondaryTypeName = character?.secondaryType?.names?.English;
+
+    function getTypeColor(type) {
+        const typeColors = {
+          'Bug': '#9AC11A',
+          'Dark': '#705848',
+          'Dragon': '#6A2EF9',
+          'Electric': '#FFD700',
+          'Fairy': '#FF7B9C',
+          'Fighting': '#D11412',
+          'Fire': '#FF6F00',
+          'Flying': '#8F7AFA',
+          'Ghost': '#7D4AB0',
+          'Grass': '#67D821',
+          'Ground': '#E5B755',
+          'Ice': '#7BDADA',
+          'Normal': '#9C9C68',
+          'Poison': '#B300B3',
+          'Psychic': '#FF4664',
+          'Rock': '#B89F24',
+          'Steel': '#A9A9C5',
+          'Water': '#4A7AFA'
+        };
+        
+        return typeColors[type] || '#FFFFFF';
+      }
+    
+      function getDarkColor(type) {
+        const darkColors = {
+          'Bug': '#637D0A',
+          'Dark': '#49392F',
+          'Dragon': '#460EA1',
+          'Electric': '#AF850F',
+          'Fairy': '#A44D64',
+          'Fighting': '#861815',
+          'Fire': '#A13F00',
+          'Flying': '#604A9F',
+          'Ghost': '#412465',
+          'Grass': '#3C7E25',
+          'Ground': '#8F7533',
+          'Ice': '#4D8D8D',
+          'Normal': '#5F5F37',
+          'Poison': '#662266',
+          'Psychic': '#C8003C',
+          'Rock': '#766117',
+          'Steel': '#616178',
+          'Water': '#2D4494'
+        };
+      }
+
+    
+    function darkenColor(color, amount) {
+      var colorInt = parseInt(color.substring(1), 16);
+      var r = (colorInt >> 16) - amount;
+      var g = ((colorInt >> 8) & 0x00FF) - amount;
+      var b = (colorInt & 0x0000FF) - amount;
+    
+      r = r < 0 ? 0 : r;
+      g = g < 0 ? 0 : g;
+      b = b < 0 ? 0 : b;
+    
+      return "#" + (r * 0x10000 + g * 0x100 + b).toString(16).padStart(6, '0');
+    }
+    
+    const primaryColor = getTypeColor(`${character.primaryType.names.English}`);
+    const secondaryColor = getTypeColor(`${character.secondaryType.names.English}`)
+
+    const darkerColor = darkenColor(primaryColor, 15); // primaryColor is your original color, 20 is the amount to darken by
+    
+
+    function mixColors(color1, color2) {
+  2  // Parse the color strings to rgb
+      var c1 = parseInt(color1.substring(1), 16);
+      var c2 = parseInt(color2.substring(1), 16);
+  2
+      var r = ((c1 >> 16) + (c2 >> 16)) >> 1;
+      var g = ((c1 >> 8 & 0x00FF) + (c2 >> 8 & 0x00FF)) >> 1;
+      var b = ((c1 & 0x0000FF) + (c2 & 0x0000FF)) >> 1;
+    
+      return "#" + (0x1000000 + r * 0x10000 + g * 0x100 + b).toString(16).slice(1);
+    }
+  
+    const midColor = primaryTypeName && secondaryTypeName 
+      ? mixColors(primaryColor, secondaryColor)
+      : mixColors(primaryColor, darkerColor) 
+        ? darkerColor 
+        : 'orange'; // Fallback color if no types are defin
+  
+    const midColorPrimary = mixColors(primaryColor, darkerColor);
+    
+
+  // Mixes red and blue to get purple
+
+    // Style object for the gradientbackground: `linear-gradient(to bottom right, ${primaryColor}
+    const cardStyle = secondaryColor
+    ? { background: `linear-gradient(to bottom right, ${primaryColor} 20%, ${midColor} 40%, ${secondaryColor} 60%)` }
+    : { background: `linear-gradient(to bottom right, ${primaryColor}, ${primaryDarkColor})`}
 
 
 
@@ -414,7 +512,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         console.log('shine processed1');
         if (!particles.current.length) {
             for (let i = 0; i < 5; i++) setTimeout(addSparkles, i * 100);
-            const drawerRef = setInterval(() => drawSparkles(canvasRef.current.getContext('2d')), 50);
+            const drawerRef = setInterval(() => drawSpakles(canvasRef.current.getContext('2d')), 50);
             setTimeout(() => stopDrawing(drawerRef), 1000);
             console.log('shine processed');
           } else {
@@ -463,6 +561,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const lowerCaseSecondaryType = character.secondaryType?.names.English.toLowerCase(); 
     const lowerCaseName = character.names.English.toLowerCase();
 
+    const colorStyle = secondaryColor
+    ? { background: `linear-gradient(to bottom right, ${primaryColor} 20%, ${midColor} 40%, ${secondaryColor} 60%)` }
+    : { background: `linear-gradient(to bottom right, ${primaryColor}, ${primaryDarkColor})`}
+      
+
     return (
         <div className="poke-temp-container">
             <Head>
@@ -470,56 +573,100 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <title>{pokeName}</title>
                 </div>
             </Head>
+                {!lowerCaseSecondaryType ?
+                    <>
+                    <div className={`second-line-top-${lowerCaseType}`} style={cardStyle}></div>
+                    <div className={`type-${lowerCaseType}`} style={cardStyle}></div>
+                    </>
+                    :
+                    <>
+                    <div className={`second-line-top-${lowerCaseType}`}></div>
+                    <div className={`type-${lowerCaseType}`}></div>
+                    </>
+}
+                        <div>
+                        <div className="temp-container">
+                            
+                            <div className={containerBack}>
+                                <div className="temp-container-title">
+                                    <h1 className="title">
+                                        {name} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${lowerCaseType}.svg`} className="titletypelogo" width={45} height={45} /> { character.secondaryType ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} className="titletypelogo" width={45} height={45} /> : null }
+                                    </h1>
+                                </div>    {/* <>
+                                        {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }fd
+                                        </> */}
+                                <div className="topcontainer">
+                                    <div className={pageContainer}>
 
-                <div className={`second-line-top-${lowerCaseType}`}></div>
-                <div className={`type-${character.primaryType.names.English}`}></div>
-                    <div>
-                    <div className="temp-container">
-                        
-                        <div className={containerBack}>
-                            <div className="temp-container-title">
-                                <h1 className="title">
-                                    {name} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${lowerCaseType}.svg`} className="titletypelogo" width={45} height={45} /> { character.secondaryType ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} className="titletypelogo" width={45} height={45} /> : null }
-                                </h1>
-                            </div>    {/* <>
-                                    {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }fd
-                                    </> */}
-                            <div className="topcontainer">
-                                <div className={pageContainer}>
-
-                                    
-                                    {/* <Canvas id="imageSparkCanvas" ref={imageSparkCanvasRef} /> */}
-                                    <div className="slidecontainer">
-                                        <div className="spritecontainer">
-                                            <div className="spritebuttoncontainer">
-                                                <div id="shinyDiv">
-                                                    <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                                        
+                                        {/* <Canvas id="imageSparkCanvas" ref={imageSparkCanvasRef} /> */}
+                                        <div className="slidecontainer">
+                                            <div className="spritecontainer">
+                                                <div className="spritebuttoncontainer">
+                                                    <div id="shinyDiv">
+                                                        <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                                                    </div>
+                                                    <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
+                                                    <FlipButton
+                                                        ballDefault={ballDefault}
+                                                        // flipFrontBackButton={flipFrontBackButton}
+                                                    >
+                                                        <button className="fbbutton">                                                                                                    
+                                                            <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
+                                                                <h2 className="fliptext">{frontBackText}</h2>
+                                                                {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
+                                                                {/* <button className={`frontswitch-${character.primaryType.names.English}`} onClick={frontBackFront}>{frontBackText}}</button> */}
+                                                        </button>
+                                                    </FlipButton>
+                                                    {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
                                                 </div>
-                                                <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
-                                                <FlipButton
-                                                    ballDefault={ballDefault}
-                                                    // flipFrontBackButton={flipFrontBackButton}
-                                                >
-                                                    <button className="fbbutton">                                                                                                    
-                                                        <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
-                                                            <h2 className="fliptext">{frontBackText}</h2>
-                                                            {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-                                                            {/* <button className={`frontswitch-${character.primaryType.names.English}`} onClick={frontBackFront}>{frontBackText}}</button> */}
-                                                    </button>
-                                                </FlipButton>
-                                                {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
                                             </div>
-                                        </div>
-                                        {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
-                                        { (`${shiny}` !==  null ?
-                                                <div className="middlediv">
+                                            {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
+                                            { (`${shiny}` !==  null ?
+                                                    <div className="middlediv">
 
-                                                   
-                                                </div>
-                                            :   <div className="middlediv">
-                                                </div>)
-                                        }
-                                        <div>
+                                                    
+                                                    </div>
+                                                :   <div className="middlediv">
+                                                    </div>)
+                                            }
+                                            <div>
+                                                {/* <Image
+                                                    src={sparkleImage}
+                                                    width={30}
+                                                    height={30}
+                                                    id={sparkleImgCSS}
+                                                    style={{ position: 'absolute', 'z-index': 5 }}
+                                                /> */}
+                                            </div>
+                                            {/* <Canvas
+                                                id="canvasId"
+                                                className="canvasBG"
+                                                height={600}
+                                                width={600}
+                                                Sparkle={Sparkle}
+                                                currentPosition={currentPosition}
+                                                sheight={30}
+                                                swidth={30}
+                                                image={image}
+                                                shineOn={shineOn}
+                                                // style={{ position: 'absolute', 'z-index': -10 }}
+                                            > */}
+                                            
+                                            {/* <SparkleImg
+                                                id={sparkleImgCSS}
+                                                src={image}
+                                                width={35}
+                                                height={35}
+                                            /> */}
+                                                {/* <Image
+                                                    src={sparkleImage}
+                                                    width={30}
+                                                    height={30}
+                                                    id={sparkleImgCSS}
+                                                /> */}
+
+                                            {/* </Canvas> */}
                                             {/* <Image
                                                 src={sparkleImage}
                                                 width={30}
@@ -527,79 +674,53 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                 id={sparkleImgCSS}
                                                 style={{ position: 'absolute', 'z-index': 5 }}
                                             /> */}
+                                            {/* <Image src="/images/sparkle.png" id="sparkleImg-before"  width={35} height={35} /> */}
+                                            <div className={`templateinfodiv-${lowerCaseType}`}>
+                                                <ul>
+                                                    {secondaryTypeName ?
+                                                        <>
+                                                            <li className="typeli" style={{ display: 'inline-flex', flexDirection: 'column' }}>
+                                                                <b>Type(s):</b>
+                                                                <ul> {/* Start of the nested unordered list */}
+                                                                    <li className="typeli">{primaryTypeName}</li>
+                                                                    <li className="typeli">{secondaryTypeName}</li>
+                                                                </ul> {/* End of the nested unordered list */}
+                                                            </li>
+                                                        </>
+                                                        :
+                                                        <li className="typeli">
+                                                            <b>Type(s):</b> {primaryTypeName}
+                                                            {/* Other content */}
+                                                        </li>
+                                                    }
+                                                    {/* Other <li> elements */}
+                                                </ul>
+                                            </div>
+
                                         </div>
-                                        {/* <Canvas
-                                            id="canvasId"
-                                            className="canvasBG"
-                                            height={600}
-                                            width={600}
-                                            Sparkle={Sparkle}
-                                            currentPosition={currentPosition}
-                                            sheight={30}
-                                            swidth={30}
-                                            image={image}
-                                            shineOn={shineOn}
-                                            // style={{ position: 'absolute', 'z-index': -10 }}
-                                        > */}
+                                        {/* <div className="numbertext">
+                                            <Image src={currentPosition2} className="spritefrontshiny" />
+                                            <Image src={currentPosition4} className="spritebackshiny" />
+                                        </div>
                                         
-                                        {/* <SparkleImg
-                                            id={sparkleImgCSS}
-                                            src={image}
-                                            width={35}
-                                            height={35}
-                                         /> */}
-                                            {/* <Image
-                                                src={sparkleImage}
-                                                width={30}
-                                                height={30}
-                                                id={sparkleImgCSS}
-                                            /> */}
-
-                                        {/* </Canvas> */}
-                                        {/* <Image
-                                            src={sparkleImage}
-                                            width={30}
-                                            height={30}
-                                            id={sparkleImgCSS}
-                                            style={{ position: 'absolute', 'z-index': 5 }}
-                                         /> */}
-                                        {/* <Image src="/images/sparkle.png" id="sparkleImg-before"  width={35} height={35} /> */}
-                                        <div className={`templateinfodiv-${lowerCaseType}`}>
-                                            <ul>
-                                                <li className="typeli"><b>Type(s):</b> {character.primaryType.names.English} 
-                                                    {/* <Image src={`/images/type_logo_${character.primaryType.names.English}.svg`} /> */}
-                                                    {/* {typeTwo}  */}
-                                                </li>
-                                                {/* <li className="typeli"><b>Ability:</b> {abilities[0].ability.name}</li> */}
-                                                {/* <li className="typeli"><b>{abilityTwo}</b></li> */}
-                                                {/* { `${abilities[1].ability.name}` != ability ? <li className="typeli">{abilities[1].ability.name}</li>  : null } */}
-                                            </ul>
+                                        <div className="mySlides">
+                                        <div className="numbertext"><Image src={spriteCurrent} /></div>
+                                            <Image src={shiny} className="picdefault" />
                                         </div>
-                                    </div>
+                                        <div className="mySlides">
+                                            <div className="numbertext"></div>
+                                            <Image src={sprites.back_shiny} className="picdefault" />
+                                        </div> */}
+                                        <div>
 
-                                    {/* <div className="numbertext">
-                                        <Image src={currentPosition2} className="spritefrontshiny" />
-                                        <Image src={currentPosition4} className="spritebackshiny" />
-                                    </div>
-                                    
-                                    <div className="mySlides">
-                                    <div className="numbertext"><Image src={spriteCurrent} /></div>
-                                        <Image src={shiny} className="picdefault" />
-                                    </div>
-                                    <div className="mySlides">
-                                        <div className="numbertext"></div>
-                                        <Image src={sprites.back_shiny} className="picdefault" />
-                                    </div> */}
-                                    <div>
-
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={`second-line-bottom-${character.primaryType.names.English}`} style={{height: '1px'}}></div>
-                <div className={`type-gradient-${character.primaryType.names.English}`} style={{height: '3px', marginBottom: '0px'}}></div>
-        </div>
-    );
+                    <div className={`second-line-bottom-${lowerCaseType}`} style={{height: '1px'}}></div>
+                    <div className={`type-gradient-${lowerCaseType}`} style={{height: '3px', marginBottom: '0px'}}></div>
+            </div>
+        );
 }
