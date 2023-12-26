@@ -1794,7 +1794,13 @@ max-height: 200px;
    };
 
 
-  
+  .navbarSearchClass {
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: black;
+    border-width: 10px;
+    z-index: 500;
+  }
   
   col, div.col {
     background-color: none;

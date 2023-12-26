@@ -4,15 +4,13 @@
 
 
 .navbarcontainer {
-    background: #8b0303;
+    display: flex;
+    background: #f8f8f8;
     /* background: #701200;  fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: center;
-    align-self: flex-start;
-    margin-top:0;
-    /* margin-bottom: 15px; */
-    padding: 0 10 0 15;
+    align-self: center;
     display: flex;
     align-items: center;
     width: 100vw;
@@ -20,8 +18,11 @@
     height: 100%;
     top: 0;
     position: static;
-    border-width: 2px;
-    border-color: black;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 1500;
+    justify-content: center;
 }
 
 .navbarSearchContainer {
@@ -38,11 +39,33 @@
     align-items: center;
     width: 100%;
     align-content: center;
-    height: 100%;
+    height: auto;
     top: 0;
     position: static;
-    border-width: 3px;
-    border-color: black;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 1500;
+}
+
+
+.search-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* background: #701200;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-items: center;
+    align-content: center;
+    height: auto;
+    top: 0;
+    position: static;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 15;
 }
 
 .footercontainer {

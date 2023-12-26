@@ -211,7 +211,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     }
     
     const primaryColor = getTypeColor(`${character.primaryType.names.English}`);
-    const secondaryColor = getTypeColor(`${character.secondaryType.names.English}`)
+    const secondaryColor = getTypeColor(`${character?.secondaryType?.names.English}`)
 
     const darkerColor = darkenColor(primaryColor, 15); // primaryColor is your original color, 20 is the amount to darken by
     

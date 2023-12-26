@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Search({ currentItems, onSearch }) {
-    const [query, setQuery] = useState('');
+function Search({ currentItems, handleSearch, query }) {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -36,6 +35,6 @@ function Search({ currentItems, onSearch }) {
             </ul> */}
         </div>
     )
-}
+    }
 
 export default Search;

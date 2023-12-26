@@ -1910,6 +1910,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -2592,6 +2599,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -3278,6 +3292,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -3960,6 +3981,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -4646,6 +4674,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -5328,6 +5363,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -6014,6 +6056,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -6696,6 +6745,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -7382,6 +7438,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -8064,6 +8127,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -8750,6 +8820,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -9432,6 +9509,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -10118,6 +10202,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -10800,6 +10891,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -11486,6 +11584,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -12168,6 +12273,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
@@ -12854,6 +12966,13 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
 }
 
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
+}
+
 col, div.col {
   background-color: none;
 }
@@ -13536,6 +13655,13 @@ col, div.col {
 
 body, Body, .div-container, root, container-fluid, *.container-fluid {
   background: linear-gradient(to bottom, #d6ebff, #9fc0e1);
+}
+
+.navbarSearchClass {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: black;
+  z-index: 500;
 }
 
 col, div.col {
