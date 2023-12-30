@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Rajdhani:wght@600;700&family=Righteous&display=swap');
 
 
-.navbarcontainer {
+.navbartopcontainer {
     background: #8b0303;
     /* background: #701200;  fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
@@ -21,27 +21,6 @@
     top: 0;
     position: static;
     border-width: 2px;
-    border-color: black;
-}
-
-.navbarSearchContainer {
-    background: #ececec;
-    /* background: #701200;  fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    float: center;
-    align-self: flex-start;
-    margin-top:0;
-    margin-bottom: 15px;
-    padding: 0 10 0 15;
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    align-content: center;
-    height: 100%;
-    top: 0;
-    position: static;
-    border-width: 3px;
     border-color: black;
 }
 

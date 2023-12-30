@@ -135,7 +135,7 @@ export default function Pagination({ filteredData }) {
   return (
     <>
       <div>
-        <div className="btn-div-border">
+        <div className="paginate-container">
           <div id="search">
             <Search 
               onChange={handleSearch}
