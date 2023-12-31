@@ -9,6 +9,7 @@ export async function getAllPokeData(url) {
     }
 
 export async function getPokeData(url) {
+    console.log(url)
     return new Promise((resolve, reject) => {
         fetch(url) 
             .then(res => res.json())

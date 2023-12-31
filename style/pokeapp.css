@@ -21,7 +21,7 @@
 html, body {
         height: 100%;
         /* background-color: #F0F0F0; */
-        background-color: #d6d6d6;
+        background: linear-gradient(to bottom,  #d6ebff, #9fc0e1);
         margin: 0;
         padding: 0;
     }
@@ -30,7 +30,7 @@ html, body {
             /* flex-direction: row; */
             /* justify-content: center; */
             /* align-items: center; */
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
 
     /* .Container { */
@@ -385,14 +385,14 @@ html, body {
         background-clip: border-box; */
         /* vertical-align: middle; */
         /* flex-grow: 0; */
-        opacity: .5;
+        /* opacity: .5; */
         /* mix-blend-mode: overlay; */
         /* align-items: center; */
         /* align-content: center; */
         /* justify-content: flex-start; */
         /* justify-items: flex-start; */
         /* justify-self: flex-start; */
-        height: 90%;
+        height: 100%;
         width: 90%;
         /* margin-top: 20px;
         margin-left: 30px;

@@ -19,5 +19,5 @@ const Canvas = props => {
         draw(context)
     }, [draw])
 
-    reurn <canvas ref={canvasRef} {...props}/>
+    return <canvas ref={canvasRef} {...props} />
 }

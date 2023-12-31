@@ -1,282 +1,135 @@
+          @property --rotate {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+  }
+
+@property --border-width {
+    syntax: "width";
+    initial-value: 1px 1px  4px 4px;
+    inherits: false;
+    }
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,500;1,700&display=swap');
 
 :root {
     width: 100vw;
-    --types: --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
+    --bug-color: #9AC11A;
+    --bug-light: #CDE559;
+    --bug-dark: #637D0A;
     --dark-color: #705848;
     --dark-light: #A29288;
     --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-    // SASS Variables - Poketype color palette //
-    --bug-color: #A8B820;
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
-    --dark-color: #705848;
-    --dark-light: #A29288;
-    --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-    // $fire-color: #F08030;
-    // $fire-light: #F5AC78;
-    // $fire-dark: #9C531F;
-    --fire-color: orange;
-    --fire-light: #F5AC78;
-    --fire-dark: #9C531F;
-    --flying-color: #A890F0;
-    --flying-light: #C6B7F5;
-    --flying-dark: #6D5E9C;
-    --ghost-color: #705898;
-    --ghost-light: #A292BC;
-    --ghost-dark: #493963;
-    --grass-color: #78C850;
-    --grass-light: #A7DB8D;
-    --grass-dark: #4E8234;
-    --ground-color: #E0C068;
-    --ground-light: #EBD69D;
-    --ground-dark: #927D44;
-    --ice-color: #98D8D8;
-    --ice-light: #BCE6E6;
-    --ice-dark: #638D8D;
-    --normal-color: #A8A878;
-    --normal-light: #C6C6A7;
-    --normal-dark: #6D6D4E;
-    --poison-color: #A040A0;
-    --poison-light: #C183C1;
-    --poison-dark: #682A68;
-    --psychic-color: #F85888;
-    --psychic-light: #FA92B2;
-    --psychic-dark: #F85888;
-    --rock-color: #B8A038;
-    --rock-light: #D1C17D;
-    --rock-dark: #786824;
-    --steel-color: #B8B8D0;
-    --steel-light: #D1D1E0;
-    --steel-dark: #787887;
-    --water-color: #6890F0;
-    --water-dark: #445E9C;
-    --water-light: #9DB7F5;
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
-    --dark-color: #705848;
-    --dark-light: #A29288;
-    --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
+    --dragon-color: #6A2EF9;
+    --dragon-light: #9E6FFC;
+    --dragon-dark: #460EA1;
+    --electric-color: #FFD700;
+    --electric-light: #FFE765;
+    --electric-dark: #AF850F;
+    --fairy-color: #FF7B9C;
+    --fairy-light: #FFB4D0;
+    --fairy-dark: #A44D64;
+    --fighting-color: #D11412;
+    --fighting-light: #E36760;
+    --fighting-dark: #861815;
+    --fighting-hover: #E36760;
+    --fire-color: #FF6F00;
+    --fire-light: #FFAC5F;
+    --fire-dark: #A13F00;
+    --flying-color: #8F7AFA;
+    --flying-light: #B49BFF;
+    --flying-dark: #604A9F;
+    --ghost-color: #7D4AB0;
+    --ghost-light: #AA89D3;
+    --ghost-dark: #412465;
+    --grass-color: #67D821;
+    --grass-light: #8FEB7A;
+    --grass-dark: #3C7E25;
+    --ground-color: #E5B755;
+    --ground-light: #F3D290;
+    --ground-dark: #8F7533;
+    --ice-color: #7BDADA;
+    --ice-light: #ACEEEE;
+    --ice-dark: #4D8D8D;
+    --normal-color: #9C9C68;
+    --normal-light: #CCCC92;
+    --normal-dark: #5F5F37;
+    --poison-color: #B300B3;
+    --poison-light: #D657D6;
+    --poison-dark: #662266;
+    --psychic-color: #FF4664;
+    --psychic-light: #FF85A1;
+    --psychic-dark: #FF4664;
+    --rock-color: #B89F24;
+    --rock-light: #DCC767;
+    --rock-dark: #766117;
+    --steel-color: #A9A9C5;
+    --steel-light: #C5C5E2;
+    --steel-dark: #616178;
+    --water-color: #4A7AFA;
+    --water-light: #80A4FF;
+    --water-dark: #2D4494;
 }
+// Bolder Versions
+/* More vibrant SASS Variables - Poketype color palette */
+    $poke-color: #8b0303;
+    $bug-color: #9AC11A;
+    $bug-light: #CDE559;
+    $bug-dark: #637D0A;
+    $dark-color: #705848;
+    $dark-light: #A29288;
+    $dark-dark: #49392F;
+    $dragon-color: #6A2EF9;
+    $dragon-light: #9E6FFC;
+    $dragon-dark: #460EA1;
+    $electric-color: #FFD700;
+    $electric-light: #FFE765;
+    $electric-dark: #AF850F;
+    $fairy-color: #FF7B9C;
+    $fairy-light: #FFB4D0;
+    $fairy-dark: #A44D64;
+    $fighting-color: #D11412;
+    $fighting-light: #E36760;
+    $fighting-dark: #861815;
+    $fighting-hover: #E36760;
+    $fire-color: #FF6F00;
+    $fire-light: #FFAC5F;
+    $fire-dark: #A13F00;
+    $flying-color: #8F7AFA;
+    $flying-light: #B49BFF;
+    $flying-dark: #604A9F;
+    $ghost-color: #7D4AB0;
+    $ghost-light: #AA89D3;
+    $ghost-dark: #412465;
+    $grass-color: #67D821;
+    $grass-light: #8FEB7A;
+    $grass-dark: #3C7E25;
+    $ground-color: #E5B755;
+    $ground-light: #F3D290;
+    $ground-dark: #8F7533;
+    $ice-color: #7BDADA;
+    $ice-light: #ACEEEE;
+    $ice-dark: #4D8D8D;
+    $normal-color: #9C9C68;
+    $normal-light: #CCCC92;
+    $normal-dark: #5F5F37;
+    $poison-color: #B300B3;
+    $poison-light: #D657D6;
+    $poison-dark: #662266;
+    $psychic-color: #FF4664;
+    $psychic-light: #FF85A1;
+    $psychic-dark: #FF4664;
+    $rock-color: #B89F24;
+    $rock-light: #DCC767;
+    $rock-dark: #766117;
+    $steel-color: #A9A9C5;
+    $steel-light: #C5C5E2;
+    $steel-dark: #616178;
+    $water-color: #4A7AFA;
+    $water-light: #80A4FF;
+    $water-dark: #2D4494;
 
-$pokecolors: ("bug-color": #A8B820,
-"bug-light": #C6D16E,
-"bug-dark": #6D7815,
-"dark-color": #705848,
-"dark-light": #A29288,
-"dark-dark": #49392F,
-"dragon-color": #7038F8,
-"dragon-light": #A27DFA,
-"dragon-dark": #4924A1,
-"electric-color": #F8D030,
-"electric-light": #FAE078,
-"electric-dark": #A1871F,
-"fairy-color": #EE99AC,
-"fairy-light": #F4BDC9,
-"fairy-dark": #9B6470,
-"fighting-color": #C03028,
-"fighting-light": #D67873,
-"fighting-dark": #7D1F1A,
-"fighting-hover": #D67873,
-"fire-color": #F08030,
-"fire-light": #F5AC78,
-"fire-dark": #9C531F,
-"flying-color": #A890F0,
-"flying-light": #C6B7F5,
-"flying-dark": #6D5E9C,
-"ghost-color": #705898,
-"ghost-light": #A292BC,
-"ghost-dark": #493963,
-"grass-color": #78C850,
-"grass-light": #A7DB8D,
-"grass-dark": #4E8234,
-"ground-color": #E0C068,
-"ground-light": #EBD69D,
-"ground-dark": #927D44,
-"ice-color": #98D8D8,
-"ice-light": #BCE6E6,
-"ice-dark": #638D8D,
-"normal-color": #A8A878,
-"normal-light": #C6C6A7,
-"normal-dark": #6D6D4E,
-"poison-color": #A040A0,
-"poison-light": #C183C1,
-"poison-dark": #682A68,
-"psychic-color": #F85888,
-"psychic-light": #FA92B2,
-"psychic-dark": #F85888,
-"rock-color": #B8A038,
-"rock-light": #D1C17D,
-"rock-dark": #786824,
-"steel-color": #B8B8D0,
-"steel-light": #D1D1E0,
-"steel-dark": #787887,
-"water-color": #6890F0,
-"water-dark": #445E9C,
-"water-light": #9DB7F5);
-// $bug: (
-//   light: #C6D16E,
-//   dark: #6D7815,
-//   color: #A8B820
-// );
-// $dark: (
-//   color: #705848,
-//   light: #A29288,
-//   dark: #49392F
-// );
-// $dragon: (
-//   color: #7038F8,
-//   light: #A27DFA,
-//   dark: #4924A1
-// );
-// $electric: (
-//   color: #F8D030,
-//   light: #FAE078,
-//   dark: #A1871F
-// );
-// $fairy: (
-//   color: #EE99AC,
-//   light: #F4BDC9,
-//   dark: #9B6470
-// );
-// $fighting: (
-//   color: #C030,
-//   light: #D678,
-//   dark: #7D1F1A  
-// );
-// $fire: (
-//   color: orange,
-//   light: #F5AC78,
-//   dark: #9C531F
-// );
-// $flying: (
-//   color: #A890F0,
-//   light: #C6B7F5,
-//   dark: #6D5E9C
-// );
-// $ghost: (
-//   color: #705898,
-//   light: #A292BC,
-//   dark: #493963
-// );
-// $ice: (
-//   color: #98D8D8,
-//   light: #BCE6E6,
-//   dark: #638D8D
-// );
-// $ground: (
-//   color: #E0C068,
-//   light: #EBD69D,
-//   dark: #927D44
-// );
-// $normal: (
-//   color: #A8A878,
-//   light: #C6C6A7,
-//   dark: #6D6D4E
-// );
-// $poison: (
-//   color: #A040A0,
-//   light: #C183C1,
-//   dark: #682A68
-// );
-// $ice: (
-//   color: #F85888,
-//   light: #FA92B2,
-//   dark: #F85888
-// );
-// $rock: (
-//   color: #B8A038,
-//   light: #D1C17D,
-//   dark: #786824
-// );
-// $steel: (
-//   color: #B8B8D0,
-//   light: #D1D1E0,
-//   dark: #787887
-// );
-// $water: (
-//   color: #6890F0,
-//   dark: #445E9C,
-//   light: #9DB7F5
-// );
-$types: ("grass",
-"fire",
-"fairy",
-"water",
-"rock",
-"dark",
-"ghost",
-"ice",
-"dragon",
-"flying",
-"steel",
-"electric",
-"poison",
-"fighting",
-"psychic",
-"ground",
-"bug",
-"normal",
-"grass");
-// @each $type in $types {
-//   .type-gradient-#{$type}-bottom {
-//     width: 100%;
-//     z-index: 10;
-//     background: linear-gradient(121.52deg, var(--(#{$type}-color)) 9.79%, var(--(#{$type}-light)) 24.44%, var(--(#{$type}-dark)) 65.12%);
-//   }
-// };
-// @each $type in $types {
-//   .type1logo {
-//     content: url(images/type_c21_#{$type}.svg)
-//   }
-// }
-@each $type in $types {
-    .type-c-#{$type} {
-        content: url(images/type_c21_#{$type}.svg)
-    }
-}
+
 
 @mixin typegradient {
     display: -webkit-inline-box;
@@ -297,121 +150,162 @@ $types: ("grass",
     position: relative;
     z-index: 50;
 }
-// @function #{$type}($key) {
-//   @return map-get(#{$type}, $key);
-// }
-// @each $type, $bug, $dark, $dragon, $electric, $fairy, $fighting, $fire, $ghost, $grass, $ground, $ice, $poison, $psychic, $rock, $steel, $water, $normal in $types, $bugs, $darks, $dragons, $electrics, $fairies, $fightings, $fires, $ghosts, $grasses, $grounds, $ices, $poisons, $psychics, $rocks, $steels, $waters, $normals {
-//   .type-gradient-#{$type}-#{$bug}, .type-gradient-#{$type}-#{$dark}, .type-gradient-#{$type}-#{$dragon}, .type-gradient-#{$type}-#{$electric}, .type-gradient-#{$type}-#{$fairy}, .type-gradient-#{$type}-#{$fighting}, .type-gradient-#{$type}-#{$fire}, .type-gradient-#{$type}-#{$flying}, .type-gradient-#{$type}-#{$ghost}, .type-gradient-#{$type}-#{$grass},.type-gradient-#{$type}-#{$ground}, .type-gradient-#{$type}-#{$ice},.type-gradient-#{$type}-#{$normal},.type-gradient-#{$type}-#{$poison}, .type-gradient-#{$type}-#{$psychic}, .type-gradient-#{$type}-#{$rock}, .type-gradient-#{$type}-#{$water} {
-//     @include typegradient;
-//     background: linear-gradient(121.52deg, #{$type}-) 9.79%, bug(dark) 24.44%, bug(light) 65.12%)
-//   }
-// }
-//colors
-$dark-color: #705848;
-$dark-maincolor: #705848;
-$dark-light: #A29288;
-$dark-dark: #49392F;
-$dragon-color: #7038F8;
-$dragon-light: #A27DFA;
-$dragon-maincolor: #7038F8;
-$dragon-dark: #4924A1;
-$electric-color: #F8D030;
-$electric-light: #FAE078;
-$electric-maincolor: #F8D030;
-$electric-dark: #A1871F;
-$fairy-color: #EE99AC;
-$fairy-light: #F4BDC9;
-$fairy-maincolor: #EE99AC;
-$fairy-dark: #9B6470;
-$fighting-color: #C03028;
-$fighting-light: #D67873;
-$fighting-maincolor: #C03028;
-$fighting-dark: #7D1F1A;
-$fighting-hover: #D67873;
-// SASS Variables - Poketype color palette //
-$bug-color: #A8B820;
-$bug-light: #C6D16E;
-$bug-color: #A8B820;
-$bug-dark: #6D7815;
-// $fire-color: #F08030;
-// $fire-light: #F5AC78;
-// $fire-dark: #9C531F;
-$fire-color: #eb9800f8;
-$fire-light: #F5AC78;
-$fire-maincolor: #eb9800f8;
-$fire-dark: #9C531F;
-$flying-color: #A890F0;
-$flying-light: #C6B7F5;
-$flying-maincolor: #A890F0;
-$flying-dark: #6D5E9C;
-$ghost-color: #705898;
-$ghost-light: #A292BC;
-$ghost-maincolor: #705898;
-$ghost-dark: #493963;
-$grass-color: #78C850;
-$grass-light: #A7DB8D;
-$grass-maincolor: #78C850;
-$grass-dark: #4E8234;
-$ground-color: #E0C068;
-$ground-light: #EBD69D;
-$ground-maincolor: #E0C068;
-$ground-dark: #927D44;
-$ice-color: #98D8D8;
-$ice-light: #BCE6E6;
-$ice-maincolor: #98D8D8;
-$ice-dark: #638D8D;
-$normal-color: #A8A878;
-$normal-light: #C6C6A7;
-$normal-maincolor: #A8A878;
-$normal-dark: #6D6D4E;
-$poison-color: #A040A0;
-$poison-light: #C183C1;
-$poison-maincolor: #A040A0;
-$poison-dark: #682A68;
-$psychic-color: #F85888;
-$psychic-light: #FA92B2;
-$psychic-maincolor: #F85888;
-$psychic-dark: #F85888;
-$rock-color: #B8A038;
-$rock-light: #D1C17D;
-$rock-maincolor: #B8A038;
-$rock-dark: #786824;
-$steel-color: #B8B8D0;
-$steel-light: #D1D1E0;
-$steel-maincolor: #B8B8D0;
-$steel-dark: #787887;
-$water-color: #6890F0;
-$water-dark: #445E9C;
-$water-maincolor: #6890F0;
-$water-light: #9DB7F5;
-$bug-light: #C6D16E;
-$bug-dark: #6D7815;
-$dark-color: #705848;
-$dark-light: #A29288;
-$dark-dark: #49392F;
-$dragon-color: #7038F8;
-$dragon-light: #A27DFA;
-$dragon-dark: #4924A1;
-$electric-color: #F8D030;
-$electric-light: #FAE078;
-$electric-dark: #A1871F;
-$fairy-color: #EE99AC;
-$fairy-light: #F4BDC9;
-$fairy-dark: #9B6470;
-$fighting-color: #C03028;
-$fighting-light: #D67873;
-$fighting-dark: #7D1F1A;
-$fighting-hover: #D67873;
-// $color-map: ( //create an array to support the colors
-//   maincolor: $color-maincolor,
-//   light: $color-light,
-//   dark: $color-dark
-// );
-// @each $color-key, $color-var in $color-map {
-//   .type-gradient-#{$color-key}-bottom {
-//     background: linear-gradient(121.52deg, $maincolor 9.79%, $light 24.44%, $dark 65.12%);
-//   }
-// }
+
+
+$types: ("grass",
+"fire",
+"fairy",
+"water",
+"rock",
+"dark",
+"ghost",
+"ice",
+"dragon",
+"flying",
+"steel",
+"electric",
+"poison",
+"fighting",
+"psychic",
+"ground",
+"bug",
+"normal",
+"grass");
+
+$typeNames: (
+"fire",
+"fairy",
+"water",
+"rock",
+"dark",
+"ghost",
+"ice",
+"dragon",
+"flying",
+"steel",
+"electric",
+"poison",
+"fighting",
+"psychic",
+"ground",
+"bug",
+"normal",
+"grass");
+
+$types-light: ("grass-light",
+"fire-light",
+"fairy-light",
+"water-light",
+"rock-light",
+"dark-light",
+"ghost-light",
+"ice-light",
+"dragon-light",
+"flying-light",
+"steel-light",
+"electric-light",
+"poison-light",
+"fighting-light",
+"psychic-light",
+"ground-light",
+"bug-light",
+"normal-light");
+
+$types: (
+  'bug': (
+    'color': $bug-color,
+    'light': $bug-light,
+    'dark': $bug-dark
+  ),
+  'dark': (
+    'color': $dark-color,
+    'light': $dark-light,
+    'dark': $dark-dark
+  ),
+  'dragon': (
+    'color': $dragon-color,
+    'light': $dragon-light,
+    'dark': $dragon-dark
+  ),
+  'electric': (
+    'color': $electric-color,
+    'light': $electric-light,
+    'dark': $electric-dark
+  ),
+  'fairy': (
+    'color': $fairy-color,
+    'light': $fairy-light,
+    'dark': $fairy-dark
+  ),
+  'fighting': (
+    'color': $fighting-color,
+    'light': $fighting-light,
+    'dark': $fighting-dark,
+    'hover': $fighting-hover
+  ),
+  'fire': (
+    'color': $fire-color,
+    'light': $fire-light,
+    'dark': $fire-dark
+  ),
+  'flying': (
+    'color': $flying-color,
+    'light': $flying-light,
+    'dark': $flying-dark
+  ),
+  'ghost': (
+    'color': $ghost-color,
+    'light': $ghost-light,
+    'dark': $ghost-dark
+  ),
+  'grass': (
+    'color': $grass-color,
+    'light': $grass-light,
+    'dark': $grass-dark
+  ),
+  'ground': (
+    'color': $ground-color,
+    'light': $ground-light,
+    'dark': $ground-dark
+  ),
+  'ice': (
+    'color': $ice-color,
+    'light': $ice-light,
+    'dark': $ice-dark
+  ),
+  'normal': (
+    'color': $normal-color,
+    'light': $normal-light,
+    'dark': $normal-dark
+  ),
+  'poison': (
+    'color': $poison-color,
+    'light': $poison-light,
+    'dark': $poison-dark
+  ),
+  'psychic': (
+    'color': $psychic-color,
+    'light': $psychic-light,
+    'dark': $psychic-dark
+  ),
+  'rock': (
+    'color': $rock-color,
+    'light': $rock-light,
+    'dark': $rock-dark
+  ),
+  'steel': (
+    'color': $steel-color,
+    'light': $steel-light,
+    'dark': $steel-dark
+  ),
+  'water': (
+    'color': $water-color,
+    'light': $water-light,
+    'dark': $water-dark
+  )
+);
+
+
 @mixin infobg {
     margin-top: 20px;
     display: flex;
@@ -419,300 +313,9 @@ $fighting-hover: #D67873;
     justify-content: center;
 }
 
-.infocontainergrass {
-    @include infobg;
-    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-}
 
-//top gradient bar
-.type-gradient-bug {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-dark 24.44%, $bug-light 65.12%);
-}
 
-.type-gradient-dark {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-dark 24.44%, $dark-light 65.12%);
-}
 
-.type-gradient-dragon {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-dark 24.44%, $dragon-light 65.12%);
-}
-
-.type-gradient-electric {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-dark 24.44%, $electric-light 65.12%);
-}
-
-.type-gradient-fairy {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-dark 24.44%, $fairy-light 65.12%);
-}
-
-.type-gradient-fighting {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
-}
-
-.type-gradient-fire {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $fire-color 9.79%, $fire-dark 24.44%, $fire-light 65.12%);
-}
-
-.type-gradient-flying {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-dark 24.44%, $flying-light 65.12%);
-}
-
-.type-gradient-ghost {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-dark 24.44%, $ghost-light 65.12%);
-}
-
-.type-gradient-grass {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $grass-color 9.79%, $grass-dark 24.44%, $grass-light 65.12%);
-}
-
-.type-gradient-ground {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-dark 24.44%, $ground-light 65.12%);
-}
-
-.type-gradient-ice {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-dark 24.44%, $ice-light 65.12%);
-}
-
-.type-gradient-normal {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-dark 24.44%, $normal-light 65.12%);
-}
-
-.type-gradient-poison {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-dark 24.44%, $poison-light 65.12%);
-}
-
-.type-gradient-psychic {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-dark 24.44%, $psychic-light 65.12%);
-}
-
-.type-gradient-rock {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-dark 24.44%, $rock-light 65.12%);
-}
-
-.type-gradient-steel {
-    @include typegradient;
-    background: linear-gradient(121.52deg, $steel-color 9.79%, $steel-dark 24.44%, $steel-light 65.12%);
-}
-
-.type-gradient-water {
-    @include typegradient;
-    // background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 24.44%, $water-light 65.12%);
-}
-
-//bottom gradient bar //
-.type-gradient-bug-bottom {
-    @include typegradient-bottom;
-    height: 1em;
-    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-dark 24.44%, $bug-light 65.12%);
-}
-
-.type-gradient-dark-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-dark 24.44%, $dark-light 65.12%);
-}
-
-.type-gradient-dragon-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-dark 24.44%, $dragon-light 65.12%);
-}
-
-.type-gradient-electric-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-dark 24.44%, $electric-light 65.12%);
-}
-
-.type-gradient-fairy-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $fairy-color 9.79%, $fairy-dark 24.44%, $fairy-light 65.12%);
-}
-
-.type-gradient-fighting-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-dark 24.44%, $fighting-light 65.12%);
-}
-
-.type-gradient-fire-bottom {
-    @include typegradient-bottom;
-    z-index: 1000;
-    background: linear-gradient(121.52deg, $fire-color 9.79%, $fire-dark 24.44%, $fire-light 65.12%);
-}
-
-.type-gradient-flying-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-dark 24.44%, $flying-light 65.12%);
-}
-
-.type-gradient-ghost-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-dark 24.44%, $ghost-light 65.12%);
-}
-
-.type-gradient-grass-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $grass-color 9.79%, $grass-dark 24.44%, $grass-light 65.12%);
-}
-
-.type-gradient-ground-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-dark 24.44%, $ground-light 65.12%);
-}
-
-.type-gradient-ice-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-dark 24.44%, $ice-light 65.12%);
-}
-
-.type-gradient-normal-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-dark 24.44%, $normal-light 65.12%);
-}
-
-.type-gradient-poison-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-dark 24.44%, $poison-light 65.12%);
-}
-
-.type-gradient-psychic-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-dark 24.44%, $psychic-light 65.12%);
-}
-
-.type-gradient-rock-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-dark 24.44%, $rock-light 65.12%);
-}
-
-.type-gradient-steel-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $steel-color 9.79%, $steel-dark 24.44%, $steel-light 65.12%);
-}
-
-.type-gradient-water-bottom {
-    @include typegradient-bottom;
-    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 24.44%, $water-light 65.12%);
-}
-
-// @each $type in $types {
-//   .flipfront-#{$type} {
-//   }
-// }
-// $g:( bug:(from: $bug-color, to: $bug-dark),
-// dark:(from: $dark-color, to: $dark-dark),
-// night:(from: $fire-color, to:$fire-dark));
-// @function gradient($gradient,$key) {
-//     @return map-get(map-get($g, $gradient),$key);
-// }
-// @each $type in $types {
-//   div.card-bg-gradient-#{$type} {
-//     background-image:linear-gradient(105deg,gradient(#{$type}-color,from),gradient(#{$type}-dark,to));
-//     border-radius: .3rem;
-//     margin-left: 10px;
-//     display:table;
-//     background-size:200% 200%!important;
-//     color:#fff;
-//     text-transform:uppercase;
-//     text-decoration:none;
-//     letter-spacing:1px;
-//     padding:1.3em 1.5em;
-//     margin:1.5em auto;
-//     border-radius:0.3em;
-//     -webkit-transition:all 200ms linear;
-//       &.inverse {
-//         -webkit-background-clip:text;
-//         -webkit-text-fill-color:transparent;
-//         border-image-source:linear-gradient(100deg,gradient(#{$type}-color,from),gradient(#{$type}-dark,to));
-//         font-weight:bold;
-//         padding:1.15em 1.5em;
-//         -webkit-background-clip:text;
-//         -webkit-text-fill-color:transparent;
-//         border-width:0.25em;
-//         border-style:solid;
-//         border-image-source:linear-gradient(45deg,#fff,#fff);
-//         border-image-slice:30%;
-//         border-image-width:1;
-//         border-image-repeat:stretch;
-//       }
-//       &:hover {
-//         background-size:110% 110%!important;
-//         padding:1.3em 2.1em;
-//         -webkit-transition:all 200ms linear;
-//       }
-//   }
-// }
-@each $type,
-$gradient in $types {
-    .frontswitch-#{$type} {
-        background-image:linear-gradient(105deg,
-        gradient(var(#{$type}-color), from),
-        gradient(var(#{$type}-dark), to));
-        border-radius: .3rem;
-        margin-left: 10px;
-        &.inverse {
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-image-source:linear-gradient(100deg,
-            gradient(var(#{$type}-color), from),
-            gradient(var(#{$type}-dark), to));
-        }
-    }
-}
-
-// @each $type in $types {
-//   .#{$type}-color {
-//     color: #{$type}-color;
-//   }
-// }
-// @each $type in $types {S
-//   .#{$type}-dark {
-//     color: #{$type}-dark;
-//   }
-// }
-// @each $type in $types {
-//   .#{$type}-light {
-//     color: #{$type}-light;
-//   }
-// }
-// @each $type in $types {
-//   .type-gradient-#{$type} {
-//     display: -webkit-inline-box;
-//     display: -ms-inline-flexbox;
-//     display: inline-flex;
-//     width: 100%;
-//     height: 2em;
-//     background: linear-gradient(121.52deg, #{$type}-color 9.79%, #{$type}-light 24.44%, #{$type}-dark 65.12%);
-//   }
-// }
-// @each $typeshade, $colornum in $colors {
-//   @each $type in $types {
-//       .type-gradient-#{$type} {
-//       display: -webkit-inline-box;
-//       display: -ms-inline-flexbox;
-//       display: inline-flex;
-//       width: 100%;
-//       height: 2em;
-//       background: linear-gradient(121.52deg, #{$colornum} 9.79%, #{$colornum} 24.44%, #{$colornum} 65.12%);
-//     } 
-//   }
-// }
-// $logo_fire: (
-//     content: url(images/type_#{$type}.svg)
-// );
 .Navbar_navbartitle {
     font-size: 60px;
     text-decoration: bold;
@@ -720,13 +323,6 @@ $gradient in $types {
     color: white;
 }
 
-// .tempnav {
-//   display: inline-flex;
-//   width: 100%;
-//   height: 1em;
-//   background: l
-//   linear-gradient(121.52deg, #7af519 9.79%, #39ef1b 21.97%, #319800 41.76%);
-// }
 .tempcontainersprites {
     display: grid;
     grid-gap: 10px;
@@ -735,12 +331,6 @@ $gradient in $types {
     grid-template-areas: 'default info' 'default info' 'back back' 'pic3 pic4 pic5'
 }
 
-// .picdefault {
-//   grid-area: default;
-//   background-color: yellow;
-//   width: 400px;
-//   height: 400px;
-// }
 .shinyfront {
     display: inline-block;
     width: 200px;
@@ -772,31 +362,85 @@ $gradient in $types {
 
 @mixin type-logo {
     position: relative;
+
     z-index: 10;
     pointer-events: none;
-    margin-left: 9px;
+    margin-left: 0px;
+    margin-right: 0px;
     // width: 100%;
     // max-width: 25px;
+    width: 100%;
     //height: 128.57142857142858%;
-    height: 25px;
+    height: auto;
     max-height: 25px;
-    margin-top: -5px;
-    padding-right: 0px;
+    margin-top: 0px;
+    padding-right: 3px;
     align-self: center;
     align-items: center;
+    justify-content: flex-start;
+    // transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
-#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
-    transform: translateY(-2px) translateX(-7px);
+@mixin type-logo-2 {
+    position: relative;
+
+    z-index: 10;
+    pointer-events: none;
+    margin-left: 1px;
+    margin-right: 0px;
+    // width: 100%;
+    // max-width: 25px;
+    width: 100%;
+    //height: 128.57142857142858%;
+    height: auto;
+    max-height: 20px;
+    margin-top: 0px;
+    padding-right: 3px;
+    padding-top: 0px;
+    left: 0;
+    justify-content: flex-start;
+    align-self: center;
+    align-items: center;
+    // transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
+
 
 @mixin type-name {
     position: relative;
     z-index: 12;
     pointer-events: none;
     // margin-left: 18px;
-    padding-left: 8px;
-    margin-top: 5px;
+    padding-left: 0px;
+    // margin-top: 5px;
+    align-items: center;
+    // min-width: 33px;
+    // margin-bottom: 15.560000000000002px;
+    // min-height: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: center;
+    font-style: normal;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+@mixin type-name-2 {
+    // padding-top: 10px;
+    position: relative;
+    z-index: 12;
+    pointer-events: none;
+    // margin-left: 18px;
+    padding-left: 2px;
+    // margin-top: 5px;
     align-items: center;
     // min-width: 33px;
     // margin-bottom: 15.560000000000002px;
@@ -812,6 +456,8 @@ $gradient in $types {
     font-size: 18px;
     line-height: 100%;
     text-transform: uppercase;
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 @mixin pokename {
@@ -839,6 +485,7 @@ $gradient in $types {
     background: linear-gradient(180deg, #126282 0%, #002f3d 33.85%);
     background-clip: text;
     text-decoration: shadow whitesmoke;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -857,8 +504,7 @@ $gradient in $types {
     height: auto;
     pointer-events: auto;
     // box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-    
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;    
 }
 
 #Page {
@@ -871,8 +517,7 @@ $gradient in $types {
     // height: auto;
     // pointer-events: auto;
     // box-shadow: 0 5px 5px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-    
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;    
 }
 
 
@@ -885,7 +530,7 @@ $gradient in $types {
     z-index: 1;
     margin: 0;
     padding: 10px 10px;
-    transition: all 0.5s ease-in;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #Page:hover #card-img {
@@ -894,663 +539,134 @@ $gradient in $types {
     z-index: 14;
     pointer-events: none;
     margin-left: 0px;
-    width: 205px;
-    height: 203px;
+    // width: 205px;
+    // height: 203px;
     margin-top: 0px;
-    margin-bottom: -8px;
+    margin-bottom: 0px;
     min-height: 203px;
+    transform: translateX(-3px) translateY(-4px);
     /* content:url(images/card_img.png); */
-    transform: scale(1);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: 1;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    // opacity: 1;
     // box-shadow: 1px 8px 20px grey;
     -webkit-transition:  box-shadow .6s ease-in;
    
 }
 
-#Page:hover #card-img2 {
+#Page:hover #card-img::before {
+    --angle: 40;
+    content: '';
     position: relative;
     z-index: 14;
     pointer-events: none;
     margin-left: 0px;
-    width: 205px;
-    height: 203px;
+    // width: 205px;
+    // height: 203px;
     margin-top: 0px;
-    margin-bottom: -8px;
+    margin-bottom: 0px;
     min-height: 203px;
+    transform: translateX(0px) translateY(0px);
     /* content:url(images/card_img.png); */
-    transform: scale(1);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease-in;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    // opacity: 1;
+    // box-shadow: 1px 8px 20px grey;
+    -webkit-transition:  box-shadow .6s ease-in;
+   
 }
 
+
+#Page:hover #card-img::after {
+    --angle: 40;
+    content: '';
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 0px;
+    // width: 205px;
+    // height: 203px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 203px;
+    transform: translateX(0px) translateY(0px);
+    /* content:url(images/card_img.png); */
+    /* [2] Transition property for smooth transformation of images */
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    // opacity: 1;
+    // box-shadow: 1px 8px 20px grey;
+    -webkit-transition:  box-shadow .6s ease-in;
+   
+}
+
+
 #totalcard {
-    transform: scale(0);
+    // transform: scale(0);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 #totalcard:hover, #Page:hover #frame{
-    transform: scale(1);
-    transition: transfrom .6s ease-in;
+    // transform: scale(1);
+    color: red;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    // transition: transfrom .6s ease-in;
 }
 
-#Page:hover #poke-name-fire {
-    background: linear-gradient(1 0deg, fire-light 0%, #002f3d 60.42%);
-    // text-decoration: drop-shadow(3px whitesmoke);
-    background-clip: text;
-}
 
-#Page:hover #poke-name-fairy {
-    background: linear-gradient(180deg, $fairy-color 0%, #ba62a1 18.75%, #002f3d 71.87%);
-    background-clip: text;
-}
 
-#Page:hover #poke-name-dark {
-    background: linear-gradient(180deg, $dark-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-dragon {
-    background: linear-gradient(180deg, $dragon-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-electric {
-    background: linear-gradient(180deg, $electric-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-fairy {
-    background: linear-gradient(180deg, $fairy-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-flying {
-    background: linear-gradient(180deg, $flying-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-fighting {
-    background: linear-gradient(180deg, $fighting-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-ghost {
-    background: linear-gradient(180deg, $ghost-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-ground {
-    background: linear-gradient(180deg, $ground-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-ice {
-    background: linear-gradient(180deg, $ice-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-normal {
-    background: linear-gradient(180deg, $normal-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-poison {
-    background: linear-gradient(180deg, $poison-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-psychic {
-    background: linear-gradient(180deg, $psychic-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-rock {
-    background: linear-gradient(180deg, $rock-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #poke-name-water {
-    background: linear-gradient(180deg, $water-color 0%, #082b1e 59.9%);
-    background-clip: text;
-}
-
-#Page:hover #frame-card-bg-white-fire {
-    background: linear-gradient(180deg, #ffffff 40%, $fire-light 80%);
-}
-
-// .gradient-border {
-//   --borderWidth: 1px 1px 4px 4px;
-//   background: #1D1F20;
-//   position: relative;
-//   border-radius: var(--borderWidth);
-// }
-// .gradient-border:after {
-//   content: '';
-//   position: absolute;
-//   top: calc(-1 * var(--borderWidth));
-//   left: calc(-1 * var(--borderWidth));
-//   height: calc(100% + var(--borderWidth) * 2);
-//   width: calc(100% + var(--borderWidth) * 2);
-//   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-//   border-radius: calc(2 * var(--borderWidth));
-//   z-index: -1;
-//   animation: animatedgradient 3s ease alternate infinite;
-//   background-size: 300% 300%;
-// }
 @mixin card-gradient {
     --borderWidth: 1px 1px 4px 4px;
+    --cardheight: 
     position: relative;
-    width: 100%;
+    width: 104%;
     height: 102%;
     z-index: 5;
     pointer-events: none;
-    margin-left: 0%;
-    margin-top: 0%;
-    border: 1px;
-    border-color: lime;
-    border-radius: var(--borderWidth);
-}
-
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-        opacity: 0;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-        transition: opacity(1);
-        transform: rotateX('50deg');
-        transform: rotateY(60deg);
-        background: linear-gradient(121.52deg, $water-color 9.79%, $water-light 21.97%, $water-dark 41.76%);
-    }
-}
-
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
-    100% {
-        --rotate: 360deg;
-    }
-}
-
-@mixin cardspin {
-    --borderWidth: 1px 1px 4px 4px;
-    content: '';
-    position: absolute;
-    z-index: 5;
-    top: calc(-1 * --borderWidth);
-    left: 150px;
-    height: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
-    width: calc(100% + (border-width(1px 1px 4px 4px)) * 2);
-    border-radius: calc(2 * (border-width(1px 1px 4px 4px)));
+    margin-left: -1px;
+    margin-top: -4px;
+    // border: 1px;
+    // border-color: lime;
+    border-width: var(--borderWidth);
     animation-name: animatedgradient;
+    // transform: var(--rotate);
     animation: 3s ease alternate infinite;
-    background-size: 300% 300%;
-}
-
-// background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(121.52deg, #F8D030 4.11%, #A040A0 7.69%, #98D8D8 13.76%, #0085FF 20.66%, #A8B820 25.13%, #705898 30.08%, #F08030 35.91%, #6890F0 40.91%, #78C850 47.81%, #705848 55.43%, #A890F0 63.04%, #EE99AC 69.4%, #B8A038 74.99%, #C03028 80.46%, #445E9C 86.98%);
-#card-bg-gradient-fairy {
-    @include card-gradient;
-    background: radial-gradient(121.52deg, $fairy-color 9.79%, $fairy-light 24.44%, $fairy-dark 65.12%);
-}
-
-// #card-bg-gradient-fighting {
-//     @include card-gradient;
-//     background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
-// }
-
-#card-bg-gradient-bug {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $bug-color 9.79%, $bug-light 21.97%, $bug-dark 41.76%);
-}
-
-#card-bg-gradient-water {
-    @include card-gradient;
-    animation: spin 2.5s linear infinite;
-    background: linear-gradient(121.52deg, $water-color 9.79%, $water-dark 21.97%, $water-light 41.76%);
 }
 
 
-
-
-
-
-#card-bg-gradient-water::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    border-radius: calc(2 * var(--borderWidth));
-    animation-name: animatedgradient;
-    animation: 3s ease alternate infinite;
-    background-size: 300% 300%;
-    background: linear-gradient(60deg, $water-color, $water-dark, $water-light);
+#Page:hover #card-bg-gradient-fighting{
+    animation: rotateGradient-fighting 3.5s linear infinite;
 }
 
-#card-bg-gradient-rock {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $rock-color 9.79%, $rock-light 21.97%, $rock-dark 41.76%);
-}
 
-#card-bg-gradient-normal {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $normal-color 9.79%, $normal-light 21.97%, $normal-dark 41.76%);
-}
-
-#card-bg-gradient-electric {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
-}
-
-#card-bg-gradient-ice {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ice-color 9.79%, $ice-light 21.97%, $ice-dark 41.76%);
-}
-
-#card-bg-gradient-psychic {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $psychic-color 9.79%, $psychic-light 21.97%, $psychic-dark 41.76%);
-}
-
-#card-bg-gradient-dark {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $dark-color 9.79%, $dark-light 21.97%, $dark-dark 41.76%);
-}
-
-#card-bg-gradient-dragon {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $dragon-color 9.79%, $dragon-light 21.97%, $dragon-dark 41.76%);
-}
-
-#card-bg-gradient-electric {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $electric-color 9.79%, $electric-light 21.97%, $electric-dark 41.76%);
-}
-
-#card-bg-gradient-poison {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $poison-color 9.79%, $poison-light 21.97%, $poison-dark 41.76%);
-}
-
-#card-bg-gradient-flying {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $flying-color 9.79%, $flying-light 21.97%, $flying-dark 41.76%);
-}
-
-#card-bg-gradient-ghost {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ghost-color 9.79%, $ghost-light 21.97%, $ghost-dark 41.76%);
-}
-
-#card-bg-gradient-ground {
-    @include card-gradient;
-    background: linear-gradient(121.52deg, $ground-color 9.79%, $ground-light 21.97%, $steel-dark 41.76%);
-}
-
-// @keyframes animatedgradient {
-//     0% {
-//         background-position: 0% 50%;
-//     }
-//     50% {
-//         background-position: 100% 50%;
-//     }
-//     100% {
-//         background-position: 0% 50%;
-//     }
-// }
 
 .card-bg-gradient-outer {
     position: absolute;
     display: flex;
     pointer-events: none;
     z-index: 4;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
     left: 0;
     top: 0;
 }
 
-#Page:hover #card-bg-gradient-outer::after {
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    z-index: -1;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-}
-
-.card-bg-gradient {
-    @include card-gradient;
-    background: linear-gradient( 138.82999999999998deg, rgba(245, 197, 25, 1) 9.90681722903146%, rgb(0, 139, 23) 16.49605437168893%, rgb(245, 25, 234) 22.071563002043444%, rgb(0, 124, 206) 41.83927225478994%);
-}
-
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-:root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-    --rotate: 75deg;
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
-    --dark-color: #705848;
-    --dark-light: #A29288;
-    --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-    // SASS Variables - Poketype color palette //
-    --bug-color: #A8B820;
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
-    --dark-color: #705848;
-    --dark-light: #A29288;
-    --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-    // $fire-color: #F08030;
-    // $fire-light: #F5AC78;
-    // $fire-dark: #9C531F;
-    --fire-color: orange;
-    --fire-light: #F5AC78;
-    --fire-dark: #9C531F;
-    --flying-color: #A890F0;
-    --flying-light: #C6B7F5;
-    --flying-dark: #6D5E9C;
-    --ghost-color: #705898;
-    --ghost-light: #A292BC;
-    --ghost-dark: #493963;
-    --grass-color: #78C850;
-    --grass-light: #A7DB8D;
-    --grass-dark: #4E8234;
-    --ground-color: #E0C068;
-    --ground-light: #EBD69D;
-    --ground-dark: #927D44;
-    --ice-color: #98D8D8;
-    --ice-light: #BCE6E6;
-    --ice-dark: #638D8D;
-    --normal-color: #A8A878;
-    --normal-light: #C6C6A7;
-    --normal-dark: #6D6D4E;
-    --poison-color: #A040A0;
-    --poison-light: #C183C1;
-    --poison-dark: #682A68;
-    --psychic-color: #F85888;
-    --psychic-light: #FA92B2;
-    --psychic-dark: #F85888;
-    --rock-color: #B8A038;
-    --rock-light: #D1C17D;
-    --rock-dark: #786824;
-    --steel-color: #B8B8D0;
-    --steel-light: #D1D1E0;
-    --steel-dark: #787887;
-    --water-color: #6890F0;
-    --water-dark: #445E9C;
-    --water-light: #9DB7F5;
-    --bug-light: #C6D16E;
-    --bug-dark: #6D7815;
-    --dark-color: #705848;
-    --dark-light: #A29288;
-    --dark-dark: #49392F;
-    --dragon-color: #7038F8;
-    --dragon-light: #A27DFA;
-    --dragon-dark: #4924A1;
-    --electric-color: #F8D030;
-    --electric-light: #FAE078;
-    --electric-dark: #A1871F;
-    --fairy-color: #EE99AC;
-    --fairy-light: #F4BDC9;
-    --fairy-dark: #9B6470;
-    --fighting-color: #C03028;
-    --fighting-light: #D67873;
-    --fighting-dark: #7D1F1A;
-    --fighting-hover: #D67873;
-}
-
-// #card-bg-gradient-grass {
-//   @include card-gradient;
-//   animation: spingrass 2.5s linear infinite;
-//   background: linear-gradient(121.52deg, #7af519 9.79%, #39ef1b 21.97%, #319800 41.76%);
-// }
-// @keyframes spingrass {
-//   0% {
-//     --rotate: 0deg;
-//   }
-//   100% {
-//     --rotate: 360deg;
-//   }
-// }
-// @each $type in $types {
-//     #card-bg-gradient-#{$type} {
-//       @include card-gradient;
-//       background: linear-gradient(121.52deg, --fire-light 9.79%, --fire-color 21.97%, --fire-dark 41.76%);
-//       animation: spin 2.5s linear infinite;
-// }
-// .card-bg-gradient-#{$type} {
-//   @include card-gradient;
-//   background: linear-gradient(121.52deg, type(light) 9.79%, type(color) 21.97%, type(dark) 41.76%);
-//   animation: spin 2.5s linear infinite;
-// }
-// #card-bg-gradient-water {
-//   @include card-gradient;
-//   background: linear-gradient(121.52deg, $water-light 9.79%, $water-color 21.97%, $water-dark 41.76%);
-// }
-// @each $type in $types {
-//   #Page:hover #card-bg-gradient-#{$type}  {
-//     @include cardspin;  
-//     top: calc(var(--card-height) / 6);
-//     z-index: 5;
-//     height: 100%;
-//     width: 100%;
-//     top: 0;
-//     left: 0;
-//     margin: 0 auto;
-//     transform: scale(0.8);
-//     // filter: blur(calc(var(--card-height) / 6));
-//     // background-image: linear-gradient(
-//     //   var(--rotate)
-//     //   , $fire-light,  rgb(240, 156, 0) 43%, rgb(151, 98, 0));
-//     background-image: linear-gradient(
-//       var(--rotate)
-//       121.52deg, var(--type(light)) 9.79%, var(--type(color)) 21.97%, var(--type(dark)) 41.76%);
-//       opacity: 1;
-//     filter: drop-shadow(3px 3px 6px 6px var(--type(color));
-//     transition: opacity .5s;
-//   } 
-// }
-// #Page:hover #card-bg-gradient-$type  {
-//   @include cardspin;  
-//   top: calc(var(--card-height) / 6);
-//   z-index: 5;
-//   height: 100%;
-//   width: 100%;
-//   top: 0;
-//   left: 0;
-//   margin: 0 auto;
-//   transform: scale(0.8);
-//   // filter: blur(calc(var(--card-height) / 6));
-//   // background-image: linear-gradient(
-//   //   var(--rotate)
-//   //   , $fire-light,  rgb(240, 156, 0) 43%, rgb(151, 98, 0));
-//   background-image: linear-gradient(
-//     var(--rotate)
-//     121.52deg, var(--type(light)) 9.79%, var(--type(color)) 21.97%, var(--type(dark)) 41.76%);
-//     opacity: 1;
-//   filter: drop-shadow(3px 3px 6px 6px var(--type(color));
-//   transition: opacity .5s;
-// }
-// }
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
-    100% {
-        --rotate: 360deg;
-    }
-}
-
-// #Page:hover #frame-card-bg-white-grass {
-    // background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-    // filter: brightness(150%);
-// }
-
-#Page:hover #frame-card-bg-white-fairy {
-    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-fighting {
-    background: linear-gradient(180deg, #ffffff 0%, $fighting-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-fairy {
-    background: linear-gradient(180deg, #ffffff 0%, $fairy-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-bug {
-    background: linear-gradient(180deg, #ffffff 0%, $bug-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-dark {
-    background: linear-gradient(180deg, #ffffff 0%, $dark-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-dragon {
-    background: linear-gradient(180deg, #ffffff 0%, $dragon-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-electric {
-    background: linear-gradient(180deg, #ffffff 0%, $electric-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-flying {
-    background: linear-gradient(180deg, #ffffff 0%, $flying-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ghost {
-    background: linear-gradient(180deg, #ffffff 0%, $ghost-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-grass {
-    background: linear-gradient(180deg, #ffffff 0%, $grass-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ground {
-    background: linear-gradient(180deg, #ffffff 0%, $ground-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-ice {
-    background: linear-gradient(180deg, #ffffff 0%, $ice-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-normal {
-    background: linear-gradient(180deg, #ffffff 0%, $normal-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-poison {
-    background: linear-gradient(180deg, #ffffff 0%, $poison-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-psychic {
-    background: linear-gradient(180deg, #ffffff 0%, $psychic-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-rock {
-    background: linear-gradient(180deg, #ffffff 0%, $rock-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-steel {
-    background: linear-gradient(180deg, #ffffff 0%, $steel-color 100%);
-    filter: brightness(150%);
-}
-
-#Page:hover #frame-card-bg-white-water {
-    background: linear-gradient(180deg, #ffffff 0%, $water-color 100%);
-    filter: brightness(150%);
-    animation-name: spin;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-}
 
 .Frame {
     position: relative;
     z-index: 2;
     pointer-events: none;
-    width: 100%;
+    width: 101%;
     margin-left: 0;
     max-width: 252px;
     margin: inherit;
     padding: 0;
     background: linear-gradient( 151.98deg, rgba(250, 250, 250, 1) 41.051563958595864%, rgb(236, 235, 235) 85.82368021521708%);
     // filter:  
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
-// #Page:hover #frame  {
-    // filter:  
-    // box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-    // -webkit-transition:  box-shadow .5s;
-// }
-
-// #totalcard:hover {
-//     top: 2px;
-//     left: -2px;
-// }
 
 .Frame-outer {
     position: relative;
@@ -1601,19 +717,6 @@ $gradient in $types {
 }
 
 
-/* .frame-white-bg-card, .frame-white-bg-card-fire , .frame-white-bg-card-grass, .frame-white-bg-card-fairy, .frame-white-bg-card-fighting, .frame-white-bg-card-flying, .frame-white-bg-card-dragon, .frame-white-bg-card-ghost, .frame-white-bg-card-rock, .frame-white-bg-card-normal, .frame-white-bg-card-water, .frame-white-bg-card-dragon, .frame-white-bg-card-psychic, .frame-white-bg-card-bug, .frame-white-bg-card-ground{
-  position: relative;
-  z-index: 6;
-  pointer-events: none;
-  margin-left: 0px;
-  width: 252px;
-  min-width: 250px;
-  height: 285px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  min-height: 285px;
-  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
-} */
 
 .frame-card-bg-white {
     position: relative;
@@ -1626,84 +729,98 @@ $gradient in $types {
     margin-top: 0px;
     margin-bottom: 0px;
     min-height: 285px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
     background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
-    border-radius: 1px 1px 4px 4px;
+    border-radius: 8px;
+
+    & ::before {
+        content: '';
+        transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+    }
+
+    & ::after {
+        content: '';
+        transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+    }
 }
 
+.frame-card-bg-white {
+    position: relative;
+    z-index: 6;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 252px;
+    min-width: 250px;
+    height: 285px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 285px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    transition: background 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+    background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+    border-radius: 8px;
 
-/* .frame-card-bg-white:hover {
-  position: relative;
-  z-index: 6;
-  pointer-events: none;
-  margin-left: 0px;
-  width: 252px;
-  min-width: 250px;
-  height: 285px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  min-height: 285px;
-  background: linear-gradient(180deg, #ffffff 0%, #fff2de 100%);
-} */
+    &:hover {  
+        transition: background 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+    }
+
+    &::before {
+        content: '';
+        transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    }
+
+    &::after {
+        content: '';
+        transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    }
+}
 
 .frame-card-bg-white-outer {
-    position: relative;
+    position: absolute;
     display: flex;
     pointer-events: none;
     z-index: 6;
 }
 
 .frame-card-img {
+    display: flex;
     position: relative;
     z-index: 13;
     pointer-events: none;
-    margin-left: 28px;
-    width: 197px;
-    min-width: 197px;
-    height: 195px;
-    margin-top: -256px;
-    margin-bottom: 61px;
-    min-height: 195px;
+    // width: 100%;
+    // height: 100%;
+    // align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .frame-card-img-outer {
     position: relative;
     display: flex;
     pointer-events: none;
-    z-index: 13;
+    z-index: 14;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 285px;
 }
 
 .card-img {
     position: relative;
-    z-index: 14;
+    z-index: 140;
     pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    min-height: 203px;
-    /* content:url(images/card_img.png); */
-    transform: scale(0.9);
+    // margin-left: 0px;
+    // width: 200px;
+    // height: auto;
+    transform: translateY(0px) translateX(0px);
     /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: .9;
-}
-
-.card-img2 {
-    position: relative;
-    z-index: 14;
-    pointer-events: none;
-    margin-left: 0px;
-    width: 205px;
-    height: 203px;
-    margin-top: 0px;
-    margin-bottom: -8px;
-    /* min-height:203px;
-    content:url(images/card_img.png); */
-    transform: scale(0.9);
-    /* [2] Transition property for smooth transformation of images */
-    transition: transform 0.5s ease;
-    opacity: 1;
+    transition: transform 250.0ms ease-in-out 250ms, box-shadow 200ms ease-in-out 250ms;
+    // opacity: 1;
 }
 
 .card-img-outer {
@@ -1712,13 +829,18 @@ $gradient in $types {
     pointer-events: none;
     z-index: 14;
     justify-content: center;
+    height: 70%;
+    width: 150px;
+    // padding-bottom: 5px;
 }
 
 .frame-pokemon-name {
     position: relative;
     z-index: 15;
     pointer-events: none;
-    margin-left: -2px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 250px;
     height: 45px;
     margin-top: 224px;
@@ -1749,7 +871,7 @@ $gradient in $types {
     margin-bottom: 7px;
     min-height: 30px;
     filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .card-frame-name-outer {
@@ -1771,7 +893,9 @@ $gradient in $types {
 }
 
 #Page:hover .poke-name {
-    transform: translateY(-5px) translateX(-5px);
+    transform: translateY(-2px) translateX(-2px);
+    transition: transform 200.0ms ease-in-out 200.967ms,
+                box-shadow 200ms ease-in-out 0.967ms;
 }
 
 .poke-name-outer {
@@ -1782,37 +906,56 @@ $gradient in $types {
 }
 
 .frame-type-logo-name {
+    display: inline-flex;
+    flex-direction: row;
     position: relative;
     z-index: 7;
     pointer-events: none;
-    margin-left: 0.4%;
-    width: 100%;
-    height: 15.985964912280702%;
+    height: 100%;
     margin-top: 0px;
-    margin-right: 5px;
+    padding-right: 2px;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.logo-name-parent-frame {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 5000;
+    width: 100%;
+    /* align-content: center; */
+    top: 3px;
+    left: 0;
+    /* height: 100%; */
+    margin-top: 0px;
 }
 
 .frame-type-logo-name-outer {
     position: absolute;
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
     pointer-events: none;
     z-index: 7;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    padding-right: 50px;
+    // padding-right: 50px;
     margin-right: 4px;
 }
 
 .frame-type-name {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     position: relative;
     z-index: 11;
     pointer-events: none;
-    margin-left: 35px;
-    width: 45px;
+    width: 100%;
     min-width: 40px;
     height: 45.56px;
     margin-top: 0px;
@@ -1820,6 +963,7 @@ $gradient in $types {
     min-height: 45.56px;
     align-content: center;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .frame-type-name-outer {
@@ -1829,157 +973,117 @@ $gradient in $types {
     z-index: 11;
 }
 
-#TYPENAME-fire {
-    @include type-name;
-    // margin-top: 10px;
-    // margin-left: 12px;
-    color: $fire-color;
-}
-
 .TYPENAME {
     @include type-name;
     color: #09bac7;
 }
 
-#TYPENAME-grass {
-    @include type-name;
-    color: $grass-color;
-}
-
-#TYPENAME-fairy {
-    @include type-name;
-    color: $fairy-color;
-}
-
-#TYPENAME-water {
-    @include type-name;
-    color: $water-color;
-    filter: brightness(50%);
-}
-
-#TYPENAME-bug {
-    @include type-name;
-    color: $bug-dark;
-}
-
-#TYPENAME-dark {
-    @include type-name;
-    color: $dark-color;
-}
-
-#TYPENAME-dragon {
-    @include type-name;
-    color: $dragon-color;
-}
-
-#TYPENAME-electric {
-    @include type-name;
-    color: $electric-color;
-    filter: brightness(75%);
-    font-style: shadow;
-}
-
-#TYPENAME-fighting {
-    @include type-name;
-    color: $fighting-color;
-}
-
-#TYPENAME-flying {
-    @include type-name;
-    color: $flying-color;
-}
-
-#TYPENAME-ghost {
-    @include type-name;
-    color: $ghost-color;
-}
-
-#TYPENAME-ground {
-    @include type-name;
-    color: $ground-color;
-}
-
-#TYPENAME-ice {
-    @include type-name;
-    color: $ice-color;
-}
-
-#TYPENAME-normal {
-    @include type-name;
-    color: $normal-color;
-}
-
-#TYPENAME-poison {
-    @include type-name;
-    color: $poison-color;
-}
-
-#TYPENAME-psychic {
-    @include type-name;
-    color: $psychic-color;
-}
-
-#TYPENAME-rock {
-    @include type-name;
-    color: $rock-color;
-}
-
-#TYPENAME-steel {
-    @include type-name;
-    color: $steel-color;
-}
-
 #Page:hover .TYPENAME {
-    transform: translateY(-5px) translateX(-5px);
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+#Page:hover type-logo {
+    transform: translateY(0px) translateX(-1px);
+    overflow: visible;
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 .TYPENAME-logo {
     position: relative;
+    display: inline-flex;
+    flex-direction: column;
     z-index: 8;
-    pointer-events: none;
-    // margin-left: 8px;
-    // width: 28px;
-    // min-width: 25px;
-    // height: 43px;
-    padding: 0px 2px 0px 0px;
-    overflow: visible;
-}
-
-.TYPENAME-logo-outer {
-    position: relative;
-    display: flex;
-    pointer-events: auto;
-    z-index: 8;
-    width: 100%;
-    // padding-right: 5px;
-    // margin-right: 5px;
-}
-
-.Frame-4 {
-    position: relative;
-    z-index: 9;
     pointer-events: none;
     margin-left: 0px;
+    // width: 28px;
+    // min-width: 25px;
+    height: 40px;
+    margin-bottom: 3px;
+    overflow: visible;
+    align-items: center;
+    align-self: center;
+    justify-content: flex-start;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    
+}
+
+.TYPENAME-logo-outer {    
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    pointer-events: auto;
+    margin-left: 0px;
+    z-index: 8;
+    padding-left: 0px;
     width: 100%;
+    align-items: flex-start;
+    // padding-right: 5px;
+    // margin-right: 5px;
+    justify-content: flex-start;
+
+}
+
+
+.Frame-4 {
+    // display: flex;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    z-index: 9;
+    pointer-events: none;
+    // margin-left: 5px;
+    width: 75px;
     min-width: 25px;
     height: 28px;
-    margin-top: 8px;
-    margin-bottom: 7px;
-    min-height: 28px;
+    margin-top: 0px;
+    // padding-left: 3px;
+    margin-bottom: 0px;
+    min-height: 26px;
+    align-items: flex-start;
 }
+
+.Frame-4-2 {
+    // display: flex;y
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    z-index: 9;
+    pointer-events: none;
+    margin-left: 2px;
+    width: 75px;
+    min-width: 25px;
+    height: 28px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 26px;
+    align-items: flex-start;
+}
+
 
 .Frame-4-outer {
     position: relative;
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    // display: flex;
     pointer-events: none;
     z-index: 9;
     margin-right: 0px;
     padding-right: 0px;
-    margin-top: -40px;
-    margin-left: 5px;
+    margin-top: 0px;
+    margin-left: 3px;
     width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+
 }
 
+
+@each $typeName in $typeNames {
+    #type-logo-TYPENAME-2-#{$typeName} {
+        @include type-logo-2;
+        }
+    }
 
 
 .type-logo-TYPENAME {
@@ -2085,65 +1189,94 @@ $gradient in $types {
 
 .type-logo-TYPENAME-outer {
     position: absolute;
-    display: flex;
+    display: inline-flex;
+    flex-direction: row;
     pointer-events: none;
     z-index: 10;
-    width: 100%;
     height: 100%;
+    width: 100%;
     left: 0;
     top: 0;
 }
 
-// #Page::after .Page::after {
-//     content: '';
-//     position: absolute;
-//     z-index: -1;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 300px;
-//     opacity: 0;
-//     box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-//     transition: opacity 0.5s ease-in-out;
-
-// }
-
-// #Page:hover {
-//     z-index: 20;
-//     -webkit-transform: scale(1.25, 1.25);
-//     transform: scale(1.25, 1.25);
-// }
-
-// #Page:hover::after .Page:hover::after {
-//     z-index: 20;
-//     content: '';
-//     opacity: 1;
-// }
-
-
-#Page:hover::after #Frame {
-    content: '';
-    opacity: 1;
+.type-logo-TYPENAME-2-outer {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: row;
+    pointer-events: none;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 
+
+#Page:hover::after #Frame{
+    opacity: 1;
+    color: #ff0000;
+}
+
+#Frame{
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    // transform: translate(0, 0);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+
+   }
+   
+
+//Card Hover Movement //
 #Page:hover #Frame {
     // content: '';
     // position: absolute;
-    // z-index: -1;
-    width: 100%;
-    height: 100%;
-    // opacity: 0;
-    transform: translateY(-5px) translateX(-5px);
-    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out, opacity .3s ease-in-out;
-    color: rgba(0, 0, 0, 0.25);
-
+    // z-index: -50;
+    transform: translate(-1px, -2px);
+    box-shadow: 5px 15px 20px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
-#Page:hover {
+#Page:hover::after #Frame {
+    content: '';
+    // position: absolute;
+    // z-index: -50;
+    // height: 100%;
+    // width: 100%;
+    // opacity: 0;
+    // transform: translateY(-5px) translateX(-5px);
+    // box-shadow: 0px 7.5px 10px 0px rgba(0, 0, 0, 0.25);
+    // color: #ff0000;
+    // width: 102%;
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+#Page:hover .Frame-outline-outer {
+    width: 150%;
+    height: 100%;
+    display: flex;
+    color: #fd0000;
+    border-width: 10px;
+}
+
+// HOVER ON TYPE LOGO //
+#Page:hover div[class^='type-logo-TYPENAME-'], div[className='type-logo-TYPENAME-*'] {
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+// HOVER ON TYPE LOGO //
+#Page:hover div[class^='type-logo-'], div[className='type-logo-*'] {
+    transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+}
+
+
+#Page:hover #Page::after {
     // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.169);
-    // color: rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out;
+    color: rgba(0, 0, 0, 0.25);
+    border-width: 10px;
+    border-color: red;
+    // transform: translateY(0px) translateX(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
 }
 
 // #Page:hover .Page {
@@ -2152,14 +1285,14 @@ $gradient in $types {
 
 
 
-#Frame {
-    // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
-    width: 100%;
-    transition: transform .5s ease;
-    // background-color: rgba(0, 0, 0, 0.54);
-    // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+// #Frame {
+//     // box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+//     width: 102%;
+//     transition: transform .3s ease;
+//     // background-color: rgba(0, 0, 0, 0.54);
+//     // box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
 
-}
+// }
 
 .Page {
     width: 100%;
@@ -2178,21 +1311,7 @@ $gradient in $types {
 
 // }
 
-#Frame{
-    box-shadow:none;
-   }
-   
-   /* Division */
-   #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(2) a:nth-child(1) div:nth-child(1) #Page div:nth-child(1) #Frame > div:nth-child(1){
-    box-shadow:0px 0px 3px 0px #0000ee !important;
-   }
-   
-   /* Page */
-   #Page{
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-   }
-   
    /* Frame (hover) */
 //    #Frame:hover{
 //     max-width:100%;
@@ -2204,72 +1323,860 @@ $gradient in $types {
    }
    
    /* Image (hover) */
-   #Page:hover img {
-    transform:scale(1.10) rotateY(-2deg) translatex(2px) translatey(-3px);
-    perspective:399px;
-   }
+//    #Page:hover img {
+//     transform: translatex(-1px) translatey(-2px);
+//     transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+//    }
    
    /* Span Tag (hover) */
    div > span:hover{
-    transform:scale(1.17) rotateX(8deg) rotateY(26deg) translatex(-14px) translatey(-3px);
-    perspective:584px;
+    // transform:scale(1.0) rotateX(0deg) rotateY(0deg) translatex(0px) translatey(-1px);
+    transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
    }
    
    /* Span Tag (hover) */
    #Page span span:hover{
-    transform:scale(0.52);
+    // transform:scale(0.52);
+    transition: transform 200ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+   }
+
+
+#loadingDiv {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    }
+
+#loadingDivPokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#loadingPokemon {
+display: block;
+justify-content: center;
+align-items: center;
+max-width: 200px;
+max-height: 200px;
+} 
+
+#loadingh2 {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+
+
+.frame-card-img {
+    position: relative;
+    z-index: 13;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* List */
+#pagination ul{
+    display:inline-flex;
+    justify-content:center;
+    margin-bottom:0px;
+    height:24px;
+    position:relative;
+    left:0px;
+    font-family:'Rubik', sans-serif;
+    font-weight:500;
+    text-shadow:none;
+    text-transform:uppercase;
+    word-spacing:0.7px;
+    letter-spacing:-0.5px;
+    column-count:1;
+    border-style:none;
+    margin-top:1px;
+    align-items:baseline;
+   }
+   
+   /* Link */
+   #pagination .previous a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    height:15px;
+   }
+   
+   /* List Item */
+   #pagination ul li{
+    height:20px;
+    display:inline-flex;
+    position:relative;
+    justify-content:center;
+   }
+   
+   /* Previous */
+   #pagination ul .previous{
+    align-items:baseline;
+    font-size:12px;
+    font-weight:500;
+    width:77px;
+    line-height:0px;
+    padding-right:2px;
+    align-self:baseline;
+    height:9px;
+   }
+   
+   /* Link */
+   #pagination ul a{
+    padding-left:5px;
+    padding-right:5px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+   }
+   
+   /* Next */
+   #pagination ul .next{
+    transform:translatex(0px) translatey(0px);
+    width:58px;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    margin-top:0px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    font-size:12px;
+    word-spacing:2.1px;
+    letter-spacing:0.3px;
+    font-weight:500;
+    height:15px;
+    justify-content:center;
+    align-items:baseline;
+   }
+   
+   /* Link */
+   #pagination .next a{
+    transform:translatex(0px) translatey(0px);
+    height:15px;
+    display:flex;
+   }
+   
+   /* Pagination */
+   #pagination{
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-between;
+   }
+   
+   /* Link */
+   #__next .container-fluid .row .col div div .btn-div-border #pagination ul .previous a{
+    width:77px !important;
+   }
+   
+   /* Link */
+   #__next .container-fluid .row .col div div .btn-div-border #pagination ul .next a{
+    width:58px !important;
+   }
+   
+   /* Div border */
+//    .container-fluid div .btn-div-border{
+//     display:flex;
+//     justify-content:space-around;
+//     margin-bottom: 10px;
+//     padding-bottom: 10px;
+//     margin-top: 5px;
+//    }f
+   
+   /* Link (active) */
+   #pagination ul a:active{
+    font-weight:500;
+    color: red;
    }
    
    /* Division (hover) */
+// div:nth-child(2) > div:nth-child(2) > div:nth-child(1):hover{
+//     transform: translatex(-5px) translatey(-5px);
+//     width:auto;
+//     opacity: .5;
+//    }
+   
+   /* Division */
+    // #__next .container-fluid .row:nth-child(2) .col div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+        // width:auto !important;
+    // }
+    
+    /* Frame outer (hover) */
+    #Page:hover #Frame-outer::after {
+        transform: translatex(0px) translatey(-0px);
+        opacity: 0;
+        transition: transform 200.0ms ease-in-out 200ms, box-shadow 200ms ease-in-out 200ms;
+    }
 
-   #card-bg-gradient-fighting {
-    background-size: 600% 600%;
-    --borderWidth: 1px;
-    background-image: linear-gradient(
-        to bottom,
-        var(--fighting-light),
-        var(--fighting-color)
-    );
-    border: var(--borderWidth) solid var(--fighting-dark);
-    border-radius: 4px;
+    #Page:hover .Frame-card-outline .frame-card-outline-outer {
+        width: 150%;
+        background-color: red;
+        border-width: 10px;
+        border-color: red;
+    }
+
+    //    @each $type in $types {
+    //     #card-bg-gradient-#{$type} {};
+    //     //   width: 102%;
+    //     //   height: 104%;
+    //       background-size: 600% 600%;
+    //         --borderWidth: 8px;
+    //     //   background-image: linear-gradient(
+    //     //       to bottom,
+    //     //       var(--#{$type}-light),
+    //     //       var(--#{$type}-dark)
+    //     //   );
+    //       border: var(--borderWidth) solid var(--#{$type}-dark);
+    //       border-radius: 8px;
+    //       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    //       background: linear-gradient(
+    //           --rotate,
+    //           var(--#{$type}-color) 9.79%,
+    //           var(--#{$type}-light) 21.97%,
+    //           var(--#{$type}-dark) 41.76%
+    //       );
+    //       z-index: 500;
+    //       @include card-gradient;
+    //     }
+    
+    //     #Page:hover #card-bg-gradient-#{$type} {
+    //       animation: rotateGradient 3.5s linear infinite;
+    //     }
+    //   }
+
+
+
+
+    // #Page:hover #card-bg-gradient-fire::before {
+    //     content: "";
+    //     --card-height: 104%;
+    //     width: 104%;
+    //     height: 104%;
+    //     border-radius: 8px;
+    //     background: linear-gradient(var(--rotate), $fire-color 9.79%, $fire-light 21.97%, $fire-dark 41.76%);
+    //     animation: rotateGradient-fire 3.5s linear infinite;    
+    //     position: absolute;
+    //     z-index: -1;
+    //     top: -1%;
+    //     left: -4px;
+    //     filter: blur(20px);
+    // }
+
+
+
+.pokemon-card {
+    @include card-gradient;
+    $borderWidth: 1px 1px 4px 4px;
+    border-width: $borderWidth;
+    border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+    background-size: 200%;
+    z-index: 50;
 }
 
-#Page:hover #card-bg-gradient-fighting{
-    animation: rotateGradient 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+
+    @each $type, $shades in $types {
+        $type-color: map-get($shades, 'color');
+        $type-light: map-get($shades, 'light');
+        $type-dark: map-get($shades, 'dark');
+
+        #type-logo-TYPENAME-#{$type} {
+            @include type-logo;
+            content: url(images/type_c21_#{$type}.svg);
+        }
+
+        .type-gradient-#{$type} {
+            @include typegradient;
+            background: linear-gradient(121.52deg, $type-color 9.79%, $type-dark 24.44%, $type-light 65.12%);
+        }
+
+        //bottom gradient bar //
+        .type-gradient-#{$type}-bottom {
+            @include typegradient-bottom;
+            height: 1em;
+            background: linear-gradient(121.52deg, $type-color 9.79%, $type-dark 24.44%, $type-light 65.12%);
+        }
+
+
+
+
+        #Page:hover #poke-name-#{$type} {
+            background: linear-gradient(180deg, $type-color 0%, #082b1e 59.9%);
+            background-clip: text;
+        }
+
+        #TYPENAME-#{$type} {
+            @include type-name;
+            // margin-top: 10px;
+            // margin-left: 12px;
+            color: $type-color;
+        }
+
+        #TYPENAME-2-#{$type} {
+            @include type-name-2;
+            // margin-top: 10px;
+            // margin-left: 12px;
+            color: $type-color;
+        }
+
+
+        #card-bg-gradient-#{$type}{
+            @include card-gradient;
+            // background-size: 600% 600%;
+            --borderWidth: 1px 1px 4px 4px;
+            // background-image: linear-gradient(
+            //     to bottom,
+            //     var(--fire-light),
+            //     var(--fire-dark)
+            // );
+            border-width: --borderWidth;
+            // border: var(--borderWidth) solid var(--fire-dark);
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
+            background-size: 200% 100%;
+        }
+        #Page:hover #card-bg-gradient-#{$type} {
+            background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
+            background-size: 200% 100%;
+        
+            animation: rotateGradient-#{$type} 3.5s linear infinite;
+        
+            
+        }
+
+        #Page:hover #card-bg-gradient-#{$type}::before {
+            content: "";
+            --card-height: 102%;
+            width: 102%;
+            height: 102%;
+            border-radius: 8px;
+            background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
+            background-size: 125% 100%;
+            animation: rotateGradient-#{$type} 3.5s linear infinite;
+            position: absolute;
+            z-index: -1;
+            top: -1%;
+            left: -4px;
+            filter: blur(5px);
+        }
+
+        #Page:hover #card-bg-gradient-#{$type}::after {
+            content: '';
+            @include card-gradient;
+            --#{$type}-bold: hsl(from #{$type-color}) h s calc(l - 80%); 
+            --card-height: 102%;
+            // background-size: 600% 600%;
+            --borderWidth: 1px 1px 4px 4px;
+            // background-image: linear-gradient(
+            //     to bottom,
+            //     var(--fire-light),
+            //     var(--fire-dark)
+            // );
+            border-width: --borderWidth;
+            // border: var(--borderWidth) solid var(--fire-dark);
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(var(--rotate), $type-color 9.79%, $type-light 21.97%, $type-dark 41.76%, $type-light 60.23%, $type-color 72.21%);
+            background-size: 200% 100%;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 101%;
+            width: 101%;
+            margin: 0 auto;
+            transform: scale(0.8);
+            filter: blur(calc(var(--card-height) / 50));
+            animation: rotateGradient-#{$type} 3.5s linear infinite;
+            transition: opacity .5s;
+        }
+        
+      
+        @keyframes rotateGradient-#{$type} {
+            0% {
+              background-position: 0% 50%;
+            }
+            100% {
+              background-position: 100% 50%;
+            }
+          }
+          
+
+        .icon-container {
+          z-index: 4000;
+          position: relative;
+          display: inline-block;
+          overflow: hidden; // Hide the overflowing "light" element
+        }
+        
+        .icon {
+          z-index: 4000;
+          width: 50px;
+          height: 50px;
+          content: url(/shinyblack.svg);
+        }
+        
+        .light {
+          z-index: 4000;
+          position: absolute;
+          top: 0;
+          left: -100%; // Start outside the icon
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle, $type-light, rgba(255, 255, 255, 0)); // Use Sass variable
+          opacity: 0;
+          animation: ripple 5s infinite ease-in-out;
+        }
+        
+        @keyframes ripple {
+          0% {
+            left: -100%;
+            opacity: 0;
+          }
+          25% {
+            opacity: 1;
+          }
+          50% {
+            left: 100%;
+            opacity: 0;
+          }
+          75% {
+            opacity: 1;
+          }
+          100% {
+            left: -100%;
+            opacity: 0;
+          }
+        }
+
+/* Container fluid */
+#__next .container-fluid{
+    background-color: none;
+   
+   }
+   
+   /* List */
+   #pagination ul{
+    align-items:center;
+   }
+   
+   /* Div border */
+   .container-fluid div .btn-div-border{
+    width:100vw;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+   }
+   
+   /* Pagination */
+   #pagination{
+    justify-content:center;
+   }
+   
+   body, Body, .div-container, root, container-fluid,  *.container-fluid {
+    background: linear-gradient(to bottom,  #d6ebff, #9fc0e1);
+   };
+
+
+//   .navbarSearchClass {
+//     border-top-width: 10px;
+//     border-bottom-width: 10px;
+//     border-color: black;
+//     border-width: 10px;
+//     z-index: 500;
+//   }
+  
+//   col, div.col {
+//     background-color: none;
+//   }
+  
+  @each $type-light in $types-light  {
+    #Page:hover #frame-card-bg-white-#{$type-light} {
+        --bug-light: #CDE559;
+        --dark-light: #A29288;
+        --dragon-light: #9E6FFC;
+        --electric-light: #FFE765;
+        --fairy-light: #FFB4D0;
+        --fighting-light: #E36760;
+        --fire-light: #FFAC5F;
+        --flying-light: #B49BFF;
+        --ghost-light: #AA89D3;
+        --grass-light: #8FEB7A;
+        --ground-light: #F3D290;
+        --ice-light: #ACEEEE;
+        --normal-light: #CCCC92;
+        --poison-light: #D657D6;
+        --psychic-light: #FF85A1;
+        --rock-light: #DCC767;
+        --steel-light: #C5C5E2;
+        --water-light: #80A4FF;
+        transition: background 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+        background-image: radial-gradient(circle at 50%, rgb(255, 255, 255), var(--#{$type-light}));
+        filter: brightness(150%);
+        }
+    }
 }
 
-@keyframes rotateGradient {
-    0% {
-        --rotate: 0deg;
-        background-position: 0% 50%;
-        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
+/* List */
+#pagination ul{
+    display:inline-flex;
+    align-self:center;
+    padding-left:0px;
+    background-color:transparent;
+   }
+   
+   /* Link */
+   #pagination .previous a{
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:13px;
+    padding-top:0px;
+    min-height:24px;
+    position:relative;
+    cursor: pointer;
+   }
+   
+   /* Col */
+   .container-fluid .col{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   }
+   
+   /* Link */
+   #__next .container-fluid .row .col div div .btn-div-border #pagination ul .previous a{
+    height:100% !important;
+   }
+   
+   /* Link */
+   #pagination .next a{
+    margin-bottom:0px;
+    height:100%;
+    position:relative;
+    min-height:24px;
+    display:inline-flex;
+    flex-direction:column;
+    cursor: pointer;
+   }
+   
+   /* Next */
+   #pagination ul .next{
+    height:100%;
+    min-height:24px;
+   }
+   
+   /* Link (active) */
+   #pagination li:active{
+    border-width: 1px;
+    border-radius: 10px;
+    color:#9b9ef2;
+   }
+   
+   #pagination li:disabled {
+    border-width: 1px;
+    border-radius: 10px;
+    color:#9b9ef2;
+   }
+   
+   /* Navbar */
+   .container-fluid .row .col > .navbar{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Link */
+   #pagination li:nth-child(2) a{
+    color:#050505;
+   }
+
+   
+   /* Link (hover) */
+   #pagination li a:hover{
+    color:#7b4141;
+    cursor: pointer;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+   }
+
+   .paginate-inactive {
+    color: darkgray;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: $poke-color;
+   }
+
+   #search-div {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+   }
+
+   #search-box {
+    border-width: 2px;
+    border-color: $poke-color;
+    border-radius: 6px;
+
+   }
+
+   /* Division */
+.container-fluid .row .col > div > div{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Div border */
+   .container-fluid div .btn-div-border{
+    box-sizing: border-box;
+    flex-direction:row;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: black;
+
+   }
+   
+   /* Search div */
+   #search-div{
+    width:auto !important;
+   }
+
+
+   .logo-frame {
+        display: inline-flex;
+        padding: 0px 3px 3px 0px;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 11px;
+   }
+
+   .logo-frame-text {
+        display: flex;
+        width: 424px;
+        padding: 9px 15px 10px 0px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 13.906px;
+   }
+
+   .logo-outline {
+        width: 421px;
+        height: 102px;
+   }
+
+   .poke {
+        width: 136.601px;
+        height: 44.448px;
+        transform: rotate(-3.707deg);
+
+        position: absolute;
+        left: 10px;
+        top: 20px;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+   }
+
+   .com {
+        width: 58px;
+        height: 26px;
+        transform: rotate(0.534deg);
+
+        position: absolute;
+        right: 0px;
+        bottom: 7.73px;
+
+        color: #FFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Rubik;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
-    25% {
-        --rotate: 30deg;
-        background: linear-gradient(121.52deg, $fighting-color 30.79%, $fighting-light 51.97%, $fighting-dark 91.76%);
+    .decks {
+        width: 162.809px;
+        height: 54.154px;
+        transform: rotate(2.628deg);
+
+        position: absolute;
+        right: 58.119px;
+        top: 15px;
+        bottom: 0px;
+
     }
 
-    50% {
-        --rotate: 90deg;
-        background-postion: 100% 50%;
-        background: linear-gradient(121.52deg, $fighting-light 9.79%, $fighting-dark 21.97%, $fighting-color 41.76%);
+    .frame-poke {
+        display: flex;
+        padding-left: 0px;
+        align-items: center;
+        gap: 10px;
+        flex: 1 0 0;
+        align-self: stretch;
     }
-    100% {
-        --rotate: 360deg;
-        background-position: 0% 50%;
-        background: linear-gradient(121.52deg, $fighting-color 9.79%, $fighting-light 21.97%, $fighting-dark 41.76%);
-    }
-}
 
-@keyframes spin {
-    0% {
-        --rotate: 0deg;
+    .frame-decks {
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex: 1 0 0;
+        align-self: stretch;
     }
-    100% {
-        --rotate: 360deg;
-    }
-}
 
+    .frame-com {
+        display: flex;
+        padding-top: 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    .shiny-icon-container {
+        position: absolute;
+        display: flex; /* or any other display type as per your layout */
+        top: -30px;
+        left: 160px;
+    }
+
+    .shinyImageContainer {
+        position: relative;
+        display: block; /* or any other display type as per your layout */
+        top: 70px;
+        left: 80px;
+    }
+
+
+    .shiny-img {
+        top: -20px;
+        left: 80px;
+        opacity: 0.5;
+    }
+
+    .sparkling-icon {
+        display: block;
+        width: 30px; /* Adjust as needed */
+        height: auto;
+        animation: sparkling 2s infinite ease-in-out;
+    }
+    
+    @keyframes sparkling {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+    }
+
+    .shiny-button.shine::after {
+        animation: quickShine 0.5s ease forwards;
+    }
+    .shiny-button {
+        position: relative;
+        background-color: #af4caa; /* Example color */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .shiny-button::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+        display: none;
+    }
+    
+    @keyframes quickShine {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes streak {
+        0% { background-position: -100% 0; }
+        100% { background-position: 100% 0; }
+      }
+      
+      #shiny {
+        /* Adjust the width and height to fit your SVG */
+        width: 200px; 
+        height: 200px;
+      
+        /* Initial black background */
+        background-color: black;
+      
+        /* Linear gradient for the streak */
+        background-image: linear-gradient(to right, black, lightgray, black);
+      
+        /* Set the initial position of the gradient off-screen */
+        background-size: 200% 100%;
+        background-position: -100% 0;
+      
+        /* Animation */
+        animation: streak 1s linear forwards;
+      }
+    
+      .paginate-container {
+        background: #ececec;
+        /* background: #701200;  fallback for old browsers */
+        /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+        /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        float: center;
+        align-self: flex-start;
+        padding: 0 10 0 15;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        align-content: center;
+        height: auto;
+        top: 0;
+        position: static;
+        box-sizing: border-box;
+        border-top-width: 10px;
+        border-bottom-width: 10px;
+        border-color: rgb(26, 26, 26);
+        z-index: 1500;
+        justify-content: space-around;
+    
+    }

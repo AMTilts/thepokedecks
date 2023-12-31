@@ -3,20 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Rajdhani:wght@600;700&family=Righteous&display=swap');
 
 
-.navbarcontainer {
+.navbartopcontainer {
     background: #8b0303;
     /* background: #701200;  fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: center;
-    align-self: center;
-    margin-bottom: 15px;
-    padding: 0 5 0 15;
-    display: inline-flex;
+    align-self: flex-start;
+    margin-top:0;
+    /* margin-bottom: 15px; */
+    padding: 0 10 0 15;
+    display: flex;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     align-content: center;
     height: 100%;
+    top: 0;
+    position: static;
+    border-width: 2px;
+    border-color: black;
 }
 
 .footercontainer {
@@ -25,6 +30,7 @@
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: center;
+    flex-grow: 1;
     align-self: center;
     margin-bottom: 15px;
     padding: 0 5 0 15;
@@ -37,18 +43,35 @@
     height: 35px;
 }
 
-.navbarlight {
+/* .navbarlight {
     color: white;
-}
+} */
 
-.navbarbrand {
+/* .navbarbrand {
     font-size: 60px;
     text-decoration: bold;
     font-family: 'Oxygen', sans-serif;
     color: white;
-}
+} */
 
-a.navbarbrand {
+/* .navbarDecks {
+    font-size: 60px;
+    text-decoration: bold;
+    font-style: italic;
+    font-family: 'Rubik', sans-seriff;
+    
+    background: linear-gradient(to right, #c73939, #e0cccc); /* From deep red to white */
+
+    /* border-width: 1px;
+    border-color: white;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+/* } */
+
+/* a.navbarbrand {
     padding-left: 5px;
     padding-right: 0px;
     margin-right: 0px;
@@ -59,14 +82,14 @@ a.navbarbrand {
     font-weight: bold;
     font-size: 50px;
     text-decoration: none;
-}
+} */
 
-.navbartitle2 {
+/* .navbartitle2 {
     color: whitesmoke;
     font-family: 'Rubik';
     font-weight: 50px;
     margin-right: 5px;
-}
+} */
 
 
 /* .mlauto {
@@ -78,7 +101,7 @@ a.navbarbrand {
     font-weight: 600;
     justify-items: flex-end;
 } */
-
+/* 
 .logo {
     margin-left: 0px;
     margin-right: 10px;
@@ -90,4 +113,4 @@ a.navbarbrand {
     color: white;
     justify-content: flex-start;
     text-shadow: black 1px 1px;
-}
+} */

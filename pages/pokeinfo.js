@@ -38,7 +38,7 @@ export default function Pokeinfo({ data }) {
         <div className="container">
             <Head>
                 <title>Pokedexicles</title>
-                <link ref="icon" href="/favicon.ico" />
+                <link href="/favicon.ico" />
             </Head>
 
             <main>
@@ -55,7 +55,7 @@ export default function Pokeinfo({ data }) {
                         const { id, name, sprites} = result;
 
                         return (
-                            <li key={id} name={name} sprites={sprites} className="card">
+                            <li key={id} name={name} className="card">
                                 { id ? <a href={sprites.front_default}>
                                         <img src={sprites.front_default} alt={`${name}`}></img>
                                         <h3>{ name }</h3>

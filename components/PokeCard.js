@@ -1,12 +1,20 @@
-import React from 'react';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
-import classNames from 'classnames';
-import Image from 'next/image';
+import Image from 'next/future/image';
+import FixImage from './FixImage';
+import imageSize from 'image-size';
+import probe from 'probe-image-size'
+import { doExpression } from '@babel/types';
+import { raw } from 'fs-loader';
+// import { EntryOptionPlugin } from 'webpack';
+import {shinyBlack} from './shinyblack.png';
+import Link from 'next/link';
 
 `query MyQuery {
     allFile(filter: { sourceInstanceName:{eq: "loading"} }) {
       edges {
+
         node {
           extension
           dir
@@ -16,291 +24,363 @@ import Image from 'next/image';
     }
   }`;
 
-// if( {p.types[1].type.name} == "Water") {
-//     waterType();
-// }
-// if ({p.types[]})
-/* 
-function typeCheck(p) {
-  const isGrass = p.types[0].type.name === "grass";
-  const isWater = p.types[0].type.name === "water";
-  const isFire = p.types[0].type.name === "fire";
+export const getStaticProps = async () => {
+  const url = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+  const response = await fetch(url);
+  const data = await response.json();
+  const imageUrls = data.map((entry) => entry.assets.image);
+  console.log(imageUrls);
+  const imagesWithSizes = await Promise.all(
+    imageUrls.map(async (url) => {
+      const imageWithSize = {url};
+      imageWithSize.size = await probe(url);
+      console.log(imageWithSize.width)
+      return imageWithSize;
+    })
+  );
 
-  const typeGrass = useState(grass, setGrass); */
+  return {
+    props: {
+      data,
+      images: imagesWithSizes
+    }
+  };
+};
 
-function PokeCard({ p }) {
-  // if ("grass" === p.types[0].type.name) {
+function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseData, currentItems, data, p, filteredData, imageWidth, fImg, imgWidth, imgHeight, images, imagesWithSizes, imgUrl, props, dimensions, shinyImage, primaryColor, secondaryColor, primaryDarkColor}) {
 
-  //   return ;
-  // }else if(p.types[0].type.name === "water") {
-  //   return <TypeWater />;
-  // }else if(p.types[0].type.name === "fighting") {
-  //   return <TypeFire />;
-  // }else if(p.types[0].type.name === "normal")
+    const [ imageArray, setImageArray ] = useState([]);
+    const [ pokeImage, setPokeImage ] = useState(null);
+    const [ imageURL, setImageURL] = useState('');
+    const [ imageHeight, setImageHeight] = useState(undefined);
+    const [ naturalWidth, setNaturalWidth] = useState(undefined);
 
-  // console.log(p.types[0].type.name)
+    const [naturalHeight, setNaturalHeight] = useState(undefined);
+    const imageRef = useRef(null);
+    const primaryTypeName = p?.primaryType?.names?.English;
+    const secondaryTypeName = p?.secondaryType?.names?.English;
 
-  // function waterType() {
-  //         return (
-  //             <Card style={
-  //                 background-image: linear-gradient(-60deg, #f12711 0%, #f5af19 100%)
-  //                 border-width: 2px 5px 7.5px 2px
-  //                 border-color: rgb(0, 194, 212);
-  //             }>
-  //         )
-  //     }
-  const cardWhite = classNames({
-    'frame-card-bg-white-grass': `${p.types[0].type.name}` === 'grass',
-    'frame-card-bg-white-fire': `${p.types[0].type.name}` === 'fire',
-    'frame-card-bg-white-fairy': `${p.types[0].type.name}` === 'fairy',
-    'frame-card-bg-white-water': `${p.types[0].type.name}` === 'water',
-    'frame-card-bg-white-rock': `${p.types[0].type.name}` === 'rock',
-    'frame-card-bg-white-dark': `${p.types[0].type.name}` === 'dark',
-    'frame-card-bg-white-ghost': `${p.types[0].type.name}` === 'ghost',
-    'frame-card-bg-white-ice': `${p.types[0].type.name}` === 'ice',
-    'frame-card-bg-white-dragon': `${p.types[0].type.name}` === 'dragon',
-    'frame-card-bg-white-flying': `${p.types[0].type.name}` === 'flying',
-    'frame-card-bg-white-steel': `${p.types[0].type.name}` === 'steel',
-    'frame-card-bg-white-electric': `${p.types[0].type.name}` === 'electric',
-    'frame-card-bg-white-poison': `${p.types[0].type.name}` === 'poison',
-    'frame-card-bg-white-fighting': `${p.types[0].type.name}` === 'fighting',
-    'frame-card-bg-white-psychic': `${p.types[0].type.name}` === 'psychic',
-    'frame-card-bg-white-ground': `${p.types[0].type.name}` === 'ground',
-    'frame-card-bg-white-bug': `${p.types[0].type.name}` === 'bug',
-    'frame-card-bg-white-normal': `${p.types[0].type.name}` === 'normal',
+    function darkenColor(color, amount) {
+      let colorInt = parseInt(color.substring(1), 16);
+      let r = (colorInt >> 16) - amount;
+      let g = ((colorInt >> 8) & 0x00FF) - amount;
+      let b = (colorInt & 0x0000FF) - amount;
+    
+      r = r < 0 ? 0 : r;
+      g = g < 0 ? 0 : g;
+      b = b < 0 ? 0 : b;
+    
+      return "#" + (r * 0x10000 + g * 0x100 + b).toString(16).padStart(6, '0');
+    }
+    
+    const darkerColor = darkenColor(primaryColor, 15); // primaryColor is your original color, 20 is the amount to darken by
+        
 
-  });
+    function mixColors(color1, color2) {
+  2  // Parse the color strings to rgb
+      let c1 = parseInt(color1.substring(1), 16);
+      let c2 = parseInt(color2.substring(1), 16);
+  2
+      let r = ((c1 >> 16) + (c2 >> 16)) >> 1;
+      let g = ((c1 >> 8 & 0x00FF) + (c2 >> 8 & 0x00FF)) >> 1;
+      let b = ((c1 & 0x0000FF) + (c2 & 0x0000FF)) >> 1;
+    
+      return "#" + (0x1000000 + r * 0x10000 + g * 0x100 + b).toString(16).slice(1);
+    }
+  
+    const midColor = primaryTypeName && secondaryTypeName 
+      ? mixColors(primaryColor, secondaryColor)
+      : mixColors(primaryColor, darkerColor) 
+        ? darkerColor 
+        : 'orange'; // Fallback color if no types are defin
+  
+    const midColorPrimary = mixColors(primaryColor, darkerColor);
+    
 
-  const logoType = classNames({
-    'type-logo-TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'type-logo-TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'type-logo-TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy',
-    'type-logo-TYPENAME-water': `${p.types[0].type.name}` === 'water',
-    'type-logo-TYPENAME-rock': `${p.types[0].type.name}` === 'rock',
-    'type-logo-TYPENAME-dark': `${p.types[0].type.name}` === 'dark',
-    'type-logo-TYPENAME-ghost': `${p.types[0].type.name}` === 'ghost',
-    'type-logo-TYPENAME-ice': `${p.types[0].type.name}` === 'ice',
-    'type-logo-TYPENAME-dragon': `${p.types[0].type.name}` === 'dragon',
-    'type-logo-TYPENAME-flying': `${p.types[0].type.name}` === 'flying',
-    'type-logo-TYPENAME-steel': `${p.types[0].type.name}` === 'steel',
-    'type-logo-TYPENAME-electric': `${p.types[0].type.name}` === 'electric',
-    'type-logo-TYPENAME-poison': `${p.types[0].type.name}` === 'poison',
-    'type-logo-TYPENAME-fighting': `${p.types[0].type.name}` === 'fighting',
-    'type-logo-TYPENAME-psychic': `${p.types[0].type.name}` === 'psychic',
-    'type-logo-TYPENAME-ground': `${p.types[0].type.name}` === 'ground',
-    'type-logo-TYPENAME-bug': `${p.types[0].type.name}` === 'bug',
-    'type-logo-TYPENAME-normal': `${p.types[0].type.name}` === 'normal'
-  });
+  // Mixes red and blue to get purple
 
-  const pokeName = classNames({
-    'poke-name-grass': `${p.types[0].type.name}` === 'grass',
-    'poke-name-fire': `${p.types[0].type.name}` === 'fire',
-    'poke-name-fairy': `${p.types[0].type.name}` === 'fairy',
-    'poke-name-water': `${p.types[0].type.name}` === 'water',
-    'poke-name-rock': `${p.types[0].type.name}` === 'rock',
-    'poke-name-dark': `${p.types[0].type.name}` === 'dark',
-    'poke-name-ghost': `${p.types[0].type.name}` === 'ghost',
-    'poke-name-ice': `${p.types[0].type.name}` === 'ice',
-    'poke-name-dragon': `${p.types[0].type.name}` === 'dragon',
-    'poke-name-flying': `${p.types[0].type.name}` === 'flying',
-    'poke-name-steel': `${p.types[0].type.name}` === 'steel',
-    'poke-name-electric': `${p.types[0].type.name}` === 'electric',
-    'poke-name-poison': `${p.types[0].type.name}` === 'poison',
-    'poke-name-fighting': `${p.types[0].type.name}` === 'fighting',
-    'poke-name-psychic': `${p.types[0].type.name}` === 'psychic',
-    'poke-name-ground': `${p.types[0].type.name}` === 'ground',
-    'poke-name-bug': `${p.types[0].type.name}` === 'bug',
-    'poke-name-normal': `${p.types[0].type.name}` === 'normal',
-    'poke-name-grass': `${p.types[0].type.name}` === 'grass',
-    'poke-name-fire': `${p.types[0].type.name}` === 'fire',
-    'poke-name-fairy': `${p.types[0].type.name}` === 'fairy'
-  });
+    // Style object for the gradientbackground: `linear-gradient(to bottom right, ${primaryColor}
+    const cardStyle = secondaryColor
+    ? { background: `linear-gradient(to bottom right, ${primaryColor} 20%, ${midColor} 40%, ${secondaryColor} 60%)` }
+    : { background: `linear-gradient(to bottom right, ${primaryColor}, ${primaryDarkColor})`}
+      
+  
+    
+    console.log({primaryColor}, {secondaryColor}, {midColor});
+    
+    function handleImageURLChange(event) {
+        setImageURL(event.target.value);
+        setImageHeight(undefined);
+    }
 
-  const typeName = classNames({
-    'TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy',
-    'TYPENAME-water': `${p.types[0].type.name}` === 'water',
-    'TYPENAME-rock': `${p.types[0].type.name}` === 'rock',
-    'TYPENAME-dark': `${p.types[0].type.name}` === 'dark',
-    'TYPENAME-ghost': `${p.types[0].type.name}` === 'ghost',
-    'TYPENAME-ice': `${p.types[0].type.name}` === 'ice',
-    'TYPENAME-dragon': `${p.types[0].type.name}` === 'dragon',
-    'TYPENAME-flying': `${p.types[0].type.name}` === 'flying',
-    'TYPENAME-steel': `${p.types[0].type.name}` === 'steel',
-    'TYPENAME-electric': `${p.types[0].type.name}` === 'electric',
-    'TYPENAME-poison': `${p.types[0].type.name}` === 'poison',
-    'TYPENAME-fighting': `${p.types[0].type.name}` === 'fighting',
-    'TYPENAME-psychic': `${p.types[0].type.name}` === 'psychic',
-    'TYPENAME-ground': `${p.types[0].type.name}` === 'ground',
-    'TYPENAME-bug': `${p.types[0].type.name}` === 'bug',
-    'TYPENAME-normal': `${p.types[0].type.name}` === 'normal',
-    'TYPENAME-grass': `${p.types[0].type.name}` === 'grass',
-    'TYPENAME-fire': `${p.types[0].type.name}` === 'fire',
-    'TYPENAME-fairy': `${p.types[0].type.name}` === 'fairy'
-  });
+    function handleImageLoad() {
+        if (imageRef.current) {
+            const { naturalWidth, naturalHeight } = imageRef.current;
+            setImageHeight(naturalHeight)
+            setNaturalWidth(naturalWidth);
+            setNaturalHeight(naturalHeight);
+            setImageHeight(naturalHeight);
+        }
+    }
 
-  const cardGradient = classNames({
-    'card-bg-gradient-grass': `${p.types[0].type.name}` === 'grass',
-    'card-bg-gradient-fire': `${p.types[0].type.name}` === 'fire',
-    'card-bg-gradient-fairy': `${p.types[0].type.name}` === 'fairy',
-    'card-bg-gradient-water': `${p.types[0].type.name}` === 'water',
-    'card-bg-gradient-rock': `${p.types[0].type.name}` === 'rock',
-    'card-bg-gradient-dark': `${p.types[0].type.name}` === 'dark',
-    'card-bg-gradient-ghost': `${p.types[0].type.name}` === 'ghost',
-    'card-bg-gradient-ice': `${p.types[0].type.name}` === 'ice',
-    'card-bg-gradient-dragon': `${p.types[0].type.name}` === 'dragon',
-    'card-bg-gradient-flying': `${p.types[0].type.name}` === 'flying',
-    'card-bg-gradient-steel': `${p.types[0].type.name}` === 'steel',
-    'card-bg-gradient-electric': `${p.types[0].type.name}` === 'electric',
-    'card-bg-gradient-poison': `${p.types[0].type.name}` === 'poison',
-    'card-bg-gradient-fighting': `${p.types[0].type.name}` === 'fighting',
-    'card-bg-gradient-psychic': `${p.types[0].type.name}` === 'psychic',
-    'card-bg-gradient-ground': `${p.types[0].type.name}` === 'ground',
-    'card-bg-gradient-bug': `${p.types[0].type.name}` === 'bug',
-    'card-bg-gradient-normal': `${p.types[0].type.name}` === 'normal',
-    'card-bg-gradient-grass': `${p.types[0].type.name}` === 'grass',
-    'card-bg-gradient-fire': `${p.types[0].type.name}` === 'fire',
-    'card-bg-gradient-fairy': `${p.types[0].type.name}` === 'fairy'
+
+  const [imgArray, setImgArray] = useState([]);
+
+  
+  const pokemonTypes = ['grass', 'fire', 'water', 'fairy', 'rock', 'dark', 'ghost', 'ice', 'dragon', 'flying', 'steel', 'electric', 'poison', 'fighting', 'psychic', 'ground', 'bug', 'normal'];
+   
+  const cardFrame = pokemonTypes.map((type) => {
+    return `frame-card-bg-white-${type}`;
   })
 
+  useEffect(() => {
+    const icon = document.querySelector('.sparkling-icon');
+    function randomizeAnimation() {
+        let randomDuration = Math.random() * (5 - 3) + 3; // Duration between 3 and 5 seconds
+        icon.style.animationDuration = `${randomDuration}s`;
+    }
+    const intervalId = setInterval(randomizeAnimation, 5000); // Adjust interval as needed
 
+    return () => clearInterval(intervalId);
+}, []);
+
+
+
+  function loadedData() {
+    if (lowerCaseData.primaryType && lowerCaseData.primaryType.names) {
+      console.log(lowerCaseData.primaryType.names.English)
+    } console.log('nope mannn')
+  };
+
+  const lowerCaseType = type.toLowerCase(); 
+  const lowerCaseSecondaryType = secondaryType?.toLowerCase(); 
+  const lowerCaseName = name.toLowerCase();
+  
+  loadedData;
 
   return (
-    <div className="Page-outer">
-      <div id="Page" data-name="Artboards" className="Page">
-        <div className="Frame-outer">
-          <div id="Frame" data-name="card-parent" className="Frame">
-            <div className="frame-card-outline-outer">
-              <div
-                id="frame-card-outline"
-                data-name="frame-card-outline"
-                className="frame-card-outline"
-              >
-                <div className="Frame-card-elements-outer">
+    <Link href={`/pokemon/${lowerCaseName}`}>
+      <a>
+        <div className="Page-outer">
+          <div id="Page" data-name="Artboards" className="Page">
+            <div id="Frame-outer" className="Frame-outer">
+              <div id="Frame" data-name="card-parent" className="Frame">
+                <div className="frame-card-outline-outer">
                   <div
-                    id="Frame-card-elements"
-                    data-name="Frame-card-elements"
-                    className="Frame-card-elements"
+                    id="frame-card-outline"
+                    data-name="frame-card-outline"
+                    className="frame-card-outline"
                   >
-                    <div className="frame-card-bg-white-outer">
+                    <div className="Frame-card-elements-outer">
                       <div
-                        data-name="frame-card-bg-white"
-                        id={cardWhite}
-                        className="frame-card-bg-white"
-                      ></div>
-                    </div>
-                    <div className="frame-card-img-outer">
-                      <div
-                        id="frame-card-img"
-                        data-name="frame-card-img"
-                        className="frame-card-img"
+                        id="Frame-card-elements"
+                        data-name="Frame-card-elements"
+                        className="Frame-card-elements"
                       >
-                        <div className="card-img-outer">
-                          <Image
-                            id="card-img"
-                            src={p.sprites.front_default}
-                            data-name="card-img"
-                            alt="Pokemon Image"
-                            className="card-img"
-                            width="205px"
-                            height="203px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="frame-pokemon-name-outer">
-                      <div
-                        id="frame-pokemon-name"
-                        data-name="frame-pokemon-name"
-                        className="frame-pokemon-name"
-                      >
-                        <div className="card-frame-name-outer">
+                        <div className="frame-card-bg-white-outer">
                           <div
-                            id="card-frame-name"
-                            data-name="card-frame-name"
-                            className="card-frame-name"
-                          >
-                            <div className="poke-name-outer">
-                              <div
-                                id={pokeName}
-                                data-name="poke-name"
-                                className="poke-name"
-                              >
-                                <div key="0">{p.name}</div>
-                              </div>
+                            data-name="frame-card-bg-white"
+                            id={`frame-card-bg-white-${lowerCaseType}-light`}
+                            className="frame-card-bg-white">
+                        </div>
+                            <div className="icon-container" style={{zIndex: 5000}}>
+                                {filteredData ? (filteredData.map((pokemon) => {
+                                    pokemon.assets?.shinyImage ? (
+                                        <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
+                                    )
+                                    :
+                                    (
+                                        <Image src={shinyIcon} alt="icon" className="icon" style={{zIndex: 500}}>
+                                            <div className="light"></div>
+                                        </Image>    
+                                    )
+                                    }))
+                                    :
+                                    (
+                                    <div className="nocurrent">
+                                    </div>
+                                    )
+                                }
                             </div>
-                          </div>
+                            <div className="sparkle-icon"></div> 
                         </div>
-                      </div>
-                    </div>
-                    <div className="frame-type-logo-name-outer">
-                      <div
-                        id="frame-type-logo-name"
-                        data-name="frame-type-logo-name"
-                        className="frame-type-logo-name"
-                      >
-                        <div className="frame-type-name-outer">
+                        <div className="frame-card-img-outer">
+                            <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
+                                <div className="card-img-outer">
+                                    <div>
+                                        {image && (
+                                                <Image
+                                                    key={key}
+                                                    id="card-img"
+                                                    src={image}
+                                                    dataName="card-img"
+                                                    alt={name}
+                                                    className="card-img"
+                                                    onLoadingComplete={handleImageLoad}
+                                                    ref={imageRef.current}
+                                                    style={{objectFit: 'contain', width: '100%'}}
+                                                    fill={true}
+                                                    sizes="100%"
+                                                    layout="intrinsic"
+                                                />
+              
+                                        )}
+                                        {/* Display the shiny image icon if available */}
+                                        {shinyImage && (
+                                          <>
+                                            <div className="shiny-icon-container">
+                                              <Image
+                                                src="/shinyblack.svg"
+                                                className="sparkling-icon"
+                                                alt={`Shiny ${name}`}
+                                                width={30}
+                                                height={30}
+                                              />
+                                            </div>
+                                            <div className="shinyImageContainer">
+                                              <Image
+                                                src={shinyImage}
+                                                alt={`Shiny ${name}`}
+                                                width={50}
+                                                height={50}
+                                                className="shiny-img"
+                                              />
+                                            </div>
+                                          </>
+                                        )}
+                                    </div>    
+                                </div>
+                            </div>
+                        <div className="frame-pokemon-name-outer">
                           <div
-                            id="frame-type-name"
-                            data-name="frame-type-name"
-                            className="frame-type-name"
+                            id="frame-pokemon-name"
+                            data-name="frame-pokemon-name"
+                            className="frame-pokemon-name"
                           >
-                            <div className="TYPENAME-outer">
+                            <div className="card-frame-name-outer">
                               <div
-                                id={typeName}
-                                data-name="TYPENAME"
-                                className="TYPENAME"
+                                id="card-frame-name"
+                                data-name="card-frame-name"
+                                className="card-frame-name"
                               >
-                                <div key="0">
-                                  {p.types[0].type.name}
+                                <div className="poke-name-outer">
+                                  <div
+                                    id={`poke-name-${lowerCaseType}`}
+                                    data-name="poke-name"
+                                    className="poke-name"
+                                  >
+                                    <div key="0">{name}</div>
+                                    
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="TYPENAME-logo-outer">
-                          <div
-                            id="TYPENAME-logo"
-                            data-name="TYPENAME-logo">
-                            <div className="Frame-4-outer">
-                              <div id="Frame-4" data-name="Frame 4" className="Frame-4">
-                                <div className="type-logo-TYPENAME-outer">
-                                  <img
-                                    id={logoType}
-                                    data-name="type-logo-TYPENAME"
-                                    alt="Pokemon Type"
-                                    className="type-logo-TYPENAME"
-                                    height={25}
-                                    width={25}
-                                  />
+                        <div className="logo-name-parent-frame">
+                          <div className="frame-type-logo-name-outer">
+                          <div className="TYPENAME-logo-outer">
+                                <div
+                                  id="TYPENAME-logo"
+                                  data-name="TYPENAME-logo">
+                                  <div className="Frame-4-outer">
+                                    <div id="Frame-4" data-name="Frame 4" className="Frame-4">
+                                      <div className="type-logo-TYPENAME-outer">
+                                      {!lowerCaseType ? (
+                                          console.log('no type icon')
+                                      ) : (
+                                          <>
+                                            <Image
+                                                id={`type-logo-TYPENAME-${lowerCaseType}`}
+                                                src={
+                                                    !lowerCaseType
+                                                        ? `/images/type_c21_${lowerCaseType}.svg`
+                                                        : '/images/default.svg'
+                                                }
+                                                data-name="type-logo-TYPENAME"
+                                                alt={`${type} Type`}
+                                                className="type-logo-TYPENAME"
+                                                height={25}
+                                                width={25}
+                                            />
+                                            <div id={`TYPENAME-${lowerCaseType}`} data-name="TYPENAME" className="TYPENAME">
+                                                <div key="0">
+                                                    {type}
+                                                </div>
+                                            </div>  
+                                          </>
+                                        )
+                                      }
+                                      </div>  
+                                    </div>
+                                  <div id="Frame-4-2" data-name="Frame 4" className="Frame-4-2"> 
+                                    <div className="type-logo-TYPENAME-outer-2">                                                                               </div>
+                                    {!lowerCaseSecondaryType
+                                        ? 
+                                        (
+                                          console.log('no type icon')
+                                        ) 
+                                        :
+                                        (
+                                        <>
+                                        <Image
+                                            id={`type-logo-TYPENAME-2-${lowerCaseSecondaryType}`}
+                                            src={
+                                                  lowerCaseSecondaryType
+                                                    ? `/images/type_c22_${lowerCaseSecondaryType}.svg`
+                                                    : '/images/default.svg'
+                                            }
+                                            data-name="type-logo-TYPENAME"
+                                            alt={`${secondaryType} Type`}
+                                            className="type-logo-TYPENAME-2"
+                                            height={25}
+                                            width={25}
+                                          />
+                                          <div id={`TYPENAME-2-${lowerCaseSecondaryType}`} data-name="TYPENAME">
+                                              <div key="0">
+                                                  {secondaryType}
+                                              </div>
+                                          </div>
+                                            </>
+                                            )
+                                          }
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
+                            <div
+                              id="frame-type-logo-name"
+                              data-name="frame-type-logo-name"
+                              className="frame-type-logo-name"
+                            >
+                            </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    {/* <div className={`type-gradient-${p.types[0].type.name}`}>
+                        {/* <div className={`type-gradient-${type}`}>
 
-                  </div> */}
-                </div>
-                <div className="card-bg-gradient-outer">
-                  <div
-                    id={cardGradient}
-                    data-name="card-bg-gradient"
-                    alt="card-bg-gradient"
-                    className="card-bg-gradient"
-                    >              
+                      </div> */}
+                    </div>
+                    <div className="card-bg-gradient-outer">
+                      <div
+                        // id={`card-bg-gradient-${lowerCaseType}`} 
+                        data-name="card-bg-gradient"
+                        alt="card-bg-gradient"
+                        // className="card-bg-gradient"
+                        className="pokemon-card" 
+                        style={cardStyle}
+                        >              
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>  
+      </a>
+    </Link>
   );
 }
 

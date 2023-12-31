@@ -225,7 +225,6 @@ const Canvas = ({height, width, imageS, changeShinySprite, sheight, swidth, scal
                 ref={canvasRef.current}
                 height={500} 
                 width={500}
-                imager={imager}
 
 
             />    

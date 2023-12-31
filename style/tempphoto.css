@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Signika+Negative:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap");
+/* More vibrant SASS Variables - Poketype color palette */
 .poke-temp-container {
   display: flex;
   flex-direction: column;
@@ -54,223 +55,235 @@ html {
   padding: 0, 0;
 }
 
-.second-line-top-dark {
+.second-line-top-poke {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #705848;
-}
-
-.second-line-top-dragon {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  height: 0.1em;
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #7038F8;
-}
-
-.second-line-top-electric {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  height: 0.1em;
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #F8D030;
-}
-
-.second-line-top-fairy {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  height: 0.1em;
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #EE99AC;
-}
-
-.second-line-top-fighting {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  height: 0.1em;
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #C03028;
 }
 
 .second-line-top-bug {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #A8B820;
+}
+
+.second-line-top-dark {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  height: 1em;
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.second-line-top-dragon {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  height: 1em;
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.second-line-top-electric {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  height: 1em;
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.second-line-top-fairy {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  height: 1em;
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.second-line-top-fighting {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  height: 1em;
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .second-line-top-fire {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #F08030;
 }
 
 .second-line-top-flying {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #A890F0;
 }
 
 .second-line-top-ghost {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #705898;
 }
 
 .second-line-top-grass {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #78C850;
 }
 
 .second-line-top-ground {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #E0C068;
 }
 
 .second-line-top-ice {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #98D8D8;
 }
 
 .second-line-top-normal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #A8A878;
 }
 
 .second-line-top-poison {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #A040A0;
 }
 
 .second-line-top-psychic {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #F85888;
 }
 
 .second-line-top-rock {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #B8A038;
 }
 
 .second-line-top-steel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #B8B8D0;
 }
 
 .second-line-top-water {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 0.1em;
+  height: 1em;
   position: relative;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: #6890F0;
 }
 
-.second-line-bottom-dark {
+.second-line-bottom-poke {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -280,59 +293,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #705848;
-}
-
-.second-line-bottom-dragon {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 0;
-  height: 5px;
-  position: relative;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  background-color: #7038F8;
-}
-
-.second-line-bottom-electric {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 0;
-  height: 5px;
-  position: relative;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  background-color: #F8D030;
-}
-
-.second-line-bottom-fairy {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 0;
-  height: 5px;
-  position: relative;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  background-color: #EE99AC;
-}
-
-.second-line-bottom-fighting {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 0;
-  height: 5px;
-  position: relative;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  background-color: #C03028;
 }
 
 .second-line-bottom-bug {
@@ -345,7 +305,66 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #A8B820;
+}
+
+.second-line-bottom-dark {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  height: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.second-line-bottom-dragon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  height: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.second-line-bottom-electric {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  height: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.second-line-bottom-fairy {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  height: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.second-line-bottom-fighting {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  height: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .second-line-bottom-fire {
@@ -358,7 +377,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #F08030;
 }
 
 .second-line-bottom-flying {
@@ -371,7 +389,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #A890F0;
 }
 
 .second-line-bottom-ghost {
@@ -384,7 +401,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #705898;
 }
 
 .second-line-bottom-grass {
@@ -397,7 +413,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #78C850;
 }
 
 .second-line-bottom-ground {
@@ -410,7 +425,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #E0C068;
 }
 
 .second-line-bottom-ice {
@@ -423,7 +437,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #98D8D8;
 }
 
 .second-line-bottom-normal {
@@ -436,7 +449,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #A8A878;
 }
 
 .second-line-bottom-poison {
@@ -449,7 +461,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #A040A0;
 }
 
 .second-line-bottom-psychic {
@@ -462,7 +473,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #F85888;
 }
 
 .second-line-bottom-rock {
@@ -475,7 +485,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #B8A038;
 }
 
 .second-line-bottom-steel {
@@ -488,7 +497,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #B8B8D0;
 }
 
 .second-line-bottom-water {
@@ -501,7 +509,6 @@ html {
   position: relative;
   margin-top: 5px;
   margin-bottom: 0px;
-  background-color: #6890F0;
 }
 
 .templateinfodiv-bug {
@@ -510,7 +517,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D7815;
+  border-color: #637D0A;
   z-index: 200;
 }
 
@@ -530,7 +537,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #4924A1;
+  border-color: #460EA1;
   z-index: 200;
 }
 
@@ -540,7 +547,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #A1871F;
+  border-color: #AF850F;
   z-index: 200;
 }
 
@@ -550,7 +557,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #9B6470;
+  border-color: #A44D64;
   z-index: 200;
 }
 
@@ -560,7 +567,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #7D1F1A;
+  border-color: #861815;
   z-index: 200;
 }
 
@@ -570,7 +577,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #9C531F;
+  border-color: #A13F00;
   z-index: 200;
 }
 
@@ -580,7 +587,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D5E9C;
+  border-color: #604A9F;
   z-index: 200;
 }
 
@@ -590,7 +597,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #493963;
+  border-color: #412465;
   z-index: 200;
 }
 
@@ -600,7 +607,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #4E8234;
+  border-color: #3C7E25;
   z-index: 200;
 }
 
@@ -610,7 +617,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #927D44;
+  border-color: #8F7533;
   z-index: 200;
 }
 
@@ -620,7 +627,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #638D8D;
+  border-color: #4D8D8D;
   z-index: 200;
 }
 
@@ -630,7 +637,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #6D6D4E;
+  border-color: #5F5F37;
   z-index: 200;
 }
 
@@ -640,7 +647,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #682A68;
+  border-color: #662266;
   z-index: 200;
 }
 
@@ -650,7 +657,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #F85888;
+  border-color: #FF4664;
   z-index: 200;
 }
 
@@ -660,7 +667,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #786824;
+  border-color: #766117;
   z-index: 200;
 }
 
@@ -670,7 +677,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #787887;
+  border-color: #616178;
   z-index: 200;
 }
 
@@ -680,7 +687,7 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transform: translatex(-17px) translatey(-16px);
-  border-color: #445E9C;
+  border-color: #2D4494;
   z-index: 200;
 }
 
@@ -1037,7 +1044,7 @@ html {
 
 .p caption-bug {
   display: inline-flex;
-  color: #6D7815;
+  color: #637D0A;
 }
 
 .p caption-dark {
@@ -1047,82 +1054,82 @@ html {
 
 .p caption-dragon {
   display: inline-flex;
-  color: #4924A1;
+  color: #460EA1;
 }
 
 .p caption-electric {
   display: inline-flex;
-  color: #A1871F;
+  color: #AF850F;
 }
 
 .p caption-fairy {
   display: inline-flex;
-  color: #9B6470;
+  color: #A44D64;
 }
 
 .p caption-fighting {
   display: inline-flex;
-  color: #7D1F1A;
+  color: #861815;
 }
 
 .p caption-fire {
   display: inline-flex;
-  color: #9C531F;
+  color: #A13F00;
 }
 
 .p caption-flying {
   display: inline-flex;
-  color: #6D5E9C;
+  color: #604A9F;
 }
 
 .p caption-ghost {
   display: inline-flex;
-  color: #493963;
+  color: #412465;
 }
 
 .p caption-grass {
   display: inline-flex;
-  color: #4E8234;
+  color: #3C7E25;
 }
 
 .p caption-ground {
   display: inline-flex;
-  color: #927D44;
+  color: #8F7533;
 }
 
 .p caption-ice {
   display: inline-flex;
-  color: #638D8D;
+  color: #4D8D8D;
 }
 
 .p caption-normal {
   display: inline-flex;
-  color: #6D6D4E;
+  color: #5F5F37;
 }
 
 .p caption-poison {
   display: inline-flex;
-  color: #682A68;
+  color: #662266;
 }
 
 .p caption-psychic {
   display: inline-flex;
-  color: #F85888;
+  color: #FF4664;
 }
 
 .p caption-rock {
   display: inline-flex;
-  color: #786824;
+  color: #766117;
 }
 
 .p caption-steel {
   display: inline-flex;
-  color: #787887;
+  color: #616178;
 }
 
 .p caption-water {
   display: inline-flex;
-  color: #445E9C;
+  color: #2D4494;
 }
 
 .p caption-bug:hover {

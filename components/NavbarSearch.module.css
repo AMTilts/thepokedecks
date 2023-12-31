@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Padauk:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Rajdhani:wght@600;700&family=Righteous&display=swap');
+
+
+.navbarContainerSearch {
+    display: inline-flex;
+    flex-direction: row;
+    background: #f8f8f8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* background: #701200;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: center;
+    align-self: center;
+    width: 100vw;
+    align-content: center;
+    height: auto;
+    top: 0;
+    position: static;
+    box-sizing: border-box;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 1500;
+    justify-content: space-between;
+}
+
+.navbarSearchContainer {
+    background: #ececec;
+    /* background: #701200;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: center;
+    align-self: flex-start;
+    padding: 0 10 0 15;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    align-content: center;
+    height: auto;
+    top: 0;
+    position: static;
+    box-sizing: border-box;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 1500;
+    justify-content: space-between;
+
+}
+
+
+.search-container {
+    display: inline-flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* background: #701200;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: auto;
+    top: 0;
+    position: static;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: rgb(26, 26, 26);
+    z-index: 15;
+    justify-content: space-between;
+}
+
+.footercontainer {
+    background: #8b0303;
+    /* background: #701200;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: center;
+    flex-grow: 1;
+    align-self: center;
+    margin-bottom: 15px;
+    padding: 0 5 0 15;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    align-content: center;
+    height: 100%;
+    margin-top: 30px;
+    height: 35px;
+}
+
+/* .navbarlight {
+    color: white;
+} */
+
+/* .navbarbrand {
+    font-size: 60px;
+    text-decoration: bold;
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+} */
+
+/* .navbarDecks {
+    font-size: 60px;
+    text-decoration: bold;
+    font-style: italic;
+    font-family: 'Rubik', sans-seriff;
+    
+    background: linear-gradient(to right, #c73939, #e0cccc); /* From deep red to white */
+
+    /* border-width: 1px;
+    border-color: white;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+/* } */
+
+/* a.navbarbrand {
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    font-family: 'Rubik', sans-serif;
+    text-shadow: white;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    text-decoration: none;
+} */
+
+/* .navbartitle2 {
+    color: whitesmoke;
+    font-family: 'Rubik';
+    font-weight: 50px;
+    margin-right: 5px;
+} */
+
+
+/* .mlauto {
+    margin-left: 20px;
+    align-content: right;
+    text-align:center;
+    font-family: 'Noto Sans TC';
+    font-size: 20px;
+    font-weight: 600;
+    justify-items: flex-end;
+} */
+/* 
+.logo {
+    margin-left: 0px;
+    margin-right: 10px;
+    align-items: center;
+
+}
+
+.navbarlight .navbarbrand {
+    color: white;
+    justify-content: flex-start;
+    text-shadow: black 1px 1px;
+} */

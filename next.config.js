@@ -1,8 +1,15 @@
 const nextConfig = {
   reactStrictMode: true,
-};
-
-module.exports = {
+  images: {
+    domains: ['raw.githubusercontent.com'],
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'raw.githubusercontent.com',
+            pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
+        }
+    ]
+  },
   webpack: (config, { isServer }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
@@ -36,19 +43,14 @@ module.exports = {
 
     return config;
   },
-  resolve: {
-    extensions: ['.ts', '.js'],
-    fallback: {
-      fs: false,
-      child_process: false,
-      worker_threads: false,
-    },
-  },
-  ...nextConfig,
-  images: {
-    domains: ['raw.githubusercontent.com', 'mprice.one'],
-  },
-  future: {
-    webpack5: true,
-  },
+  // resolve: {
+  //   extensions: ['.js'],
+  //   fallback: {
+  //     fs: false,
+  //     child_process: false,
+  //     worker_threads: false,
+  //   },
+  // },
 };
+
+module.exports = nextConfig;

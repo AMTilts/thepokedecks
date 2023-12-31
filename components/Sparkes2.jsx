@@ -55,7 +55,6 @@ const Sparkles = (props) => {
           ref={sparklesRef}
           width="256"
           height="256"
-          context={context}
           {...rest}
         ></canvas>
         <Image
