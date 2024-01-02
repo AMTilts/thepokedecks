@@ -79,7 +79,6 @@ export async function getStaticProps({ params }) {
     }
 
     // Extract specific properties if needed
-    const shiny = character.assets?.shinyImage;
     const primaryType = character.primaryType?.names.English;
     const name = character.names.English;
 
@@ -87,7 +86,6 @@ export async function getStaticProps({ params }) {
     return { 
         props: { 
             character, 
-            shiny, 
             primaryType,
             // Include other properties as needed
         },
@@ -104,11 +102,11 @@ function useFetchData() {
 export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, sparkleRef, shinyBlackRef, renderFrame, ...props}) {
     
     const { name, base_experience, types, abilities } = character;
-    const [spriteCurrent, setSpriteCurrent] = useState(character.assets.image);
+    const [spriteCurrent, setSpriteCurrent] = useState(character.assets?.image);
     const [spriteShiny, setSpriteShiny] = useState(character.assets?.shinyImage);
-    const [currentPosition, setCurrentPosition] = useState(character.assets.image);
+    const [currentPosition, setCurrentPosition] = useState(character.assets?.image);
     const [currentPosition2, setCurrentPosition2] = useState(character.assets?.shinyImage);
-    const [currentPosition3, setCurrentPosition3] = useState(`${character.assets.image}`); // Check if back image is different
+    const [currentPosition3, setCurrentPosition3] = useState(`${character.assets?.image}`); // Check if back image is different
     const [currentPosition4, setCurrentPosition4] = useState(`${character.assets?.shinyImage}`); // Check if back shiny image is different
     const [spriteButton, setSpriteButton] = useState(null);
     const [spriteToggle, setSpriteToggle] = useState(true);
@@ -284,7 +282,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     };
 
     const ballDefault = event => {
-        if (currentPosition == `${character.assets.image}` && isFront === true) {
+        if (currentPosition == `${character.assets?.image}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_default}`)
             // setPokeName('Rippin Fat Farts.Balls')
@@ -302,7 +300,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setIsFront(true)
         } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
             setIsFront(true)
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setFrontBackText('Back')
             setIsFront(true)
             // setPokeName('Why are you so gay?')
@@ -330,7 +328,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -340,8 +338,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setCurrentPosition(`${sprites.back_shiny}`)
             setIsShiny(true)
         }
-        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${character.assets.image}`) {
+        // if (currentPosition.toString() != `${character.assets?.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets?.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -363,7 +361,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const changeShinySpriteTT = () => {
         setContainerBack('container-back')
         setPageContainer('pagecontainer')
-        setCurrentPosition(`${character.assets.image}`)
+        setCurrentPosition(`${character.assets?.image}`)
         setIsShiny(false)
     }
 
@@ -398,7 +396,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -411,8 +409,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <Sparkles shine={shine} sparkleRef={sparkleRef} />
                 )
         }
-        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${character.assets.image}`) {
+        // if (currentPosition.toString() != `${character.assets?.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets?.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -430,11 +428,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     function backDefault() {
         if (isDefault !== true) switchShiny;
         else if (currentPosition == `${sprites.back_default}`) flipFront;
-        else if (currentPosition == `${character.assets.image}`) {
+        else if (currentPosition == `${character.assets?.image}`) {
             setCurrentPosition(`${sprites.back_default}`)
             setFrontBackText('Front');
         };
-        setCurrentPosition(`${character.assets.image}`)
+        setCurrentPosition(`${character.assets?.image}`)
         setFrontBackText('Back');
     }
 
