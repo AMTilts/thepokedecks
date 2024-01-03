@@ -14217,7 +14217,6 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   float: center;
   align-self: flex-start;
-  padding: 0 10 0 15;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -14227,9 +14226,11 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   top: 0;
   position: static;
   box-sizing: border-box;
-  border-top-width: 10px;
-  border-bottom-width: 10px;
-  border-color: rgb(26, 26, 26);
+  border-width: 5px 0px 2px 0px;
+  border-style: solid;
+  border-color: black;
   z-index: 1500;
   justify-content: space-around;
+  padding: 5px 5px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=pokecardv2.css.map */

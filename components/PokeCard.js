@@ -1,7 +1,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
