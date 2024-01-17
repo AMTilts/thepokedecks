@@ -112,15 +112,15 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
         setImageHeight(undefined);
     }
 
-    function handleImageLoad() {
-        if (imageRef.current) {
-            const { naturalWidth, naturalHeight } = imageRef.current;
-            setImageHeight(naturalHeight)
-            setNaturalWidth(naturalWidth);
-            setNaturalHeight(naturalHeight);
-            setImageHeight(naturalHeight);
-        }
-    }
+    // function handleImageLoad() {
+    //     if (imageRef.current) {
+    //         const { naturalWidth, naturalHeight } = imageRef.current;
+    //         setImageHeight(naturalHeight)
+    //         setNaturalWidth(naturalWidth);
+    //         setNaturalHeight(naturalHeight);
+    //         setImageHeight(naturalHeight);
+    //     }
+    // }
 
 
   const [imgArray, setImgArray] = useState([]);
@@ -215,16 +215,15 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
                                                   dataName="card-img"
                                                   alt={name}
                                                   className="card-img"
-                                                  onLoadingComplete={handleImageLoad}
+                                                  // onLoadingComplete={handleImageLoad}
                                                   ref={imageRef.current}
-                                                  // style={{objectFit: 'contain', width: '100%'}}
+                                                  style={{objectFit: 'contain', width: '100%'}}
                                                   fill={true}
                                                   sizes="100%"
-                                                  layout="responsive"
+                                                  // layout="responsive"
                                               />
             
                                       )}
-                                      {/* Display the shiny image icon if available */}
                                       {shinyImage && (
                                         <>
                                           <div className="shiny-icon-container">

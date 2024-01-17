@@ -46,7 +46,7 @@ header > .customHeader {
   border-bottom-width: 10px;
   border-color: rgb(26, 26, 26);
   z-index: 1500;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .navbarMain {
@@ -55,7 +55,7 @@ header > .customHeader {
   /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   float: center;
-  align-self: flex-start;
+  align-self: center;
   margin-top: 0;
   /* margin-bottom: 15px; */
   padding: 0 10 0 15;

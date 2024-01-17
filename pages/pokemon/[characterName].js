@@ -14,8 +14,6 @@ import imageSpark from '/images/sparkle.png'
 import Canimation from '../../components/Canimation';
 import Sparkles from '../../components/Sparkles'
 import PropTypes from 'prop-types';
-import { getImageSize } from 'next/dist/server/image-optimizer';
-
 
 
 
@@ -535,7 +533,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     // const drawSparkles = (context) => {
     // //   const ctx = sparklesRef.current.getContext("2d");
     //     // context.clearRect(0, 0, 256, 256);
-    
+    _
     //     for (const p of particlesRef.current) {
     //     const x = 128 + p.radius * Math.cos((p.angle * Math.PI) / 180);
     //     const y = 128 + p.radius * Math.sin((p.angle * Math.PI) / 180);
@@ -604,7 +602,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                                     <div id="shinyDiv">
                                                         <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
                                                     </div>
-                                                    <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
+                                                    <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} /> 
                                                     <FlipButton
                                                         ballDefault={ballDefault}
                                                         // flipFrontBackButton={flipFrontBackButton}

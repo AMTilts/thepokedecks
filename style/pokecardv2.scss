@@ -1473,8 +1473,10 @@ max-height: 200px;
    /* Pagination */
    #pagination{
     display:inline-flex;
+    flex-direction: row;
+
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
    }
    
    /* Link */
@@ -1784,11 +1786,6 @@ max-height: 200px;
     align-items:center;
    }
    
-   /* Pagination */
-   #pagination{
-    justify-content:center;
-   }
-   
    body, Body, .div-container, root, container-fluid,  *.container-fluid {
     background: linear-gradient(to bottom,  #d6ebff, #9fc0e1);
    };
@@ -1921,15 +1918,18 @@ max-height: 200px;
     border-color: $poke-color;
    }
 
-   #search-div {
+   #search {
     display: inline-flex;
     position: relative;
     justify-content: center;
     align-items: center;
+    width: 30%;
    }
 
    #search-box {
     border-width: 2px;
+    padding-right: 10px;
+    margin-right: 20px;
     border-color: $poke-color;
     border-radius: 6px;
 
@@ -1953,6 +1953,8 @@ max-height: 200px;
    /* Search div */
    #search-div{
     width:auto !important;
+    padding-right: 10px;
+    margin-right: 10px;
    }
 
 
@@ -2162,8 +2164,8 @@ max-height: 200px;
         /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
         /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         float: center;
-        align-self: flex-start;
-        display: inline-flex;
+        align-self: center;
+        display: flex-end;
         flex-direction: row;
         align-items: center;
         width: 100%;
@@ -2177,7 +2179,6 @@ max-height: 200px;
         border-color: black;
         z-index: 1500;
         justify-content: space-around;
-        padding: 5px 5px;
-        margin-bottom: 10px;
-    
+        padding-bottom: 5px;
+        padding-top: 5px;
     }

@@ -1,12 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import styles from './NavbarSearch.module.css'
-import Search from './Search.js'
 import Pagination from './Pagination.js'
 
 
-function pokeNavbarSearch() {
+function NavbarSearch() {
     return (
         <>
             <navbar className={styles.navbarContainerSearch}>
@@ -18,4 +15,4 @@ function pokeNavbarSearch() {
     )
 }
 
-export default pokeNavbarSearch
+export default NavbarSearch
