@@ -16,6 +16,7 @@
     "image-size": "^1.0.2",
     "next": "^14.0.4",
     "next-images": "^1.8.5",
+    "noop": "^1.0.1",
     "postcss": "^8.4.13",
     "probe-image-size": "^7.2.3",
     "prop-types": "^15.8.1",
