@@ -144,7 +144,6 @@ export default function Pagination({ filteredData }) {
     <>
       <div style={{display: 'inlineFlex', flexDirection: 'row', justifyContent: 'center'}}>
         <div className="paginate-container">
-          
           <div id="pagination">
             <ReactPaginate
               breakLabel="..."
@@ -192,7 +191,7 @@ export default function Pagination({ filteredData }) {
             <h1 style={{fontStyle: 'bold', fontSize: '30px'}}>No Pokemon found</h1>
           )}
         </div>
-        <div className="paginate-container">
+        <div className="paginate-container-bottom">
           <div id="pagination">
             <ReactPaginate
               breakLabel="..."

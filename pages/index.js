@@ -11,9 +11,6 @@ function IndexPage() {
         <meta charSet="utf-8" />
         <title>THE POKEDECKS - THE POKEMON GO CHARACTER CARD SITE</title>
       </Head>
-      <header className={styles.customHeader}>
-        <Navbar className={styles.navbarMain} />
-      </header>
       <main className={styles.customMain}>
         <App />
       </main>

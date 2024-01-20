@@ -1602,8 +1602,9 @@ div > span:hover {
 /* Pagination */
 #pagination {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 /* Link */
@@ -13901,8 +13902,7 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   position: relative;
   justify-content: center;
   align-items: center;
-  padding-left: 15px;
-  margin-left: 15px;
+  width: 30%;
 }
 
 #search-box {
@@ -14145,6 +14145,8 @@ body, Body, .div-container, root, container-fluid, *.container-fluid {
   border-color: black;
   z-index: 1500;
   justify-content: space-around;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 :root {

@@ -6,6 +6,8 @@ import '../services/pokemon';
 import { getAllPokeData, getPokeData } from '../services/pokemon';
 import NavbarSearch from './NavbarSearch';
 import styles from './NavbarSearch.module.css';
+import Navbar from './Navbar'
+
 
   // import styles from "./Button.module.css";
   // import '../style/pokecard.css'
@@ -205,7 +207,10 @@ import styles from './NavbarSearch.module.css';
               </div>
             </>
           ) : (
-            <NavbarSearch className={styles.navbarSearch} style={{ width: '100vw', height: '30px', border: '10px black', borderStyle: 'solid none' }} />
+            <>
+              <Navbar className={styles.navbarMain} />
+              <NavbarSearch className={styles.navbarSearch} style={{ width: '100vw', height: '30px', border: '10px black', borderStyle: 'solid none' }} />
+            </>
           )}
         </div>
       </>
