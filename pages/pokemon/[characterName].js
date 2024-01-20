@@ -533,7 +533,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     // const drawSparkles = (context) => {
     // //   const ctx = sparklesRef.current.getContext("2d");
     //     // context.clearRect(0, 0, 256, 256);
-    _
+   // 
     //     for (const p of particlesRef.current) {
     //     const x = 128 + p.radius * Math.cos((p.angle * Math.PI) / 180);
     //     const y = 128 + p.radius * Math.sin((p.angle * Math.PI) / 180);
