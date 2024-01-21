@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
 import Image from 'next/image';
@@ -151,10 +151,11 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
     } console.log('nope mannn')
   };
 
-  const lowerCaseType = type.toLowerCase(); 
-  const lowerCaseSecondaryType = secondaryType?.toLowerCase(); 
-  const lowerCaseName = name.toLowerCase();
-  
+  const lowerCaseType = type.toLowerCase().replace(/\s/g, ''); 
+  const lowerCaseSecondaryType = secondaryType?.toLowerCase().replace(/\s/g, ''); 
+  const lowerCaseName = name.toLowerCase().replace(/\s/g, '');
+
+
   loadedData;
 
   return (

@@ -34,9 +34,6 @@ export async function getStaticPaths() {
     const res = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
     const characters = await res.json();
 
-    // Debugging: Log the fetched data
-    console.log("Fetched characters:", characters);
-
     // Ensure the data structure is as expected
     if (!Array.isArray(characters)) {
         console.error("Unexpected data structure:", characters);
@@ -44,8 +41,11 @@ export async function getStaticPaths() {
     }
 
     const paths = characters.map((character) => ({
-        params: { characterName: character.names.English.toLowerCase() },
+        params: { characterName: character.names.English.toLowerCase().replace(/[^a-z0-9]/g, '') },
     }));
+
+    // Log the generated paths for debugging
+    console.log("Generated paths:", paths);
 
     return { paths, fallback: false };
 }
@@ -85,7 +85,6 @@ export async function getStaticProps({ params }) {
         props: { 
             character, 
             primaryType,
-            // Include other properties as needed
         },
         revalidate: 3600, // ISR (Incremental Static Regeneration) interval
     };
@@ -143,6 +142,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [isSpriteFront, setIsSpriteFront] = useState(true);
     const primaryTypeName = character?.primaryType?.names?.English;
     const secondaryTypeName = character?.secondaryType?.names?.English;
+    const [blank, setBlank] = useState('');
 
     function getTypeColor(type) {
         const typeColors = {
@@ -487,7 +487,9 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             return (
                 <div className="temp-container-title">
                     <h1 className="title">
-                        {pokeName} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
+                        {pokeName} 
+                        <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> 
+                        <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
                     </h1>
                 </div>  
             )   
@@ -586,7 +588,22 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                             <div className={containerBack}>
                                 <div className="temp-container-title">
                                     <h1 className="title">
-                                        {name} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${lowerCaseType}.svg`} className="titletypelogo" width={45} height={45} /> { character.secondaryType ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} className="titletypelogo" width={45} height={45} /> : null }
+                                        {name} <Image 
+                                                    alt="Pokemon Type One (Main Type)" 
+                                                    src={`/images/type_c21_${lowerCaseType}.svg`} 
+                                                    className="titletypelogo"
+                                                    width={45}
+                                                    height={45}
+                                                 /> 
+                                                 { character.secondaryType ? 
+                                                    (<Image 
+                                                        alt="Pokemon Type Two (Secondary Type)" 
+                                                        src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} 
+                                                        className="titletypelogo"
+                                                        width={45} 
+                                                        height={45} 
+                                                     />) : blank
+                                                 }
                                     </h1>
                                 </div>    {/* <>
                                         {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }fd
@@ -600,28 +617,22 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             <div className="spritecontainer">
                                                 <div className="spritebuttoncontainer">
                                                     <div id="shinyDiv">
-                                                        <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                                                    <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
                                                     </div>
-                                                    <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} /> 
-                                                    <FlipButton
-                                                        ballDefault={ballDefault}
-                                                        // flipFrontBackButton={flipFrontBackButton}
-                                                    >
-                                                        <button className="fbbutton">                                                                                                    
-                                                            <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
-                                                                <h2 className="fliptext">{frontBackText}</h2>
-                                                                {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-                                                                {/* <button className={`frontswitch-${character.primaryType.names.English}`} onClick={frontBackFront}>{frontBackText}}</button> */}
-                                                        </button>
-                                                    </FlipButton>
-                                                    {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
+                                                    <Image 
+                                                        id="pogoimg" 
+                                                        src={currentPosition} 
+                                                        alt="Pokemon Image" 
+                                                        className="picdefault" 
+                                                        width={300} 
+                                                        height={300} 
+                                                     /> 
                                                 </div>
                                             </div>
                                             {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
                                             { (`${shiny}` !==  null ?
                                                     <div className="middlediv">
-
-                                                    
+                                                        {blank}
                                                     </div>
                                                 :   <div className="middlediv">
                                                     </div>)
