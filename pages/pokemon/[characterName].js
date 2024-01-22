@@ -14,8 +14,6 @@ import imageSpark from '/images/sparkle.png'
 import Canimation from '../../components/Canimation';
 import Sparkles from '../../components/Sparkles'
 import PropTypes from 'prop-types';
-import { getImageSize } from 'next/dist/server/image-optimizer';
-
 
 
 
@@ -36,9 +34,6 @@ export async function getStaticPaths() {
     const res = await fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json');
     const characters = await res.json();
 
-    // Debugging: Log the fetched data
-    console.log("Fetched characters:", characters);
-
     // Ensure the data structure is as expected
     if (!Array.isArray(characters)) {
         console.error("Unexpected data structure:", characters);
@@ -46,8 +41,11 @@ export async function getStaticPaths() {
     }
 
     const paths = characters.map((character) => ({
-        params: { characterName: character.names.English.toLowerCase() },
+        params: { characterName: character.names.English.toLowerCase().replace(/[^a-z0-9]/g, '') },
     }));
+
+    // Log the generated paths for debugging
+    console.log("Generated paths:", paths);
 
     return { paths, fallback: false };
 }
@@ -79,7 +77,6 @@ export async function getStaticProps({ params }) {
     }
 
     // Extract specific properties if needed
-    const shiny = character.assets?.shinyImage;
     const primaryType = character.primaryType?.names.English;
     const name = character.names.English;
 
@@ -87,9 +84,7 @@ export async function getStaticProps({ params }) {
     return { 
         props: { 
             character, 
-            shiny, 
             primaryType,
-            // Include other properties as needed
         },
         revalidate: 3600, // ISR (Incremental Static Regeneration) interval
     };
@@ -104,11 +99,11 @@ function useFetchData() {
 export default function Character({ character, shinyArray, imageS, sWidth, sHeight, resJson, shiny, shinyRes, statsRes, particles, imageRef, sparkle, ctx, sparkleImage, SparkleImg, image, startDrawing, sparkleRef, shinyBlackRef, renderFrame, ...props}) {
     
     const { name, base_experience, types, abilities } = character;
-    const [spriteCurrent, setSpriteCurrent] = useState(character.assets.image);
+    const [spriteCurrent, setSpriteCurrent] = useState(character.assets?.image);
     const [spriteShiny, setSpriteShiny] = useState(character.assets?.shinyImage);
-    const [currentPosition, setCurrentPosition] = useState(character.assets.image);
+    const [currentPosition, setCurrentPosition] = useState(character.assets?.image);
     const [currentPosition2, setCurrentPosition2] = useState(character.assets?.shinyImage);
-    const [currentPosition3, setCurrentPosition3] = useState(`${character.assets.image}`); // Check if back image is different
+    const [currentPosition3, setCurrentPosition3] = useState(`${character.assets?.image}`); // Check if back image is different
     const [currentPosition4, setCurrentPosition4] = useState(`${character.assets?.shinyImage}`); // Check if back shiny image is different
     const [spriteButton, setSpriteButton] = useState(null);
     const [spriteToggle, setSpriteToggle] = useState(true);
@@ -147,6 +142,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const [isSpriteFront, setIsSpriteFront] = useState(true);
     const primaryTypeName = character?.primaryType?.names?.English;
     const secondaryTypeName = character?.secondaryType?.names?.English;
+    const [blank, setBlank] = useState('');
 
     function getTypeColor(type) {
         const typeColors = {
@@ -284,7 +280,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     };
 
     const ballDefault = event => {
-        if (currentPosition == `${character.assets.image}` && isFront === true) {
+        if (currentPosition == `${character.assets?.image}` && isFront === true) {
             setIsFront(false)
             setCurrentPosition(`${sprites.back_default}`)
             // setPokeName('Rippin Fat Farts.Balls')
@@ -302,7 +298,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setIsFront(true)
         } else if (currentPosition == `${sprites.back_default}` && isFront === false) {
             setIsFront(true)
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setFrontBackText('Back')
             setIsFront(true)
             // setPokeName('Why are you so gay?')
@@ -330,7 +326,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -340,8 +336,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             setCurrentPosition(`${sprites.back_shiny}`)
             setIsShiny(true)
         }
-        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${character.assets.image}`) {
+        // if (currentPosition.toString() != `${character.assets?.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets?.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -363,7 +359,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     const changeShinySpriteTT = () => {
         setContainerBack('container-back')
         setPageContainer('pagecontainer')
-        setCurrentPosition(`${character.assets.image}`)
+        setCurrentPosition(`${character.assets?.image}`)
         setIsShiny(false)
     }
 
@@ -398,7 +394,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
         else if (isFront === true && isShiny === true) {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
-            setCurrentPosition(`${character.assets.image}`)
+            setCurrentPosition(`${character.assets?.image}`)
             setIsShiny(false)
         }
         else if (isFront === false && isShiny === false) {
@@ -411,8 +407,8 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                 <Sparkles shine={shine} sparkleRef={sparkleRef} />
                 )
         }
-        // if (currentPosition.toString() != `${character.assets.image}` || `${sprites.back_default}`) changeDefault;
-        // if (currentPosition.toString() === `${character.assets.image}`) {
+        // if (currentPosition.toString() != `${character.assets?.image}` || `${sprites.back_default}`) changeDefault;
+        // if (currentPosition.toString() === `${character.assets?.image}`) {
         else {
             setContainerBack('container-back')
             setPageContainer('pagecontainer')
@@ -430,11 +426,11 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     function backDefault() {
         if (isDefault !== true) switchShiny;
         else if (currentPosition == `${sprites.back_default}`) flipFront;
-        else if (currentPosition == `${character.assets.image}`) {
+        else if (currentPosition == `${character.assets?.image}`) {
             setCurrentPosition(`${sprites.back_default}`)
             setFrontBackText('Front');
         };
-        setCurrentPosition(`${character.assets.image}`)
+        setCurrentPosition(`${character.assets?.image}`)
         setFrontBackText('Back');
     }
 
@@ -491,7 +487,9 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
             return (
                 <div className="temp-container-title">
                     <h1 className="title">
-                        {pokeName} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
+                        {pokeName} 
+                        <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${character.t[0].type.name}.svg`} className="titletypelogo" /> 
+                        <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${character.types[1].type.name}.svg`} className="titletypelogo" />
                     </h1>
                 </div>  
             )   
@@ -537,7 +535,7 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
     // const drawSparkles = (context) => {
     // //   const ctx = sparklesRef.current.getContext("2d");
     //     // context.clearRect(0, 0, 256, 256);
-    
+   // 
     //     for (const p of particlesRef.current) {
     //     const x = 128 + p.radius * Math.cos((p.angle * Math.PI) / 180);
     //     const y = 128 + p.radius * Math.sin((p.angle * Math.PI) / 180);
@@ -590,7 +588,22 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                             <div className={containerBack}>
                                 <div className="temp-container-title">
                                     <h1 className="title">
-                                        {name} <Image alt="Pokemon Type One (Main Type)" src={`/images/type_c21_${lowerCaseType}.svg`} className="titletypelogo" width={45} height={45} /> { character.secondaryType ? <Image alt="Pokemon Type Two (Secondary Type)" src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} className="titletypelogo" width={45} height={45} /> : null }
+                                        {name} <Image 
+                                                    alt="Pokemon Type One (Main Type)" 
+                                                    src={`/images/type_c21_${lowerCaseType}.svg`} 
+                                                    className="titletypelogo"
+                                                    width={45}
+                                                    height={45}
+                                                 /> 
+                                                 { character.secondaryType ? 
+                                                    (<Image 
+                                                        alt="Pokemon Type Two (Secondary Type)" 
+                                                        src={`/images/type_c21_${lowerCaseSecondaryType}.svg`} 
+                                                        className="titletypelogo"
+                                                        width={45} 
+                                                        height={45} 
+                                                     />) : blank
+                                                 }
                                     </h1>
                                 </div>    {/* <>
                                         {`${character.types[0].type}` && `${character.types[1].type}` ? type1 : type2 }fd
@@ -604,28 +617,22 @@ export default function Character({ character, shinyArray, imageS, sWidth, sHeig
                                             <div className="spritecontainer">
                                                 <div className="spritebuttoncontainer">
                                                     <div id="shinyDiv">
-                                                        <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
+                                                    <Sparkles {...props} isFront={isFront} isShiny={isShiny} isFrontData={isFrontData} changeShinySpriteTF={changeShinySpriteTF} changeShinySpriteTT={changeShinySpriteTT} changeShinySpriteFT={changeShinySpriteFT} changeShinySpriteFF={changeShinySpriteFF} isShinyData={isShinyData} clickShinyButton={clickShinyButton} childButton={childButton} changeShinySprite={changeShinySprite} />
                                                     </div>
-                                                    <Image id="pogoimg" src={currentPosition} alt="Pokemon Image" className="picdefault" width={300} height={300} /> 
-                                                    <FlipButton
-                                                        ballDefault={ballDefault}
-                                                        // flipFrontBackButton={flipFrontBackButton}
-                                                    >
-                                                        <button className="fbbutton">                                                                                                    
-                                                            <Image id="flip" style={{paddingTop: 4, paddingBottom: 4, alignItems: 'center' }} src="/images/fliparrows.svg" alt="Flip Icon (Two arrows curved in the shape of a circle)" width={20} height={20} />
-                                                                <h2 className="fliptext">{frontBackText}</h2>
-                                                                {/* <button className="backswitch" onClick={backDefault}>{frontBackText}</button> */}
-                                                                {/* <button className={`frontswitch-${character.primaryType.names.English}`} onClick={frontBackFront}>{frontBackText}}</button> */}
-                                                        </button>
-                                                    </FlipButton>
-                                                    {/* <ShinyButton changeShinySprite2={changeShinySprite} clickShiny={clickShiny} {...props} /> */}
+                                                    <Image 
+                                                        id="pogoimg" 
+                                                        src={currentPosition} 
+                                                        alt="Pokemon Image" 
+                                                        className="picdefault" 
+                                                        width={300} 
+                                                        height={300} 
+                                                     /> 
                                                 </div>
                                             </div>
                                             {/* <Image src={imageSpark} id="imageSpark" ref={imageSparkRef} /> */}
                                             { (`${shiny}` !==  null ?
                                                     <div className="middlediv">
-
-                                                    
+                                                        {blank}
                                                     </div>
                                                 :   <div className="middlediv">
                                                     </div>)

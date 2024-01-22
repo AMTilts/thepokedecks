@@ -1,13 +1,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['raw.githubusercontent.com'],
     remotePatterns: [
         {
             protocol: 'https',
             hostname: 'raw.githubusercontent.com',
-            pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**'
+            pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/**',
+            pathname: '/PokeMiners/pogo_assets/master/Images/Pokemon/**'
         }
+        
     ]
   },
   webpack: (config, { isServer }) => {

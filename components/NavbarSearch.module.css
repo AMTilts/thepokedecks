@@ -7,7 +7,6 @@
     display: inline-flex;
     flex-direction: row;
     background: #f8f8f8;
-    padding-top: 5px;
     padding-bottom: 5px;
     /* background: #701200;  fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
@@ -33,7 +32,7 @@
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: center;
-    align-self: flex-start;
+    align-self: center;
     padding: 0 10 0 15;
     display: inline-flex;
     flex-direction: row;
@@ -56,13 +55,11 @@
 .search-container {
     display: inline-flex;
     flex-direction: row;
-    padding-top: 5px;
+    
     padding-bottom: 5px;
     /* background: #701200;  fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    align-items: center;
-    align-content: center;
     width: 100vw;
     height: auto;
     top: 0;
@@ -71,7 +68,8 @@
     border-bottom-width: 10px;
     border-color: rgb(26, 26, 26);
     z-index: 15;
-    justify-content: space-between;
+    margin-right: 15px;
+    justify-content: center;
 }
 
 .footercontainer {
@@ -164,3 +162,27 @@
     justify-content: flex-start;
     text-shadow: black 1px 1px;
 } */
+
+.navbarSearch {
+  display: inline-flex;
+  flex-direction: row;
+  background: #f8f8f8;
+  /* padding-top: 5px; */
+  padding-bottom: 5px;
+  /* background: #701200;  fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #1dbde6, #cf1515);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #1dbde6, #cf1515); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  float: center;
+  align-self: center;
+  width: 100vw;
+  align-content: center;
+  height: auto;
+  top: 0;
+  position: static;
+  box-sizing: border-box;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-color: rgb(26, 26, 26);
+  z-index: 1500;
+  justify-content: space-evenly;
+}

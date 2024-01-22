@@ -1,22 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import paginationStyles from '../style/paginationStyles.module.css';
 import PokeCard from './PokeCard';
-import Probe from 'probe-image-size';
-import NextImage from 'next/image'
-import paginationStyles from '../style/paginationStyles.module.css'
-import Search from './Search'
+import Search from './Search';
 
 
 
 export default function Pagination({ filteredData }) {
   const [currentItems, setCurrentItems] = useState([]);
   const pogoAPIUrl = 'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json';
-  const itemsPerPage = 40;  
+  const itemsPerPage = 30;  
 
-  const [itemOffset, setItmOffset] = useState(0); // Add this line to define itemOffset state
+  const [itemOffset, setItemOffset] = useState(0); // Add this line to define itemOffset state
   const [query, setQuery] = useState('');
   const [data, setData] = useState([])
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  // const pageCount = Math.ceil(data.length / itemsPerPage);
+  const [pageCount, setPageCount] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [unfilteredItems, setUnfilteredItems] = useState([]);
   const [pokesImage, setPokesImage] = useState('');
@@ -34,6 +33,8 @@ export default function Pagination({ filteredData }) {
         setPokemons(fetchedData);
         setData(fetchedData);
         setUnfilteredItems(fetchedData);
+        setCurrentItems(fetchedData.slice(0, itemsPerPage));
+        setPageCount(Math.ceil(fetchedData.length / itemsPerPage));
         console.log()
       } catch (error) {
           console.error('Error fetching data:', error);
@@ -49,7 +50,7 @@ export default function Pagination({ filteredData }) {
 
     useEffect(() => {
       fetchPogo();    
-    }, [filteredData]); // Fetch data when component mount
+    }, []); // Fetch data when component mount
 
     
     useEffect(() => {
@@ -58,9 +59,10 @@ export default function Pagination({ filteredData }) {
         pokemon.names.English && 
         pokemon.names.English.toLowerCase().includes(query.toLowerCase())
       );
-      setCurrentItems(filteredData);
-
-      console.log(currentItems);
+      setSearchResults(filteredData);
+      setPageCount(Math.ceil(filteredData.length / itemsPerPage));
+      setItemOffset(0);
+   
     }, [data, query]);
 
 
@@ -71,15 +73,21 @@ export default function Pagination({ filteredData }) {
 
     const filteredData = Array.isArray(fetchedData.filter(pokemon => pokemon.names.English.toLowerCase().includes(query.toLowerCase())));
     setSearchResults(filteredData);
-    setCurrentItems(filteredData);
+    // setCurrentItems(filteredData);
   }
    
 
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage;
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-    setCurrentItems(currentItems.slice(newOffset, newOffset + itemsPerPage));
+    setCurrentItems(searchResults.slice(newOffset, newOffset + itemsPerPage));
   };
+
+  useEffect(() => {
+    //Update current items when search results changes
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(searchResults.slice(itemOffset, endOffset));
+  }, [searchResults, itemOffset]);
 
   console.log(filteredData);
 
@@ -134,15 +142,8 @@ export default function Pagination({ filteredData }) {
   }
   return (
     <>
-      <div>
+      <div style={{display: 'inlineFlex', flexDirection: 'row', justifyContent: 'center'}}>
         <div className="paginate-container">
-          <div id="search">
-            <Search 
-              onChange={handleSearch}
-              onSearch={setQuery}
-              currentItems={currentItems}
-            />
-          </div>
           <div id="pagination">
             <ReactPaginate
               breakLabel="..."
@@ -161,8 +162,15 @@ export default function Pagination({ filteredData }) {
               id="pagination"
             />
           </div>
+          <div id="search">
+              <Search 
+                onChange={handleSearch}
+                onSearch={setQuery}
+                // currentItems={currentItems}
+              />
         </div>
-        <div className="div-container">
+        </div>
+        <div className="div-container" style={{paddingTop: '10px'}}>
           {currentItems.length > 0 ? (
             currentItems.map((p) => (
               <PokeCard
@@ -180,9 +188,36 @@ export default function Pagination({ filteredData }) {
               />
             ))
           ) : (
-            <h1>No Pokemon found</h1>
+            <h1 style={{fontStyle: 'bold', fontSize: '30px'}}>No Pokemon found</h1>
           )}
         </div>
+        <div className="paginate-container-bottom">
+          <div id="pagination">
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel="next >"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel="< previous"
+              renderOnZeroPageCount={null}
+              containerClassName={paginationStyles.container}
+              pageClassName={paginationStyles.page}
+              activeClassName={paginationStyles.active}
+              disabledClassName={paginationStyles.disabled}
+              inactiveClassName="paginate-inactive"
+              forcePage={currentItems}
+              id="pagination"
+            />
+          </div>
+          <div id="search">
+              <Search 
+                onChange={handleSearch}
+                onSearch={setQuery}
+                // currentItems={currentItems}
+              />
+          </div>
+      </div>
       </div>
     </>
   );

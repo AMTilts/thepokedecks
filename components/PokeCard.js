@@ -1,12 +1,11 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import cardImg from '../images/card_img.png';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import FixImage from './FixImage';
 import imageSize from 'image-size';
 import probe from 'probe-image-size'
 import { doExpression } from '@babel/types';
-import { raw } from 'fs-loader';
 // import { EntryOptionPlugin } from 'webpack';
 import {shinyBlack} from './shinyblack.png';
 import Link from 'next/link';
@@ -113,15 +112,15 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
         setImageHeight(undefined);
     }
 
-    function handleImageLoad() {
-        if (imageRef.current) {
-            const { naturalWidth, naturalHeight } = imageRef.current;
-            setImageHeight(naturalHeight)
-            setNaturalWidth(naturalWidth);
-            setNaturalHeight(naturalHeight);
-            setImageHeight(naturalHeight);
-        }
-    }
+    // function handleImageLoad() {
+    //     if (imageRef.current) {
+    //         const { naturalWidth, naturalHeight } = imageRef.current;
+    //         setImageHeight(naturalHeight)
+    //         setNaturalWidth(naturalWidth);
+    //         setNaturalHeight(naturalHeight);
+    //         setImageHeight(naturalHeight);
+    //     }
+    // }
 
 
   const [imgArray, setImgArray] = useState([]);
@@ -152,226 +151,225 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
     } console.log('nope mannn')
   };
 
-  const lowerCaseType = type.toLowerCase(); 
-  const lowerCaseSecondaryType = secondaryType?.toLowerCase(); 
-  const lowerCaseName = name.toLowerCase();
-  
+  const lowerCaseType = type.toLowerCase().replace(/\s/g, ''); 
+  const lowerCaseSecondaryType = secondaryType?.toLowerCase().replace(/\s/g, ''); 
+  const lowerCaseName = name.toLowerCase().replace(/\s/g, '');
+
+
   loadedData;
 
   return (
-    <Link href={`/pokemon/${lowerCaseName}`}>
-      <a>
-        <div className="Page-outer">
-          <div id="Page" data-name="Artboards" className="Page">
-            <div id="Frame-outer" className="Frame-outer">
-              <div id="Frame" data-name="card-parent" className="Frame">
-                <div className="frame-card-outline-outer">
-                  <div
-                    id="frame-card-outline"
-                    data-name="frame-card-outline"
-                    className="frame-card-outline"
-                  >
-                    <div className="Frame-card-elements-outer">
-                      <div
-                        id="Frame-card-elements"
-                        data-name="Frame-card-elements"
-                        className="Frame-card-elements"
-                      >
-                        <div className="frame-card-bg-white-outer">
-                          <div
-                            data-name="frame-card-bg-white"
-                            id={`frame-card-bg-white-${lowerCaseType}-light`}
-                            className="frame-card-bg-white">
-                        </div>
-                            <div className="icon-container" style={{zIndex: 5000}}>
-                                {filteredData ? (filteredData.map((pokemon) => {
-                                    pokemon.assets?.shinyImage ? (
-                                        <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
-                                    )
-                                    :
-                                    (
-                                        <Image src={shinyIcon} alt="icon" className="icon" style={{zIndex: 500}}>
-                                            <div className="light"></div>
-                                        </Image>    
-                                    )
-                                    }))
-                                    :
-                                    (
-                                    <div className="nocurrent">
-                                    </div>
-                                    )
-                                }
-                            </div>
-                            <div className="sparkle-icon"></div> 
-                        </div>
-                        <div className="frame-card-img-outer">
-                            <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
-                                <div className="card-img-outer">
-                                    <div>
-                                        {image && (
-                                                <Image
-                                                    key={key}
-                                                    id="card-img"
-                                                    src={image}
-                                                    dataName="card-img"
-                                                    alt={name}
-                                                    className="card-img"
-                                                    onLoadingComplete={handleImageLoad}
-                                                    ref={imageRef.current}
-                                                    style={{objectFit: 'contain', width: '100%'}}
-                                                    fill={true}
-                                                    sizes="100%"
-                                                    layout="intrinsic"
-                                                />
-              
-                                        )}
-                                        {/* Display the shiny image icon if available */}
-                                        {shinyImage && (
-                                          <>
-                                            <div className="shiny-icon-container">
-                                              <Image
-                                                src="/shinyblack.svg"
-                                                className="sparkling-icon"
-                                                alt={`Shiny ${name}`}
-                                                width={30}
-                                                height={30}
-                                              />
-                                            </div>
-                                            <div className="shinyImageContainer">
-                                              <Image
-                                                src={shinyImage}
-                                                alt={`Shiny ${name}`}
-                                                width={50}
-                                                height={50}
-                                                className="shiny-img"
-                                              />
-                                            </div>
-                                          </>
-                                        )}
-                                    </div>    
-                                </div>
-                            </div>
-                        <div className="frame-pokemon-name-outer">
-                          <div
-                            id="frame-pokemon-name"
-                            data-name="frame-pokemon-name"
-                            className="frame-pokemon-name"
-                          >
-                            <div className="card-frame-name-outer">
-                              <div
-                                id="card-frame-name"
-                                data-name="card-frame-name"
-                                className="card-frame-name"
-                              >
-                                <div className="poke-name-outer">
-                                  <div
-                                    id={`poke-name-${lowerCaseType}`}
-                                    data-name="poke-name"
-                                    className="poke-name"
-                                  >
-                                    <div key="0">{name}</div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="logo-name-parent-frame">
-                          <div className="frame-type-logo-name-outer">
-                          <div className="TYPENAME-logo-outer">
-                                <div
-                                  id="TYPENAME-logo"
-                                  data-name="TYPENAME-logo">
-                                  <div className="Frame-4-outer">
-                                    <div id="Frame-4" data-name="Frame 4" className="Frame-4">
-                                      <div className="type-logo-TYPENAME-outer">
-                                      {!lowerCaseType ? (
-                                          console.log('no type icon')
-                                      ) : (
-                                          <>
-                                            <Image
-                                                id={`type-logo-TYPENAME-${lowerCaseType}`}
-                                                src={
-                                                    !lowerCaseType
-                                                        ? `/images/type_c21_${lowerCaseType}.svg`
-                                                        : '/images/default.svg'
-                                                }
-                                                data-name="type-logo-TYPENAME"
-                                                alt={`${type} Type`}
-                                                className="type-logo-TYPENAME"
-                                                height={25}
-                                                width={25}
-                                            />
-                                            <div id={`TYPENAME-${lowerCaseType}`} data-name="TYPENAME" className="TYPENAME">
-                                                <div key="0">
-                                                    {type}
-                                                </div>
-                                            </div>  
-                                          </>
-                                        )
-                                      }
-                                      </div>  
-                                    </div>
-                                  <div id="Frame-4-2" data-name="Frame 4" className="Frame-4-2"> 
-                                    <div className="type-logo-TYPENAME-outer-2">                                                                               </div>
-                                    {!lowerCaseSecondaryType
-                                        ? 
-                                        (
-                                          console.log('no type icon')
-                                        ) 
-                                        :
-                                        (
-                                        <>
-                                        <Image
-                                            id={`type-logo-TYPENAME-2-${lowerCaseSecondaryType}`}
-                                            src={
-                                                  lowerCaseSecondaryType
-                                                    ? `/images/type_c22_${lowerCaseSecondaryType}.svg`
-                                                    : '/images/default.svg'
-                                            }
-                                            data-name="type-logo-TYPENAME"
-                                            alt={`${secondaryType} Type`}
-                                            className="type-logo-TYPENAME-2"
-                                            height={25}
-                                            width={25}
-                                          />
-                                          <div id={`TYPENAME-2-${lowerCaseSecondaryType}`} data-name="TYPENAME">
-                                              <div key="0">
-                                                  {secondaryType}
-                                              </div>
-                                          </div>
-                                            </>
-                                            )
-                                          }
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              id="frame-type-logo-name"
-                              data-name="frame-type-logo-name"
-                              className="frame-type-logo-name"
-                            >
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        {/* <div className={`type-gradient-${type}`}>
+    (<Link href={`/pokemon/${lowerCaseName}`}>
 
-                      </div> */}
-                    </div>
-                    <div className="card-bg-gradient-outer">
-                      <div
-                        // id={`card-bg-gradient-${lowerCaseType}`} 
-                        data-name="card-bg-gradient"
-                        alt="card-bg-gradient"
-                        // className="card-bg-gradient"
-                        className="pokemon-card" 
-                        style={cardStyle}
-                        >              
+      <div className="Page-outer">
+        <div id="Page" data-name="Artboards" className="Page">
+          <div id="Frame-outer" className="Frame-outer">
+            <div id="Frame" data-name="card-parent" className="Frame">
+              <div className="frame-card-outline-outer">
+                <div
+                  id="frame-card-outline"
+                  data-name="frame-card-outline"
+                  className="frame-card-outline"
+                >
+                  <div className="Frame-card-elements-outer">
+                    <div
+                      id="Frame-card-elements"
+                      data-name="Frame-card-elements"
+                      className="Frame-card-elements"
+                    >
+                      <div className="frame-card-bg-white-outer">
+                        <div
+                          data-name="frame-card-bg-white"
+                          id={`frame-card-bg-white-${lowerCaseType}-light`}
+                          className="frame-card-bg-white">
                       </div>
+                          <div className="icon-container" style={{zIndex: 5000}}>
+                              {filteredData ? (filteredData.map((pokemon) => {
+                                  pokemon.assets?.shinyImage ? (
+                                      <h3 style={{color: 'teal', fontStyle: 'bold', zIndex: 500}}>BONERS</h3>
+                                  )
+                                  :
+                                  (
+                                      <Image src={shinyIcon} alt="icon" className="icon" style={{zIndex: 500}}>
+                                          <div className="light"></div>
+                                      </Image>    
+                                  )
+                                  }))
+                                  :
+                                  (
+                                  <div className="nocurrent">
+                                  </div>
+                                  )
+                              }
+                          </div>
+                          <div className="sparkle-icon"></div> 
+                      </div>
+                      <div className="frame-card-img-outer">
+                          <div id="frame-card-img" data-name="frame-card-img" className="frame-card-img">
+                              <div className="card-img-outer">
+                                  <div>
+                                      {image && (
+                                              <Image
+                                                  key={key}
+                                                  id="card-img"
+                                                  src={image}
+                                                  dataName="card-img"
+                                                  alt={name}
+                                                  className="card-img"
+                                                  // onLoadingComplete={handleImageLoad}
+                                                  ref={imageRef.current}
+                                                  style={{objectFit: 'contain', width: '100%'}}
+                                                  fill={true}
+                                                  sizes="100%"
+                                                  // layout="responsive"
+                                              />
+            
+                                      )}
+                                      {shinyImage && (
+                                        <>
+                                          <div className="shiny-icon-container">
+                                            <Image
+                                              src="/shinyblack.svg"
+                                              className="sparkling-icon"
+                                              alt={`Shiny ${name}`}
+                                              width={30}
+                                              height={30}
+                                            />
+                                          </div>
+                                          <div className="shinyImageContainer">
+                                            <Image
+                                              src={shinyImage}
+                                              alt={`Shiny ${name}`}
+                                              width={50}
+                                              height={50}
+                                              className="shiny-img"
+                                            />
+                                          </div>
+                                        </>
+                                      )}
+                                  </div>    
+                              </div>
+                          </div>
+                      <div className="frame-pokemon-name-outer">
+                        <div
+                          id="frame-pokemon-name"
+                          data-name="frame-pokemon-name"
+                          className="frame-pokemon-name"
+                        >
+                          <div className="card-frame-name-outer">
+                            <div
+                              id="card-frame-name"
+                              data-name="card-frame-name"
+                              className="card-frame-name"
+                            >
+                              <div className="poke-name-outer">
+                                <div
+                                  id={`poke-name-${lowerCaseType}`}
+                                  data-name="poke-name"
+                                  className="poke-name"
+                                >
+                                  <div key="0">{name}</div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="logo-name-parent-frame">
+                        <div className="frame-type-logo-name-outer">
+                        <div className="TYPENAME-logo-outer">
+                              <div
+                                id="TYPENAME-logo"
+                                data-name="TYPENAME-logo">
+                                <div className="Frame-4-outer">
+                                  <div id="Frame-4" data-name="Frame 4" className="Frame-4">
+                                    <div className="type-logo-TYPENAME-outer">
+                                    {!lowerCaseType ? (
+                                        console.log('no type icon')
+                                    ) : (
+                                        <>
+                                          <Image
+                                              id={`type-logo-TYPENAME-${lowerCaseType}`}
+                                              src={
+                                                  !lowerCaseType
+                                                      ? `/images/type_c21_${lowerCaseType}.svg`
+                                                      : '/images/default.svg'
+                                              }
+                                              data-name="type-logo-TYPENAME"
+                                              alt={`${type} Type`}
+                                              className="type-logo-TYPENAME"
+                                              height={25}
+                                              width={25}
+                                          />
+                                          <div id={`TYPENAME-${lowerCaseType}`} data-name="TYPENAME" className="TYPENAME">
+                                              <div key="0">
+                                                  {type}
+                                              </div>
+                                          </div>  
+                                        </>
+                                      )
+                                    }
+                                    </div>  
+                                  </div>
+                                <div id="Frame-4-2" data-name="Frame 4" className="Frame-4-2"> 
+                                  <div className="type-logo-TYPENAME-outer-2">                                                                               </div>
+                                  {!lowerCaseSecondaryType
+                                      ? 
+                                      (
+                                        console.log('no type icon')
+                                      ) 
+                                      :
+                                      (
+                                      <>
+                                      <Image
+                                          id={`type-logo-TYPENAME-2-${lowerCaseSecondaryType}`}
+                                          src={
+                                                lowerCaseSecondaryType
+                                                  ? `/images/type_c22_${lowerCaseSecondaryType}.svg`
+                                                  : '/images/default.svg'
+                                          }
+                                          data-name="type-logo-TYPENAME"
+                                          alt={`${secondaryType} Type`}
+                                          className="type-logo-TYPENAME-2"
+                                          height={25}
+                                          width={25}
+                                        />
+                                        <div id={`TYPENAME-2-${lowerCaseSecondaryType}`} data-name="TYPENAME">
+                                            <div key="0">
+                                                {secondaryType}
+                                            </div>
+                                        </div>
+                                          </>
+                                          )
+                                        }
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="frame-type-logo-name"
+                            data-name="frame-type-logo-name"
+                            className="frame-type-logo-name"
+                          >
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* <div className={`type-gradient-${type}`}>
+
+                    </div> */}
+                  </div>
+                  <div className="card-bg-gradient-outer">
+                    <div
+                      // id={`card-bg-gradient-${lowerCaseType}`} 
+                      data-name="card-bg-gradient"
+                      alt="card-bg-gradient"
+                      // className="card-bg-gradient"
+                      className="pokemon-card" 
+                      style={cardStyle}
+                      >              
                     </div>
                   </div>
                 </div>
@@ -379,8 +377,9 @@ function PokeCard({ id, name, key, image, type, type2, secondaryType, lowerCaseD
             </div>
           </div>
         </div>
-      </a>
-    </Link>
+      </div>
+
+    </Link>)
   );
 }
 
