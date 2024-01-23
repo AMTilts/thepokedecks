@@ -4,5 +4,5 @@ deployment:
     - export DEPLOYPATH=/home/thepokedecks/public_html/
     - /usr/local/bin/npm install
     - /usr/local/bin/npm run build
-    - /bin cp -R .next/* $DEPLOYPATH
-    - /bin cp -R public/* $DEPLOYPATH
+    - /bin/cp -R .next/* $DEPLOYPATH
+    - /bin/cp -R public/* $DEPLOYPATH
